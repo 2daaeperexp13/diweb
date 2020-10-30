@@ -1,0 +1,52 @@
+body{
+    background-color: #C4C6B9;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+h1{
+    color:#161669;
+    font-size: 2em;
+    letter-spacing: 1em;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 1000;
+}
+
+h2{
+    color:white;
+    background-color: #5D6336;
+    font-size: 1.5em;
+    clear: both;
+
+}
+
+
+p.centrado{
+    text-align: center;
+}
+
+img.izq{
+    float:left;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+}
+
+img.der{
+    float: right;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+strong{
+    font-style: oblique;
+}
+
+address{
+    clear: both;
+    font-size: 1.1em;
+}
+
+
