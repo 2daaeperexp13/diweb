@@ -28,12 +28,15 @@ cite{
     text-decoration: underline;
 }
 p.latin{
-    margin-bottom: 1.5%;
+    
     font-size: 2.5em;
     font-family: lobster;
 }
+p{
+    margin-bottom: 1em;
+}
 p.espanol{
-    margin-bottom: 1.5%;
+
     color:white;
     font-family: just-another-hand;
     font-size: 3.5em;
