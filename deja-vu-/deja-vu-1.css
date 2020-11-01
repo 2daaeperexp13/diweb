@@ -15,7 +15,6 @@ h1{
     text-align: right;
 }
 h2{
-   
     margin-left: 20%;
     margin-right: 20%;
     border-bottom: white 5px solid;
@@ -44,11 +43,14 @@ strong{
     font-variant: small-caps;
 }
 q{
-    
+    border-bottom: dashed red 1px;
+    font-family: none;
+    font-size: 1.5em;
 }
 span.cargo{
-
+    background-color: white;
+    color: red;
 }
 span.lugar{
-
+    color:blue;
 }
