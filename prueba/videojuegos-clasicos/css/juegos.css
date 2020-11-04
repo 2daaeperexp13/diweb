@@ -1,0 +1,54 @@
+body{
+    margin:0 15%;
+    background: url("../img/matrix.png") repeat-y top left, url("../img/matrix2.png") repeat-y top right;
+    background-size: 7.5%;
+    background-color: black;
+    font-family: 'Gill Sans';
+}
+h1{
+    font-family: Impact;
+    font-size: 2.5em;
+    text-align: center;
+    color: green;
+
+}
+h2{
+    color: white;
+    background-color: green;
+    letter-spacing: 0.2em;
+}
+
+section{
+    padding: 0  0.5% 5%;
+    border: solid 3px white;
+    margin-bottom: 1%;
+}
+section img{
+    padding: 0.5%;
+    background-color: white;
+    border: solid 5px green;
+    margin: 0 1%;
+}
+section.space img{
+    float:left;
+}
+section.pacman img{
+    float: right;
+}
+section.pong img{
+    float: right;
+}
+p{
+    color: white;
+    font-size: 1em;
+}
+strong{
+    color: yellow;
+}
+time{
+    color: green;
+}
+cite{
+    color:red;
+    font-style: unset;
+}

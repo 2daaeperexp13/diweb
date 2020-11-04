@@ -1,0 +1,33 @@
+body{
+    margin: 0 33%;
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+a{
+    position: absolute;
+    left: 1340px;
+    bottom:730px;
+  
+}
+span{
+    text-decoration: underline blue;
+    color: blue;
+}
+cite{
+    font-style: unset;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+p{
+    line-height: 23px;
+    font-size: 1em;
+}
+strong.rojo{
+    font-weight: normal;
+    color: red;
+}
+strong.amarillo{
+    font-weight: normal;
+    color: orange;
+}
