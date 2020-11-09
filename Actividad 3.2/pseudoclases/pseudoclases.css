@@ -1,0 +1,19 @@
+h2:nth-child(2){
+    color:red;
+    font-size: 1.5em;
+}
+h2::first-letter{
+    color: red;
+}
+ul{
+    list-style: none;
+}
+li:nth-child(3){
+    color: cornflowerblue;
+}
+li:hover:nth-child(2n)::after{
+    content: "somos elementos pares";
+}
+li:hover:nth-child(2n+1)::after{
+    content: "somos elementos impares";
+}

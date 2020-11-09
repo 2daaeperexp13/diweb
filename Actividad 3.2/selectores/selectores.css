@@ -1,0 +1,37 @@
+body{
+    background-color: gray;
+    margin: 0 17% ;
+    text-align: center;
+    font-size: 1.5em;
+}
+nav ul{
+    list-style:none;
+    text-align: justify;
+}
+nav li{
+    display: inline-block;
+    margin:7%;
+    padding:1%;
+
+}
+nav li a[rel='help']::before{
+    content:url("img/doc.png");
+}
+
+nav li a[rel='bookmark']::before{
+    content:url("img/estrella.png");
+}
+nav li a[rel='search']::before{
+    content:url("img/lupa.png");
+}
+nav li a[rel='nofollow']::before{
+    content:url("img/escudo.png");
+}
+nav li a[rel='tag']::before{
+    content:url("img/carro.png");
+}
+nav a{
+
+    text-decoration: none;
+    color:black;
+}
