@@ -47,7 +47,9 @@ body {
 }
 .parallax-wrapper::before {
     transform:translateZ(-1px) scale(2);
+
 }
+
 .parallax-wrapper::before {
     z-index: -1;
 }
