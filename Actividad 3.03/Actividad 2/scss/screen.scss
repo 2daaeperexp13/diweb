@@ -1,0 +1,31 @@
+$color-texto:#eee;
+$color-texto-pasar:#fff;
+$color-fondo:#666;
+$color-fondo-pasar:#888;
+
+@mixin colores{
+    color:$color-texto;
+    background-color: $color-fondo;
+}
+@mixin colores-pasar{
+    color:$color-texto-pasar;
+    background-color: $color-fondo-pasar;
+}
+@mixin box-sizing($parametro){
+    -moz-box-sizing: $parametro;
+    -webkit-box-sizing: $parametro;
+    box-sizing: $parametro;
+}
+
+@mixin transiciones($property,$duration,$timing){
+    -moz-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+@mixin animaciones($name,$duration, $timing){
+    -moz-animation: $name $duration $timing;
+    -webkit-animation: $name $duration $timing;
+    animation: $name $duration $timing;
+}
+
+@import "_menu.scss";
