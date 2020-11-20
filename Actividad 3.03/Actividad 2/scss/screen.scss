@@ -1,15 +1,23 @@
-$color-texto:#eee;
-$color-texto-pasar:#fff;
-$color-fondo:#666;
-$color-fondo-pasar:#888;
+//VARIABLES
+//Color por defecto
+$color-claro:#eee;
+$color-oscuro:#666;
+//Color al pasar el  por encima
+$color-claro-pasar:#fff;
+$color-oscuro-pasar:#888;
 
+//nomargin y nopadding 
+@mixin no-margin-padding{
+    margin:0px;
+    padding:0px;
+}
 @mixin colores{
-    color:$color-texto;
-    background-color: $color-fondo;
+    color:$color-claro;
+    background-color: $color-oscuro;
 }
 @mixin colores-pasar{
-    color:$color-texto-pasar;
-    background-color: $color-fondo-pasar;
+    color:$color-claro-pasar;
+    background-color: $color-oscuro-pasar;
 }
 @mixin box-sizing($parametro){
     -moz-box-sizing: $parametro;
