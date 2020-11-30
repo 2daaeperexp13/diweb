@@ -1,0 +1,30 @@
+//COLORES
+
+//Fondos 
+$color-fondo-header:#E3FF00;
+$color-fondo-lateral:#F48020;
+$color-fondo-contenido:#AAABA9;
+$color-fondo-footer:#4C4C4D;
+$color-fondo-section-lateral:#FFF55C;
+$color-fondo-section-contenido:white;
+
+//Texto
+$color-texto-header:#5CA4FF;
+$color-texto-titulo-zona:#FF5F49;
+$color-texto:black;
+
+//Fuentes
+@font-face{
+    font-family: "StanilistOne"  ;src: url("../fuentes/StalinistOne-Regular.ttf");
+}
+@font-face{
+    font-family: "Cinzel"  ;src: url("../fuentes/Cinzel-VariableFont_wght.ttf");
+}
+
+$fuente-titulo:StanilistOne;
+$fuente-texto:Cinzel;
+
+@import "mixins.scss";
+@import "header.scss";
+@import "contenido-inicio.scss";
+

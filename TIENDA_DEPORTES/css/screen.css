@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "StanilistOne";
+  src: url("../fuentes/StalinistOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fuentes/Cinzel-VariableFont_wght.ttf");
+}
+
+header {
+  background-color: #E3FF00;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  padding: 1%;
+  float: left;
+}
+
+header h1 {
+  color: #5CA4FF;
+  font-family: StanilistOne;
+}
+
+header div {
+  float: right;
+}
+
+header div img {
+  width: 70px;
+  height: 700px;
+  padding: 1%;
+}
+
+main {
+  font-family: Cinzel;
+}
+
+main div.lateral {
+  background-color: #F48020;
+  float: right;
+  width: 400px;
+}
+
+main div.lateral section h3 {
+  color: #FF5F49;
+}
+
+main div.lateral section div {
+  background-color: #FFF55C;
+  color: black;
+}
+
+main div.contenido {
+  background-color: #AAABA9;
+}
+/*# sourceMappingURL=screen.css.map */
