@@ -1,8 +1,11 @@
 header{
     background-color: $color-fondo-header;
-    @include tamaño-seccion(auto,170px);
+    @include tamaño-seccion(auto,150px);
     margin:0;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
     img{
         @include tamaño-imagen(100px,100px);
         float: left;
@@ -10,23 +13,47 @@ header{
 
     h1{
         color:$color-texto-header;
-        font-family: $fuente-titulo;
     }
 
     div{
-
         @include tamaño-seccion(100px,50px);
         float: right;
         button{
             @include tamaño-imagen(50px,50px);
             border-radius: 60%;
             float: right;
+            background-color: $color-fondo-lateral;
+            img{
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                border-radius: 100%;
+                right:10px;
+            }
         }
-        #españa{
-            background-image: url("../img/españa.png");
+    }
+}
+nav{
+    background-color: $color-fondo-lateral;
+    margin: 0;
+    padding: 0.05%;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: $color-texto-titulo-zona;
+                font-weight: bold;
+
+                font-size: 1.5em;
+            }
         }
-        #ingles{
-            background-image: url("../img/ingles.png");
+        li:hover{
+            background-color: $color-fondo-section-lateral;
         }
     }
 }

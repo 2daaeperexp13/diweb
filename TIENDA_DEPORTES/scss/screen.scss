@@ -10,8 +10,9 @@ $color-fondo-section-contenido:white;
 
 //Texto
 $color-texto-header:#5CA4FF;
-$color-texto-titulo-zona:#FF5F49;
+$color-texto-titulo-zona:cornflowerblue;
 $color-texto:black;
+
 
 //Fuentes
 @font-face{
@@ -25,17 +26,15 @@ $fuente-titulo:StanilistOne;
 $fuente-texto:Cinzel;
 
 body{
-    margin: 0;
+    margin: 0 10%;
+    h1,h2,h3,h4{
+        font-family: $fuente-titulo;
+    }
+    font-family: $fuente-texto;
+    background-color: $color-fondo-contenido;
+    font-weight: bold;
 }
-@mixin tamaño-imagen($width ,$height){
-    width: $width;
-    height: $height;
-    padding: 1%;
-}
-@mixin tamaño-seccion($width ,$height){
-    width: $width;
-    height: $height;
-}
+@import"mix.scss";
 @import "header.scss";
-@import "contenido-inicio.scss";
+@import "footer.scss";
 

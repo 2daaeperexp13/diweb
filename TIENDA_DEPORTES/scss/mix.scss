@@ -1,0 +1,17 @@
+
+@mixin tamaño-imagen($width ,$height){
+    width: $width;
+    height: $height;
+    padding: 1%;
+}
+@mixin tamaño-seccion($width ,$height){
+    width: $width;
+    height: $height;
+}
+
+@mixin padding-lados(){
+    padding:0  4%;
+}
+@mixin padding-lateral(){
+    padding:6%
+}
