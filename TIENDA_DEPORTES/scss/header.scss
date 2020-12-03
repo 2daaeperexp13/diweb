@@ -1,18 +1,32 @@
 header{
     background-color: $color-fondo-header;
+    @include tamaño-seccion(auto,170px);
+    margin:0;
+
     img{
         @include tamaño-imagen(100px,100px);
         float: left;
     }
+
     h1{
         color:$color-texto-header;
         font-family: $fuente-titulo;
-
     }
+
     div{
+
+        @include tamaño-seccion(100px,50px);
         float: right;
-        img{
-            @include tamaño-imagen(70px,700px);
+        button{
+            @include tamaño-imagen(50px,50px);
+            border-radius: 60%;
+            float: right;
+        }
+        #españa{
+            background-image: url("../img/españa.png");
+        }
+        #ingles{
+            background-image: url("../img/ingles.png");
         }
     }
 }

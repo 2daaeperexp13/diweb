@@ -24,7 +24,18 @@ $color-texto:black;
 $fuente-titulo:StanilistOne;
 $fuente-texto:Cinzel;
 
-@import "mixins.scss";
+body{
+    margin: 0;
+}
+@mixin tamaño-imagen($width ,$height){
+    width: $width;
+    height: $height;
+    padding: 1%;
+}
+@mixin tamaño-seccion($width ,$height){
+    width: $width;
+    height: $height;
+}
 @import "header.scss";
 @import "contenido-inicio.scss";
 

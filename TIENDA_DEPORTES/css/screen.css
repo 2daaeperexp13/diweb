@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "StanilistOne";
   src: url("../fuentes/StalinistOne-Regular.ttf");
@@ -8,8 +9,15 @@
   src: url("../fuentes/Cinzel-VariableFont_wght.ttf");
 }
 
+body {
+  margin: 0;
+}
+
 header {
   background-color: #E3FF00;
+  width: auto;
+  height: 170px;
+  margin: 0;
 }
 
 header img {
@@ -25,13 +33,25 @@ header h1 {
 }
 
 header div {
+  width: 100px;
+  height: 50px;
   float: right;
 }
 
-header div img {
-  width: 70px;
-  height: 700px;
+header div button {
+  width: 50px;
+  height: 50px;
   padding: 1%;
+  border-radius: 60%;
+  float: right;
+}
+
+header div #españa {
+  background-image: url("../img/españa.png");
+}
+
+header div #ingles {
+  background-image: url("../img/ingles.png");
 }
 
 main {

@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  width: 100%;
+  height: auto;
+  border-bottom-style: solid;
+  border: 23px;
+}
+
+h1,
+h4,
+h2,
+p {
+  text-align: center;
+}
+
+p{
+  font-size: 0.85em;
+}
+
+body {
+  background-color: white;
+}
+
+.container {
+  color: #666666;
+  font-family: "Montserrat";
+  margin: 20px auto;
+  width: 90%;
+}
+
+img{
+  border-radius: 25px;
+}
+
+main{
+  width: 50%;
+  height: auto;
+  border:1.5px solid #666666; 
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  border-radius: 25px;
+  margin-right: 3%;
+}
+
+main img{
+  width: 90%;
+  height: 220px;
+  margin-left: 4%;
+}
+
+
+div.content_wrapper article{
+  width: 30%;
+  height: auto;
+  border:1.5px solid #666666; 
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 6%;
+  border-radius: 25px;
+}
+
+nav{
+  width: 16%;
+}
+
+nav div{
+  margin-top: 10%;
+  margin-left: 6%;
+}
+
+div.content_wrapper{
+  margin-top: 1.5%;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5%;
+  border-top: 1px solid black;
+}
+
+div.articles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 13%;
+  margin-top: 2%;
+  padding-bottom: 2%;
+}
+
+div.articles img{
+  width: 96%;
+  height: 110px;
+}
+#bonita{
+  width: 98%;
+  height: 180px;
+}
+div.articles article{
+  width: 31.5%;
+  height: auto;
+  border:1.5px solid #666666; 
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 4%;
+  border-radius: 25px;
+}
+
+footer{
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1%;
+  border-top: 1px solid black;
+}
