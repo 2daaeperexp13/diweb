@@ -1,29 +1,51 @@
 header{
-    background-color: $color-fondo-header;
+    
+    background: linear-gradient(to bottom, white, $color-fondo-header);
     @include tamaño-seccion(auto,150px);
     margin:0;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    img{
-        @include tamaño-imagen(100px,100px);
-        float: left;
+    padding: 1%;
+
+    a{
+        @include tamaño-imagen(220px,220px);
+        img{
+            
+            -webkit-transition:all .9s ease; 
+            -moz-transition:all .9s ease; 
+            -o-transition:all .9s ease; 
+            -ms-transition:all .9s ease; 
+            width:100%;
+            box-sizing: border-box;
+        }
     }
+
+    a:hover img{
+        
+        -webkit-transform:scale(2.25);
+        -moz-transform:scale(2.25);
+        -ms-transform:scale(2.25);
+        -o-transform:scale(2.25);
+        transform:scale(2.25);
+    }
+
 
     h1{
         color:$color-texto-header;
     }
 
     div{
-        @include tamaño-seccion(100px,50px);
-        float: right;
+        @include tamaño-seccion(200px,50px);
+        
         button{
-            @include tamaño-imagen(50px,50px);
+            @include tamaño-imagen(70px,70px);
             border-radius: 60%;
             float: right;
             background-color: $color-fondo-lateral;
             img{
+                @include tamaño-imagen(140px,140px);
                 width: 100%;
                 height: auto;
                 overflow: hidden;
@@ -34,7 +56,8 @@ header{
     }
 }
 nav{
-    background-color: $color-fondo-lateral;
+    
+    background: linear-gradient(to bottom, $color-fondo-header, $color-fondo-lateral);
     margin: 0;
     padding: 0.05%;
     ul{
@@ -46,7 +69,7 @@ nav{
             list-style: none;
             a{
                 text-decoration: none;
-                color: $color-texto-titulo-zona;
+                color: $color-texto-header;
                 font-weight: bold;
 
                 font-size: 1.5em;
@@ -54,6 +77,8 @@ nav{
         }
         li:hover{
             background-color: $color-fondo-section-lateral;
+            border-radius: 15%;
+            text-shadow: 2px 2px 0 #444;;
         }
     }
 }

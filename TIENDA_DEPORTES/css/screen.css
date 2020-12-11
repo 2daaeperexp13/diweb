@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "StanilistOne";
+  src: url("../fuentes/StalinistOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fuentes/Cinzel-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: Cinzel;
+  background: linear-gradient(to right, #F48020, #F48020, #FFF55C, #FFF55C);
+  font-weight: bold;
+  margin: 0;
+}
+
+body h1, body h2, body h3, body h4, body h5 {
+  font-family: StanilistOne;
+  text-shadow: 2px 2px 0 #AAA, 12px 12px 8px #444;
+}
+
+header {
+  background: linear-gradient(to bottom, white, #E3FF00);
+  width: auto;
+  height: 150px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1%;
+}
+
+header a {
+  width: 220px;
+  height: 220px;
+  padding: 1%;
+}
+
+header a img {
+  -webkit-transition: all .9s ease;
+  -moz-transition: all .9s ease;
+  -o-transition: all .9s ease;
+  -ms-transition: all .9s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header a:hover img {
+  transform: scale(2.25);
+}
+
+header h1 {
+  color: #C50A32;
+}
+
+header div {
+  width: 200px;
+  height: 50px;
+}
+
+header div button {
+  width: 70px;
+  height: 70px;
+  padding: 1%;
+  border-radius: 60%;
+  float: right;
+  background-color: #F48020;
+}
+
+header div button img {
+  width: 140px;
+  height: 140px;
+  padding: 1%;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 100%;
+  right: 10px;
+}
+
+nav {
+  background: linear-gradient(to bottom, #E3FF00, #F48020);
+  margin: 0;
+  padding: 0.05%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #C50A32;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+nav ul li:hover {
+  background-color: #FFF55C;
+  border-radius: 15%;
+  text-shadow: 2px 2px 0 #444;
+}
+
+main {
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+}
+
+main div.lateral {
+  width: 30%;
+  background: linear-gradient(to right, #E3FF00, #FFF55C);
+}
+
+main div.lateral section {
+  padding: 6%;
+}
+
+main div.lateral section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: linear-gradient(to right, #E3FF00, #FFF55C);
+  color: black;
+  border-radius: 10%;
+  box-shadow: 10px 10px 80px #F48020 inset;
+  margin-bottom: 15%;
+  padding: 6%;
+}
+
+main div.lateral section div h3 {
+  color: #C50A32;
+  font-weight: lighter;
+}
+
+main div.lateral section div img {
+  width: 100%;
+  border: inset  3px royalblue;
+  border-radius: 10%;
+}
+
+main .div-img img {
+  width: 130%;
+  height: 80%;
+  padding: 1%;
+  padding: 0;
+  -webkit-transition: all .9s ease;
+  -moz-transition: all .9s ease;
+  -o-transition: all .9s ease;
+  -ms-transition: all .9s ease;
+  width: 100%;
+}
+
+main .div-img:hover img {
+  transform: scale(1.25);
+}
+
+main .div-img {
+  width: 1000px;
+  height: 200px;
+  border-radius: 15%;
+  margin: 0 2%;
+  overflow: hidden;
+  -webkit-transition: all .9s ease;
+  -moz-transition: all .9s ease;
+  -o-transition: all .9s ease;
+  -ms-transition: all .9s ease;
+}
+
+main .div-img:hover {
+  transform: scale(1.5);
+  padding: 0 2%;
+  box-shadow: 5px 5px 25px #E3FF00 inset;
+}
+
+main div.contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+  background: linear-gradient(to right, #F48020, #FFF55C, #E3FF00);
+}
+
+main div.contenido p.descripcion {
+  padding: 4%;
+  text-align: center;
+}
+
+main div.contenido h2 {
+  text-align: center;
+}
+
+main div.contenido section {
+  padding: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main div.contenido section div {
+  background: radial-gradient(white, #FFF55C);
+  padding: 1%;
+  margin-bottom: 10%;
+  box-shadow: 15px 10px 35px #141414;
+  border-radius: 7%;
+}
+
+main div.contenido section div h5 {
+  margin-top: 1%;
+  text-align: center;
+}
+
+main div.contenido section div div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  text-align: justify;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-right: 1%;
+  background: radial-gradient(white, #F48020);
+  border-left: solid 4px cornflowerblue;
+  border-right: solid 4px cornflowerblue;
+  border-radius: 5%;
+  box-shadow: unset;
+}
+
+main div.contenido section div div div {
+  background: radial-gradient(#F48020, #C50A32);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top, #E3FF00, #F48020);
+  height: 170px;
+  overflow: hidden;
+}
+
+footer div.contacto, footer div.ubicacion {
+  border-radius: 5%;
+  margin: 1%;
+  padding: 1%;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+footer div.contacto {
+  background: linear-gradient(to bottom, #9393a7, #E3FF00);
+}
+
+footer div.ubicacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5%;
+}
+
+footer div.ubicacion span {
+  margin-right: 10%;
+}
+
+footer div.ubicacion iframe {
+  width: 50%;
+  height: 5%;
+}
+/*# sourceMappingURL=screen.css.map */

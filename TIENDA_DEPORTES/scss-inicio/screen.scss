@@ -1,16 +1,18 @@
+@import"_mix.scss";
 //COLORES
 
 //Fondos 
 $color-fondo-header:#E3FF00;
 $color-fondo-lateral:#F48020;
 $color-fondo-contenido:#AAABA9;
-$color-fondo-footer:#4C4C4D;
+$color-fondo-footer:#9393a7;
 $color-fondo-section-lateral:#FFF55C;
 $color-fondo-section-contenido:white;
 
+
 //Texto
-$color-texto-header:#5CA4FF;
-$color-texto-titulo-zona:cornflowerblue;
+$color-texto-header:#C50A32;
+
 $color-texto:black;
 
 
@@ -26,15 +28,25 @@ $fuente-titulo:StanilistOne;
 $fuente-texto:Cinzel;
 
 body{
-    margin: 0 10%;
-    h1,h2,h3,h4{
+
+    h1,h2,h3,h4,h5{
         font-family: $fuente-titulo;
+        text-shadow:
+            2px 2px 0 #AAA,
+            12px 12px 8px #444;
+    }
+    h1{
+        
     }
     font-family: $fuente-texto;
-    background-color: $color-fondo-contenido;
+
+    background: linear-gradient(to right , $color-fondo-lateral,$color-fondo-lateral,$color-fondo-section-lateral,$color-fondo-section-lateral);
+
     font-weight: bold;
+    margin:0;
 }
-@import"mix.scss";
-@import "header.scss";
-@import "footer.scss";
+
+@import "_header.scss";
+@import "_contenido-index.scss";
+@import "_footer.scss";
 

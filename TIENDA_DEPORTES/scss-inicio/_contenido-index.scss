@@ -1,0 +1,133 @@
+main{
+    margin: 0 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    
+    div.lateral{
+        
+        width: 30%;
+        background: linear-gradient(to right ,$color-fondo-header,$color-fondo-section-lateral);
+        
+        section{
+            @include padding-seccion();
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                
+                background: linear-gradient(to right,$color-fondo-header,$color-fondo-section-lateral);
+                color: $color-texto;
+                border-radius: 10%;
+                
+                box-shadow: 10px 10px 80px $color-fondo-lateral inset;
+                margin-bottom: 15%;
+                @include padding-seccion();
+                h3{
+                    color:$color-texto-header;
+                    font-weight: lighter;
+                }
+                img{
+                    width: 100%;
+                    border:inset  3px royalblue;
+                    border-radius: 10%;
+                }
+            }
+        }
+    }
+    .div-img img {
+        @include tamaño-imagen(130%,80%);
+        padding: 0;
+        -webkit-transition:all .9s ease; 
+        -moz-transition:all .9s ease; 
+        -o-transition:all .9s ease; 
+        -ms-transition:all .9s ease; 
+        width:100%;
+    }
+    .div-img:hover img {
+        -webkit-transform:scale(1.25);
+        -moz-transform:scale(1.25);
+        -ms-transform:scale(1.25);
+        -o-transform:scale(1.25);
+        transform:scale(1.25);
+    }
+    .div-img{
+        @include tamaño-seccion(1000px,200px);
+        border-radius: 15%;
+        margin:0 2%;
+
+        overflow: hidden;
+        -webkit-transition:all .9s ease; 
+        -moz-transition:all .9s ease; 
+        -o-transition:all .9s ease; 
+        -ms-transition:all .9s ease;
+    }
+    .div-img:hover{
+        -webkit-transform:scale(1.50);
+        -moz-transform:scale(1.50);
+        -ms-transform:scale(1.50);
+        -o-transform:scale(1.50);
+        transform:scale(1.50);
+        padding:0 2%;
+        box-shadow: 5px 5px 25px $color-fondo-header inset;
+    }
+    div.contenido{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        width: 70%;
+        
+        
+        background: linear-gradient(to right,$color-fondo-lateral,$color-fondo-section-lateral,$color-fondo-header);
+        p.descripcion{
+            padding: 4%;
+            text-align: center;
+        }
+
+        h2{
+            text-align: center;
+            
+        }
+        section{
+            @include padding-seccion();
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            div{
+              
+                background: radial-gradient(white,$color-fondo-section-lateral);
+                padding: 1%;
+                margin-bottom: 10%;
+                box-shadow: 15px 10px 35px rgb(20, 20, 20) ;
+                border-radius: 7%;
+                h5{
+                    margin-top: 1%;
+                    text-align: center;
+                }
+                div{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.9em;
+                    text-align: justify;
+                    font-weight: bold;
+                    margin-bottom: 0;
+                    padding-right: 1%;
+                    
+                    background: radial-gradient(white,$color-fondo-lateral);
+                    border-left:solid 4px cornflowerblue;
+                    border-right:solid 4px cornflowerblue;
+                    border-radius: 5%;
+                    box-shadow: unset;
+                    div{          
+                        background: radial-gradient($color-fondo-lateral,$color-texto-header);                      
+                    }
+                }
+            }
+        }
+    }
+   
+}
