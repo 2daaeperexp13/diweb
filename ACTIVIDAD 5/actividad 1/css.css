@@ -1,0 +1,38 @@
+.verde{
+    width: 100%;
+    height:40px;
+    background-color: green;
+}
+.central{
+    width: 100%;
+    height:600px;
+}
+
+.azul{
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+.naranja{
+    background-color: orange;
+    width: 100%;
+    height:100px;
+}
+.rojo{
+    width: 100%;
+    height:400px;
+    background-color: red;
+}
+
+.rosa{
+    width:100%;
+    height: 70px;
+   background-color: pink;
+}
+
+.contenedor{
+    margin: 3px;
+}
+.fila{
+    width: 100%;
+}
