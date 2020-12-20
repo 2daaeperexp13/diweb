@@ -1,0 +1,21 @@
+.altura{
+    height: 150px;
+}
+.azulcolor{
+    background-color: mediumslateblue;
+    border: solid 2px black;
+    margin: 2%;
+}
+.verde{
+    background-color: springgreen;
+}
+.gris{
+    background-color: rgb(105, 104, 109);
+    border: solid 2px black;
+    margin: 2%;
+}
+.naranja{
+    background-color: rgb(238, 132, 45);
+    border: solid 2px black;
+    margin: 2%;
+}
