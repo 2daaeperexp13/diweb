@@ -1,0 +1,53 @@
+
+.numeros{
+    height: 150px;
+    text-align: center;
+    background-color: red;
+}
+.margen{
+    margin: 1%;
+}
+.borde{
+    border: solid 2px black;
+}
+#f1{
+    text-align: end;
+}
+#header{
+    background-color: forestgreen;
+}
+@media screen and (max-width:575px) {
+    #uno{
+        text-align: start;
+    }
+    #dos{
+        background-color: lightseagreen;
+    }
+    #tres{
+        text-align: end;
+    }
+    #header{
+        background-color: lightcoral;
+        text-align: center;
+    }
+        #f1, #f2{
+        text-align: center;
+    }
+}
+@media screen and (min-width:576px) and (max-width:768px){
+    #header{
+        background-color: lightseagreen;
+    }
+    #uno{
+        text-align: start;
+    }
+    #dos{
+        text-align: end;
+    }
+    #tres{
+        background-color: lime;
+    }
+    #f1, #f2{
+        text-align: center;
+    }
+}
