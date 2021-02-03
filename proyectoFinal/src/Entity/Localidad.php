@@ -2,40 +2,77 @@
 
 namespace App\Entity;
 
-use App\Repository\LocalidadRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use App\Repository\CategoriaRepository;
 /**
+ * Localidad
+ *
+ * @ORM\Table(name="localidad", indexes={@ORM\Index(name="fk_localidad_provincia_idx", columns={"codProv"})})
  * @ORM\Entity(repositoryClass=LocalidadRepository::class)
  */
 class Localidad
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="codLoc", type="integer", nullable=false)
+     * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $id;
+    private $codloc;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="nombreLoc", type="string", length=45, nullable=true)
      */
-    private $nombreLoc;
+    private $nombreloc;
 
-    public function getId(): ?int
+    /**
+     * @var Provincia
+     *
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Provincia")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="codProv", referencedColumnName="codProv")
+     * })
+     */
+    private $codprov;
+
+    public function getCodloc(): ?int
     {
-        return $this->id;
+        return $this->codloc;
     }
 
-    public function getNombreLoc(): ?string
+    public function getNombreloc(): ?string
     {
-        return $this->nombreLoc;
+        return $this->nombreloc;
     }
 
-    public function setNombreLoc(string $nombreLoc): self
+    public function setNombreloc(?string $nombreloc): self
     {
-        $this->nombreLoc = $nombreLoc;
+        $this->nombreloc = $nombreloc;
 
         return $this;
     }
+
+    public function getCodprov(): ?Provincia
+    {
+        return $this->codprov;
+    }
+
+    public function setCodprov(?Provincia $codprov): self
+    {
+        $this->codprov = $codprov;
+
+        return $this;
+    }
+
+    public function setCodloc(int $codloc): self
+    {
+        $this->codloc = $codloc;
+
+        return $this;
+    }
+
+
 }

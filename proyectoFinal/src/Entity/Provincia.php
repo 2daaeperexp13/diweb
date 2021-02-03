@@ -2,40 +2,56 @@
 
 namespace App\Entity;
 
-use App\Repository\ProvinciaRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProvinciaRepository;
 
 /**
+ * Provincia
+ *
+ * @ORM\Table(name="provincia", uniqueConstraints={@ORM\UniqueConstraint(name="nombreProv_UNIQUE", columns={"nombreProv"})})
  * @ORM\Entity(repositoryClass=ProvinciaRepository::class)
  */
 class Provincia
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="codProv", type="integer", nullable=false)
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * 
      */
-    private $id;
+    private $codprov;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="nombreProv", type="string", length=45, nullable=true)
      */
-    private $nombreProv;
+    private $nombreprov;
 
-    public function getId(): ?int
+    public function getCodprov(): ?int
     {
-        return $this->id;
+        return $this->codprov;
     }
 
-    public function getNombreProv(): ?string
+    public function getNombreprov(): ?string
     {
-        return $this->nombreProv;
+        return $this->nombreprov;
     }
 
-    public function setNombreProv(string $nombreProv): self
+    public function setNombreprov(?string $nombreprov): self
     {
-        $this->nombreProv = $nombreProv;
+        $this->nombreprov = $nombreprov;
 
         return $this;
     }
+
+    public function setCodprov(int $codprov): self
+    {
+        $this->codprov = $codprov;
+
+        return $this;
+    }
+
+
 }
