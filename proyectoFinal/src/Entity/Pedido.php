@@ -2,117 +2,57 @@
 
 namespace App\Entity;
 
+use App\Repository\PedidoRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\PedidoRepository;
 
 /**
- * Pedido
- *
- * @ORM\Table(name="pedido", indexes={@ORM\Index(name="fk_pedido_usuario1_idx", columns={"dni"})})
  * @ORM\Entity(repositoryClass=PedidoRepository::class)
  */
 class Pedido
 {
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="fecha", type="datetime", nullable=false)
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="datetime")
      */
     private $fecha;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="precio", type="integer", nullable=true)
+     * @ORM\Column(type="float")
      */
     private $precio;
 
     /**
-     * @var Usuario
-     *
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Usuario")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="dni", referencedColumnName="dni")
-     * })
+     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="pedidos")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $dni;
+    private $usuario;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Producto", mappedBy="dni")
+     * @ORM\OneToMany(targetEntity=PedidoProducto::class, mappedBy="usuario", orphanRemoval=true)
      */
-    private $prods;
+    private $pedidoProdutos;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
-        $this->codprod = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->prods = new ArrayCollection();
+        $this->pedidoProdutos = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 
     public function getFecha(): ?\DateTimeInterface
     {
         return $this->fecha;
-    }
-
-    public function getPrecio(): ?int
-    {
-        return $this->precio;
-    }
-
-    public function setPrecio(?int $precio): self
-    {
-        $this->precio = $precio;
-
-        return $this;
-    }
-
-    public function getDni(): ?Usuario
-    {
-        return $this->dni;
-    }
-
-    public function setDni(?Usuario $dni): self
-    {
-        $this->dni = $dni;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Producto[]
-     */
-    public function getProductos(): Collection
-    {
-        return $this->codprod;
-    }
-
-    public function addProducto(Producto $prod, Int $cantidad): self
-    {
-        if (!$this->codprod->contains($prod)) {
-            $this->prods[]["producto"] = $prod;
-            $this->prods[]["cantidad"] = $cantidad;
-            $this->prods[]["precio"]=$cantidad*$prod->getPrecio();
-            $prod->addPedido($this,$cantidad);
-        }
-
-        return $this;
-    }
-
-    public function removeProducto(Producto $prod): self
-    {
-        if ($this->prod->removeElement($prod)) {
-            $prod->removePedido($this);
-        }
-
-        return $this;
     }
 
     public function setFecha(\DateTimeInterface $fecha): self
@@ -122,31 +62,57 @@ class Pedido
         return $this;
     }
 
+    public function getPrecio(): ?float
+    {
+        return $this->precio;
+    }
+
+    public function setPrecio(float $precio): self
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    public function getUsuario(): ?usuario
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario(?usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
     /**
-     * @return Collection|Producto[]
+     * @return Collection|PedidoProducto[]
      */
-    public function getProds(): Collection
+    public function getPedidoProdutos(): Collection
     {
-        return $this->prods;
+        return $this->pedidoProdutos;
     }
 
-    public function addProd(Producto $prod, Int $cantidad): self
+    public function addPedidoProduto(PedidoProducto $pedidoProduto): self
     {
-        if (!$this->prods->contains($prod)) {
-            $this->prods[] = $prod;
-            $prod->addPedido($this, $cantidad);
+        if (!$this->pedidoProdutos->contains($pedidoProduto)) {
+            $this->pedidoProdutos[] = $pedidoProduto;
+            $pedidoProduto->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removeProd(Producto $prod): self
+    public function removePedidoProduto(PedidoProducto $pedidoProduto): self
     {
-        if ($this->prods->removeElement($prod)) {
-            $prod->removePedido($this);
+        if ($this->pedidoProdutos->removeElement($pedidoProduto)) {
+            // set the owning side to null (unless already changed)
+            if ($pedidoProduto->getUsuario() === $this) {
+                $pedidoProduto->setUsuario(null);
+            }
         }
 
         return $this;
     }
-
 }

@@ -2,24 +2,42 @@
 
 namespace App\Entity;
 
+use App\Repository\TipoProductoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\TipoproductoRepository;
 
 /**
- * Tipoproducto
- *
- * @ORM\Table(name="tipoproducto")
- * @ORM\Entity(repositoryClass=TipoproductoRepository::class)
+ * @ORM\Entity(repositoryClass=TipoProductoRepository::class)
  */
-class Tipoproducto
+class TipoProducto
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo", type="string", length=45, nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
      */
     private $tipo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Producto::class, mappedBy="tipoProducto")
+     */
+    private $productos;
+
+    public function __construct()
+    {
+        $this->productos = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getTipo(): ?string
     {
@@ -33,5 +51,33 @@ class Tipoproducto
         return $this;
     }
 
+    /**
+     * @return Collection|Producto[]
+     */
+    public function getProductos(): Collection
+    {
+        return $this->productos;
+    }
 
+    public function addProducto(Producto $producto): self
+    {
+        if (!$this->productos->contains($producto)) {
+            $this->productos[] = $producto;
+            $producto->setTipoProducto($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProducto(Producto $producto): self
+    {
+        if ($this->productos->removeElement($producto)) {
+            // set the owning side to null (unless already changed)
+            if ($producto->getTipoProducto() === $this) {
+                $producto->setTipoProducto(null);
+            }
+        }
+
+        return $this;
+    }
 }

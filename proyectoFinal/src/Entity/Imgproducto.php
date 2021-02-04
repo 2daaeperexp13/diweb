@@ -2,42 +2,31 @@
 
 namespace App\Entity;
 
+use App\Repository\ImgProductoRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\ImgproductoRepository;
-
 
 /**
- * Imgproducto
- *
- * @ORM\Table(name="imgproducto", indexes={@ORM\Index(name="fk_imgproducto_producto1", columns={"codProd"})})
- * @ORM\Entity(repositoryClass=ImgproductoRepository::class)
+ * @ORM\Entity(repositoryClass=ImgProductoRepository::class)
  */
-class Imgproducto
+class ImgProducto
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="img", type="blob", length=0, nullable=false)
+     * @ORM\Column(type="blob")
      */
     private $img;
 
     /**
-     * @var \Producto
-     *
-     * @ORM\ManyToOne(targetEntity="Producto")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="codProd", referencedColumnName="codProd")
-     * })
+     * @ORM\ManyToOne(targetEntity=producto::class, inversedBy="imgProductos")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $codprod;
+    private $producto;
 
     public function getId(): ?int
     {
@@ -56,24 +45,15 @@ class Imgproducto
         return $this;
     }
 
-    public function getCodprod(): ?Producto
+    public function getProducto(): ?producto
     {
-        return $this->codprod;
+        return $this->producto;
     }
 
-    public function setCodprod(?Producto $codprod): self
+    public function setProducto(?producto $producto): self
     {
-        $this->codprod = $codprod;
+        $this->producto = $producto;
 
         return $this;
     }
-
-    public function setId(int $id): self
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-
 }

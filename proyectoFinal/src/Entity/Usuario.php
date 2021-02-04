@@ -2,133 +2,105 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UsuarioRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Usuario
- *
- * @ORM\Table(name="usuario", indexes={@ORM\Index(name="fk_usuario_localidad1_idx", columns={"codLoc", "codProv"}), @ORM\Index(name="fk_usuario_rol1_idx", columns={"codRol"})})
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
  */
 class Usuario
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="dni", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $dni;
+    private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="passwd", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=20)
      */
     private $passwd;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $nombre;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ap1", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $ap1;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ap2", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $ap2;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="telefono", type="integer", nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $telefono;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="calle", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
-    private $calle;
+    private $direccion;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="num", type="integer", nullable=false)
+     * @ORM\ManyToMany(targetEntity=rol::class, inversedBy="usuarios")
      */
-    private $num;
+    private $rol;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="puerta", type="string", length=45, nullable=true)
+     * @ORM\ManyToOne(targetEntity=localidad::class)
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $puerta;
+    private $localidad;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="escalera", type="string", length=45, nullable=true)
+     * @ORM\ManyToOne(targetEntity=localidad::class)
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $escalera;
+    private $provincia;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="bloque", type="string", length=45, nullable=true)
+     * @ORM\OneToMany(targetEntity=Tarjeta::class, mappedBy="usuario", orphanRemoval=true)
      */
-    private $bloque;
+    private $tarjetas;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="planta", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity=ImgUser::class, mappedBy="usuario", cascade={"persist", "remove"})
      */
-    private $planta;
+    private $imgUser;
 
     /**
-     * @var Localidad
-     *
-     * @ORM\ManyToOne(targetEntity="Localidad")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="codLoc", referencedColumnName="codLoc"),
-     *   @ORM\JoinColumn(name="codProv", referencedColumnName="codProv")
-     * })
+     * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="usuario", orphanRemoval=true)
      */
-    private $codloc;
+    private $pedidos;
 
     /**
-     * @var Rol
-     *
-     * @ORM\ManyToOne(targetEntity="Rol")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="codRol", referencedColumnName="codRol")
-     * })
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $codrol;
+    private $hashCandidato;
 
-    public function getDni(): ?int
+    public function __construct()
     {
-        return $this->dni;
+        $this->rol = new ArrayCollection();
+        $this->tarjetas = new ArrayCollection();
+        $this->pedidos = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 
     public function getPasswd(): ?string
@@ -203,108 +175,152 @@ class Usuario
         return $this;
     }
 
-    public function getCalle(): ?string
+    public function getDireccion(): ?string
     {
-        return $this->calle;
+        return $this->direccion;
     }
 
-    public function setCalle(string $calle): self
+    public function setDireccion(string $direccion): self
     {
-        $this->calle = $calle;
+        $this->direccion = $direccion;
 
         return $this;
     }
 
-    public function getNum(): ?int
+    /**
+     * @return Collection|rol[]
+     */
+    public function getRol(): Collection
     {
-        return $this->num;
+        return $this->rol;
     }
 
-    public function setNum(int $num): self
+    public function addRol(rol $rol): self
     {
-        $this->num = $num;
+        if (!$this->rol->contains($rol)) {
+            $this->rol[] = $rol;
+        }
 
         return $this;
     }
 
-    public function getPuerta(): ?string
+    public function removeRol(rol $rol): self
     {
-        return $this->puerta;
-    }
-
-    public function setPuerta(?string $puerta): self
-    {
-        $this->puerta = $puerta;
+        $this->rol->removeElement($rol);
 
         return $this;
     }
 
-    public function getEscalera(): ?string
+    public function getLocalidad(): ?localidad
     {
-        return $this->escalera;
+        return $this->localidad;
     }
 
-    public function setEscalera(?string $escalera): self
+    public function setLocalidad(?localidad $localidad): self
     {
-        $this->escalera = $escalera;
+        $this->localidad = $localidad;
 
         return $this;
     }
 
-    public function getBloque(): ?string
+    public function getProvincia(): ?localidad
     {
-        return $this->bloque;
+        return $this->provincia;
     }
 
-    public function setBloque(?string $bloque): self
+    public function setProvincia(?localidad $provincia): self
     {
-        $this->bloque = $bloque;
+        $this->provincia = $provincia;
 
         return $this;
     }
 
-    public function getPlanta(): ?int
+    /**
+     * @return Collection|Tarjeta[]
+     */
+    public function getTarjetas(): Collection
     {
-        return $this->planta;
+        return $this->tarjetas;
     }
 
-    public function setPlanta(?int $planta): self
+    public function addTarjeta(Tarjeta $tarjeta): self
     {
-        $this->planta = $planta;
+        if (!$this->tarjetas->contains($tarjeta)) {
+            $this->tarjetas[] = $tarjeta;
+            $tarjeta->setUsuario($this);
+        }
 
         return $this;
     }
 
-    public function getCodloc(): ?Localidad
+    public function removeTarjeta(Tarjeta $tarjeta): self
     {
-        return $this->codloc;
-    }
-
-    public function setCodloc(?Localidad $codloc): self
-    {
-        $this->codloc = $codloc;
+        if ($this->tarjetas->removeElement($tarjeta)) {
+            // set the owning side to null (unless already changed)
+            if ($tarjeta->getUsuario() === $this) {
+                $tarjeta->setUsuario(null);
+            }
+        }
 
         return $this;
     }
 
-    public function getCodrol(): ?Rol
+    public function getImgUser(): ?ImgUser
     {
-        return $this->codrol;
+        return $this->imgUser;
     }
 
-    public function setCodrol(?Rol $codrol): self
+    public function setImgUser(ImgUser $imgUser): self
     {
-        $this->codrol = $codrol;
+        // set the owning side of the relation if necessary
+        if ($imgUser->getUsuario() !== $this) {
+            $imgUser->setUsuario($this);
+        }
+
+        $this->imgUser = $imgUser;
 
         return $this;
     }
 
-    public function setDni(int $dni): self
+    /**
+     * @return Collection|Pedido[]
+     */
+    public function getPedidos(): Collection
     {
-        $this->dni = $dni;
+        return $this->pedidos;
+    }
+
+    public function addPedido(Pedido $pedido): self
+    {
+        if (!$this->pedidos->contains($pedido)) {
+            $this->pedidos[] = $pedido;
+            $pedido->setUsuario($this);
+        }
 
         return $this;
     }
 
+    public function removePedido(Pedido $pedido): self
+    {
+        if ($this->pedidos->removeElement($pedido)) {
+            // set the owning side to null (unless already changed)
+            if ($pedido->getUsuario() === $this) {
+                $pedido->setUsuario(null);
+            }
+        }
 
+        return $this;
+    }
+
+    public function getHashCandidato(): ?string
+    {
+        return $this->hashCandidato;
+    }
+
+    public function setHashCandidato(?string $hashCandidato): self
+    {
+        $this->hashCandidato = $hashCandidato;
+
+        return $this;
+    }
 }

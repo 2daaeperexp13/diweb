@@ -2,55 +2,79 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RolRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Rol
- *
- * @ORM\Table(name="rol")
  * @ORM\Entity(repositoryClass=RolRepository::class)
  */
 class Rol
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="codRol", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $codrol;
+    private $id;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="tipoRol", type="string", length=45, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $tiporol;
+    private $tipo;
 
-    public function getCodrol(): ?int
+    /**
+     * @ORM\ManyToMany(targetEntity=Usuario::class, mappedBy="rol")
+     */
+    private $usuarios;
+
+    public function __construct()
     {
-        return $this->codrol;
+        $this->usuarios = new ArrayCollection();
     }
 
-    public function getTiporol(): ?string
+    public function getId(): ?int
     {
-        return $this->tiporol;
+        return $this->id;
     }
 
-    public function setTiporol(?string $tiporol): self
+    public function getTipo(): ?string
     {
-        $this->tiporol = $tiporol;
+        return $this->tipo;
+    }
+
+    public function setTipo(string $tipo): self
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }
 
-    public function setCodrol(int $codrol): self
+    /**
+     * @return Collection|Usuario[]
+     */
+    public function getUsuarios(): Collection
     {
-        $this->codrol = $codrol;
+        return $this->usuarios;
+    }
+
+    public function addUsuario(Usuario $usuario): self
+    {
+        if (!$this->usuarios->contains($usuario)) {
+            $this->usuarios[] = $usuario;
+            $usuario->addRol($this);
+        }
 
         return $this;
     }
 
+    public function removeUsuario(Usuario $usuario): self
+    {
+        if ($this->usuarios->removeElement($usuario)) {
+            $usuario->removeRol($this);
+        }
 
+        return $this;
+    }
 }

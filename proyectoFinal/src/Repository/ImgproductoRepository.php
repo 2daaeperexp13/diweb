@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Imgproducto;
+use App\Entity\ImgProducto;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Imgproducto|null find($id, $lockMode = null, $lockVersion = null)
- * @method Imgproducto|null findOneBy(array $criteria, array $orderBy = null)
- * @method Imgproducto[]    findAll()
- * @method Imgproducto[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ImgProducto|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ImgProducto|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ImgProducto[]    findAll()
+ * @method ImgProducto[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ImgproductoRepository extends ServiceEntityRepository
+class ImgProductoRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Imgproducto::class);
+        parent::__construct($registry, ImgProducto::class);
     }
 
     // /**
-    //  * @return Imgproducto[] Returns an array of Imgproducto objects
+    //  * @return ImgProducto[] Returns an array of ImgProducto objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ImgproductoRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Imgproducto
+    public function findOneBySomeField($value): ?ImgProducto
     {
         return $this->createQueryBuilder('i')
             ->andWhere('i.exampleField = :val')

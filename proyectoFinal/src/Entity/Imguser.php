@@ -2,34 +2,48 @@
 
 namespace App\Entity;
 
+use App\Repository\ImgUserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\ImguserRepository;
 
 /**
- * Imguser
- *
- * @ORM\Table(name="imguser", indexes={@ORM\Index(name="fk_imgUser_usuario1_idx", columns={"dni"})})
  * @ORM\Entity(repositoryClass=ImgUserRepository::class)
  */
-class Imguser
+class ImgUser
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="img", type="blob", length=0, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity=usuario::class, inversedBy="imgUser", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $usuario;
+
+    /**
+     * @ORM\Column(type="blob")
      */
     private $img;
 
-    /**
-     * @var Usuario
-     *
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Usuario")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="dni", referencedColumnName="dni")
-     * })
-     */
-    private $dni;
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getUsuario(): ?usuario
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario(usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
 
     public function getImg()
     {
@@ -42,18 +56,4 @@ class Imguser
 
         return $this;
     }
-
-    public function getDni(): ?Usuario
-    {
-        return $this->dni;
-    }
-
-    public function setDni(?Usuario $dni): self
-    {
-        $this->dni = $dni;
-
-        return $this;
-    }
-
-
 }

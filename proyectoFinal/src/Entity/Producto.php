@@ -2,101 +2,74 @@
 
 namespace App\Entity;
 
+use App\Repository\ProductoRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-
-
 /**
- * Producto
- *
- * @ORM\Table(name="producto", indexes={@ORM\Index(name="fk_producto_categoria1_idx", columns={"categoria"}), @ORM\Index(name="fk_producto_tipoproducto1_idx", columns={"tipoproducto"})})
  * @ORM\Entity(repositoryClass=ProductoRepository::class)
  */
 class Producto
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="codProd", type="string", length=45, nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $codprod;
+    private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $nombre;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="descripcion", type="string", length=45, nullable=false)
+     * @ORM\Column(type="text")
      */
     private $descripcion;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="talla", type="string", length=45, nullable=false)
-     */
-    private $talla;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="precio", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(type="float")
      */
     private $precio;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="stock", type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $stock = '0';
+    private $stock;
 
     /**
-     * @var Categoria
-     *
-     * @ORM\ManyToOne(targetEntity="Categoria")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="categoria", referencedColumnName="nombre")
-     * })
+     * @ORM\ManyToOne(targetEntity=Categoria::class)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $categoria;
 
     /**
-     * @var Tipoproducto
-     *
-     * @ORM\ManyToOne(targetEntity="Tipoproducto")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipoproducto", referencedColumnName="tipo")
-     * })
+     * @ORM\ManyToOne(targetEntity=tipoProducto::class, inversedBy="productos")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $tipoproducto;
+    private $tipoProducto;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Pedido", mappedBy="codprod")
+     * @ORM\OneToMany(targetEntity=ImgProducto::class, mappedBy="producto")
      */
-    private $pedidos;
+    private $imgProductos;
 
     /**
-     * Constructor
+     * @ORM\OneToMany(targetEntity=Comentario::class, mappedBy="producto", orphanRemoval=true)
      */
+    private $comentarios;
+
     public function __construct()
     {
-        $this->pedidos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->imgProductos = new ArrayCollection();
+        $this->comentarios = new ArrayCollection();
     }
 
-    public function getCodprod(): ?string
+    public function getId(): ?int
     {
-        return $this->codprod;
+        return $this->id;
     }
 
     public function getNombre(): ?string
@@ -123,18 +96,6 @@ class Producto
         return $this;
     }
 
-    public function getTalla(): ?string
-    {
-        return $this->talla;
-    }
-
-    public function setTalla(string $talla): self
-    {
-        $this->talla = $talla;
-
-        return $this;
-    }
-
     public function getPrecio(): ?float
     {
         return $this->precio;
@@ -152,7 +113,7 @@ class Producto
         return $this->stock;
     }
 
-    public function setStock(?int $stock): self
+    public function setStock(int $stock): self
     {
         $this->stock = $stock;
 
@@ -171,50 +132,75 @@ class Producto
         return $this;
     }
 
-    public function getTipoproducto(): ?Tipoproducto
+    public function getTipoProducto(): ?tipoProducto
     {
-        return $this->tipoproducto;
+        return $this->tipoProducto;
     }
 
-    public function setTipoproducto(?Tipoproducto $tipoproducto): self
+    public function setTipoProducto(?tipoProducto $tipoProducto): self
     {
-        $this->tipoproducto = $tipoproducto;
+        $this->tipoProducto = $tipoProducto;
 
         return $this;
     }
 
     /**
-     * @return Collection|Pedido[]
+     * @return Collection|ImgProducto[]
      */
-    public function getPedidos(): Collection
+    public function getImgProductos(): Collection
     {
-        return $this->pedidos;
+        return $this->imgProductos;
     }
 
-    public function addPedido(Pedido $pedido, Int $cantidad): self
+    public function addImgProducto(ImgProducto $imgProducto): self
     {
-        if (!$this->pedidos->contains($pedido)) {
-            $this->pedidos[] = $pedido;
-            $pedido->addProducto($this, $cantidad);
+        if (!$this->imgProductos->contains($imgProducto)) {
+            $this->imgProductos[] = $imgProducto;
+            $imgProducto->setProducto($this);
         }
 
         return $this;
     }
 
-    public function removePedido(Pedido $pedido): self
+    public function removeImgProducto(ImgProducto $imgProducto): self
     {
-        if ($this->pedidos->removeElement($pedido)) {
-            $pedido->removeProducto($this);
+        if ($this->imgProductos->removeElement($imgProducto)) {
+            // set the owning side to null (unless already changed)
+            if ($imgProducto->getProducto() === $this) {
+                $imgProducto->setProducto(null);
+            }
         }
 
         return $this;
     }
 
-    public function setCodprod(string $codprod): self
+    /**
+     * @return Collection|Comentario[]
+     */
+    public function getComentarios(): Collection
     {
-        $this->codprod = $codprod;
+        return $this->comentarios;
+    }
+
+    public function addComentario(Comentario $comentario): self
+    {
+        if (!$this->comentarios->contains($comentario)) {
+            $this->comentarios[] = $comentario;
+            $comentario->setProducto($this);
+        }
 
         return $this;
     }
 
+    public function removeComentario(Comentario $comentario): self
+    {
+        if ($this->comentarios->removeElement($comentario)) {
+            // set the owning side to null (unless already changed)
+            if ($comentario->getProducto() === $this) {
+                $comentario->setProducto(null);
+            }
+        }
+
+        return $this;
+    }
 }

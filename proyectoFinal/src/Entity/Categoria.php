@@ -2,24 +2,30 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategoriaRepository;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Categoria
- *
- * @ORM\Table(name="categoria")
  * @ORM\Entity(repositoryClass=CategoriaRepository::class)
  */
 class Categoria
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     * 
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
      */
     private $nombre;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getNombre(): ?string
     {
@@ -32,6 +38,4 @@ class Categoria
 
         return $this;
     }
-
-
 }

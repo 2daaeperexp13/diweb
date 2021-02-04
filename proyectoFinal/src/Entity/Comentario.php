@@ -2,94 +2,56 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ComentarioRepository;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Comentario
- *
- * @ORM\Table(name="comentario", indexes={@ORM\Index(name="fk_comentario_producto1_idx", columns={"codProd"}), @ORM\Index(name="IDX_4B91E7027F8F253B", columns={"dni"})})
  * @ORM\Entity(repositoryClass=ComentarioRepository::class)
  */
 class Comentario
 {
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="fecha", type="datetime", nullable=false)
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="datetime")
      */
     private $fecha;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="comentario", type="text", length=0, nullable=false)
+     * @ORM\Column(type="text")
      */
-    private $comentario;
+    private $cometario;
 
     /**
-     * @var \Producto
-     *
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Producto")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="codProd", referencedColumnName="codProd")
-     * })
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $codprod;
+    private $valoracion;
 
     /**
-     * @var \Usuario
-     *
-
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Usuario")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="dni", referencedColumnName="dni")
-     * })
+     * @ORM\ManyToOne(targetEntity=producto::class, inversedBy="comentarios")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $dni;
+    private $producto;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=usuario::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $usuario;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getFecha(): ?\DateTimeInterface
     {
         return $this->fecha;
-    }
-
-    public function getComentario(): ?string
-    {
-        return $this->comentario;
-    }
-
-    public function setComentario(string $comentario): self
-    {
-        $this->comentario = $comentario;
-
-        return $this;
-    }
-
-    public function getCodprod(): ?Producto
-    {
-        return $this->codprod;
-    }
-
-    public function setCodprod(?Producto $codprod): self
-    {
-        $this->codprod = $codprod;
-
-        return $this;
-    }
-
-    public function getDni(): ?Usuario
-    {
-        return $this->dni;
-    }
-
-    public function setDni(?Usuario $dni): self
-    {
-        $this->dni = $dni;
-
-        return $this;
     }
 
     public function setFecha(\DateTimeInterface $fecha): self
@@ -99,5 +61,51 @@ class Comentario
         return $this;
     }
 
+    public function getCometario(): ?string
+    {
+        return $this->cometario;
+    }
 
+    public function setCometario(string $cometario): self
+    {
+        $this->cometario = $cometario;
+
+        return $this;
+    }
+
+    public function getValoracion(): ?int
+    {
+        return $this->valoracion;
+    }
+
+    public function setValoracion(?int $valoracion): self
+    {
+        $this->valoracion = $valoracion;
+
+        return $this;
+    }
+
+    public function getProducto(): ?producto
+    {
+        return $this->producto;
+    }
+
+    public function setProducto(?producto $producto): self
+    {
+        $this->producto = $producto;
+
+        return $this;
+    }
+
+    public function getUsuario(): ?usuario
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario(?usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
 }

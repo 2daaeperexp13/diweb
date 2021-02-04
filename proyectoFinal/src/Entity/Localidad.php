@@ -2,77 +2,75 @@
 
 namespace App\Entity;
 
+use App\Repository\LocalidadRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\CategoriaRepository;
+
 /**
- * Localidad
- *
- * @ORM\Table(name="localidad", indexes={@ORM\Index(name="fk_localidad_provincia_idx", columns={"codProv"})})
  * @ORM\Entity(repositoryClass=LocalidadRepository::class)
  */
 class Localidad
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="codLoc", type="integer", nullable=false)
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $codloc;
+    private $id;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="nombreLoc", type="string", length=45, nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $nombreloc;
+    private $codLoc;
 
     /**
-     * @var Provincia
-     *
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Provincia")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="codProv", referencedColumnName="codProv")
-     * })
+     * @ORM\Column(type="string", length=255)
      */
-    private $codprov;
+    private $nombre;
 
-    public function getCodloc(): ?int
+    /**
+     * @ORM\ManyToOne(targetEntity=Provincia::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $provincia;
+
+    public function getId(): ?int
     {
-        return $this->codloc;
+        return $this->id;
     }
 
-    public function getNombreloc(): ?string
+    public function getCodLoc(): ?int
     {
-        return $this->nombreloc;
+        return $this->codLoc;
     }
 
-    public function setNombreloc(?string $nombreloc): self
+    public function setCodLoc(int $codLoc): self
     {
-        $this->nombreloc = $nombreloc;
+        $this->codLoc = $codLoc;
 
         return $this;
     }
 
-    public function getCodprov(): ?Provincia
+    public function getNombre(): ?string
     {
-        return $this->codprov;
+        return $this->nombre;
     }
 
-    public function setCodprov(?Provincia $codprov): self
+    public function setNombre(string $nombre): self
     {
-        $this->codprov = $codprov;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
-    public function setCodloc(int $codloc): self
+    public function getProvincia(): ?Provincia
     {
-        $this->codloc = $codloc;
+        return $this->provincia;
+    }
+
+    public function setProvincia(?Provincia $provincia): self
+    {
+        $this->provincia = $provincia;
 
         return $this;
     }
-
-
 }
