@@ -6,11 +6,15 @@ use App\Repository\UsuarioRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use App\Entity\Rol;
+use App\Entity\Localidad;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class Usuario
+class Usuario implements UserInterface
 {
     /**
      * @ORM\Id
@@ -22,7 +26,7 @@ class Usuario
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $passwd;
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -55,7 +59,7 @@ class Usuario
     private $direccion;
 
     /**
-     * @ORM\ManyToMany(targetEntity=rol::class, inversedBy="usuarios")
+     * @ORM\ManyToMany(targetEntity=Rol::class ,inversedBy="usuarios")
      */
     private $rol;
 
@@ -65,11 +69,7 @@ class Usuario
      */
     private $localidad;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=localidad::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $provincia;
+   
 
     /**
      * @ORM\OneToMany(targetEntity=Tarjeta::class, mappedBy="usuario", orphanRemoval=true)
@@ -86,10 +86,11 @@ class Usuario
      */
     private $pedidos;
 
+
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="boolean")
      */
-    private $hashCandidato;
+    private $isVerified = false;
 
     public function __construct()
     {
@@ -103,16 +104,21 @@ class Usuario
         return $this->id;
     }
 
-    public function getPasswd(): ?string
+    public function getPassword(): ?string
     {
-        return $this->passwd;
+        return $this->password;
     }
 
-    public function setPasswd(string $passwd): self
+    public function setPassword(string $passwd): self
     {
-        $this->passwd = $passwd;
+        $this->password = $passwd;
 
         return $this;
+    }
+
+    public function getUserName(): ?string
+    {
+        return $this->nombre;
     }
 
     public function getNombre(): ?string
@@ -190,6 +196,10 @@ class Usuario
     /**
      * @return Collection|rol[]
      */
+    public function getRoles(): Collection
+    {
+        return $this->rol;
+    }
     public function getRol(): Collection
     {
         return $this->rol;
@@ -223,17 +233,7 @@ class Usuario
         return $this;
     }
 
-    public function getProvincia(): ?localidad
-    {
-        return $this->provincia;
-    }
 
-    public function setProvincia(?localidad $provincia): self
-    {
-        $this->provincia = $provincia;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Tarjeta[]
@@ -312,14 +312,25 @@ class Usuario
         return $this;
     }
 
-    public function getHashCandidato(): ?string
-    {
-        return $this->hashCandidato;
+  
+
+    public function getSalt(){
+
     }
 
-    public function setHashCandidato(?string $hashCandidato): self
+    public function eraseCredentials()
     {
-        $this->hashCandidato = $hashCandidato;
+        
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProvinciaRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=ProvinciaRepository::class)
  */
@@ -27,6 +28,7 @@ class Provincia
      */
     private $nombre;
 
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -54,5 +56,9 @@ class Provincia
         $this->nombre = $nombre;
 
         return $this;
+    }
+
+    public function __toString() {
+        return $this->nombre;
     }
 }

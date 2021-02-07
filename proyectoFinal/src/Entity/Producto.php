@@ -61,10 +61,16 @@ class Producto
      */
     private $comentarios;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Pedido::class, inversedBy="productos")
+     */
+    private $pedidos;
+
     public function __construct()
     {
         $this->imgProductos = new ArrayCollection();
         $this->comentarios = new ArrayCollection();
+        $this->pedidos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -201,6 +207,29 @@ class Producto
             }
         }
 
+        return $this;
+    }
+
+    /**
+     * @return Collection|Pedido[]
+     */
+    public function getPedidos(): Collection
+    {
+        return $this->pedidos;
+    }
+
+    public function addPedido(Pedido $pedido): self
+    {
+        if (!$this->pedidos->contains($pedido)) {
+            $this->pedidos[] = $pedido;
+        }
+
+        return $this;
+    }
+
+    public function removePedido(Pedido $pedido): self
+    {
+        $this->pedidos->removeElement($pedido);
         return $this;
     }
 }

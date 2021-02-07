@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\LocalidadRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use App\Entity\Provincia;
 /**
  * @ORM\Entity(repositoryClass=LocalidadRepository::class)
  */
@@ -28,6 +28,7 @@ class Localidad
     private $nombre;
 
     /**
+     * 
      * @ORM\ManyToOne(targetEntity=Provincia::class)
      * @ORM\JoinColumn(nullable=false)
      */
@@ -72,5 +73,8 @@ class Localidad
         $this->provincia = $provincia;
 
         return $this;
+    }
+    public function __toString() {
+        return $this->nombre;
     }
 }

@@ -36,13 +36,14 @@ class Pedido
     private $usuario;
 
     /**
-     * @ORM\OneToMany(targetEntity=PedidoProducto::class, mappedBy="usuario", orphanRemoval=true)
+     * @ORM\ManyToMany(targetEntity=Producto::class, mappedBy="pedidos")
      */
-    private $pedidoProdutos;
+    private $productos;
 
     public function __construct()
     {
         $this->pedidoProdutos = new ArrayCollection();
+        $this->productos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -87,32 +88,29 @@ class Pedido
     }
 
     /**
-     * @return Collection|PedidoProducto[]
+     * @return Collection|Producto[]
      */
-    public function getPedidoProdutos(): Collection
+    public function getProductos(): Collection
     {
-        return $this->pedidoProdutos;
+        return $this->productos;
     }
 
-    public function addPedidoProduto(PedidoProducto $pedidoProduto): self
+    public function addProducto(Producto $producto): self
     {
-        if (!$this->pedidoProdutos->contains($pedidoProduto)) {
-            $this->pedidoProdutos[] = $pedidoProduto;
-            $pedidoProduto->setUsuario($this);
+        if (!$this->productos->contains($producto)) {
+            $this->productos[] = $producto;
+            $producto->addPedido($this);
         }
 
         return $this;
     }
 
-    public function removePedidoProduto(PedidoProducto $pedidoProduto): self
+    public function removeProducto(Producto $producto): self
     {
-        if ($this->pedidoProdutos->removeElement($pedidoProduto)) {
-            // set the owning side to null (unless already changed)
-            if ($pedidoProduto->getUsuario() === $this) {
-                $pedidoProduto->setUsuario(null);
-            }
-        }
+        $this->productos->removeElement($producto);
 
         return $this;
     }
+
+
 }
