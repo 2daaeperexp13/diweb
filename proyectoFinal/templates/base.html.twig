@@ -10,25 +10,25 @@
     <meta name="robots" content="all,follow">
 {% block css %}
   <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="{{ruta}}vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
     <!-- Lightbox-->
-    <link rel="stylesheet" href="{{ruta}}vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" href="{{asset('vendor/lightbox2/css/lightbox.min.css')}}">
     <!-- Range slider-->
-    <link rel="stylesheet" href="{{ruta}}vendor/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="{{asset('vendor/nouislider/nouislider.min.css')}}">
     <!-- Bootstrap select-->
-    <link rel="stylesheet" href="{{ruta}}vendor/bootstrap-select/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{asset('vendor/bootstrap-select/css/bootstrap-select.min.css')}}">
     <!-- Owl Carousel-->
-    <link rel="stylesheet" href="{{ruta}}vendor/owl.carousel2/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ruta}}vendor/owl.carousel2/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="{{asset('vendor/owl.carousel2/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/owl.carousel2/assets/owl.theme.default.css')}}">
     <!-- Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{ruta}}css/style.blue.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{asset('css/style.blue.css')}}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="{{ruta}}css/custom.css">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ruta}}img/favicon.png">
+    <link rel="shortcut icon" href="{{asset('mg/favicon.png')}}">
 {% endblock %}
 {% endblock %}
   </head>
@@ -36,10 +36,10 @@
 {% block header %}
     
 {% endblock %}
-    <div id="principal">
+    <div id="principal" class="principal">
 {% block body%} {% endblock%}
     </div>
-      <footer class="bg-dark text-white">
+      <footer class="bg-dark text-white align-self-end">
 {% block footer%}
         <div class="container py-4">
           <div class="row py-5">
@@ -86,14 +86,14 @@
       </footer>
 {% block scripts%}
       <!-- JavaScript files-->
-      <script src="{{ruta}}vendor/jquery/jquery.min.js"></script>
-      <script src="{{ruta}}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="{{ruta}}vendor/lightbox2/js/lightbox.min.js"></script>
-      <script src="{{ruta}}vendor/nouislider/nouislider.min.js"></script>
-      <script src="{{ruta}}vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-      <script src="{{ruta}}vendor/owl.carousel2/owl.carousel.min.js"></script>
-      <script src="{{ruta}}vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-      <script src="{{ruta}}js/front.js"></script>
+      <script src="{{asset('')}}vendor/jquery/jquery.min.js"></script>
+      <script src="{{asset('')}}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="{{asset('')}}vendor/lightbox2/js/lightbox.min.js"></script>
+      <script src="{{asset('')}}vendor/nouislider/nouislider.min.js"></script>
+      <script src="{{asset('')}}vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+      <script src="{{asset('')}}vendor/owl.carousel2/owl.carousel.min.js"></script>
+      <script src="{{asset('')}}vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+      <script src="{{asset('')}}js/front.js"></script>
       <script>
         function injectSvgSprite(path) {
         

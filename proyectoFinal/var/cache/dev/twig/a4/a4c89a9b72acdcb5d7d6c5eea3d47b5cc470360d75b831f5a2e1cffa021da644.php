@@ -59,13 +59,13 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
         // line 36
         $this->displayBlock('header', $context, $blocks);
         // line 39
-        echo "    <div id=\"principal\">
+        echo "    <div id=\"principal\" class=\"principal\">
 ";
         // line 40
         $this->displayBlock('body', $context, $blocks);
         // line 41
         echo "    </div>
-      <footer class=\"bg-dark text-white\">
+      <footer class=\"bg-dark text-white align-self-end\">
 ";
         // line 43
         $this->displayBlock('footer', $context, $blocks);
@@ -129,50 +129,50 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
         echo "  <!-- Bootstrap CSS-->
     <link rel=\"stylesheet\" href=\"";
         // line 13
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 13, $this->source); })()), "html", null, true);
-        echo "vendor/bootstrap/css/bootstrap.min.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\">
     <!-- Lightbox-->
     <link rel=\"stylesheet\" href=\"";
         // line 15
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 15, $this->source); })()), "html", null, true);
-        echo "vendor/lightbox2/css/lightbox.min.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/css/lightbox.min.css"), "html", null, true);
+        echo "\">
     <!-- Range slider-->
     <link rel=\"stylesheet\" href=\"";
         // line 17
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 17, $this->source); })()), "html", null, true);
-        echo "vendor/nouislider/nouislider.min.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.css"), "html", null, true);
+        echo "\">
     <!-- Bootstrap select-->
     <link rel=\"stylesheet\" href=\"";
         // line 19
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 19, $this->source); })()), "html", null, true);
-        echo "vendor/bootstrap-select/css/bootstrap-select.min.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/css/bootstrap-select.min.css"), "html", null, true);
+        echo "\">
     <!-- Owl Carousel-->
     <link rel=\"stylesheet\" href=\"";
         // line 21
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 21, $this->source); })()), "html", null, true);
-        echo "vendor/owl.carousel2/assets/owl.carousel.min.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.carousel.min.css"), "html", null, true);
+        echo "\">
     <link rel=\"stylesheet\" href=\"";
         // line 22
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 22, $this->source); })()), "html", null, true);
-        echo "vendor/owl.carousel2/assets/owl.theme.default.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.theme.default.css"), "html", null, true);
+        echo "\">
     <!-- Google fonts-->
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
     <!-- theme stylesheet-->
     <link rel=\"stylesheet\" href=\"";
         // line 27
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 27, $this->source); })()), "html", null, true);
-        echo "css/style.blue.css\" id=\"theme-stylesheet\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.blue.css"), "html", null, true);
+        echo "\" id=\"theme-stylesheet\">
     <!-- Custom stylesheet - for your changes-->
     <link rel=\"stylesheet\" href=\"";
         // line 29
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 29, $this->source); })()), "html", null, true);
-        echo "css/custom.css\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom.css"), "html", null, true);
+        echo "\">
     <!-- Favicon-->
     <link rel=\"shortcut icon\" href=\"";
         // line 31
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 31, $this->source); })()), "html", null, true);
-        echo "img/favicon.png\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("mg/favicon.png"), "html", null, true);
+        echo "\">
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -297,35 +297,35 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
         echo "      <!-- JavaScript files-->
       <script src=\"";
         // line 89
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 89, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/jquery/jquery.min.js\"></script>
       <script src=\"";
         // line 90
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 90, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
       <script src=\"";
         // line 91
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 91, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/lightbox2/js/lightbox.min.js\"></script>
       <script src=\"";
         // line 92
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 92, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/nouislider/nouislider.min.js\"></script>
       <script src=\"";
         // line 93
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 93, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>
       <script src=\"";
         // line 94
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 94, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/owl.carousel2/owl.carousel.min.js\"></script>
       <script src=\"";
         // line 95
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 95, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js\"></script>
       <script src=\"";
         // line 96
-        echo twig_escape_filter($this->env, (isset($context["ruta"]) || array_key_exists("ruta", $context) ? $context["ruta"] : (function () { throw new RuntimeError('Variable "ruta" does not exist.', 96, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(""), "html", null, true);
         echo "js/front.js\"></script>
       <script>
         function injectSvgSprite(path) {
@@ -376,25 +376,25 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
     <meta name=\"robots\" content=\"all,follow\">
 {% block css %}
   <!-- Bootstrap CSS-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/bootstrap/css/bootstrap.min.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\">
     <!-- Lightbox-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/lightbox2/css/lightbox.min.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/lightbox2/css/lightbox.min.css')}}\">
     <!-- Range slider-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/nouislider/nouislider.min.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/nouislider/nouislider.min.css')}}\">
     <!-- Bootstrap select-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/bootstrap-select/css/bootstrap-select.min.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap-select/css/bootstrap-select.min.css')}}\">
     <!-- Owl Carousel-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/owl.carousel2/assets/owl.carousel.min.css\">
-    <link rel=\"stylesheet\" href=\"{{ruta}}vendor/owl.carousel2/assets/owl.theme.default.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.carousel.min.css')}}\">
+    <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.theme.default.css')}}\">
     <!-- Google fonts-->
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
     <!-- theme stylesheet-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}css/style.blue.css\" id=\"theme-stylesheet\">
+    <link rel=\"stylesheet\" href=\"{{asset('css/style.blue.css')}}\" id=\"theme-stylesheet\">
     <!-- Custom stylesheet - for your changes-->
-    <link rel=\"stylesheet\" href=\"{{ruta}}css/custom.css\">
+    <link rel=\"stylesheet\" href=\"{{asset('css/custom.css')}}\">
     <!-- Favicon-->
-    <link rel=\"shortcut icon\" href=\"{{ruta}}img/favicon.png\">
+    <link rel=\"shortcut icon\" href=\"{{asset('mg/favicon.png')}}\">
 {% endblock %}
 {% endblock %}
   </head>
@@ -402,10 +402,10 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
 {% block header %}
     
 {% endblock %}
-    <div id=\"principal\">
+    <div id=\"principal\" class=\"principal\">
 {% block body%} {% endblock%}
     </div>
-      <footer class=\"bg-dark text-white\">
+      <footer class=\"bg-dark text-white align-self-end\">
 {% block footer%}
         <div class=\"container py-4\">
           <div class=\"row py-5\">
@@ -452,14 +452,14 @@ class __TwigTemplate_ac6c426d9d4792de69d764b92914c39d119626e652cedaa866f3e576d02
       </footer>
 {% block scripts%}
       <!-- JavaScript files-->
-      <script src=\"{{ruta}}vendor/jquery/jquery.min.js\"></script>
-      <script src=\"{{ruta}}vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
-      <script src=\"{{ruta}}vendor/lightbox2/js/lightbox.min.js\"></script>
-      <script src=\"{{ruta}}vendor/nouislider/nouislider.min.js\"></script>
-      <script src=\"{{ruta}}vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>
-      <script src=\"{{ruta}}vendor/owl.carousel2/owl.carousel.min.js\"></script>
-      <script src=\"{{ruta}}vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js\"></script>
-      <script src=\"{{ruta}}js/front.js\"></script>
+      <script src=\"{{asset('')}}vendor/jquery/jquery.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/lightbox2/js/lightbox.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/nouislider/nouislider.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/owl.carousel2/owl.carousel.min.js\"></script>
+      <script src=\"{{asset('')}}vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js\"></script>
+      <script src=\"{{asset('')}}js/front.js\"></script>
       <script>
         function injectSvgSprite(path) {
         

@@ -98,63 +98,58 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Direccion</th>
-                <th>HashCandidato</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 24
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["usuarios"]) || array_key_exists("usuarios", $context) ? $context["usuarios"] : (function () { throw new RuntimeError('Variable "usuarios" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["usuarios"]) || array_key_exists("usuarios", $context) ? $context["usuarios"] : (function () { throw new RuntimeError('Variable "usuarios" does not exist.', 23, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["usuario"]) {
-            // line 25
+            // line 24
             echo "            <tr>
                 <td>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+                <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "nombre", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "passwd", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "ap1", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                 <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "nombre", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "ap2", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                 <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "ap1", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "email", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "ap2", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "telefono", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
                 <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "email", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "direccion", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
                 <td>";
             // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "telefono", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "direccion", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "hashCandidato", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["usuario"], "foto", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuario_show", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuario_show", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 37
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuario_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuario_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -162,7 +157,7 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 41
+            // line 39
             echo "            <tr>
                 <td colspan=\"10\">no records found</td>
             </tr>
@@ -171,12 +166,12 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['usuario'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 43
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 48
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuario_new");
         echo "\">Create new</a>
 ";
@@ -200,7 +195,7 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
 
     public function getDebugInfo()
     {
-        return array (  180 => 48,  175 => 45,  166 => 41,  157 => 37,  153 => 36,  148 => 34,  144 => 33,  140 => 32,  136 => 31,  132 => 30,  128 => 29,  124 => 28,  120 => 27,  116 => 26,  113 => 25,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  175 => 46,  170 => 43,  161 => 39,  152 => 35,  148 => 34,  143 => 32,  139 => 31,  135 => 30,  131 => 29,  127 => 28,  123 => 27,  119 => 26,  115 => 25,  112 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,7 +218,6 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Direccion</th>
-                <th>HashCandidato</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -231,14 +225,13 @@ class __TwigTemplate_5b73a99c93b07dc4dbf3038cafefd3549f1476bf34108a69b34ff3462e1
         {% for usuario in usuarios %}
             <tr>
                 <td>{{ usuario.id }}</td>
-                <td>{{ usuario.passwd }}</td>
                 <td>{{ usuario.nombre }}</td>
                 <td>{{ usuario.ap1 }}</td>
                 <td>{{ usuario.ap2 }}</td>
                 <td>{{ usuario.email }}</td>
                 <td>{{ usuario.telefono }}</td>
                 <td>{{ usuario.direccion }}</td>
-                <td>{{ usuario.hashCandidato }}</td>
+                <td>{{ usuario.foto }}</td>
                 <td>
                     <a href=\"{{ path('usuario_show', {'id': usuario.id}) }}\">show</a>
                     <a href=\"{{ path('usuario_edit', {'id': usuario.id}) }}\">edit</a>

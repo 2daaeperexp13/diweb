@@ -45,8 +45,7 @@ class UsuarioController extends AbstractController
 
         return $this->render('usuario/new.html.twig', [
             'usuario' => $usuario,
-            'form' => $form->createView(),
-            'ruta'=>'http://localhost:8000/'
+            'form' => $form->createView()
         ]);
     }
 

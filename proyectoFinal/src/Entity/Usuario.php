@@ -68,18 +68,18 @@ class Usuario implements UserInterface
      * @ORM\JoinColumn(nullable=false)
      */
     private $localidad;
-
-   
+    /**
+     * @ORM\ManyToOne(targetEntity=Provincia::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $provincia;
 
     /**
      * @ORM\OneToMany(targetEntity=Tarjeta::class, mappedBy="usuario", orphanRemoval=true)
      */
     private $tarjetas;
 
-    /**
-     * @ORM\OneToOne(targetEntity=ImgUser::class, mappedBy="usuario", cascade={"persist", "remove"})
-     */
-    private $imgUser;
+
 
     /**
      * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="usuario", orphanRemoval=true)
@@ -91,6 +91,11 @@ class Usuario implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="blob", nullable=true)
+     */
+    private $foto;
 
     public function __construct()
     {
@@ -229,10 +234,22 @@ class Usuario implements UserInterface
     public function setLocalidad(?localidad $localidad): self
     {
         $this->localidad = $localidad;
-
+        $this->provincia = $localidad->getProvincia();
         return $this;
     }
 
+    
+    public function getProvincia(): ?Provincia
+    {
+        return $this->provincia;
+    }
+
+    public function setProvincia(?Provincia $provincia): self
+    {
+        $this->provincia = $provincia;
+
+        return $this;
+    }
 
 
     /**
@@ -265,22 +282,7 @@ class Usuario implements UserInterface
         return $this;
     }
 
-    public function getImgUser(): ?ImgUser
-    {
-        return $this->imgUser;
-    }
-
-    public function setImgUser(ImgUser $imgUser): self
-    {
-        // set the owning side of the relation if necessary
-        if ($imgUser->getUsuario() !== $this) {
-            $imgUser->setUsuario($this);
-        }
-
-        $this->imgUser = $imgUser;
-
-        return $this;
-    }
+    
 
     /**
      * @return Collection|Pedido[]
@@ -331,6 +333,23 @@ class Usuario implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->isVerified;
+    }
+
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+    public function setFoto($foto): self
+    {
+        $this->foto = $foto;
 
         return $this;
     }

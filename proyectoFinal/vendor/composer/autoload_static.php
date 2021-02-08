@@ -71,6 +71,7 @@ class ComposerStaticInit6a5d9f228d64e729bc823dc13a4e57f6
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Notifier\\' => 27,
             'Symfony\\Component\\Mime\\' => 23,
+            'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 39,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -305,6 +306,10 @@ class ComposerStaticInit6a5d9f228d64e729bc823dc13a4e57f6
         'Symfony\\Component\\Mime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
+        ),
+        'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/google-mailer',
         ),
         'Symfony\\Component\\Mailer\\' => 
         array (
@@ -572,11 +577,9 @@ class ComposerStaticInit6a5d9f228d64e729bc823dc13a4e57f6
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\TipoProductoController' => __DIR__ . '/../..' . '/src/Controller/TipoProductoController.php',
         'App\\Controller\\UsuarioController' => __DIR__ . '/../..' . '/src/Controller/UsuarioController.php',
-        'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
         'App\\Entity\\Categoria' => __DIR__ . '/../..' . '/src/Entity/Categoria.php',
         'App\\Entity\\Comentario' => __DIR__ . '/../..' . '/src/Entity/Comentario.php',
         'App\\Entity\\ImgProducto' => __DIR__ . '/../..' . '/src/Entity/ImgProducto.php',
-        'App\\Entity\\ImgUser' => __DIR__ . '/../..' . '/src/Entity/ImgUser.php',
         'App\\Entity\\Localidad' => __DIR__ . '/../..' . '/src/Entity/Localidad.php',
         'App\\Entity\\Pedido' => __DIR__ . '/../..' . '/src/Entity/Pedido.php',
         'App\\Entity\\Producto' => __DIR__ . '/../..' . '/src/Entity/Producto.php',
@@ -597,7 +600,6 @@ class ComposerStaticInit6a5d9f228d64e729bc823dc13a4e57f6
         'App\\Repository\\CategoriaRepository' => __DIR__ . '/../..' . '/src/Repository/CategoriaRepository.php',
         'App\\Repository\\ComentarioRepository' => __DIR__ . '/../..' . '/src/Repository/ComentarioRepository.php',
         'App\\Repository\\ImgProductoRepository' => __DIR__ . '/../..' . '/src/Repository/ImgProductoRepository.php',
-        'App\\Repository\\ImgUserRepository' => __DIR__ . '/../..' . '/src/Repository/ImgUserRepository.php',
         'App\\Repository\\LocalidadRepository' => __DIR__ . '/../..' . '/src/Repository/LocalidadRepository.php',
         'App\\Repository\\PedidoRepository' => __DIR__ . '/../..' . '/src/Repository/PedidoRepository.php',
         'App\\Repository\\ProductoRepository' => __DIR__ . '/../..' . '/src/Repository/ProductoRepository.php',
@@ -3945,6 +3947,8 @@ class ComposerStaticInit6a5d9f228d64e729bc823dc13a4e57f6
         'Symfony\\Component\\Intl\\Util\\IcuVersion' => __DIR__ . '/..' . '/symfony/intl/Util/IcuVersion.php',
         'Symfony\\Component\\Intl\\Util\\IntlTestHelper' => __DIR__ . '/..' . '/symfony/intl/Util/IntlTestHelper.php',
         'Symfony\\Component\\Intl\\Util\\Version' => __DIR__ . '/..' . '/symfony/intl/Util/Version.php',
+        'Symfony\\Component\\Mailer\\Bridge\\Google\\Transport\\GmailSmtpTransport' => __DIR__ . '/..' . '/symfony/google-mailer/Transport/GmailSmtpTransport.php',
+        'Symfony\\Component\\Mailer\\Bridge\\Google\\Transport\\GmailTransportFactory' => __DIR__ . '/..' . '/symfony/google-mailer/Transport/GmailTransportFactory.php',
         'Symfony\\Component\\Mailer\\DataCollector\\MessageDataCollector' => __DIR__ . '/..' . '/symfony/mailer/DataCollector/MessageDataCollector.php',
         'Symfony\\Component\\Mailer\\DelayedEnvelope' => __DIR__ . '/..' . '/symfony/mailer/DelayedEnvelope.php',
         'Symfony\\Component\\Mailer\\Envelope' => __DIR__ . '/..' . '/symfony/mailer/Envelope.php',

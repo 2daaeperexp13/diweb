@@ -1,21 +1,62 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
+{% block header %} {% include(asset('frontend.html.twig')) %}{% endblock %}
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    
+    
+    <div class="container m-5 align-self-center border w-100">
+        <div class="bg-warning w-100 m-0"><h1 class="mb-3">Register</h1></div>
+        <div class="form  w-100">
+            
+                {{ form_start(registrationForm)}}
+                <div class="d-flex justify-content-around">
+                    <div >
+                        <div class="form-group d-flex justify-content-around flex-column">
+                            {{ form_row(registrationForm.email,{
+                                label:'Email'
+                            }) }}
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Password'
+                            })}}
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="form-group d-flex justify-content-around flex-column">
+                            {{form_row(registrationForm.nombre,{
+                                label:'Nombre  '
+                            })}}
+                            {{form_row(registrationForm.ap1,{
+                                label:'Primer apellido'
+                            })}}
+                            {{form_row(registrationForm.ap2,{
+                                label:'Segundo Apellido'
+                            })}}
+                            {{form_row(registrationForm.telefono)}}
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="form-group d-flex justify-content-around flex-column">
+                            {{form_row(registrationForm.provincia)}}
+                            {{form_row(registrationForm.localidad)}}
+                            {{form_row(registrationForm.direccion)}}
+                        </div>          
+                    </div>
+                    <divclass=" ml-1 form-group d-flex justify-content-around flex-column">
+                        {{ form_row(registrationForm.agreeTerms) }}
+                        <button type="submit" class="btn btn-warning ">Registrarme</button>
+                    </div>
+                </div>
+                {{ form_end(registrationForm) }}
+           
+            
+        </div>
+        
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Registrarme</button>
-    {{ form_end(registrationForm) }}
+    </div>
+    
 {% endblock %}

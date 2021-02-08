@@ -21,8 +21,7 @@ class ProvinciaController extends AbstractController
     public function index(ProvinciaRepository $provinciaRepository): Response
     {
         return $this->render('provincia/index.html.twig', [
-            'provincias' => $provinciaRepository->findAll(),
-            'ruta'=>'http://localhost:8000/'
+            'provincias' => $provinciaRepository->findAll()
         ]);
     }
 
@@ -45,8 +44,7 @@ class ProvinciaController extends AbstractController
 
         return $this->render('provincia/new.html.twig', [
             'provincium' => $provincium,
-            'form' => $form->createView(),
-            'ruta'=>'http://localhost:8000/'
+            'form' => $form->createView()
         ]);
     }
 
@@ -56,8 +54,7 @@ class ProvinciaController extends AbstractController
     public function show(Provincia $provincium): Response
     {
         return $this->render('provincia/show.html.twig', [
-            'provincium' => $provincium,
-            'ruta'=>'http://localhost:8000/'
+            'provincium' => $provincium
         ]);
     }
 
@@ -77,8 +74,7 @@ class ProvinciaController extends AbstractController
 
         return $this->render('provincia/edit.html.twig', [
             'provincium' => $provincium,
-            'form' => $form->createView(),
-            'ruta'=>'http://localhost:8000/'
+            'form' => $form->createView()
         ]);
     }
 

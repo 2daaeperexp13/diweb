@@ -5,16 +5,13 @@
 {% block body %}
     <h1>Usuario</h1>
 
-    <table class="table">
+    <table class="table table-stripped">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ usuario.id }}</td>
             </tr>
-            <tr>
-                <th>Passwd</th>
-                <td>{{ usuario.passwd }}</td>
-            </tr>
+
             <tr>
                 <th>Nombre</th>
                 <td>{{ usuario.nombre }}</td>
@@ -38,10 +35,6 @@
             <tr>
                 <th>Direccion</th>
                 <td>{{ usuario.direccion }}</td>
-            </tr>
-            <tr>
-                <th>HashCandidato</th>
-                <td>{{ usuario.hashCandidato }}</td>
             </tr>
         </tbody>
     </table>

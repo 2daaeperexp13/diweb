@@ -22,8 +22,7 @@ class LocalidadController extends AbstractController
     public function index(LocalidadRepository $localidadRepository): Response
     {
         return $this->render('localidad/index.html.twig', [
-            'localidades' => $localidadRepository->findAll(),
-            'ruta'=>'http://localhost:8000/'
+            'localidades' => $localidadRepository->findAll()
         ]);
     }
 
@@ -48,7 +47,6 @@ class LocalidadController extends AbstractController
         return $this->render('localidad/new.html.twig', [
             'localidad' => $localidad,
             'form' => $form->createView(),
-            'ruta'=>'http://localhost:8000/',
             'provincias'=>$provincias
         ]);
     }
@@ -59,8 +57,7 @@ class LocalidadController extends AbstractController
     public function show(Localidad $localidad): Response
     {
         return $this->render('localidad/show.html.twig', [
-            'localidad' => $localidad,
-            'ruta'=>'http://localhost:8000/'
+            'localidad' => $localidad
         ]);
     }
 
@@ -80,8 +77,7 @@ class LocalidadController extends AbstractController
 
         return $this->render('localidad/edit.html.twig', [
             'localidad' => $localidad,
-            'form' => $form->createView(),
-            'ruta'=>'http://localhost:8000/'
+            'form' => $form->createView()
         ]);
     }
 

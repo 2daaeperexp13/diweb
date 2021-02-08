@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Producto;
+use App\Entity\TipoProducto;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ff6085a7e1dae2bb3c5ed793e22a425cbcff0fb2',
+    'reference' => 'c7c5f40eac670b62e9a3e9d47e50965f3a3dff2a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ff6085a7e1dae2bb3c5ed793e22a425cbcff0fb2',
+      'reference' => 'c7c5f40eac670b62e9a3e9d47e50965f3a3dff2a',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -610,6 +610,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ff455b2afd3f98237d4131ffebe190e59cc0f011',
+    ),
+    'symfony/google-mailer' => 
+    array (
+      'pretty_version' => 'v5.2.3',
+      'version' => '5.2.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e93f9d09b1cf02ce74d65c08c2ddda33a0b284ef',
     ),
     'symfony/http-client' => 
     array (

@@ -16,7 +16,6 @@
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Direccion</th>
-                <th>HashCandidato</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,14 +23,13 @@
         {% for usuario in usuarios %}
             <tr>
                 <td>{{ usuario.id }}</td>
-                <td>{{ usuario.passwd }}</td>
                 <td>{{ usuario.nombre }}</td>
                 <td>{{ usuario.ap1 }}</td>
                 <td>{{ usuario.ap2 }}</td>
                 <td>{{ usuario.email }}</td>
                 <td>{{ usuario.telefono }}</td>
                 <td>{{ usuario.direccion }}</td>
-                <td>{{ usuario.hashCandidato }}</td>
+                <td>{{ usuario.foto }}</td>
                 <td>
                     <a href="{{ path('usuario_show', {'id': usuario.id}) }}">show</a>
                     <a href="{{ path('usuario_edit', {'id': usuario.id}) }}">edit</a>

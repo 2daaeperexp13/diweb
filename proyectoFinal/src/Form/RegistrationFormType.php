@@ -3,8 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Usuario;
+use Symfony\Bundle\MakerBundle\InputConfiguration;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,12 +21,16 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email')
+            ->add('foto', FileType::class,[
+                'mapped'=>false,
+            ])
             ->add('nombre')
             ->add('ap1')
             ->add('ap2')
             ->add('telefono')
             ->add('provincia')
             ->add('localidad')
+            ->add('direccion')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [

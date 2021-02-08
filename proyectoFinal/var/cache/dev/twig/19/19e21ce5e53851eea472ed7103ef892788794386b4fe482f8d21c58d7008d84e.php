@@ -67,15 +67,15 @@ class __TwigTemplate_752aa0765c485ef293865dc175a8c540950d2e2490c521c81c495205351
         echo "    <!-- navbar-->
      <header class=\"header bg-primary \">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0\"><div class=\"navbar-brand\"><a  href=\"index.html\"><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"><span class=\"font-weight-bold text-uppercase text-warning h1\">XRACING</span></img></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0\"><div class=\"navbar-brand\"><a  href=\"index.html\"><div class=\"z-index-3 position-absolute\"><span class=\"font-weight-bold text-uppercase text-warning h1  \">XRACING</span></div><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-              <ul class=\"navbar-nav mr-auto\">
+            <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
+              <ul class=\"navbar-nav mr-auto \">
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"nav-link text-white\" href=\"#\">Inicio</a>
+                  <!-- Link--><a class=\"nav-link text-white h1\" href=\"#\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"nav-link text-white\" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"nav-link text-white h1\" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
@@ -112,15 +112,15 @@ class __TwigTemplate_752aa0765c485ef293865dc175a8c540950d2e2490c521c81c495205351
     <!-- navbar-->
      <header class=\"header bg-primary \">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0\"><div class=\"navbar-brand\"><a  href=\"index.html\"><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"><span class=\"font-weight-bold text-uppercase text-warning h1\">XRACING</span></img></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0\"><div class=\"navbar-brand\"><a  href=\"index.html\"><div class=\"z-index-3 position-absolute\"><span class=\"font-weight-bold text-uppercase text-warning h1  \">XRACING</span></div><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-              <ul class=\"navbar-nav mr-auto\">
+            <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
+              <ul class=\"navbar-nav mr-auto \">
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"nav-link text-white\" href=\"#\">Inicio</a>
+                  <!-- Link--><a class=\"nav-link text-white h1\" href=\"#\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"nav-link text-white\" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"nav-link text-white h1\" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
