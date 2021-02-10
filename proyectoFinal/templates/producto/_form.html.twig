@@ -1,4 +1,62 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="container ">
+    {{ form_start(form) }}
+    <div class="">
+        <div class="form-group">
+            <div class="">
+                {{ form_row(form.categoria,{
+                    label:'Categoría'
+                })}}
+                
+            </div>
+            <div class="">
+                {{ form_row(form.tipoProducto,{
+                    label:'Tipo de producto'
+                })}}
+                
+            </div>
+            <div class="">
+                {{ form_row(form.nombre,{
+                    label:'nombre'
+                })}}
+                
+            </div>
+        </div>
+        <div class="formgroup">
+            <div class="l">
+                {{ form_row(form.descripcion,{
+                    label:'Descripción detallada'
+                })}}
+                
+            </div>
+            <div class="">
+                {{ form_row(form.stock,{
+                    label:'Existencias del producto'
+                })}}
+                
+            </div>
+            <div class="">
+                {{ form_row(form.precio,{
+                    label:'Precio'
+                })}}
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="">
+                <span class="btn btn-default btn-file">
+                    {{ form_row(form.imgProductos,{
+                        label:'Imágenes del producto'
+                    })}}
+                </span>
+            </div>
+            <button class="btn miheader">{{ button_label|default('GUARDAR') }}</button>
+        </div>
+    </div>
+    
+
+    {{ form_end(form) }}
+</div>
+
+    
+    
+

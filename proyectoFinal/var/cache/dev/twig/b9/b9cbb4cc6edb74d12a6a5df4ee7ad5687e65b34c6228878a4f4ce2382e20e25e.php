@@ -67,7 +67,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
         echo "    <!-- navbar-->
      <header class=\"header overflow-hidden shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
@@ -80,7 +80,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
                 <li class=\"nav-item\"><a class=\"h4 mr-3\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
-                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"#\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
+                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
               </ul>
             </div>
           </nav>
@@ -112,7 +112,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
     <!-- navbar-->
      <header class=\"header overflow-hidden shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
@@ -125,7 +125,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
                 <li class=\"nav-item\"><a class=\"h4 mr-3\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
-                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"#\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
+                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
               </ul>
             </div>
           </nav>

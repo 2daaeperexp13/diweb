@@ -65,7 +65,7 @@ class __TwigTemplate_6383c27c83233253e5b5cd9517bdfaf39d6ff1a649c9aafa9b3d4956a13
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit TipoProducto";
+        echo "Editar Tipode Producto";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_6383c27c83233253e5b5cd9517bdfaf39d6ff1a649c9aafa9b3d4956a13
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit TipoProducto</h1>
+        echo "    <h1>Editar un tipo</h1>
 
     ";
         // line 8
@@ -129,10 +129,10 @@ class __TwigTemplate_6383c27c83233253e5b5cd9517bdfaf39d6ff1a649c9aafa9b3d4956a13
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit TipoProducto{% endblock %}
+{% block title %}Editar Tipode Producto{% endblock %}
 
 {% block body %}
-    <h1>Edit TipoProducto</h1>
+    <h1>Editar un tipo</h1>
 
     {{ include('tipo_producto/_form.html.twig', {'button_label': 'Update'}) }}
 

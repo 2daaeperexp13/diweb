@@ -65,7 +65,7 @@ class __TwigTemplate_95916014b653b69fd0d324584a324d2b93312fa9f0663f325f910be55a1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Producto";
+        echo "NUEVO PRODUCTO";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,17 +85,18 @@ class __TwigTemplate_95916014b653b69fd0d324584a324d2b93312fa9f0663f325f910be55a1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Producto</h1>
+        echo "        <h1>AÑADIR UN NUEVO PRODUCTO</h1>
 
-    ";
+            ";
         // line 8
         echo twig_include($this->env, $context, "producto/_form.html.twig");
         echo "
 
-    <a href=\"";
+        <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
-        echo "\">back to list</a>
+        echo "\">Volver</a>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -124,14 +125,15 @@ class __TwigTemplate_95916014b653b69fd0d324584a324d2b93312fa9f0663f325f910be55a1
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Producto{% endblock %}
+{% block title %}NUEVO PRODUCTO{% endblock %}
 
 {% block body %}
-    <h1>Create new Producto</h1>
+        <h1>AÑADIR UN NUEVO PRODUCTO</h1>
 
-    {{ include('producto/_form.html.twig') }}
+            {{ include('producto/_form.html.twig') }}
 
-    <a href=\"{{ path('producto_index') }}\">back to list</a>
+        <a href=\"{{ path('producto_index') }}\">Volver</a>
+
 {% endblock %}
 ", "producto/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\producto\\new.html.twig");
     }

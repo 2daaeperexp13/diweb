@@ -124,21 +124,28 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 28, $this->source); })()), "stock", [], "any", false, false, false, 28), "html", null, true);
         echo "</td>
             </tr>
+            <tr>
+                <th>Foto</th>
+                <td>";
+        // line 32
+        echo twig_escape_filter($this->env, (isset($context["imagenes"]) || array_key_exists("imagenes", $context) ? $context["imagenes"] : (function () { throw new RuntimeError('Variable "imagenes" does not exist.', 32, $this->source); })()), "html", null, true);
+        echo "</td>
+            </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 33
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
+        // line 39
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 37
+        // line 41
         echo twig_include($this->env, $context, "producto/_delete_form.html.twig");
         echo "
 ";
@@ -162,7 +169,7 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
 
     public function getDebugInfo()
     {
-        return array (  142 => 37,  137 => 35,  132 => 33,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  149 => 41,  144 => 39,  139 => 37,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,6 +202,10 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
             <tr>
                 <th>Stock</th>
                 <td>{{ producto.stock }}</td>
+            </tr>
+            <tr>
+                <th>Foto</th>
+                <td>{{ imagenes }}</td>
             </tr>
         </tbody>
     </table>

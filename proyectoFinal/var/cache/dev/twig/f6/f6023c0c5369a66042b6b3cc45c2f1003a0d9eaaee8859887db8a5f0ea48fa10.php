@@ -48,7 +48,7 @@ class __TwigTemplate_4fb2bbed8116e48c13046bdd0ffa7a1d6f99f423fd7078e6a39dc80774f
         // line 3
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["tipo_producto"]) || array_key_exists("tipo_producto", $context) ? $context["tipo_producto"] : (function () { throw new RuntimeError('Variable "tipo_producto" does not exist.', 3, $this->source); })()), "id", [], "any", false, false, false, 3))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn miheader\"> Borrar</button>
 </form>
 ";
         
@@ -79,7 +79,7 @@ class __TwigTemplate_4fb2bbed8116e48c13046bdd0ffa7a1d6f99f423fd7078e6a39dc80774f
         return new Source("<form method=\"post\" action=\"{{ path('tipo_producto_delete', {'id': tipo_producto.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ tipo_producto.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn miheader\"> Borrar</button>
 </form>
 ", "tipo_producto/_delete_form.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\tipo_producto\\_delete_form.html.twig");
     }

@@ -143,6 +143,7 @@
     <parameter key="serializer.mapping.cache.file">C:\wamp64\www\Interfaces web\diweb\proyectoFinal\var\cache\dev/serialization.php</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_4_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\wamp64\www\Interfaces web\diweb\proyectoFinal/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -246,7 +247,7 @@
       <parameter>main</parameter>
     </parameter>
     <parameter key="security.main._indexed_authenticators" type="collection"/>
-    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
@@ -5409,7 +5410,7 @@
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
       <tag name="container.hot_path"/>
       <argument type="collection">
-        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
         <argument key="defaultPageRange">5</argument>

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Producto;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,6 +19,16 @@ class ProductoType extends AbstractType
             ->add('stock')
             ->add('categoria')
             ->add('tipoProducto')
+            ->add('imgProductos',FileType::class,[
+                'mapped'=>true,
+                'multiple'=>true,
+                'label'=>'Imágenes del producto',
+                'attr'=>['accept' => 'image/*',
+                        'multiple' => 'multiple',
+                        'data-show-upload'=>'true', 
+                        'data-show-caption'=>'true',
+                        'class'=>'file']
+            ])
         ;
     }
 

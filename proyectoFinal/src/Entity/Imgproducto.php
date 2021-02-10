@@ -18,7 +18,7 @@ class ImgProducto
     private $id;
 
     /**
-     * @ORM\Column(type="blob")
+     * @ORM\Column(type="text")
      */
     private $img;
 

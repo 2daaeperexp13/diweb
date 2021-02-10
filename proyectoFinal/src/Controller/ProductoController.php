@@ -35,6 +35,7 @@ class ProductoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+ 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($producto);
             $entityManager->flush();
@@ -55,6 +56,7 @@ class ProductoController extends AbstractController
     {
         return $this->render('producto/show.html.twig', [
             'producto' => $producto,
+            'imagenes'=>$producto->getImgProductos()
         ]);
     }
 

@@ -98,8 +98,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         </div>
       </div>
       <!-- HERO SECTION-->
-      <div class=\"container\">
-        <section class=\"hero pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
+      <div class=\"container \">
+        <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">
@@ -396,8 +396,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         </div>
       </div>
       <!-- HERO SECTION-->
-      <div class=\"container\">
-        <section class=\"hero pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
+      <div class=\"container \">
+        <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">

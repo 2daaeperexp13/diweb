@@ -3,39 +3,37 @@
 {% block title %}TipoProducto index{% endblock %}
 
 {% block body %}
-    <h1>TipoProducto index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Tipo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tipo_producto in tipo_productos %}
-            <tr>
-                <td>{{ tipo_producto.id }}</td>
-                <td>{{ tipo_producto.tipo }}</td>
-                <td>
-                    <a href="{{ path('tipo_producto_show', {'id': tipo_producto.id}) }}">show</a>
-                    <a href="{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-        <tfoot>
-            <tr>
-                    {{ knp_pagination_render(tipo_productos) }} 
-            </tr>
-        </tfoot>
+    
+    <div class="container " >
+        <h1 class=" text-secondary">Tipos de productos</h1>
+        <table class="table table-striped">
+            <thead class="thead bg-warning">
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for tipo_producto in tipo_productos %}
+                <tr>
+                    <td>{{ tipo_producto.id }}</td>
+                    <td>{{ tipo_producto.tipo }}</td>
+                    <td>
+                        <a href="{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}"><img class="interaccionesBackend" src="{{asset('/imgs/editar.png')}}"></img></a>
+                        <a href="{{ path('tipo_producto_new') }}" ><img class="interaccionesBackend" src="{{asset('/imgs/añadir.png')}}"></img></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>      
+        </table>
+        <div class="navigation"> 
+            {{ knp_pagination_render(tipo_productos) }} 
+        </div>
         
-    </table>
-
-    <a href="{{ path('tipo_producto_new') }}">Create new</a>
+    </div>
 {% endblock %}
