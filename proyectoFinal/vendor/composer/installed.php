@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'c7c5f40eac670b62e9a3e9d47e50965f3a3dff2a',
+    'reference' => 'ce2c757b6ecbde5771fdf7206688531b989c004e',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'c7c5f40eac670b62e9a3e9d47e50965f3a3dff2a',
+      'reference' => 'ce2c757b6ecbde5771fdf7206688531b989c004e',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -181,6 +181,24 @@
       array (
       ),
       'reference' => '121af47c9aee9c03031bdeca3fac0540f59aa5c3',
+    ),
+    'knplabs/knp-components' => 
+    array (
+      'pretty_version' => 'v3.0.0',
+      'version' => '3.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '246b700fdc40020f1db1c887cd462b9b9d3b79b0',
+    ),
+    'knplabs/knp-paginator-bundle' => 
+    array (
+      'pretty_version' => 'v5.4.2',
+      'version' => '5.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8a7255062dd9f6ff8a3a4712a4b34bdbbc9f31f7',
     ),
     'laminas/laminas-code' => 
     array (

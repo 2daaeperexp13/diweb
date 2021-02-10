@@ -94,6 +94,7 @@ class AnnotationException extends Exception
      */
     public static function attributeTypeError($attributeName, $annotationName, $context, $expected, $actual)
     {
+        
         return self::typeError(sprintf(
             'Attribute "%s" of @%s declared on %s expects %s, but got %s.',
             $attributeName,

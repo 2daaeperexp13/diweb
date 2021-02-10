@@ -50,9 +50,4 @@ return [
     'tipo_producto_show' => [['id'], ['_controller' => 'App\\Controller\\TipoProductoController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/tipo/producto']], [], []],
     'tipo_producto_edit' => [['id'], ['_controller' => 'App\\Controller\\TipoProductoController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/tipo/producto']], [], []],
     'tipo_producto_delete' => [['id'], ['_controller' => 'App\\Controller\\TipoProductoController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/tipo/producto']], [], []],
-    'usuario_index' => [[], ['_controller' => 'App\\Controller\\UsuarioController::index'], [], [['text', '/usuario/']], [], []],
-    'usuario_new' => [[], ['_controller' => 'App\\Controller\\UsuarioController::new'], [], [['text', '/usuario/new']], [], []],
-    'usuario_show' => [['id'], ['_controller' => 'App\\Controller\\UsuarioController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/usuario']], [], []],
-    'usuario_edit' => [['id'], ['_controller' => 'App\\Controller\\UsuarioController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/usuario']], [], []],
-    'usuario_delete' => [['id'], ['_controller' => 'App\\Controller\\UsuarioController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/usuario']], [], []],
 ];

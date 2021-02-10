@@ -28,7 +28,7 @@ class Tarjeta
     private $fechaVencimiento;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="tarjetas")
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="tarjetas")
      * @ORM\JoinColumn(nullable=false)
      */
     private $usuario;

@@ -79,9 +79,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
 
     public function checkCredentials($credentials, UserInterface $user)
     {   
-        $passwordEncoded=$this->passwordEncoder->encodePassword($user,$credentials['password']);
-       
-        return $this->passwordEncoder->isPasswordValid($user, $passwordEncoded);
+        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
 
     /**
@@ -95,11 +93,12 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator implements Passw
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+            
             return new RedirectResponse($targetPath);
         }
-
+        
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('principal'));
     }
 
     protected function getLoginUrl()

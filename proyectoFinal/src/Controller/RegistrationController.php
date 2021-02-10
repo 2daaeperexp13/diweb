@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Usuario;
 use App\Form\RegistrationFormType;
-use App\Repository\LocalidadRepository;
 use App\Security\EmailVerifier;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
-class RegistrationController extends AbstractController 
+class RegistrationController extends AbstractController
 {
     private $emailVerifier;
 
@@ -27,13 +26,12 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, LocalidadRepository $repository): Response
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new Usuario();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-        $entityManager = $this->getDoctrine()->getManager();
-  
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
@@ -42,32 +40,30 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            ($form->get('admin')->getData()) ? $user->setRoles(['ROLE_ADMIN']):'';
 
-            
+            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
-                    ->from(new Address('2daaeperexp13@ieslasfuentezuelas.com', 'Enrique Pérez'))
+                    ->from(new Address('2daaeperexp13@ieslasfuentezuelas.com', 'Enrique P�rez'))
                     ->to($user->getEmail())
-                    ->subject('Por favor confirme su dirección de correo')
+                    ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('principal');
+            return $this->redirectToRoute('app_login');
         }
-        
-        $localidades=$repository->findAll();
+
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
-            'localidades'=>$localidades
         ]);
     }
 
-    
     /**
      * @Route("/verify/email", name="app_verify_email")
      */
@@ -85,7 +81,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Su dirección de correo ha sido verificada');
+        $this->addFlash('success', 'Your email address has been verified.');
 
         return $this->redirectToRoute('app_register');
     }

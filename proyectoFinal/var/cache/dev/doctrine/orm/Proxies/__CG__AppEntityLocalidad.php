@@ -66,10 +66,10 @@ class Localidad extends \App\Entity\Localidad implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'codLoc', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'provincia'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'codLoc', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'provincia', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'usuarios'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'codLoc', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'provincia'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'codLoc', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'nombre', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'provincia', '' . "\0" . 'App\\Entity\\Localidad' . "\0" . 'usuarios'];
     }
 
     /**
@@ -266,6 +266,39 @@ class Localidad extends \App\Entity\Localidad implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsuarios(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsuarios', []);
+
+        return parent::getUsuarios();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addUsuario(\App\Entity\Usuario $usuario): \App\Entity\Localidad
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUsuario', [$usuario]);
+
+        return parent::addUsuario($usuario);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeUsuario(\App\Entity\Usuario $usuario): \App\Entity\Localidad
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUsuario', [$usuario]);
+
+        return parent::removeUsuario($usuario);
     }
 
 }

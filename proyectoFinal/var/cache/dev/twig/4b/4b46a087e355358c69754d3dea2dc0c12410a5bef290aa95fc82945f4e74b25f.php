@@ -25,7 +25,6 @@ class __TwigTemplate_d7022d6c1d45d3b9925114d0c36743c57af85ddd48cc53e6edeba47eaa1
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,27 +55,6 @@ class __TwigTemplate_d7022d6c1d45d3b9925114d0c36743c57af85ddd48cc53e6edeba47eaa1
     }
 
     // line 3
-    public function block_header($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
-
-        echo " ";
-        echo twig_include($this->env, $context, "frontend.html.twig");
-        echo " ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 4
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,7 +64,7 @@ class __TwigTemplate_d7022d6c1d45d3b9925114d0c36743c57af85ddd48cc53e6edeba47eaa1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 5
+        // line 4
         echo "<!--  Modal -->
       <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">
         <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\">
@@ -377,14 +355,13 @@ class __TwigTemplate_d7022d6c1d45d3b9925114d0c36743c57af85ddd48cc53e6edeba47eaa1
 
     public function getDebugInfo()
     {
-        return array (  90 => 5,  80 => 4,  59 => 3,  36 => 1,);
+        return array (  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block header %} {{ include('frontend.html.twig') }} {% endblock %}
 {% block body %}
 <!--  Modal -->
       <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">

@@ -29,16 +29,18 @@ class Pedido
      */
     private $precio;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=usuario::class, inversedBy="pedidos")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $usuario;
+   
 
     /**
      * @ORM\ManyToMany(targetEntity=Producto::class, mappedBy="pedidos")
      */
     private $productos;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="pedidos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
 
     public function __construct()
     {
@@ -75,17 +77,6 @@ class Pedido
         return $this;
     }
 
-    public function getUsuario(): ?usuario
-    {
-        return $this->usuario;
-    }
-
-    public function setUsuario(?usuario $usuario): self
-    {
-        $this->usuario = $usuario;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Producto[]
@@ -108,6 +99,18 @@ class Pedido
     public function removeProducto(Producto $producto): self
     {
         $this->productos->removeElement($producto);
+
+        return $this;
+    }
+
+    public function getUser(): ?Usuario
+    {
+        return $this->user;
+    }
+
+    public function setUser(?Usuario $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

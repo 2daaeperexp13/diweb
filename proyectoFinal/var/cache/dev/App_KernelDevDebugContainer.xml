@@ -21,6 +21,7 @@
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="TwigExtraBundle">Twig\Extra\TwigExtraBundle\TwigExtraBundle</parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -70,6 +71,10 @@
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
         <parameter key="path">C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -241,6 +246,11 @@
       <parameter>main</parameter>
     </parameter>
     <parameter key="security.main._indexed_authenticators" type="collection"/>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -395,13 +405,6 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\TipoProductoController"/>
       </call>
     </service>
-    <service id="App\Controller\UsuarioController" class="App\Controller\UsuarioController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\UsuarioController"/>
-      </call>
-    </service>
     <service id="App\Form\CategoriaType" class="App\Form\CategoriaType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -421,9 +424,6 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\TipoProductoType" class="App\Form\TipoProductoType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\UsuarioType" class="App\Form\UsuarioType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\CategoriaRepository" class="App\Repository\CategoriaRepository" autowire="true" autoconfigure="true">
@@ -955,7 +955,6 @@
         <argument>App\Form\ProvinciaType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\TipoProductoType</argument>
-        <argument>App\Form\UsuarioType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1313,7 +1312,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.8oSF6w6"/>
+      <argument type="service" id=".service_locator._M0u3aY"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1727,15 +1726,161 @@
         <argument key="cache_dir">C:\wamp64\www\Interfaces web\diweb\proyectoFinal\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
+          <argument key="ar" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+          </argument>
+          <argument key="bg" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+          </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+          </argument>
+          <argument key="pt_BR" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+          </argument>
           <argument key="af" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-          </argument>
-          <argument key="ar" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
@@ -1747,11 +1892,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
           </argument>
-          <argument key="bg" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-          </argument>
           <argument key="bs" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
@@ -1762,60 +1902,19 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
           </argument>
-          <argument key="cs" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-          </argument>
-          <argument key="da" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-          </argument>
-          <argument key="de" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-          </argument>
           <argument key="el" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
           </argument>
-          <argument key="en" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
-          </argument>
-          <argument key="es" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-          </argument>
           <argument key="et" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-          </argument>
-          <argument key="eu" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-          </argument>
-          <argument key="fa" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-          </argument>
-          <argument key="fr" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
@@ -1832,39 +1931,14 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
           </argument>
-          <argument key="hu" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-          </argument>
           <argument key="hy" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-          </argument>
-          <argument key="id" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-          </argument>
-          <argument key="it" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-          </argument>
-          <argument key="ja" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-          </argument>
-          <argument key="lt" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
@@ -1881,45 +1955,15 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
           </argument>
-          <argument key="nl" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-          </argument>
           <argument key="nn" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
           </argument>
-          <argument key="no" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-          </argument>
-          <argument key="pl" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-          </argument>
           <argument key="pt" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-          </argument>
-          <argument key="pt_BR" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-          </argument>
-          <argument key="ro" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-          </argument>
-          <argument key="ru" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
@@ -1946,11 +1990,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
           </argument>
-          <argument key="sv" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-          </argument>
           <argument key="th" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
@@ -1960,16 +1999,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-          </argument>
-          <argument key="tr" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-          </argument>
-          <argument key="uk" type="collection">
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
@@ -1995,6 +2024,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
@@ -2014,6 +2044,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\form/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+            <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
@@ -2497,6 +2528,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -2927,6 +2966,46 @@
           <argument>onLogout</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
@@ -3486,6 +3565,9 @@
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3576,6 +3658,14 @@
       <call method="addPath">
         <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/templates</argument>
@@ -4824,7 +4914,7 @@
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument type="abstract">Provider Key</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -5098,8 +5188,11 @@
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id="security.logout_url_generator"/>
     </service>
-    <service id="security.user.provider.concrete.users_in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider">
-      <argument type="collection"/>
+    <service id="security.user.provider.concrete.app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider">
+      <argument type="service" id="doctrine"/>
+      <argument>App\Entity\Usuario</argument>
+      <argument>email</argument>
+      <argument>null</argument>
     </service>
     <service id="security.firewall.map.config.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig">
       <argument>dev</argument>
@@ -5130,7 +5223,7 @@
       <argument>null</argument>
       <argument>true</argument>
       <argument>false</argument>
-      <argument>security.user.provider.concrete.users_in_memory</argument>
+      <argument>security.user.provider.concrete.app_user_provider</argument>
       <argument>main</argument>
       <argument>App\Security\LoginAuthenticator</argument>
       <argument>null</argument>
@@ -5170,7 +5263,7 @@
     <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument>main</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -5203,13 +5296,13 @@
       <argument type="iterator">
         <argument type="service" id="App\Security\LoginAuthenticator"/>
       </argument>
-      <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       <argument>main</argument>
       <argument type="service" id="security.user_checker"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
     <service id="security.authentication.listener.guard.main" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener">
-      <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.users_in_memory"/>
+      <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.app_user_provider"/>
       <argument type="service" id="security.authentication.guard_handler"/>
       <argument type="service" id="security.authentication.manager"/>
       <argument>main</argument>
@@ -5285,6 +5378,52 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CategoriaController" class="App\Controller\CategoriaController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CategoriaController" class="App\Controller\CategoriaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CategoriaController" class="App\Controller\CategoriaController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5312,9 +5451,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TipoProductoController" class="App\Controller\TipoProductoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TipoProductoController" class="App\Controller\TipoProductoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TipoProductoController" class="App\Controller\TipoProductoController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoriaType" class="App\Form\CategoriaType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoriaType" class="App\Form\CategoriaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocalidadType" class="App\Form\LocalidadType" autowire="true" abstract="true"/>
@@ -5329,8 +5465,6 @@
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TipoProductoType" class="App\Form\TipoProductoType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\TipoProductoType" class="App\Form\TipoProductoType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UsuarioType" class="App\Form\UsuarioType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\UsuarioType" class="App\Form\UsuarioType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriaRepository" class="App\Repository\CategoriaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoriaRepository" class="App\Repository\CategoriaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ComentarioRepository" class="App\Repository\ComentarioRepository" autowire="true" abstract="true"/>
@@ -5672,11 +5806,10 @@
         <argument key="provincium" type="service" id=".errored..service_locator.MyFGqY6.App\Entity\Provincia"/>
       </argument>
     </service>
-    <service id=".service_locator.6Nnc05y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pwZ6MTM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
-        <argument key="repository" type="service" id="App\Repository\LocalidadRepository"/>
       </argument>
     </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5697,19 +5830,7 @@
         <argument key="tipoProducto" type="service" id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto"/>
       </argument>
     </service>
-    <service id=".service_locator.6N554v1" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="usuarioRepository" type="service" id="App\Repository\UsuarioRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.2CiZGMv" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="usuario" type="service" id=".errored..service_locator.2CiZGMv.App\Entity\Usuario"/>
-      </argument>
-    </service>
-    <service id=".service_locator.sYmFXZW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yRh4fNu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CategoriaController::delete" type="service" id=".service_locator.2OM4L_f"/>
@@ -5733,16 +5854,12 @@
         <argument key="App\Controller\ProvinciaController::edit" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController::index" type="service" id=".service_locator.eWN17oh"/>
         <argument key="App\Controller\ProvinciaController::show" type="service" id=".service_locator.MyFGqY6"/>
-        <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.6Nnc05y"/>
+        <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\TipoProductoController::delete" type="service" id=".service_locator.A2udkCN"/>
         <argument key="App\Controller\TipoProductoController::edit" type="service" id=".service_locator.A2udkCN"/>
         <argument key="App\Controller\TipoProductoController::index" type="service" id=".service_locator.CZvZ3_f"/>
         <argument key="App\Controller\TipoProductoController::show" type="service" id=".service_locator.A2udkCN"/>
-        <argument key="App\Controller\UsuarioController::delete" type="service" id=".service_locator.2CiZGMv"/>
-        <argument key="App\Controller\UsuarioController::edit" type="service" id=".service_locator.2CiZGMv"/>
-        <argument key="App\Controller\UsuarioController::index" type="service" id=".service_locator.6N554v1"/>
-        <argument key="App\Controller\UsuarioController::show" type="service" id=".service_locator.2CiZGMv"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -5770,16 +5887,12 @@
         <argument key="App\Controller\ProvinciaController:edit" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController:index" type="service" id=".service_locator.eWN17oh"/>
         <argument key="App\Controller\ProvinciaController:show" type="service" id=".service_locator.MyFGqY6"/>
-        <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.6Nnc05y"/>
+        <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\TipoProductoController:delete" type="service" id=".service_locator.A2udkCN"/>
         <argument key="App\Controller\TipoProductoController:edit" type="service" id=".service_locator.A2udkCN"/>
         <argument key="App\Controller\TipoProductoController:index" type="service" id=".service_locator.CZvZ3_f"/>
         <argument key="App\Controller\TipoProductoController:show" type="service" id=".service_locator.A2udkCN"/>
-        <argument key="App\Controller\UsuarioController:delete" type="service" id=".service_locator.2CiZGMv"/>
-        <argument key="App\Controller\UsuarioController:edit" type="service" id=".service_locator.2CiZGMv"/>
-        <argument key="App\Controller\UsuarioController:index" type="service" id=".service_locator.6N554v1"/>
-        <argument key="App\Controller\UsuarioController:show" type="service" id=".service_locator.2CiZGMv"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -5844,7 +5957,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.8oSF6w6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator._M0u3aY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoriaType" type="service" id="App\Form\CategoriaType"/>
@@ -5854,7 +5967,6 @@
         <argument key="App\Form\ProvinciaType" type="service" id="App\Form\ProvinciaType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\TipoProductoType" type="service" id="App\Form\TipoProductoType"/>
-        <argument key="App\Form\UsuarioType" type="service" id="App\Form\UsuarioType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service" id="form.type.color"/>
@@ -6145,12 +6257,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
-    <service id=".service_locator.5nX7ca3.App\Controller\UsuarioController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UsuarioController"/>
-      <argument>App\Controller\UsuarioController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.5nX7ca3" method="withContext"/>
-    </service>
     <service id=".service_locator.J4b.DPX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6313,12 +6419,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.sYmFXZW"/>
+      <argument type="service" id=".service_locator.yRh4fNu"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.sYmFXZW"/>
+      <argument type="service" id=".service_locator.yRh4fNu"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6336,7 +6442,6 @@
     <service id=".errored..service_locator.1jRuMKL.App\Entity\Producto" class="App\Entity\Producto"/>
     <service id=".errored..service_locator.MyFGqY6.App\Entity\Provincia" class="App\Entity\Provincia"/>
     <service id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto" class="App\Entity\TipoProducto"/>
-    <service id=".errored..service_locator.2CiZGMv.App\Entity\Usuario" class="App\Entity\Usuario"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
       <argument type="service" id=".service_locator.eXzwb0x"/>
@@ -6726,15 +6831,16 @@
     <service id="Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface" alias="security.authentication.manager"/>
     <service id="Symfony\Component\Security\Guard\GuardAuthenticatorHandler" alias="security.authentication.guard_handler"/>
     <service id="security.firewall" alias="debug.security.firewall"/>
-    <service id="security.user_providers" alias="security.user.provider.concrete.users_in_memory"/>
-    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.users_in_memory"/>
+    <service id="security.user_providers" alias="security.user.provider.concrete.app_user_provider"/>
+    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.app_user_provider"/>
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.sYmFXZW"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.yRh4fNu"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

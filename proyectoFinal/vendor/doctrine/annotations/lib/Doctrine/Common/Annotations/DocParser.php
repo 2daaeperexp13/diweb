@@ -355,7 +355,6 @@ final class DocParser
 
         $this->lexer->setInput(trim(substr($input, $pos), '* /'));
         $this->lexer->moveNext();
-
         return $this->Annotations();
     }
 

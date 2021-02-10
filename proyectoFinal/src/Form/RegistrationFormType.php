@@ -3,12 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Usuario;
-use Symfony\Bundle\MakerBundle\InputConfiguration;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -22,7 +20,10 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email')
             ->add('foto', FileType::class,[
-                'mapped'=>false,
+                'mapped'=>true,
+            ])
+            ->add('admin',CheckboxType::class,[
+                'mapped'=>false
             ])
             ->add('nombre')
             ->add('ap1')
@@ -31,14 +32,6 @@ class RegistrationFormType extends AbstractType
             ->add('provincia')
             ->add('localidad')
             ->add('direccion')
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Acepta los términos.',
-                    ]),
-                ],
-            ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller

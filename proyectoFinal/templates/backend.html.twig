@@ -1,20 +1,24 @@
 {% block header%}
     <!-- navbar-->
-     <header class="header bg-warning">
+     <header class="header bg-warning overflow-scroll">
         <div class="container px-0 px-lg-3 ">
-          <nav class="navbar navbar-expand-lg navbar-light py-5 px-lg-0"><div class="navbar-brand"><a  href="index.html"><img id="logo" class="img-fluid" src="/imgs/logo.jpg"><span class="font-weight-bold text-uppercase text-warning h1">XRACING</span></img></a></div>
+          <nav class="navbar navbar-expand-lg navbar-light py-5 px-lg-0"><div class="navbar-brand"><a  href="/producto"><div id="titulo" class=" position-relative  mr-5 "><span class="font-weight-bold text-uppercase text-primary h1">XRACING</span><img id="logo" class="img-fluid" src="/imgs/logo.jpg"></img></div></a></div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto col-2">
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link text-white" href="#">Gestion</a>
+                    <a class="text-white dropdown-toggle h3 " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Gestion</a>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/provincia">Provincias</a>
+                      <a class="dropdown-item" href="/localidad">Localidades</a>
+                      <a class="dropdown-item" href="/categoria">Categorías</a>
+                      <a class="dropdown-item" href="/tipo/producto">Tipos de productos</a>
+                      <a class="dropdown-item" href="/producto">Productos</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                  <!-- Link--><a class="nav-link text-white" href="#">Pedidos</a>
+                <li class="nav-item ml-2 col-4">
+                  <!-- Link--><a class=" text-white h3" href="#">Pedidos</a>
                 </li>
-              </ul>
-              <ul class="navbar-nav ml-auto">               
-                <li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
               </ul>
             </div>
           </nav>

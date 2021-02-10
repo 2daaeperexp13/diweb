@@ -30,8 +30,6 @@ return [
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/tipo/producto' => [[['_route' => 'tipo_producto_index', '_controller' => 'App\\Controller\\TipoProductoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/tipo/producto/new' => [[['_route' => 'tipo_producto_new', '_controller' => 'App\\Controller\\TipoProductoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/usuario' => [[['_route' => 'usuario_index', '_controller' => 'App\\Controller\\UsuarioController::index'], null, ['GET' => 0], null, true, false, null]],
-        '/usuario/new' => [[['_route' => 'usuario_new', '_controller' => 'App\\Controller\\UsuarioController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -84,11 +82,6 @@ return [
                     .'|/edit(*:466)'
                     .'|(*:474)'
                 .')'
-                .'|/usuario/([^/]++)(?'
-                    .'|(*:503)'
-                    .'|/edit(*:516)'
-                    .'|(*:524)'
-                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -116,11 +109,8 @@ return [
         416 => [[['_route' => 'provincia_delete', '_controller' => 'App\\Controller\\ProvinciaController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
         453 => [[['_route' => 'tipo_producto_show', '_controller' => 'App\\Controller\\TipoProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         466 => [[['_route' => 'tipo_producto_edit', '_controller' => 'App\\Controller\\TipoProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        474 => [[['_route' => 'tipo_producto_delete', '_controller' => 'App\\Controller\\TipoProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        503 => [[['_route' => 'usuario_show', '_controller' => 'App\\Controller\\UsuarioController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        516 => [[['_route' => 'usuario_edit', '_controller' => 'App\\Controller\\UsuarioController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        524 => [
-            [['_route' => 'usuario_delete', '_controller' => 'App\\Controller\\UsuarioController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        474 => [
+            [['_route' => 'tipo_producto_delete', '_controller' => 'App\\Controller\\TipoProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

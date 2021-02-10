@@ -39,10 +39,11 @@ class Comentario
     private $producto;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuario::class)
+     * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="comentarios")
      * @ORM\JoinColumn(nullable=false)
      */
     private $usuario;
+
 
     public function getId(): ?int
     {

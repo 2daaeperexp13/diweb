@@ -24,10 +24,6 @@ class Rol
      */
     private $tipo;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Usuario::class, mappedBy="rol")
-     */
-    private $usuarios;
 
     public function __construct()
     {
@@ -51,30 +47,4 @@ class Rol
         return $this;
     }
 
-    /**
-     * @return Collection|Usuario[]
-     */
-    public function getUsuarios(): Collection
-    {
-        return $this->usuarios;
-    }
-
-    public function addUsuario(Usuario $usuario): self
-    {
-        if (!$this->usuarios->contains($usuario)) {
-            $this->usuarios[] = $usuario;
-            $usuario->addRol($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUsuario(Usuario $usuario): self
-    {
-        if ($this->usuarios->removeElement($usuario)) {
-            $usuario->removeRol($this);
-        }
-
-        return $this;
-    }
 }

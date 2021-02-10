@@ -65,7 +65,7 @@ class __TwigTemplate_6df97754843ceac2990cf5e437c2bb2a0911f84695d024b8aeea182c06c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Categoria";
+        echo "CATEGORÍA";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_6df97754843ceac2990cf5e437c2bb2a0911f84695d024b8aeea182c06c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Categoria</h1>
+        echo "    <h1>Añadir categoria</h1>
 
     ";
         // line 8
@@ -95,7 +95,7 @@ class __TwigTemplate_6df97754843ceac2990cf5e437c2bb2a0911f84695d024b8aeea182c06c
     <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_index");
-        echo "\">back to list</a>
+        echo "\">Listar</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -124,14 +124,14 @@ class __TwigTemplate_6df97754843ceac2990cf5e437c2bb2a0911f84695d024b8aeea182c06c
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Categoria{% endblock %}
+{% block title %}CATEGORÍA{% endblock %}
 
 {% block body %}
-    <h1>Create new Categoria</h1>
+    <h1>Añadir categoria</h1>
 
     {{ include('categoria/_form.html.twig') }}
 
-    <a href=\"{{ path('categoria_index') }}\">back to list</a>
+    <a href=\"{{ path('categoria_index') }}\">Listar</a>
 {% endblock %}
 ", "categoria/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\categoria\\new.html.twig");
     }

@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-{% block header %} {% include(asset('frontend.html.twig')) %}{% endblock %}
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -10,7 +9,7 @@
     
     
     <div class="container m-5 align-self-center border w-100">
-        <div class="bg-warning w-100 m-0"><h1 class="mb-3">Register</h1></div>
+        <div class="bg-warning w-100 m-0"><h1 class="mb-3">Registro</h1></div>
         <div class="form  w-100">
             
                 {{ form_start(registrationForm)}}
@@ -47,16 +46,19 @@
                         </div>          
                     </div>
                     <divclass=" ml-1 form-group d-flex justify-content-around flex-column">
-                        {{ form_row(registrationForm.agreeTerms) }}
+                        {% set admin %}
+                            {{form_row(registrationForm.admin,{
+                                label:'Administrador'
+                            })}}
+                        {% endset %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            {{ admin }}
+                        {% endif %}    
                         <button type="submit" class="btn btn-warning ">Registrarme</button>
                     </div>
                 </div>
                 {{ form_end(registrationForm) }}
-           
-            
         </div>
-        
-
     </div>
     
 {% endblock %}

@@ -1,11 +1,19 @@
 /* your styles go here */
 #logo{
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    opacity: 36%;
-    z-index: 1;
+    margin-right:10%;
+    opacity: 50%;
+    
+    
+}
+#titulo>span{
+    z-index:999;
+    position:absolute; 
+    margin-top: 30%;
+    font-size: 2em;
 }
 .principal{
     height: 100%;

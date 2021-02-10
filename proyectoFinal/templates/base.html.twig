@@ -24,17 +24,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{asset('css/style.blue.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{asset('css/style.blue.min.css')}}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('mg/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('imgs/logo.jpg')}}">
 {% endblock %}
 {% endblock %}
   </head>
   <body>
 {% block header %}
-    
+    {% if is_granted('ROLE_ADMIN') %}
+      {% include(asset('backend.html.twig')) %}
+    {% else %}
+      {% include(asset('frontend.html.twig')) %}
+    {% endif %}
 {% endblock %}
     <div id="principal" class="principal">
 {% block body%} {% endblock%}
@@ -107,7 +111,7 @@
             document.body.insertBefore(div, document.body.childNodes[0]);
             }
         }
-        injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+        injectSvgSprite('/icons/orion-svg-sprite.svg'); 
         
       </script>
 {% endblock %}

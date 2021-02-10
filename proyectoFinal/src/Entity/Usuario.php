@@ -6,13 +6,12 @@ use App\Repository\UsuarioRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Rol;
-use App\Entity\Localidad;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
- * @UniqueEntity(fields={"email"}, message="Ya hay una cuenta de usuario con este email)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class Usuario implements UserInterface
 {
@@ -24,7 +23,18 @@ class Usuario implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
 
@@ -44,14 +54,14 @@ class Usuario implements UserInterface
     private $ap2;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $telefono;
+
+    /**
+     * @ORM\Column(type="blob", nullable=true)
+     */
+    private $foto;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -59,15 +69,11 @@ class Usuario implements UserInterface
     private $direccion;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Rol::class ,inversedBy="usuarios")
-     */
-    private $rol;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=localidad::class)
+     * @ORM\ManyToOne(targetEntity=Localidad::class, inversedBy="usuarios")
      * @ORM\JoinColumn(nullable=false)
      */
     private $localidad;
+
     /**
      * @ORM\ManyToOne(targetEntity=Provincia::class)
      * @ORM\JoinColumn(nullable=false)
@@ -75,33 +81,30 @@ class Usuario implements UserInterface
     private $provincia;
 
     /**
+     * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $pedidos;
+
+    /**
      * @ORM\OneToMany(targetEntity=Tarjeta::class, mappedBy="usuario", orphanRemoval=true)
      */
     private $tarjetas;
 
-
-
     /**
-     * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="usuario", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Comentario::class, mappedBy="usuario", orphanRemoval=true)
      */
-    private $pedidos;
-
+    private $comentarios;
 
     /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
 
-    /**
-     * @ORM\Column(type="blob", nullable=true)
-     */
-    private $foto;
-
     public function __construct()
     {
-        $this->rol = new ArrayCollection();
-        $this->tarjetas = new ArrayCollection();
         $this->pedidos = new ArrayCollection();
+        $this->tarjetas = new ArrayCollection();
+        $this->comentarios = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,21 +112,77 @@ class Usuario implements UserInterface
         return $this->id;
     }
 
-    public function getPassword(): ?string
+    public function getEmail(): ?string
     {
-        return $this->password;
+        return $this->email;
     }
 
-    public function setPassword(string $passwd): self
+    public function setEmail(string $email): self
     {
-        $this->password = $passwd;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getUserName(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->nombre;
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getNombre(): ?string
@@ -162,18 +221,6 @@ class Usuario implements UserInterface
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getTelefono(): ?int
     {
         return $this->telefono;
@@ -182,6 +229,18 @@ class Usuario implements UserInterface
     public function setTelefono(int $telefono): self
     {
         $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+    public function setFoto($foto): self
+    {
+        $this->foto = $foto;
 
         return $this;
     }
@@ -198,47 +257,18 @@ class Usuario implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|rol[]
-     */
-    public function getRoles(): Collection
-    {
-        return $this->rol;
-    }
-    public function getRol(): Collection
-    {
-        return $this->rol;
-    }
-
-    public function addRol(rol $rol): self
-    {
-        if (!$this->rol->contains($rol)) {
-            $this->rol[] = $rol;
-        }
-
-        return $this;
-    }
-
-    public function removeRol(rol $rol): self
-    {
-        $this->rol->removeElement($rol);
-
-        return $this;
-    }
-
-    public function getLocalidad(): ?localidad
+    public function getLocalidad(): ?Localidad
     {
         return $this->localidad;
     }
 
-    public function setLocalidad(?localidad $localidad): self
+    public function setLocalidad(?Localidad $localidad): self
     {
         $this->localidad = $localidad;
-        $this->provincia = $localidad->getProvincia();
+
         return $this;
     }
 
-    
     public function getProvincia(): ?Provincia
     {
         return $this->provincia;
@@ -251,6 +281,35 @@ class Usuario implements UserInterface
         return $this;
     }
 
+    /**
+     * @return Collection|Pedido[]
+     */
+    public function getPedidos(): Collection
+    {
+        return $this->pedidos;
+    }
+
+    public function addPedido(Pedido $pedido): self
+    {
+        if (!$this->pedidos->contains($pedido)) {
+            $this->pedidos[] = $pedido;
+            $pedido->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePedido(Pedido $pedido): self
+    {
+        if ($this->pedidos->removeElement($pedido)) {
+            // set the owning side to null (unless already changed)
+            if ($pedido->getUser() === $this) {
+                $pedido->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 
     /**
      * @return Collection|Tarjeta[]
@@ -282,47 +341,34 @@ class Usuario implements UserInterface
         return $this;
     }
 
-    
-
     /**
-     * @return Collection|Pedido[]
+     * @return Collection|Comentario[]
      */
-    public function getPedidos(): Collection
+    public function getComentarios(): Collection
     {
-        return $this->pedidos;
+        return $this->comentarios;
     }
 
-    public function addPedido(Pedido $pedido): self
+    public function addComentario(Comentario $comentario): self
     {
-        if (!$this->pedidos->contains($pedido)) {
-            $this->pedidos[] = $pedido;
-            $pedido->setUsuario($this);
+        if (!$this->comentarios->contains($comentario)) {
+            $this->comentarios[] = $comentario;
+            $comentario->setUsuario($this);
         }
 
         return $this;
     }
 
-    public function removePedido(Pedido $pedido): self
+    public function removeComentario(Comentario $comentario): self
     {
-        if ($this->pedidos->removeElement($pedido)) {
+        if ($this->comentarios->removeElement($comentario)) {
             // set the owning side to null (unless already changed)
-            if ($pedido->getUsuario() === $this) {
-                $pedido->setUsuario(null);
+            if ($comentario->getUsuario() === $this) {
+                $comentario->setUsuario(null);
             }
         }
 
         return $this;
-    }
-
-  
-
-    public function getSalt(){
-
-    }
-
-    public function eraseCredentials()
-    {
-        
     }
 
     public function isVerified(): bool
@@ -333,23 +379,6 @@ class Usuario implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
-
-        return $this;
-    }
-
-    public function getIsVerified(): ?bool
-    {
-        return $this->isVerified;
-    }
-
-    public function getFoto()
-    {
-        return $this->foto;
-    }
-
-    public function setFoto($foto): self
-    {
-        $this->foto = $foto;
 
         return $this;
     }
