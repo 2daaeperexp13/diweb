@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\TipoProducto;
 use App\Form\TipoProductoType;
 use App\Repository\TipoProductoRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,12 @@ class TipoProductoController extends AbstractController
     /**
      * @Route("/", name="tipo_producto_index", methods={"GET"})
      */
-    public function index(TipoProductoRepository $tipoProductoRepository): Response
+    public function index(TipoProductoRepository $tipoProductoRepository, Request $request,PaginatorInterface $paginator ): Response
     {
         return $this->render('tipo_producto/index.html.twig', [
-            'tipo_productos' => $tipoProductoRepository->findAll(),
+            'tipo_productos' => $paginator->paginate($tipoProductoRepository->createQueryBuilder('t')
+                ->getQuery()
+            , $request->query->getInt('page',1),3)
         ]);
     }
 

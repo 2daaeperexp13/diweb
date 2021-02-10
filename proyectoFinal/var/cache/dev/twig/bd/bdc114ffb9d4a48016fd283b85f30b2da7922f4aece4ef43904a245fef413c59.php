@@ -138,10 +138,19 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 31
         echo "        </tbody>
+        <tfoot>
+            <tr>
+                    ";
+        // line 34
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 34, $this->source); })()));
+        echo " 
+            </tr>
+        </tfoot>
+        
     </table>
 
     <a href=\"";
-        // line 34
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_new");
         echo "\">Create new</a>
 ";
@@ -165,7 +174,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
 
     public function getDebugInfo()
     {
-        return array (  145 => 34,  140 => 31,  131 => 27,  122 => 23,  118 => 22,  113 => 20,  109 => 19,  106 => 18,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  154 => 40,  145 => 34,  140 => 31,  131 => 27,  122 => 23,  118 => 22,  113 => 20,  109 => 19,  106 => 18,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -201,6 +210,12 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             </tr>
         {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                    {{ knp_pagination_render(tipo_productos) }} 
+            </tr>
+        </tfoot>
+        
     </table>
 
     <a href=\"{{ path('tipo_producto_new') }}\">Create new</a>

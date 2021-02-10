@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* frontend.html.twig */
+/* /frontend.html.twig */
 class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c390e8 extends Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "frontend.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/frontend.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "frontend.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/frontend.html.twig"));
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
@@ -65,17 +65,17 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 2
         echo "    <!-- navbar-->
-     <header class=\"header bg-primary overflow-hidden\">
+     <header class=\"header overflow-hidden shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase text-warning h1\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
                 <li class=\"nav-item mr-4\">
-                  <!-- Link--><a class=\"h4 text-white \" href=\"/inicio\">Inicio</a>
+                  <!-- Link--><a class=\"h4 \" href=\"/inicio\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"h4 text-white \" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
@@ -98,7 +98,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getTemplateName()
     {
-        return "frontend.html.twig";
+        return "/frontend.html.twig";
     }
 
     public function getDebugInfo()
@@ -110,17 +110,17 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
     {
         return new Source("{% block header%}
     <!-- navbar-->
-     <header class=\"header bg-primary overflow-hidden\">
+     <header class=\"header overflow-hidden shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase text-warning h1\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid\" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
                 <li class=\"nav-item mr-4\">
-                  <!-- Link--><a class=\"h4 text-white \" href=\"/inicio\">Inicio</a>
+                  <!-- Link--><a class=\"h4 \" href=\"/inicio\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"h4 text-white \" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
@@ -134,6 +134,6 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
  
 {% endblock %}
 
-", "frontend.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\frontend.html.twig");
+", "/frontend.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\frontend.html.twig");
     }
 }

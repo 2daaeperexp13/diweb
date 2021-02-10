@@ -104,7 +104,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">
                 <p class=\"text-muted small text-uppercase mb-2\">2021</p>
-                <h1 class=\"h2 text-uppercase mb-3\">TU TIENDA DE CONFIANZA</h1>
+                <h1 class=\"h2 text-uppercase mb-1 text-white\">TU MEJOR EQUIPAMIENTO</h1>
               </div>
             </div>
           </div>
@@ -402,7 +402,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">
                 <p class=\"text-muted small text-uppercase mb-2\">2021</p>
-                <h1 class=\"h2 text-uppercase mb-3\">TU TIENDA DE CONFIANZA</h1>
+                <h1 class=\"h2 text-uppercase mb-1 text-white\">TU MEJOR EQUIPAMIENTO</h1>
               </div>
             </div>
           </div>
