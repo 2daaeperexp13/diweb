@@ -91,6 +91,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         <table class=\"table table-striped\">
             <thead class=\"thead bg-warning\">
                 <tr>
+                
                     <th>Id</th>
                     <th>Tipo</th>
                     <th>Acciones</th>
@@ -98,30 +99,30 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             </thead>
             <tbody>
             ";
-        // line 18
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 19, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["tipo_producto"]) {
-            // line 19
+            // line 20
             echo "                <tr>
                     <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 20), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                     <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 21), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\"><img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         <a href=\"";
-            // line 24
+            // line 25
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_new");
             echo "\" ><img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/añadir.png"), "html", null, true);
@@ -132,7 +133,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 28
+            // line 29
             echo "                <tr>
                     <td colspan=\"3\">no records found</td>
                 </tr>
@@ -141,13 +142,13 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tipo_producto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 33
         echo "            </tbody>      
         </table>
         <div class=\"navigation\"> 
             ";
-        // line 35
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 35, $this->source); })()));
+        // line 36
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 36, $this->source); })()));
         echo " 
         </div>
         
@@ -173,7 +174,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
 
     public function getDebugInfo()
     {
-        return array (  150 => 35,  145 => 32,  136 => 28,  125 => 24,  119 => 23,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  151 => 36,  146 => 33,  137 => 29,  126 => 25,  120 => 24,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -189,6 +190,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         <table class=\"table table-striped\">
             <thead class=\"thead bg-warning\">
                 <tr>
+                
                     <th>Id</th>
                     <th>Tipo</th>
                     <th>Acciones</th>

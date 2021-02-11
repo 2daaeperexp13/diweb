@@ -3123,3 +3123,12 @@ a75aba,::1,GET,http://localhost:8000/,1613041163,,500
 e30b18,::1,GET,http://localhost:8000/,1613059061,,200
 fcc4f0,::1,GET,http://localhost:8000/login,1613059089,,200
 >>>>>>> d8f4ecd3ddfbac90853cb09df0251122de4b341b
+7fa82e,::1,GET,http://localhost:8000/producto/,1613059759,,200
+3f667b,::1,GET,http://localhost:8000/,1613059777,,200
+069998,::1,GET,http://localhost:8000/login,1613059783,,200
+d66718,::1,POST,http://localhost:8000/login,1613059791,,302
+7113c5,::1,GET,http://localhost:8000/,1613059792,,200
+798984,::1,GET,http://localhost:8000/tipo/producto/,1613059874,,200
+3833e2,::1,GET,http://localhost:8000/tipo/producto/3/edit,1613059879,,200
+10be83,::1,POST,http://localhost:8000/tipo/producto/3/edit,1613059893,,302
+621bdb,::1,GET,http://localhost:8000/tipo/producto/,1613059894,,200
