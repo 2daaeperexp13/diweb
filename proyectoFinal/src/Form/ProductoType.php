@@ -20,7 +20,7 @@ class ProductoType extends AbstractType
             ->add('categoria')
             ->add('tipoProducto')
             ->add('imgProductos',FileType::class,[
-                'mapped'=>true,
+                'mapped'=>false,
                 'multiple'=>true,
                 'label'=>'Imágenes del producto',
                 'attr'=>['accept' => 'image/*',

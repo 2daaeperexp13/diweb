@@ -1,8 +1,8 @@
 /* your styles go here */
 #logo{
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 110px;
     border-radius: 50%;
     margin-right:10%;
     opacity: 55%;
@@ -13,7 +13,7 @@ img.flogo:hover{
 #titulo>span{
     z-index:999;
     position:absolute;
-    margin-top: 40%;
+    margin-top: 20%;
     font-size: 1.5em;
     font-style: oblique;
     opacity: 85%;
@@ -27,7 +27,9 @@ img.flogo:hover{
     height: 100%;
     margin:0;
 }
-
+#carro{
+    margin-right: 10%;
+}
 .miheader{
     background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
 }

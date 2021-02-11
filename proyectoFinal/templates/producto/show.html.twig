@@ -2,10 +2,13 @@
 
 {% block title %}Producto{% endblock %}
 
-{% block body %}
-    <h1>Producto</h1>
 
-    <table class="table">
+
+{% block body %}
+<div class="container">
+    <h1 class="text-secondary bg-warning px-2">Producto</h1>
+
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -29,14 +32,18 @@
             </tr>
             <tr>
                 <th>Foto</th>
-                <td>{{ imagenes }}</td>
-            </tr>
+                <td>
+                    {% for  imgs in producto.imgProductos %}
+                    <img src="{{imgs.img}}" width="150px" height="150px"  class="rounded img-fluid"/>
+                    {% endfor %}
+                </td>
         </tbody>
     </table>
-
-    <a href="{{ path('producto_index') }}">back to list</a>
-
-    <a href="{{ path('producto_edit', {'id': producto.id}) }}">edit</a>
-
+    <div class="form-group float-left">
+        <a href="{{ path('producto_index') }}"><img class="interaccionesBackend" src="{{asset('/imgs/volver.png')}}"></img></a>
+        <a href="{{ path('producto_edit', {'id': producto.id}) }}"><img class="interaccionesBackend" src="{{asset('/imgs/editar.png')}}"></img></a> 
+    </div>
     {{ include('producto/_delete_form.html.twig') }}
+
+</div>
 {% endblock %}

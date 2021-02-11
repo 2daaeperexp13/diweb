@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Producto;
+use App\Entity\imgProducto;
 use App\Form\ProductoType;
 use App\Repository\ProductoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,13 +34,22 @@ class ProductoController extends AbstractController
         $producto = new Producto();
         $form = $this->createForm(ProductoType::class, $producto);
         $form->handleRequest($request);
+        
 
         if ($form->isSubmitted() && $form->isValid()) {
- 
             $entityManager = $this->getDoctrine()->getManager();
+            //dd();
+            
             $entityManager->persist($producto);
             $entityManager->flush();
-
+            foreach($request->files->get('producto')['imgProductos'] as $img){
+              
+                $imgProducto=new imgProducto();
+                $imgProducto->setImg("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
+                $producto->addImgProducto($imgProducto);
+                $entityManager->flush();
+            }
+            
             return $this->redirectToRoute('producto_index');
         }
 
@@ -54,9 +64,9 @@ class ProductoController extends AbstractController
      */
     public function show(Producto $producto): Response
     {
+    
         return $this->render('producto/show.html.twig', [
             'producto' => $producto,
-            'imagenes'=>$producto->getImgProductos()
         ]);
     }
 

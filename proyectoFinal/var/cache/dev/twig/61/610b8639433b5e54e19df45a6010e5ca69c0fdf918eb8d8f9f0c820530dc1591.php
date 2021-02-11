@@ -69,13 +69,13 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
               <ul class=\"navbar-nav mr-auto col-2\">
                 <li class=\"nav-item\">
                     <a class=\"text-white dropdown-toggle h4\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\">Gestion</a>
-                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                      <a class=\"dropdown-item\" href=\"/provincia\">Provincias</a>
-                      <a class=\"dropdown-item\" href=\"/localidad\">Localidades</a>
-                      <a class=\"dropdown-item\" href=\"/categoria\">Categorías</a>
-                      <a class=\"dropdown-item\" href=\"/tipo/producto\">Tipos de productos</a>
-                      <a class=\"dropdown-item\" href=\"/producto\">Productos</a>
-                    </div>
+                      <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                        <a class=\"dropdown-item\" href=\"/provincia\">Provincias</a>
+                        <a class=\"dropdown-item\" href=\"/localidad\">Localidades</a>
+                        <a class=\"dropdown-item\" href=\"/categoria\">Categorías</a>
+                        <a class=\"dropdown-item\" href=\"/tipo/producto\">Tipos de productos</a>
+                        <a class=\"dropdown-item\" href=\"/producto\">Productos</a>
+                      </div>
                 </li>
                 <li class=\"nav-item ml-2 col-4\">
                   <!-- Link--><a class=\" text-white h4\" href=\"#\">Pedidos</a>
@@ -120,13 +120,13 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
               <ul class=\"navbar-nav mr-auto col-2\">
                 <li class=\"nav-item\">
                     <a class=\"text-white dropdown-toggle h4\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\">Gestion</a>
-                     <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
-                      <a class=\"dropdown-item\" href=\"/provincia\">Provincias</a>
-                      <a class=\"dropdown-item\" href=\"/localidad\">Localidades</a>
-                      <a class=\"dropdown-item\" href=\"/categoria\">Categorías</a>
-                      <a class=\"dropdown-item\" href=\"/tipo/producto\">Tipos de productos</a>
-                      <a class=\"dropdown-item\" href=\"/producto\">Productos</a>
-                    </div>
+                      <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                        <a class=\"dropdown-item\" href=\"/provincia\">Provincias</a>
+                        <a class=\"dropdown-item\" href=\"/localidad\">Localidades</a>
+                        <a class=\"dropdown-item\" href=\"/categoria\">Categorías</a>
+                        <a class=\"dropdown-item\" href=\"/tipo/producto\">Tipos de productos</a>
+                        <a class=\"dropdown-item\" href=\"/producto\">Productos</a>
+                      </div>
                 </li>
                 <li class=\"nav-item ml-2 col-4\">
                   <!-- Link--><a class=\" text-white h4\" href=\"#\">Pedidos</a>

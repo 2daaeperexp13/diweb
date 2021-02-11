@@ -74,7 +74,7 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,70 +84,88 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Producto</h1>
+        // line 8
+        echo "<div class=\"container\">
+    <h1 class=\"text-secondary bg-warning px-2\">Producto</h1>
 
-    <table class=\"table\">
+    <table class=\"table table-striped\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Nombre</th>
                 <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 16, $this->source); })()), "nombre", [], "any", false, false, false, 16), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 19, $this->source); })()), "nombre", [], "any", false, false, false, 19), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Descripcion</th>
                 <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 20, $this->source); })()), "descripcion", [], "any", false, false, false, 20), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 23, $this->source); })()), "descripcion", [], "any", false, false, false, 23), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Precio</th>
                 <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 24, $this->source); })()), "precio", [], "any", false, false, false, 24), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 27, $this->source); })()), "precio", [], "any", false, false, false, 27), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Stock</th>
                 <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 28, $this->source); })()), "stock", [], "any", false, false, false, 28), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 31, $this->source); })()), "stock", [], "any", false, false, false, 31), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Foto</th>
-                <td>";
-        // line 32
-        echo twig_escape_filter($this->env, (isset($context["imagenes"]) || array_key_exists("imagenes", $context) ? $context["imagenes"] : (function () { throw new RuntimeError('Variable "imagenes" does not exist.', 32, $this->source); })()), "html", null, true);
-        echo "</td>
-            </tr>
+                <td>
+                    ";
+        // line 36
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 36, $this->source); })()), "imgProductos", [], "any", false, false, false, 36));
+        foreach ($context['_seq'] as $context["_key"] => $context["imgs"]) {
+            // line 37
+            echo "                    <img src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["imgs"], "img", [], "any", false, false, false, 37), "html", null, true);
+            echo "\" width=\"150px\" height=\"150px\"  class=\"rounded img-fluid\"/>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['imgs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 39
+        echo "                </td>
         </tbody>
     </table>
-
-    <a href=\"";
-        // line 37
+    <div class=\"form-group float-left\">
+        <a href=\"";
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
-        echo "\">back to list</a>
-
-    <a href=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
-        echo "\">edit</a>
-
+        echo "\"><img class=\"interaccionesBackend\" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/volver.png"), "html", null, true);
+        echo "\"></img></a>
+        <a href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["producto"]) || array_key_exists("producto", $context) ? $context["producto"] : (function () { throw new RuntimeError('Variable "producto" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
+        echo "\"><img class=\"interaccionesBackend\" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/editar.png"), "html", null, true);
+        echo "\"></img></a> 
+    </div>
     ";
-        // line 41
+        // line 46
         echo twig_include($this->env, $context, "producto/_delete_form.html.twig");
         echo "
+
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -169,7 +187,7 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
 
     public function getDebugInfo()
     {
-        return array (  149 => 41,  144 => 39,  139 => 37,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  165 => 46,  158 => 44,  152 => 43,  146 => 39,  137 => 37,  133 => 36,  125 => 31,  118 => 27,  111 => 23,  104 => 19,  97 => 15,  88 => 8,  78 => 7,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -178,10 +196,13 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
 
 {% block title %}Producto{% endblock %}
 
-{% block body %}
-    <h1>Producto</h1>
 
-    <table class=\"table\">
+
+{% block body %}
+<div class=\"container\">
+    <h1 class=\"text-secondary bg-warning px-2\">Producto</h1>
+
+    <table class=\"table table-striped\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -205,16 +226,20 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
             </tr>
             <tr>
                 <th>Foto</th>
-                <td>{{ imagenes }}</td>
-            </tr>
+                <td>
+                    {% for  imgs in producto.imgProductos %}
+                    <img src=\"{{imgs.img}}\" width=\"150px\" height=\"150px\"  class=\"rounded img-fluid\"/>
+                    {% endfor %}
+                </td>
         </tbody>
     </table>
-
-    <a href=\"{{ path('producto_index') }}\">back to list</a>
-
-    <a href=\"{{ path('producto_edit', {'id': producto.id}) }}\">edit</a>
-
+    <div class=\"form-group float-left\">
+        <a href=\"{{ path('producto_index') }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/volver.png')}}\"></img></a>
+        <a href=\"{{ path('producto_edit', {'id': producto.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/editar.png')}}\"></img></a> 
+    </div>
     {{ include('producto/_delete_form.html.twig') }}
+
+</div>
 {% endblock %}
 ", "producto/show.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\producto\\show.html.twig");
     }

@@ -24,7 +24,7 @@ class ImgProducto
 
     /**
      * @ORM\ManyToOne(targetEntity=producto::class, inversedBy="imgProductos")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $producto;
 

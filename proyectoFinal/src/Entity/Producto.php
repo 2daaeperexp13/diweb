@@ -7,7 +7,6 @@ use App\Entity\TipoProducto;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ProductoRepository::class)
@@ -54,7 +53,7 @@ class Producto
     private $tipoProducto;
 
     /**
-     * @ORM\OneToMany(targetEntity=ImgProducto::class, mappedBy="producto")
+     * @ORM\OneToMany(targetEntity=ImgProducto::class, mappedBy="producto",cascade="persist")
      */
     private $imgProductos;
 
@@ -160,15 +159,11 @@ class Producto
         return $this->imgProductos;
     }
 
-    public function addImgProducto(UploadedFile $imgs): self
+    public function addImgProducto(ImgProducto $imgProducto): self
     {
-        $imgProducto=new ImgProducto();
-        foreach($imgs as $img){
-            $imgProducto->setImg($img);
-            if (!$this->imgProductos->contains($imgProducto)) {
-                $this->imgProductos[] = $imgProducto;
-                $imgProducto->setProducto($this);
-            }
+        if (!$this->imgProductos->contains($imgProducto)) {
+            $this->imgProductos->add($imgProducto);
+            $imgProducto->setProducto($this);
         }
 
         return $this;

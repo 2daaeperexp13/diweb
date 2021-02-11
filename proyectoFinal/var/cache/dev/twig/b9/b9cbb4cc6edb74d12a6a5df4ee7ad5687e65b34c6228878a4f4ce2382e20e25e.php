@@ -42,7 +42,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
-        // line 26
+        // line 39
         echo "
 ";
         
@@ -65,9 +65,9 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 2
         echo "    <!-- navbar-->
-     <header class=\"header overflow-hidden shadow  mb-5 miheader\">
+     <header class=\"header  shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\" ><div id=\"titulo\" class=\" position-relative  mr-5 align-items-center\"><span class=\"font-weight-bold text-uppercase  mititulo z-index-50 text-shadows\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
@@ -79,9 +79,29 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
-                <li class=\"nav-item\"><a class=\"h4 mr-3\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
-                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
-              </ul>
+                <li class=\"nav-item mr-5\" id=\"carro\"><a class=\"h4 mr-5 \" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+                ";
+        // line 18
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 19
+            echo "                <li class=\"nav-item position-absolute ml-5\">
+                  <div>
+                    <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
+                      <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
+                        <a class=\"dropdown-item\" href=\"#\">Métodos de pago</a>
+                        <a class=\"dropdown-item\" href=\"#\">Mis datos</a>
+                        <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
+                      </div>
+                  </div>
+                </li>
+                ";
+        } else {
+            // line 30
+            echo "                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
+                ";
+        }
+        // line 32
+        echo "              </ul>
             </div>
           </nav>
         </div>
@@ -103,16 +123,16 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getDebugInfo()
     {
-        return array (  67 => 2,  57 => 1,  46 => 26,  44 => 1,);
+        return array (  104 => 32,  100 => 30,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 39,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% block header%}
     <!-- navbar-->
-     <header class=\"header overflow-hidden shadow  mb-5 miheader\">
+     <header class=\"header  shadow  mb-5 miheader\">
         <div class=\"container px-0 px-lg-3 \">
-          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase  mititulo\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
+          <nav class=\"navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100\"><div class=\"navbar-brand mr-2 py-4\"><a  href=\"/\" ><div id=\"titulo\" class=\" position-relative  mr-5 align-items-center\"><span class=\"font-weight-bold text-uppercase  mititulo z-index-50 text-shadows\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
               <ul class=\"navbar-nav  menu\">
@@ -124,8 +144,21 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto\">               
-                <li class=\"nav-item\"><a class=\"h4 mr-3\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+                <li class=\"nav-item mr-5\" id=\"carro\"><a class=\"h4 mr-5 \" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class=\"nav-item position-absolute ml-5\">
+                  <div>
+                    <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
+                      <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
+                        <a class=\"dropdown-item\" href=\"#\">Métodos de pago</a>
+                        <a class=\"dropdown-item\" href=\"#\">Mis datos</a>
+                        <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
+                      </div>
+                  </div>
+                </li>
+                {% else %}
                 <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
+                {% endif %}
               </ul>
             </div>
           </nav>
