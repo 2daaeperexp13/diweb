@@ -3114,3 +3114,5 @@ bab0bc,::1,POST,http://localhost:8000/login,1613040826,,302
 eda656,::1,GET,http://localhost:8000/,1613041163,a75aba,500
 a75aba,::1,GET,http://localhost:8000/,1613041163,,500
 9cccc9,::1,GET,http://localhost:8000/,1613041186,,200
+85b20c,::1,GET,http://localhost:8000/,1613058177,,200
+6dcccb,::1,GET,http://localhost:8000/login,1613058186,,200
