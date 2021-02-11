@@ -3116,4 +3116,10 @@ a75aba,::1,GET,http://localhost:8000/,1613041163,,500
 9cccc9,::1,GET,http://localhost:8000/,1613041186,,200
 85b20c,::1,GET,http://localhost:8000/,1613058177,,200
 6dcccb,::1,GET,http://localhost:8000/login,1613058186,,200
+<<<<<<< HEAD
 596396,::1,GET,http://localhost:8000/,1613058894,,200
+=======
+1e6f59,::1,GET,http://localhost:8000/,1613058887,,200
+e30b18,::1,GET,http://localhost:8000/,1613059061,,200
+fcc4f0,::1,GET,http://localhost:8000/login,1613059089,,200
+>>>>>>> d8f4ecd3ddfbac90853cb09df0251122de4b341b
