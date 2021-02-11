@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\Producto;
 use App\Entity\imgProducto;
 use App\Form\ProductoType;
