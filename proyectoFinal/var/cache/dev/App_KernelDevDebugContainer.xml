@@ -2026,7 +2026,6 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2038,6 +2037,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2046,7 +2046,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-            <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2058,6 +2057,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+            <argument>translations</argument>
           </argument>
         </argument>
       </argument>
