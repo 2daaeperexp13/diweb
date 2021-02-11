@@ -65,7 +65,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $this->displayBlock('body', $context, $blocks);
         // line 37
         echo "    </div>
-      <footer class=\"bg-dark text-white align-self-end\">
+      <footer class=\"bg-dark text-white align-self-end \">
 ";
         // line 39
         $this->displayBlock('footer', $context, $blocks);
@@ -409,7 +409,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
     <div id=\"principal\" class=\"principal\">
 {% block body %} {% endblock %}
     </div>
-      <footer class=\"bg-dark text-white align-self-end\">
+      <footer class=\"bg-dark text-white align-self-end \">
 {% block footer%}
         <div class=\"container py-4\">
           <div class=\"row py-5\">

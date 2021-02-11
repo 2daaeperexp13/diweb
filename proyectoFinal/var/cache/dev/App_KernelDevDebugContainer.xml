@@ -455,10 +455,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\RolRepository" class="App\Repository\RolRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -2026,7 +2022,6 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2038,6 +2033,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2046,7 +2042,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-            <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2058,6 +2053,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+            <argument>translations</argument>
           </argument>
         </argument>
       </argument>
@@ -4341,7 +4337,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.l6uT8qO"/>
+      <argument type="service" id=".service_locator.LhWhJe0"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5480,8 +5476,6 @@
     <service id=".abstract.instanceof.App\Repository\ProductoRepository" class="App\Repository\ProductoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProvinciaRepository" class="App\Repository\ProvinciaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProvinciaRepository" class="App\Repository\ProvinciaRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RolRepository" class="App\Repository\RolRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\RolRepository" class="App\Repository\RolRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TipoProductoRepository" class="App\Repository\TipoProductoRepository" autowire="true" abstract="true"/>
@@ -6137,7 +6131,7 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.l6uT8qO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LhWhJe0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriaRepository" type="service" id="App\Repository\CategoriaRepository"/>
@@ -6147,7 +6141,6 @@
         <argument key="App\Repository\PedidoRepository" type="service" id="App\Repository\PedidoRepository"/>
         <argument key="App\Repository\ProductoRepository" type="service" id="App\Repository\ProductoRepository"/>
         <argument key="App\Repository\ProvinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
-        <argument key="App\Repository\RolRepository" type="service" id="App\Repository\RolRepository"/>
         <argument key="App\Repository\TarjetaRepository" type="service" id="App\Repository\TarjetaRepository"/>
         <argument key="App\Repository\TipoProductoRepository" type="service" id="App\Repository\TipoProductoRepository"/>
         <argument key="App\Repository\UsuarioRepository" type="service" id="App\Repository\UsuarioRepository"/>

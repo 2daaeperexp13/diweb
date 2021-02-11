@@ -65,7 +65,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Provincia index";
+        echo "PROVINCIAS";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,70 +85,84 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Provincia index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>CodProv</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 18
+        echo "<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>PROVINCIAS</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ";
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["provincias"]) || array_key_exists("provincias", $context) ? $context["provincias"] : (function () { throw new RuntimeError('Variable "provincias" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["provincias"]) || array_key_exists("provincias", $context) ? $context["provincias"] : (function () { throw new RuntimeError('Variable "provincias" does not exist.', 21, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["provincium"]) {
-            // line 19
-            echo "            <tr>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "codProv", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "nombre", [], "any", false, false, false, 22), "html", null, true);
+            echo "                    <tr>
+                        <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                <td>
-                    <a href=\"";
+                        <td>";
             // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_show", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "codProv", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                        <td>";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "nombre", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+                        <td>
+                            <a class=\"btn btnform2\" href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["provincia"]) || array_key_exists("provincia", $context) ? $context["provincia"] : (function () { throw new RuntimeError('Variable "provincia" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\">DATOS</a>
+                            <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
+            echo "\"></img></a>
+                        </td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
-            echo "            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        ";
+            // line 32
+            echo "                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['provincium'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
-    </table>
-
-    <a href=\"";
         // line 36
+        echo "                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=\"mt-3\">
+        <a class=\"ml-auto \" href=\"";
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_new");
-        echo "\">Create new</a>
+        echo "\">
+            <img class=\"interaccionesBackend\" src=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
+        echo "\"></img>
+        </a>
+    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -170,48 +184,58 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
 
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 42,  157 => 41,  150 => 36,  141 => 32,  130 => 28,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Provincia index{% endblock %}
+{% block title %}PROVINCIAS{% endblock %}
 
 {% block body %}
-    <h1>Provincia index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>CodProv</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for provincium in provincias %}
-            <tr>
-                <td>{{ provincium.id }}</td>
-                <td>{{ provincium.codProv }}</td>
-                <td>{{ provincium.nombre }}</td>
-                <td>
-                    <a href=\"{{ path('provincia_show', {'id': provincium.id}) }}\">show</a>
-                    <a href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href=\"{{ path('provincia_new') }}\">Create new</a>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>PROVINCIAS</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for provincium in provincias %}
+                    <tr>
+                        <td>{{ provincium.id }}</td>
+                        <td>{{ provincium.codProv }}</td>
+                        <td>{{ provincium.nombre }}</td>
+                        <td>
+                            <a class=\"btn btnform2\" href=\"{{ path('provincia_show', {'id': provincia.id}) }}\">DATOS</a>
+                            <a href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=\"mt-3\">
+        <a class=\"ml-auto \" href=\"{{ path('provincia_new') }}\">
+            <img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img>
+        </a>
+    </div>
+</div>
 {% endblock %}
+
 ", "provincia/index.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\provincia\\index.html.twig");
     }
 }

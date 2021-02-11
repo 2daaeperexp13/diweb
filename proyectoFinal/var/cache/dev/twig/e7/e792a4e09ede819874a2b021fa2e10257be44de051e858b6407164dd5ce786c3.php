@@ -65,7 +65,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Localidad index";
+        echo "LOCALIDADES";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,70 +85,84 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Localidad index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>CodLoc</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 18
+        echo "<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>LOCALIDADES</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ";
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 21, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["localidad"]) {
-            // line 19
-            echo "            <tr>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "codLoc", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 22), "html", null, true);
+            echo "                    <tr>
+                        <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                <td>
-                    <a href=\"";
+                        <td>";
             // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_show", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "codLoc", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                        <td>";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+                        <td>
+                            <a class=\"btn miheader\" href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_show", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\">DATOS</a>
+                            <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
+            echo "\"></img></a>
+                        </td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
-            echo "            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        ";
+            // line 32
+            echo "                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['localidad'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
-    </table>
-
-    <a href=\"";
         // line 36
+        echo "                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=\"mt-3\">
+        <a class=\"ml-auto \" href=\"";
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_new");
-        echo "\">Create new</a>
+        echo "\">
+            <img class=\"interaccionesBackend\" src=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
+        echo "\"></img>
+        </a>
+    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -170,47 +184,56 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 42,  157 => 41,  150 => 36,  141 => 32,  130 => 28,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Localidad index{% endblock %}
+{% block title %}LOCALIDADES{% endblock %}
 
 {% block body %}
-    <h1>Localidad index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>CodLoc</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for localidad in localidades %}
-            <tr>
-                <td>{{ localidad.id }}</td>
-                <td>{{ localidad.codLoc }}</td>
-                <td>{{ localidad.nombre }}</td>
-                <td>
-                    <a href=\"{{ path('localidad_show', {'id': localidad.id}) }}\">show</a>
-                    <a href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href=\"{{ path('localidad_new') }}\">Create new</a>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>LOCALIDADES</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for localidad in localidades %}
+                    <tr>
+                        <td>{{ localidad.id }}</td>
+                        <td>{{ localidad.codLoc }}</td>
+                        <td>{{ localidad.nombre }}</td>
+                        <td>
+                            <a class=\"btn miheader\" href=\"{{ path('localidad_show', {'id': localidad.id}) }}\">DATOS</a>
+                            <a href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=\"mt-3\">
+        <a class=\"ml-auto \" href=\"{{ path('localidad_new') }}\">
+            <img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img>
+        </a>
+    </div>
+</div>
 {% endblock %}
 ", "localidad/index.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\localidad\\index.html.twig");
     }

@@ -33,13 +33,16 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $img=$request->files->get('usuario')['foto'];
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
-            );
+            )->setFoto("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
+            
             ($form->get('admin')->getData()) ? $user->setRoles(['ROLE_ADMIN']):'';
 
             $entityManager = $this->getDoctrine()->getManager();

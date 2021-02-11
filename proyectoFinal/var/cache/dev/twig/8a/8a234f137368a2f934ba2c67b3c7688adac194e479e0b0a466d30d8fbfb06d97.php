@@ -65,7 +65,7 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "New Localidad";
+        echo "LOCALIDAD";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,17 +85,25 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Localidad</h1>
+        echo "<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVA LOCALIDAD</h1>
+        </div>
 
-    ";
-        // line 8
+        ";
+        // line 12
         echo twig_include($this->env, $context, "localidad/_form.html.twig");
         echo "
-
+    </div>
     <a href=\"";
-        // line 10
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_index");
-        echo "\">back to list</a>
+        echo "\"><img class=\"interaccionesBackend rounded mt-3\" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></a>
+</div>
+        
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,21 +125,27 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}New Localidad{% endblock %}
+{% block title %}LOCALIDAD{% endblock %}
 
 {% block body %}
-    <h1>Create new Localidad</h1>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVA LOCALIDAD</h1>
+        </div>
 
-    {{ include('localidad/_form.html.twig') }}
-
-    <a href=\"{{ path('localidad_index') }}\">back to list</a>
+        {{ include('localidad/_form.html.twig') }}
+    </div>
+    <a href=\"{{ path('localidad_index') }}\"><img class=\"interaccionesBackend rounded mt-3\" src=\"{{asset('imgs/volver.png')}}\"></img></a>
+</div>
+        
 {% endblock %}
 ", "localidad/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\localidad\\new.html.twig");
     }

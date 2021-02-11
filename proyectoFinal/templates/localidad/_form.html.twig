@@ -1,4 +1,26 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="container-fluid form row p-3">
+        <div class="col-3">
+            {{ form_row(form.codLoc,{
+                label:'Código de la localidad'
+            })}}
+            
+        </div>
+        <div class="col-3">
+            {{ form_row(form.nombre,{
+                label:'Nombre'
+            })}}
+            
+        </div>
+        <div class="col-3 offset-3">
+            {{ form_row(form.provincia,{
+                label:'Provincia'
+            })}}
+            
+        </div>
+        <div class="col-2 offset-10">
+            <button class="btn btnform2 rounded">{{ button_label|default('GUARDAR') }}</button>
+        </div>
+    </div>
+    
 {{ form_end(form) }}

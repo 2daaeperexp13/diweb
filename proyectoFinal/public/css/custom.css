@@ -1,4 +1,14 @@
 /* your styles go here */
+
+#carro{
+    margin-right: 10%;
+}
+.miheader{
+    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+}
+.miheader2{
+    background: linear-gradient(to bottom, #ffbf00 0%, #fcf376 100%);
+}
 #logo{
     position: relative;
     width: 150px;
@@ -23,19 +33,24 @@ img.flogo:hover{
     text-shadow: #3366cc;
     
 }
+.btnform:hover{
+    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+    box-shadow: #ffbf00;
+}
+.btnform{
+    background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
+}
+.btnform2:hover{
+    background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
+}
+.btnform2{
+    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+}
 .principal{
     height: 100%;
     margin:0;
 }
-#carro{
-    margin-right: 10%;
-}
-.miheader{
-    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
-}
-.miheader2{
-    background: linear-gradient(to bottom, #ffbf00 0%, #fcf376 100%);
-}
+
 
 a:hover{
     text-decoration: none;

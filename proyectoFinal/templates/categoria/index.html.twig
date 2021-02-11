@@ -1,35 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categoria index{% endblock %}
+{% block title %}CATEGORÍAS{% endblock %}
 
 {% block body %}
-    <h1>Categoria index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for categorium in categorias %}
-            <tr>
-                <td>{{ categorium.id }}</td>
-                <td>{{ categorium.nombre }}</td>
-                <td>
-                    <a href="{{ path('categoria_show', {'id': categorium.id}) }}">show</a>
-                    <a href="{{ path('categoria_edit', {'id': categorium.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('categoria_new') }}">Create new</a>
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow">
+        <div class="miheader pl-3 text-dark mb-auto rounded">
+            <h1>CATEGORÍAS</h1>
+        </div>
+        <div class="m-1 p-3 ">
+            <table class="table table-striped bg-white">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for categorium in categorias %}
+                    <tr>
+                        <td>{{ categorium.id }}</td>
+                        <td>{{ categorium.nombre }}</td>
+                        <td>
+                            <a class=" btn btnform2 rounded" href="{{ path('categoria_show', {'id': categorium.id}) }}">DATOS</a>
+                            <a href="{{ path('categoria_edit', {'id': categorium.id}) }}"><img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No hay registros en la base de datos</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a class="ml-auto " href="{{ path('categoria_new') }}">
+            <img class="interaccionesBackend" src="{{asset('imgs/añadir.png')}}"></img>
+        </a>
+    </div>
+</div>
 {% endblock %}
+

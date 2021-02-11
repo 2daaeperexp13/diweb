@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Localidad{% endblock %}
+{% block title %}LOCALIDAD{% endblock %}
 
 {% block body %}
-    <h1>Create new Localidad</h1>
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow">
+        <div class="miheader pl-3 text-dark mb-auto rounded">
+            <h1>NUEVA LOCALIDAD</h1>
+        </div>
 
-    {{ include('localidad/_form.html.twig') }}
-
-    <a href="{{ path('localidad_index') }}">back to list</a>
+        {{ include('localidad/_form.html.twig') }}
+    </div>
+    <a href="{{ path('localidad_index') }}"><img class="interaccionesBackend rounded mt-3" src="{{asset('imgs/volver.png')}}"></img></a>
+</div>
+        
 {% endblock %}
