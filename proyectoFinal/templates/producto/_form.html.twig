@@ -1,4 +1,4 @@
-<div class="container ">
+
     {{ form_start(form) }}
     <div class="">
         <div class="form-group">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="formgroup">
-            <div class="l">
+            <div class="">
                 {{ form_row(form.descripcion,{
                     label:'Descripción detallada'
                 })}}
@@ -49,13 +49,13 @@
                     })}}
                 </span>
             </div>
-            <button class="btn miheader">{{ button_label|default('GUARDAR') }}</button>
+            <button class=" btnform2 rounded">{{ button_label|default('GUARDAR') }}</button>
         </div>
     </div>
     
 
     {{ form_end(form) }}
-</div>
+
 
     
     

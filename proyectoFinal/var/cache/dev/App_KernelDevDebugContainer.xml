@@ -2022,6 +2022,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2033,7 +2034,6 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
-          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2042,6 +2042,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2053,7 +2054,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
-            <argument>translations</argument>
           </argument>
         </argument>
       </argument>
@@ -5783,6 +5783,13 @@
         <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.GQnSgGz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="imgs" type="service" id="App\Repository\ImgProductoRepository"/>
+        <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.1jRuMKL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5826,7 +5833,7 @@
         <argument key="tipoProducto" type="service" id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto"/>
       </argument>
     </service>
-    <service id=".service_locator.OEvjQDE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QB9DGEJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CategoriaController::delete" type="service" id=".service_locator.2OM4L_f"/>
@@ -5845,6 +5852,7 @@
         <argument key="App\Controller\ProductoController::delete" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController::edit" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController::index" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\ProductoController::prodindex" type="service" id=".service_locator.GQnSgGz"/>
         <argument key="App\Controller\ProductoController::show" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProvinciaController::delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController::edit" type="service" id=".service_locator.MyFGqY6"/>
@@ -5878,6 +5886,7 @@
         <argument key="App\Controller\ProductoController:delete" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController:edit" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController:index" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\ProductoController:prodindex" type="service" id=".service_locator.GQnSgGz"/>
         <argument key="App\Controller\ProductoController:show" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProvinciaController:delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController:edit" type="service" id=".service_locator.MyFGqY6"/>
@@ -6414,12 +6423,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.OEvjQDE"/>
+      <argument type="service" id=".service_locator.QB9DGEJ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.OEvjQDE"/>
+      <argument type="service" id=".service_locator.QB9DGEJ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6835,7 +6844,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.OEvjQDE"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QB9DGEJ"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

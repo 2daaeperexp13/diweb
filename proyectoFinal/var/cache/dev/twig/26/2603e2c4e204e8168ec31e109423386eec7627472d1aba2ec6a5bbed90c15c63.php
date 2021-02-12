@@ -40,7 +40,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "producto/_form.html.twig"));
 
         // line 1
-        echo "<div class=\"container \">
+        echo "
     ";
         // line 2
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'form_start');
@@ -73,7 +73,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
             </div>
         </div>
         <div class=\"formgroup\">
-            <div class=\"l\">
+            <div class=\"\">
                 ";
         // line 26
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "descripcion", [], "any", false, false, false, 26), 'row', ["label" => "Descripción detallada"]);
@@ -108,7 +108,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
         echo "
                 </span>
             </div>
-            <button class=\"btn miheader\">";
+            <button class=\" btnform2 rounded\">";
         // line 52
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 52, $this->source); })()), "GUARDAR")) : ("GUARDAR")), "html", null, true);
         echo "</button>
@@ -120,7 +120,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
         // line 57
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 57, $this->source); })()), 'form_end');
         echo "
-</div>
+
 
     
     
@@ -151,7 +151,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"container \">
+        return new Source("
     {{ form_start(form) }}
     <div class=\"\">
         <div class=\"form-group\">
@@ -175,7 +175,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
             </div>
         </div>
         <div class=\"formgroup\">
-            <div class=\"l\">
+            <div class=\"\">
                 {{ form_row(form.descripcion,{
                     label:'Descripción detallada'
                 })}}
@@ -202,13 +202,13 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
                     })}}
                 </span>
             </div>
-            <button class=\"btn miheader\">{{ button_label|default('GUARDAR') }}</button>
+            <button class=\" btnform2 rounded\">{{ button_label|default('GUARDAR') }}</button>
         </div>
     </div>
     
 
     {{ form_end(form) }}
-</div>
+
 
     
     

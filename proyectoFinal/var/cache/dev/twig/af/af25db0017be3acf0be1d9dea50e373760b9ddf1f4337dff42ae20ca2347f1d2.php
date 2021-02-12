@@ -48,7 +48,10 @@ class __TwigTemplate_68e8e4f711dce413262dc421679bdcce18681344993e14a0ac50f1be09f
         // line 3
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["localidad"]) || array_key_exists("localidad", $context) ? $context["localidad"] : (function () { throw new RuntimeError('Variable "localidad" does not exist.', 3, $this->source); })()), "id", [], "any", false, false, false, 3))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-white rounded-cicrcle\"><img class=\"interaccionesBackend rounded-circle\" src=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/borrar.png"), "html", null, true);
+        echo "\" width=\"150px\"></img></button>
 </form>
 ";
         
@@ -71,7 +74,7 @@ class __TwigTemplate_68e8e4f711dce413262dc421679bdcce18681344993e14a0ac50f1be09f
 
     public function getDebugInfo()
     {
-        return array (  49 => 3,  43 => 1,);
+        return array (  53 => 4,  49 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -79,7 +82,7 @@ class __TwigTemplate_68e8e4f711dce413262dc421679bdcce18681344993e14a0ac50f1be09f
         return new Source("<form method=\"post\" action=\"{{ path('localidad_delete', {'id': localidad.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ localidad.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-white rounded-cicrcle\"><img class=\"interaccionesBackend rounded-circle\" src=\"{{asset('/imgs/borrar.png')}}\" width=\"150px\"></img></button>
 </form>
 ", "localidad/_delete_form.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\localidad\\_delete_form.html.twig");
     }

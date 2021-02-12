@@ -27,10 +27,11 @@
             </table>
         </div>
     </div>
+    <div class="d-flex ">
+        <div class="float-left ">{{ include('localidad/_delete_form.html.twig') }}</div>
+        <div><a href="{{ path('localidad_index') }}" ><img class="interaccionesBackend rounded-circle" src="{{asset('imgs/volver.png')}}"></img></a></div>
+        <div><a href="{{ path('localidad_edit', {'id': localidad.id}) }}"><img class="interaccionesBackend rounded circle" src="{{asset('imgs/editar.png')}}"></img></a></div>
+    </div>
 </div>
-    <a href="{{ path('localidad_index') }}"><img class="interaccionesBackend" src="{{asset('imgs/volver.png')}}"></img></a>
 
-    <a href="{{ path('localidad_edit', {'id': localidad.id}) }}"><img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
-
-    {{ include('localidad/_delete_form.html.twig') }}
 {% endblock %}

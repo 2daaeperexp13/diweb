@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Localidad{% endblock %}
+{% block title %}LOCALIDADES{% endblock %}
 
 {% block body %}
-    <h1>Edit Localidad</h1>
+<div class="container">
+    <h1>EDITAR LOCALDIAD</h1>
 
     {{ include('localidad/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('localidad_index') }}">back to list</a>
+    <a href="{{ path('producto_index') }}"><img class="interaccionesBackend" src="{{asset('/imgs/volver.png')}}"></img></a>
 
-    {{ include('localidad/_delete_form.html.twig') }}
+    <div class="">{{ include('localidad/_delete_form.html.twig') }}</div>
+</div>
 {% endblock %}

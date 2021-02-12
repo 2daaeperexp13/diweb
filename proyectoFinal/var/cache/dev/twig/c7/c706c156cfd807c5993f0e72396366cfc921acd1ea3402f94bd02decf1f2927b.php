@@ -159,11 +159,12 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
         echo "\"><img class=\"interaccionesBackend\" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/editar.png"), "html", null, true);
         echo "\"></img></a> 
-    </div>
-    ";
-        // line 46
+        ";
+        // line 45
         echo twig_include($this->env, $context, "producto/_delete_form.html.twig");
         echo "
+    </div>
+    
 
 </div>
 ";
@@ -187,7 +188,7 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
 
     public function getDebugInfo()
     {
-        return array (  165 => 46,  158 => 44,  152 => 43,  146 => 39,  137 => 37,  133 => 36,  125 => 31,  118 => 27,  111 => 23,  104 => 19,  97 => 15,  88 => 8,  78 => 7,  59 => 3,  36 => 1,);
+        return array (  164 => 45,  158 => 44,  152 => 43,  146 => 39,  137 => 37,  133 => 36,  125 => 31,  118 => 27,  111 => 23,  104 => 19,  97 => 15,  88 => 8,  78 => 7,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -236,8 +237,9 @@ class __TwigTemplate_c35392f3fc5acbbc292d132383d0d744d13b6b94d0d5dcdbb52d073ed50
     <div class=\"form-group float-left\">
         <a href=\"{{ path('producto_index') }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/volver.png')}}\"></img></a>
         <a href=\"{{ path('producto_edit', {'id': producto.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/editar.png')}}\"></img></a> 
+        {{ include('producto/_delete_form.html.twig') }}
     </div>
-    {{ include('producto/_delete_form.html.twig') }}
+    
 
 </div>
 {% endblock %}

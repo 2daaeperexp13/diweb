@@ -4,8 +4,10 @@ namespace App\Controller;
 use App\Entity\Producto;
 use App\Entity\imgProducto;
 use App\Form\ProductoType;
+use App\Repository\ImgProductoRepository;
 use App\Repository\ProductoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,6 +28,25 @@ class ProductoController extends AbstractController
     }
 
     /**
+     * @Route("/prodindex", name="prodIndex", methods={"GET","POST"})
+     */
+    public function prodindex(ProductoRepository $productoRepository, ImgProductoRepository $imgs): JsonResponse
+    {
+        $productos=$productoRepository->createQueryBuilder('p')->getQuery()
+        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        $objProducto=$productoRepository->findAll();
+        for ($i=0; $i < count($productos); $i++) {
+            $productos[$i]['tipoProducto']=$objProducto[$i]->getTipoProducto()->getTipo();
+            $productos[$i]['imagenes']=[];
+            foreach ($objProducto[$i]->getImgProductos() as $img ) {
+                array_push($productos[$i]['imagenes'],$img->getImg());
+            }
+        }
+      
+        return new JsonResponse($productos);
+    }
+
+    /**
      * @Route("/new", name="producto_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -41,6 +62,7 @@ class ProductoController extends AbstractController
             
             $entityManager->persist($producto);
             $entityManager->flush();
+            
             foreach($request->files->get('producto')['imgProductos'] as $img){
               
                 $imgProducto=new imgProducto();

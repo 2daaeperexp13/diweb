@@ -80,32 +80,32 @@
         </div>
 {% endblock %}
       </footer>
-{% block scripts%}
-      <!-- JavaScript files-->
-      <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-      <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-      <script src="{{asset('vendor/lightbox2/js/lightbox.min.js')}}"></script>
-      <script src="{{asset('vendor/nouislider/nouislider.min.js')}}"></script>
-      <script src="{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
-      <script src="{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}"></script>
-      <script src="{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}"></script>
-      <script src="{{asset('js/front.js')}}"></script>
-      <script>
-        function injectSvgSprite(path) {
-        
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", path, true);
-            ajax.send();
-            ajax.onload = function(e) {
-            var div = document.createElement("div");
-            div.className = 'd-none';
-            div.innerHTML = ajax.responseText;
-            document.body.insertBefore(div, document.body.childNodes[0]);
-            }
+{% block scripts %}
+  <!-- JavaScript files-->
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('vendor/lightbox2/js/lightbox.min.js')}}"></script>
+  <script src="{{asset('vendor/nouislider/nouislider.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+  <script src="{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}"></script>
+  <script src="{{asset('js/front.js')}}"></script>
+  <script>
+    function injectSvgSprite(path) {
+    
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", path, true);
+        ajax.send();
+        ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.className = 'd-none';
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
         }
-        injectSvgSprite('/icons/orion-svg-sprite.svg'); 
-        
-      </script>
+    }
+    injectSvgSprite('/icons/orion-svg-sprite.svg'); 
+    
+  </script>
 {% endblock %}
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
       <link rel="stylesheet" href="{{asset('css/custom.css')}}">

@@ -32,6 +32,7 @@ return [
     'pedido_delete' => [['id'], ['_controller' => 'App\\Controller\\PedidoController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/pedido']], [], []],
     'principal' => [[], ['_controller' => 'App\\Controller\\PrincipalController::index'], [], [['text', '/']], [], []],
     'producto_index' => [[], ['_controller' => 'App\\Controller\\ProductoController::index'], [], [['text', '/producto/']], [], []],
+    'prodIndex' => [[], ['_controller' => 'App\\Controller\\ProductoController::prodindex'], [], [['text', '/producto/prodindex']], [], []],
     'producto_new' => [[], ['_controller' => 'App\\Controller\\ProductoController::new'], [], [['text', '/producto/new']], [], []],
     'producto_show' => [['id'], ['_controller' => 'App\\Controller\\ProductoController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/producto']], [], []],
     'producto_edit' => [['id'], ['_controller' => 'App\\Controller\\ProductoController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/producto']], [], []],

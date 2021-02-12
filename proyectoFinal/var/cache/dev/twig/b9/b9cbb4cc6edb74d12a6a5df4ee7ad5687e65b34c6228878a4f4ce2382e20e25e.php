@@ -42,7 +42,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
-        // line 39
+        // line 41
         echo "
 ";
         
@@ -78,13 +78,13 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                   <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
                 </li>
               </ul>
-              <ul class=\"navbar-nav ml-auto\">               
-                <li class=\"nav-item mr-5\" id=\"carro\"><a class=\"h4 mr-5 \" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+              <ul class=\"navbar-nav ml-auto row\">               
+                
                 ";
         // line 18
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             // line 19
-            echo "                <li class=\"nav-item position-absolute ml-5\">
+            echo "                <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
                     <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
@@ -94,13 +94,15 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                       </div>
                   </div>
                 </li>
+                <li class=\" nav-item col\" id=\"carro\"><a class=\"h4\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed  text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+              
                 ";
         } else {
-            // line 30
+            // line 32
             echo "                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
                 ";
         }
-        // line 32
+        // line 34
         echo "              </ul>
             </div>
           </nav>
@@ -123,7 +125,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getDebugInfo()
     {
-        return array (  104 => 32,  100 => 30,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 39,  44 => 1,);
+        return array (  106 => 34,  102 => 32,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 41,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -143,10 +145,10 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                   <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
                 </li>
               </ul>
-              <ul class=\"navbar-nav ml-auto\">               
-                <li class=\"nav-item mr-5\" id=\"carro\"><a class=\"h4 mr-5 \" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed mr-1 text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+              <ul class=\"navbar-nav ml-auto row\">               
+                
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <li class=\"nav-item position-absolute ml-5\">
+                <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
                     <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
@@ -156,6 +158,8 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                       </div>
                   </div>
                 </li>
+                <li class=\" nav-item col\" id=\"carro\"><a class=\"h4\" href=\"cart.html\"> <i class=\"fas fa-dolly-flatbed  text-gray\"></i><small class=\"text-gray\">(0)</small></a></li>
+              
                 {% else %}
                 <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
                 {% endif %}

@@ -297,55 +297,55 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
         // line 84
-        echo "      <!-- JavaScript files-->
-      <script src=\"";
+        echo "  <!-- JavaScript files-->
+  <script src=\"";
         // line 85
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 86
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 87
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 88
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 89
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/js/bootstrap-select.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 91
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"), "html", null, true);
         echo "\"></script>
-      <script src=\"";
+  <script src=\"";
         // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
         echo "\"></script>
-      <script>
-        function injectSvgSprite(path) {
-        
-            var ajax = new XMLHttpRequest();
-            ajax.open(\"GET\", path, true);
-            ajax.send();
-            ajax.onload = function(e) {
-            var div = document.createElement(\"div\");
-            div.className = 'd-none';
-            div.innerHTML = ajax.responseText;
-            document.body.insertBefore(div, document.body.childNodes[0]);
-            }
+  <script>
+    function injectSvgSprite(path) {
+    
+        var ajax = new XMLHttpRequest();
+        ajax.open(\"GET\", path, true);
+        ajax.send();
+        ajax.onload = function(e) {
+        var div = document.createElement(\"div\");
+        div.className = 'd-none';
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
         }
-        injectSvgSprite('/icons/orion-svg-sprite.svg'); 
-        
-      </script>
+    }
+    injectSvgSprite('/icons/orion-svg-sprite.svg'); 
+    
+  </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -454,32 +454,32 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         </div>
 {% endblock %}
       </footer>
-{% block scripts%}
-      <!-- JavaScript files-->
-      <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/lightbox2/js/lightbox.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/nouislider/nouislider.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}\"></script>
-      <script src=\"{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}\"></script>
-      <script src=\"{{asset('js/front.js')}}\"></script>
-      <script>
-        function injectSvgSprite(path) {
-        
-            var ajax = new XMLHttpRequest();
-            ajax.open(\"GET\", path, true);
-            ajax.send();
-            ajax.onload = function(e) {
-            var div = document.createElement(\"div\");
-            div.className = 'd-none';
-            div.innerHTML = ajax.responseText;
-            document.body.insertBefore(div, document.body.childNodes[0]);
-            }
+{% block scripts %}
+  <!-- JavaScript files-->
+  <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/lightbox2/js/lightbox.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/nouislider/nouislider.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}\"></script>
+  <script src=\"{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}\"></script>
+  <script src=\"{{asset('js/front.js')}}\"></script>
+  <script>
+    function injectSvgSprite(path) {
+    
+        var ajax = new XMLHttpRequest();
+        ajax.open(\"GET\", path, true);
+        ajax.send();
+        ajax.onload = function(e) {
+        var div = document.createElement(\"div\");
+        div.className = 'd-none';
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
         }
-        injectSvgSprite('/icons/orion-svg-sprite.svg'); 
-        
-      </script>
+    }
+    injectSvgSprite('/icons/orion-svg-sprite.svg'); 
+    
+  </script>
 {% endblock %}
       <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"{{asset('css/custom.css')}}\">
