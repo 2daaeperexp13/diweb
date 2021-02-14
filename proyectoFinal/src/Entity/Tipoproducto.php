@@ -30,6 +30,11 @@ class TipoProducto
      */
     private $productos;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $icono;
+
     public function __construct()
     {
         $this->productos = new ArrayCollection();
@@ -85,5 +90,17 @@ class TipoProducto
     public function __toString()
     {
         return $this->getTipo();
+    }
+
+    public function getIcono(): ?string
+    {
+        return $this->icono;
+    }
+
+    public function setIcono(?string $icono): self
+    {
+        $this->icono = $icono;
+
+        return $this;
     }
 }

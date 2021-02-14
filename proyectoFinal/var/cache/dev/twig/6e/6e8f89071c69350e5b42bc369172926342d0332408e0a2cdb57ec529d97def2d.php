@@ -87,7 +87,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
         // line 6
         echo "<div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>CATEGORÍAS</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -123,7 +123,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
                             <a href=\"";
             // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -151,10 +151,10 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
         // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_new");
         echo "\">
-            <img class=\"interaccionesBackend\" src=\"";
+            <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
         // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
-        echo "\"></img>
+        echo "\"></img><h4>
         </a>
     </div>
 </div>
@@ -191,7 +191,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
 {% block body %}
 <div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>CATEGORÍAS</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -209,7 +209,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
                         <td>{{ categorium.nombre }}</td>
                         <td>
                             <a class=\" btn btnform2 rounded\" href=\"{{ path('categoria_show', {'id': categorium.id}) }}\">DATOS</a>
-                            <a href=\"{{ path('categoria_edit', {'id': categorium.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a href=\"{{ path('categoria_edit', {'id': categorium.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -223,7 +223,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto \" href=\"{{ path('categoria_new') }}\">
-            <img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img>
+            <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img><h4>
         </a>
     </div>
 </div>

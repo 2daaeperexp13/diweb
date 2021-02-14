@@ -5,7 +5,7 @@
 {% block body %}
 <div class="container mb-5">
     <div class="container-fluid border p-0 miheader2 rounded shadow">
-        <div class="miheader pl-3 text-dark mb-auto rounded">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
             <h1>LOCALIDADES</h1>
         </div>
         <div class="m-1 p-3 ">
@@ -24,8 +24,7 @@
                         <td>{{ localidad.codLoc }}</td>
                         <td>{{ localidad.nombre }}</td>
                         <td>
-                            <a class="btn miheader" href="{{ path('localidad_show', {'id': localidad.id}) }}">DATOS</a>
-                            <a href="{{ path('localidad_edit', {'id': localidad.id}) }}"><img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
+                            <a href="{{ path('localidad_edit', {'id': localidad.id}) }}" CLASS="ml-5 ">EDITAR<img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -38,9 +37,12 @@
         </div>
     </div>
     <div class="mt-3">
-        <a class="ml-auto " href="{{ path('localidad_new') }}">
-            <img class="interaccionesBackend" src="{{asset('imgs/añadir.png')}}"></img>
+        <a class="ml-auto p-5" href="{{ path('localidad_new') }}">
+            <h4 class="float-left m-0">AÑADIR<img class="interaccionesBackend m-o" src="{{asset('imgs/añadir.png')}}"></img></h4>
         </a>
+    </div>
+    <div class="navigation"> 
+        {{ knp_pagination_render(localidades) }} 
     </div>
 </div>
 {% endblock %}

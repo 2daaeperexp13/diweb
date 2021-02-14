@@ -22,6 +22,11 @@ class Categoria
      */
     private $nombre;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $icono;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -42,5 +47,17 @@ class Categoria
     public function __toString()
     {
         return $this->getNombre();
+    }
+
+    public function getIcono(): ?string
+    {
+        return $this->icono;
+    }
+
+    public function setIcono(?string $icono): self
+    {
+        $this->icono = $icono;
+
+        return $this;
     }
 }

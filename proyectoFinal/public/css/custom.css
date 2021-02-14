@@ -1,5 +1,8 @@
 /* your styles go here */
-
+@font-face {
+    font-family: "titulo";
+    src: url("../fonts/PermanentMarker-Regular.ttf");
+  }
 #carro{
     margin-right: 10%;
 }
@@ -11,7 +14,7 @@
 }
 #logo{
     position: relative;
-    width: 150px;
+    width: 180px;
     height: 110px;
     border-radius: 50%;
     margin-right:10%;
@@ -20,13 +23,18 @@
 img.flogo:hover{
     opacity:100%;
 }
+.imgindex{
+    width: 230px;
+    height: 230px;
+}
 #titulo>span{
     z-index:999;
     position:absolute;
     margin-top: 20%;
-    font-size: 1.5em;
+    margin-right: 10%;
+    font-size: 1.8em;
     font-style: oblique;
-    opacity: 85%;
+    font-family: "titulo";
 }
 #titulo>span:hover{
     opacity: 100%;
@@ -35,7 +43,6 @@ img.flogo:hover{
 }
 .btnform:hover{
     background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
-    box-shadow: #ffbf00;
 }
 .btnform{
     background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
@@ -45,6 +52,10 @@ img.flogo:hover{
 }
 .btnform2{
     background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+}
+
+.encabezadoBack{
+    background: linear-gradient(to bottom, #485458 0%, #6693e6 50%, #b9bbbe 100%);
 }
 .principal{
     height: 100%;
@@ -57,6 +68,7 @@ a:hover{
 }
 
 .interaccionesBackend{
-    width: 50px;
-    height:50px;
+    width: 30px;
+    height:30px;
+    
 }

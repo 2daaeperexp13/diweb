@@ -66,10 +66,10 @@ class TipoProducto extends \App\Entity\TipoProducto implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'id', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'tipo', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'productos'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'id', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'tipo', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'icono'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'id', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'tipo', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'productos'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'id', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'tipo', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'productos', '' . "\0" . 'App\\Entity\\TipoProducto' . "\0" . 'icono'];
     }
 
     /**
@@ -255,6 +255,28 @@ class TipoProducto extends \App\Entity\TipoProducto implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIcono(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIcono', []);
+
+        return parent::getIcono();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIcono(?string $icono): \App\Entity\TipoProducto
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIcono', [$icono]);
+
+        return parent::setIcono($icono);
     }
 
 }

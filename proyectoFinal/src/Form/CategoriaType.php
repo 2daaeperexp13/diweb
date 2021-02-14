@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Categoria;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,6 +14,9 @@ class CategoriaType extends AbstractType
     {
         $builder
             ->add('nombre')
+            ->add('icono',FileType::class,[
+                'mapped'=>false
+            ])
         ;
     }
 

@@ -87,7 +87,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         // line 6
         echo "<div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>PROVINCIAS</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -121,14 +121,10 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "nombre", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>
-                            <a class=\"btn btnform2\" href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_show", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">DATOS</a>
                             <a href=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\"> EDITAR<img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -137,7 +133,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 32
+            // line 31
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -146,20 +142,20 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['provincium'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 35
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto \" href=\"";
-        // line 41
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_new");
         echo "\">
-            <img class=\"interaccionesBackend\" src=\"";
-        // line 42
+            <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
-        echo "\"></img>
+        echo "\"></img></h4>
         </a>
     </div>
 </div>
@@ -184,7 +180,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
 
     public function getDebugInfo()
     {
-        return array (  161 => 42,  157 => 41,  150 => 36,  141 => 32,  130 => 28,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  157 => 41,  153 => 40,  146 => 35,  137 => 31,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,7 +192,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
 {% block body %}
 <div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>PROVINCIAS</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -215,8 +211,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
                         <td>{{ provincium.codProv }}</td>
                         <td>{{ provincium.nombre }}</td>
                         <td>
-                            <a class=\"btn btnform2\" href=\"{{ path('provincia_show', {'id': provincium.id}) }}\">DATOS</a>
-                            <a href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\"> EDITAR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -230,7 +225,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto \" href=\"{{ path('provincia_new') }}\">
-            <img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img>
+            <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
         </a>
     </div>
 </div>

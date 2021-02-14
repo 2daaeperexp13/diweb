@@ -24,7 +24,7 @@ class TipoProductoController extends AbstractController
         return $this->render('tipo_producto/index.html.twig', [
             'tipo_productos' => $paginator->paginate($tipoProductoRepository->createQueryBuilder('t')
                 ->getQuery()
-            , $request->query->getInt('page',1),3)
+            , $request->query->getInt('page',1),5)
         ]);
     }
 
@@ -38,6 +38,8 @@ class TipoProductoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img=$request->files->get('tipoproducto')['icono'];
+            $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($tipoProducto);
             $entityManager->flush();
@@ -70,6 +72,8 @@ class TipoProductoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img=$request->files->get('tipoproducto')['icono'];
+            $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('tipo_producto_index');

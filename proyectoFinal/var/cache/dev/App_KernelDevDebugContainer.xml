@@ -2022,7 +2022,6 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2034,6 +2033,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2042,7 +2042,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
-            <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2054,6 +2053,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
+            <argument>translations</argument>
           </argument>
         </argument>
       </argument>
@@ -5735,10 +5735,11 @@
         <argument key="loader" type="service" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.6ieTL0P" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.smGk.x1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="categoriaRepository" type="service" id="App\Repository\CategoriaRepository"/>
+        <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.2OM4L_f" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5747,10 +5748,11 @@
         <argument key="categorium" type="service" id=".errored..service_locator.2OM4L_f.App\Entity\Categoria"/>
       </argument>
     </service>
-    <service id=".service_locator.IuXccsC" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wJCao0A" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="localidadRepository" type="service" id="App\Repository\LocalidadRepository"/>
+        <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
     <service id=".service_locator.665dTYD" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5777,16 +5779,16 @@
         <argument key="pedido" type="service" id=".errored..service_locator.AOEYXy4.App\Entity\Pedido"/>
       </argument>
     </service>
-    <service id=".service_locator.Y935jyL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1_gyAer" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service" id="knp_paginator"/>
         <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.GQnSgGz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Y935jyL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="imgs" type="service" id="App\Repository\ImgProductoRepository"/>
         <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
       </argument>
     </service>
@@ -5796,9 +5798,10 @@
         <argument key="producto" type="service" id=".errored..service_locator.1jRuMKL.App\Entity\Producto"/>
       </argument>
     </service>
-    <service id=".service_locator.eWN17oh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.52xk0Eg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="paginator" type="service" id="knp_paginator"/>
         <argument key="provinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
       </argument>
     </service>
@@ -5833,16 +5836,16 @@
         <argument key="tipoProducto" type="service" id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto"/>
       </argument>
     </service>
-    <service id=".service_locator.QB9DGEJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..ZUtLdi" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CategoriaController::delete" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\CategoriaController::edit" type="service" id=".service_locator.2OM4L_f"/>
-        <argument key="App\Controller\CategoriaController::index" type="service" id=".service_locator.6ieTL0P"/>
+        <argument key="App\Controller\CategoriaController::index" type="service" id=".service_locator.smGk.x1"/>
         <argument key="App\Controller\CategoriaController::show" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\LocalidadController::delete" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController::edit" type="service" id=".service_locator.YVT_0fT"/>
-        <argument key="App\Controller\LocalidadController::index" type="service" id=".service_locator.IuXccsC"/>
+        <argument key="App\Controller\LocalidadController::index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController::new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController::show" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\PedidoController::delete" type="service" id=".service_locator.AOEYXy4"/>
@@ -5851,12 +5854,12 @@
         <argument key="App\Controller\PedidoController::show" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\ProductoController::delete" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController::edit" type="service" id=".service_locator.1jRuMKL"/>
-        <argument key="App\Controller\ProductoController::index" type="service" id=".service_locator.Y935jyL"/>
-        <argument key="App\Controller\ProductoController::prodindex" type="service" id=".service_locator.GQnSgGz"/>
+        <argument key="App\Controller\ProductoController::index" type="service" id=".service_locator.1_gyAer"/>
+        <argument key="App\Controller\ProductoController::prodindex" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\ProductoController::show" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProvinciaController::delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController::edit" type="service" id=".service_locator.MyFGqY6"/>
-        <argument key="App\Controller\ProvinciaController::index" type="service" id=".service_locator.eWN17oh"/>
+        <argument key="App\Controller\ProvinciaController::index" type="service" id=".service_locator.52xk0Eg"/>
         <argument key="App\Controller\ProvinciaController::show" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.UDgw6Ol"/>
@@ -5872,11 +5875,11 @@
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\CategoriaController:delete" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\CategoriaController:edit" type="service" id=".service_locator.2OM4L_f"/>
-        <argument key="App\Controller\CategoriaController:index" type="service" id=".service_locator.6ieTL0P"/>
+        <argument key="App\Controller\CategoriaController:index" type="service" id=".service_locator.smGk.x1"/>
         <argument key="App\Controller\CategoriaController:show" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\LocalidadController:delete" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController:edit" type="service" id=".service_locator.YVT_0fT"/>
-        <argument key="App\Controller\LocalidadController:index" type="service" id=".service_locator.IuXccsC"/>
+        <argument key="App\Controller\LocalidadController:index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController:new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController:show" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\PedidoController:delete" type="service" id=".service_locator.AOEYXy4"/>
@@ -5885,12 +5888,12 @@
         <argument key="App\Controller\PedidoController:show" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\ProductoController:delete" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProductoController:edit" type="service" id=".service_locator.1jRuMKL"/>
-        <argument key="App\Controller\ProductoController:index" type="service" id=".service_locator.Y935jyL"/>
-        <argument key="App\Controller\ProductoController:prodindex" type="service" id=".service_locator.GQnSgGz"/>
+        <argument key="App\Controller\ProductoController:index" type="service" id=".service_locator.1_gyAer"/>
+        <argument key="App\Controller\ProductoController:prodindex" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\ProductoController:show" type="service" id=".service_locator.1jRuMKL"/>
         <argument key="App\Controller\ProvinciaController:delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController:edit" type="service" id=".service_locator.MyFGqY6"/>
-        <argument key="App\Controller\ProvinciaController:index" type="service" id=".service_locator.eWN17oh"/>
+        <argument key="App\Controller\ProvinciaController:index" type="service" id=".service_locator.52xk0Eg"/>
         <argument key="App\Controller\ProvinciaController:show" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.UDgw6Ol"/>
@@ -6423,12 +6426,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.QB9DGEJ"/>
+      <argument type="service" id=".service_locator..ZUtLdi"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.QB9DGEJ"/>
+      <argument type="service" id=".service_locator..ZUtLdi"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6844,7 +6847,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QB9DGEJ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator..ZUtLdi"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

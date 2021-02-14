@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Knp\Component\Pager\PaginatorInterface;
 /**
  * @Route("/producto")
  */
@@ -20,17 +20,19 @@ class ProductoController extends AbstractController
     /**
      * @Route("/", name="producto_index", methods={"GET"})
      */
-    public function index(ProductoRepository $productoRepository): Response
+    public function index(Request $request ,PaginatorInterface $paginator, ProductoRepository $productoRepository): Response
     {
         return $this->render('producto/index.html.twig', [
-            'productos' => $productoRepository->findAll(),
+            'productos' => $paginator->paginate($productoRepository->createQueryBuilder('p')
+                ->getQuery()
+            , $request->query->getInt('page',1),5)
         ]);
     }
 
     /**
      * @Route("/prodindex", name="prodIndex", methods={"GET","POST"})
      */
-    public function prodindex(ProductoRepository $productoRepository, ImgProductoRepository $imgs): JsonResponse
+    public function prodindex(ProductoRepository $productoRepository): JsonResponse
     {
         $productos=$productoRepository->createQueryBuilder('p')->getQuery()
         ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);

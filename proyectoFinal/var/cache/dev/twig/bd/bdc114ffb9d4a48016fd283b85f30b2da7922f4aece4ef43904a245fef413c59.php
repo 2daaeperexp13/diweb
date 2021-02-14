@@ -65,7 +65,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "TipoProducto index";
+        echo "TIPOS PRODUCTOS";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -86,73 +86,81 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
 
         // line 6
         echo "    
-    <div class=\"container \" >
-        <h1 class=\" text-secondary\">Tipos de productos</h1>
-        <table class=\"table table-striped\">
-            <thead class=\"thead bg-warning\">
-                <tr>
-                
-                    <th>Id</th>
-                    <th>Tipo</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            ";
-        // line 19
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>TIPOS DE PRODUCTOS</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ";
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 21, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["tipo_producto"]) {
-            // line 20
-            echo "                <tr>
-                    <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                    <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 22), "html", null, true);
+            echo "                    <tr>
+                        <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                    <td>
-                        <a href=\"";
+                        <td>";
             // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                        <td>
+                            <a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
-                        <a href=\"";
-            // line 25
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_new");
-            echo "\" ><img class=\"interaccionesBackend\" src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/añadir.png"), "html", null, true);
-            echo "\"></img></a>
-                    </td>
-                </tr>
-            ";
+                        </td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
-            echo "                <tr>
-                    <td colspan=\"3\">no records found</td>
-                </tr>
-            ";
+            // line 30
+            echo "                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tipo_producto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "            </tbody>      
-        </table>
+        // line 34
+        echo "                </tbody>      
+            </table>
+        </div>
+    </div>
+        <div class=\"mt-3\">
+            <a class=\"ml-auto \" href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_new");
+        echo "\">
+                <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
+        echo "\"></img></h4>
+            </a>
+        </div>
         <div class=\"navigation\"> 
             ";
-        // line 36
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 36, $this->source); })()));
+        // line 44
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 44, $this->source); })()));
         echo " 
         </div>
-        
-    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -174,50 +182,57 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
 
     public function getDebugInfo()
     {
-        return array (  151 => 36,  146 => 33,  137 => 29,  126 => 25,  120 => 24,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 44,  153 => 40,  149 => 39,  142 => 34,  133 => 30,  122 => 26,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}TipoProducto index{% endblock %}
+{% block title %}TIPOS PRODUCTOS{% endblock %}
 
 {% block body %}
     
-    <div class=\"container \" >
-        <h1 class=\" text-secondary\">Tipos de productos</h1>
-        <table class=\"table table-striped\">
-            <thead class=\"thead bg-warning\">
-                <tr>
-                
-                    <th>Id</th>
-                    <th>Tipo</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for tipo_producto in tipo_productos %}
-                <tr>
-                    <td>{{ tipo_producto.id }}</td>
-                    <td>{{ tipo_producto.tipo }}</td>
-                    <td>
-                        <a href=\"{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/editar.png')}}\"></img></a>
-                        <a href=\"{{ path('tipo_producto_new') }}\" ><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/añadir.png')}}\"></img></a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan=\"3\">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>      
-        </table>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>TIPOS DE PRODUCTOS</h1>
+        </div>
+        <div class=\"m-1 p-3 \">
+            <table class=\"table table-striped bg-white\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for tipo_producto in tipo_productos %}
+                    <tr>
+                        <td>{{ tipo_producto.id }}</td>
+                        <td>{{ tipo_producto.tipo }}</td>
+                        <td>
+                            <a href=\"{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('/imgs/editar.png')}}\"></img></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"4\">No hay registros en la base de datos</td>
+                    </tr>
+                {% endfor %}
+                </tbody>      
+            </table>
+        </div>
+    </div>
+        <div class=\"mt-3\">
+            <a class=\"ml-auto \" href=\"{{ path('provincia_new') }}\">
+                <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
+            </a>
+        </div>
         <div class=\"navigation\"> 
             {{ knp_pagination_render(tipo_productos) }} 
         </div>
-        
-    </div>
+</div>
 {% endblock %}
 ", "tipo_producto/index.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\tipo_producto\\index.html.twig");
     }

@@ -103,21 +103,27 @@ class __TwigTemplate_528576f00de0e6c080c85743141661786aec27ecf91f9305e4af6edd41e
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["categorium"]) || array_key_exists("categorium", $context) ? $context["categorium"] : (function () { throw new RuntimeError('Variable "categorium" does not exist.', 16, $this->source); })()), "nombre", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
             </tr>
+            <tr>
+                <td> <img src=\"";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["categorium"]) || array_key_exists("categorium", $context) ? $context["categorium"] : (function () { throw new RuntimeError('Variable "categorium" does not exist.', 19, $this->source); })()), "icono", [], "any", false, false, false, 19), "html", null, true);
+        echo "\"   class=\"rounded img-fluid\"/> </td>
+            </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 21
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["categorium"]) || array_key_exists("categorium", $context) ? $context["categorium"] : (function () { throw new RuntimeError('Variable "categorium" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["categorium"]) || array_key_exists("categorium", $context) ? $context["categorium"] : (function () { throw new RuntimeError('Variable "categorium" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 25
+        // line 28
         echo twig_include($this->env, $context, "categoria/_delete_form.html.twig");
         echo "
 ";
@@ -141,7 +147,7 @@ class __TwigTemplate_528576f00de0e6c080c85743141661786aec27ecf91f9305e4af6edd41e
 
     public function getDebugInfo()
     {
-        return array (  121 => 25,  116 => 23,  111 => 21,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  127 => 28,  122 => 26,  117 => 24,  109 => 19,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -162,6 +168,9 @@ class __TwigTemplate_528576f00de0e6c080c85743141661786aec27ecf91f9305e4af6edd41e
             <tr>
                 <th>Nombre</th>
                 <td>{{ categorium.nombre }}</td>
+            </tr>
+            <tr>
+                <td> <img src=\"{{categorium.icono}}\"   class=\"rounded img-fluid\"/> </td>
             </tr>
         </tbody>
     </table>

@@ -20,7 +20,7 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email')
             ->add('foto', FileType::class,[
-                'mapped'=>true,
+                'mapped'=>false
             ])
             ->add('admin',CheckboxType::class,[
                 'mapped'=>false

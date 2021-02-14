@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Knp\Component\Pager\PaginatorInterface;
 /**
  * @Route("/categoria")
  */
@@ -18,10 +18,13 @@ class CategoriaController extends AbstractController
     /**
      * @Route("/", name="categoria_index", methods={"GET"})
      */
-    public function index(CategoriaRepository $categoriaRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator, CategoriaRepository $categoriaRepository): Response
     {
+        
         return $this->render('categoria/index.html.twig', [
-            'categorias' => $categoriaRepository->findAll(),
+            'categorias' => $paginator->paginate($categoriaRepository->createQueryBuilder('t')
+                ->getQuery()
+            , $request->query->getInt('page',1),5)
         ]);
     }
 
@@ -35,6 +38,9 @@ class CategoriaController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img=$request->files->get('categoria')['icono'];
+            $categorium->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($categorium);
             $entityManager->flush();
@@ -67,6 +73,8 @@ class CategoriaController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img=$request->files->get('categoria')['icono'];
+            $categorium->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('categoria_index');

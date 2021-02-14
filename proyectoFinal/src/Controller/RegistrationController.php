@@ -33,8 +33,8 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $img=$request->files->get('usuario')['foto'];
+          
+            $img=$request->files->get('registration_form')['foto'];
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(

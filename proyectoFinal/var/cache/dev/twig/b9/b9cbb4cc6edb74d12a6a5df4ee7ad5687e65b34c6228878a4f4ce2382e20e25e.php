@@ -86,7 +86,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
             // line 19
             echo "                <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
-                    <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
+                    <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
                         <a class=\"dropdown-item\" href=\"#\">Métodos de pago</a>
                         <a class=\"dropdown-item\" href=\"#\">Mis datos</a>
@@ -150,7 +150,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
-                    <a class= \"dropdown-toggle h4\" onclick= type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
+                    <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu  m-0 p-0 position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
                         <a class=\"dropdown-item\" href=\"#\">Métodos de pago</a>
                         <a class=\"dropdown-item\" href=\"#\">Mis datos</a>

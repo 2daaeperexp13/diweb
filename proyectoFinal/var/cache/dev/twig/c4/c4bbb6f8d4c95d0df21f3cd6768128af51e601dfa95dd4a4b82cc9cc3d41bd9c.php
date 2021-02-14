@@ -72,7 +72,14 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
           <div class=\"modal-content\">
             <div class=\"modal-body p-0\">
               <div class=\"row align-items-stretch\">
-                <div class=\"col-lg-6 p-lg-0\"><a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\"></a><a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\"></a><a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\"></a></div>
+                <div class=\"col-lg-6 p-lg-0\">
+                  <a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\">
+                  </a>
+                  <a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  </a>
+                  <a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  </a>
+                </div>
                 <div class=\"col-lg-6\">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
@@ -132,8 +139,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#delivery-time-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">Free shipping</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Envio gratuito a todo a cualquier parte</h6>
+                      <p class=\"text-small mb-0 text-muted\"></p>
                     </div>
                   </div>
                 </div>
@@ -145,8 +152,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#helpline-24h-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">24 x 7 service</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Servicio 24 h </h6>
+                      <p class=\"text-small mb-0 text-muted\"></p>
                     </div>
                   </div>
                 </div>
@@ -158,32 +165,11 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#label-tag-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">Festival offer</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Las mejores ofertas!</h6>
+                      <p class=\"text-small mb-0 text-muted\">100% Calidad - Precio</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- NEWSLETTER-->
-        <section class=\"py-5\">
-          <div class=\"container p-0\">
-            <div class=\"row\">
-              <div class=\"col-lg-6 mb-3 mb-lg-0\">
-                <h5 class=\"text-uppercase\">Let's be friends!</h5>
-                <p class=\"text-small text-muted mb-0\">Nisi nisi tempor consequat laboris nisi.</p>
-              </div>
-              <div class=\"col-lg-6\">
-                <form action=\"#\">
-                  <div class=\"input-group flex-column flex-sm-row mb-3\">
-                    <input class=\"form-control form-control-lg py-3\" type=\"email\" placeholder=\"Enter your email address\" aria-describedby=\"button-addon2\">
-                    <div class=\"input-group-append\">
-                      <button class=\"btn btn-dark btn-block\" id=\"button-addon2\" type=\"submit\">Subscribe</button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -198,7 +184,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 128
+    // line 114
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -208,10 +194,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 129
+        // line 115
         echo "  
   ";
-        // line 130
+        // line 116
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -236,7 +222,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  215 => 130,  212 => 129,  202 => 128,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  201 => 116,  198 => 115,  188 => 114,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -250,7 +236,14 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
           <div class=\"modal-content\">
             <div class=\"modal-body p-0\">
               <div class=\"row align-items-stretch\">
-                <div class=\"col-lg-6 p-lg-0\"><a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\"></a><a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\"></a><a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\"></a></div>
+                <div class=\"col-lg-6 p-lg-0\">
+                  <a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\">
+                  </a>
+                  <a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  </a>
+                  <a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  </a>
+                </div>
                 <div class=\"col-lg-6\">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
@@ -310,8 +303,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#delivery-time-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">Free shipping</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Envio gratuito a todo a cualquier parte</h6>
+                      <p class=\"text-small mb-0 text-muted\"></p>
                     </div>
                   </div>
                 </div>
@@ -323,8 +316,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#helpline-24h-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">24 x 7 service</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Servicio 24 h </h6>
+                      <p class=\"text-small mb-0 text-muted\"></p>
                     </div>
                   </div>
                 </div>
@@ -336,32 +329,11 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                       <use xlink:href=\"#label-tag-1\"> </use>
                     </svg>
                     <div class=\"media-body text-left ml-3\">
-                      <h6 class=\"text-uppercase mb-1\">Festival offer</h6>
-                      <p class=\"text-small mb-0 text-muted\">Free shipping worlwide</p>
+                      <h6 class=\"text-uppercase mb-1\">Las mejores ofertas!</h6>
+                      <p class=\"text-small mb-0 text-muted\">100% Calidad - Precio</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- NEWSLETTER-->
-        <section class=\"py-5\">
-          <div class=\"container p-0\">
-            <div class=\"row\">
-              <div class=\"col-lg-6 mb-3 mb-lg-0\">
-                <h5 class=\"text-uppercase\">Let's be friends!</h5>
-                <p class=\"text-small text-muted mb-0\">Nisi nisi tempor consequat laboris nisi.</p>
-              </div>
-              <div class=\"col-lg-6\">
-                <form action=\"#\">
-                  <div class=\"input-group flex-column flex-sm-row mb-3\">
-                    <input class=\"form-control form-control-lg py-3\" type=\"email\" placeholder=\"Enter your email address\" aria-describedby=\"button-addon2\">
-                    <div class=\"input-group-append\">
-                      <button class=\"btn btn-dark btn-block\" id=\"button-addon2\" type=\"submit\">Subscribe</button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>

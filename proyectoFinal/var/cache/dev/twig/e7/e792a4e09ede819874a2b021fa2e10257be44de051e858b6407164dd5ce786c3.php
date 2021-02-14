@@ -87,7 +87,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         // line 6
         echo "<div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>LOCALIDADES</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -121,14 +121,14 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>
-                            <a class=\"btn miheader\" href=\"";
+                            <a class=\"btnform2 btn rounded-circle\" href=\"";
             // line 27
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_show", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">DATOS</a>
                             <a href=\"";
             // line 28
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\"><img class=\"interaccionesBackend\" src=\"";
+            echo "\" CLASS=\"ml-5\">EDITAR<img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -152,14 +152,14 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         </div>
     </div>
     <div class=\"mt-3\">
-        <a class=\"ml-auto \" href=\"";
+        <a class=\"ml-auto p-5\" href=\"";
         // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_new");
         echo "\">
-            <img class=\"interaccionesBackend\" src=\"";
+            <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"";
         // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
-        echo "\"></img>
+        echo "\"></img></h4>
         </a>
     </div>
 </div>
@@ -196,7 +196,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 {% block body %}
 <div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>LOCALIDADES</h1>
         </div>
         <div class=\"m-1 p-3 \">
@@ -215,8 +215,8 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
                         <td>{{ localidad.codLoc }}</td>
                         <td>{{ localidad.nombre }}</td>
                         <td>
-                            <a class=\"btn miheader\" href=\"{{ path('localidad_show', {'id': localidad.id}) }}\">DATOS</a>
-                            <a href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\"><img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a class=\"btnform2 btn rounded-circle\" href=\"{{ path('localidad_show', {'id': localidad.id}) }}\">DATOS</a>
+                            <a href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\" CLASS=\"ml-5\">EDITAR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -229,8 +229,8 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         </div>
     </div>
     <div class=\"mt-3\">
-        <a class=\"ml-auto \" href=\"{{ path('localidad_new') }}\">
-            <img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img>
+        <a class=\"ml-auto p-5\" href=\"{{ path('localidad_new') }}\">
+            <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
         </a>
     </div>
 </div>
