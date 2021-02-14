@@ -3,9 +3,14 @@
 {% block title %}CATEGORÍA{% endblock %}
 
 {% block body %}
-    <h1>Añadir categoria</h1>
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow pb-2 mb-5">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
+            <h1>NUEVA CATEGORÍA</h1>
+        </div>
 
-    {{ include('categoria/_form.html.twig') }}
-
-    <a href="{{ path('categoria_index') }}">Listar</a>
+        {{ include('categoria/_form.html.twig') }}
+    </div>
+    <a href="{{ path('categoria_index') }}" class="mt-2"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
+</div>
 {% endblock %}

@@ -3,11 +3,16 @@
 {% block title %}Edit Provincia{% endblock %}
 
 {% block body %}
-    <h1>Edit Provincia</h1>
-
-    {{ include('provincia/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('provincia_index') }}">back to list</a>
-
-    {{ include('provincia/_delete_form.html.twig') }}
+<div class="container mb-5 ">
+    <div class="  miheader2 mb-5 pb-2">
+        <div class="encabezadoBack"><h1>EDITAR PROVINCIA</h1></div>
+        <div class="container-fluid">
+            {{ include('provincia/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('provincia/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('provincia_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
+</div>}
 {% endblock %}

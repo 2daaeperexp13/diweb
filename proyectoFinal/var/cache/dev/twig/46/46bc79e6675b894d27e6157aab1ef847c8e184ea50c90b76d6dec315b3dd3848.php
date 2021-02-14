@@ -52,32 +52,32 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 26
+        // line 27
         echo "  </head>
   <body>
 ";
-        // line 28
+        // line 29
         $this->displayBlock('header', $context, $blocks);
-        // line 35
+        // line 36
         echo "    <div id=\"principal\" class=\"principal\">
 ";
-        // line 36
-        $this->displayBlock('body', $context, $blocks);
         // line 37
+        $this->displayBlock('body', $context, $blocks);
+        // line 38
         echo "    </div>
       <footer class=\"bg-dark text-white align-self-end \">
 ";
-        // line 39
+        // line 40
         $this->displayBlock('footer', $context, $blocks);
-        // line 82
+        // line 65
         echo "      </footer>
 ";
-        // line 83
+        // line 66
         $this->displayBlock('scripts', $context, $blocks);
-        // line 110
+        // line 93
         echo "      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"";
-        // line 111
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom.css"), "html", null, true);
         echo "\">
     </div>
@@ -129,38 +129,40 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
 
         // line 12
-        echo "    <link rel=\"stylesheet\" href=\"";
+        echo "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
     <link rel=\"stylesheet\" href=\"";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/css/lightbox.min.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/css/bootstrap-select.min.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 17
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.carousel.min.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.theme.default.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
     <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.gold.min.css"), "html", null, true);
         echo "\" id=\"theme-stylesheet\">
     <link rel=\"shortcut icon\" href=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/logo.jpg"), "html", null, true);
         echo "\">
 
@@ -173,7 +175,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 28
+    // line 29
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,19 +185,19 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 29
+        // line 30
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 30
-            echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 30)->display($context);
             // line 31
+            echo "      ";
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 31)->display($context);
+            // line 32
             echo "    ";
         } else {
-            // line 32
-            echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 32)->display($context);
             // line 33
+            echo "      ";
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 33)->display($context);
+            // line 34
             echo "    ";
         }
         
@@ -206,7 +208,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 36
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -225,7 +227,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 39
+    // line 40
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -235,31 +237,13 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 40
+        // line 41
         echo "        <div class=\"container py-4\">
           <div class=\"row py-5\">
-            <div class=\"col-md-4 mb-3 mb-md-0\">
-              <h6 class=\"text-uppercase mb-3\">Customer services</h6>
-              <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">Help &amp; Contact Us</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Returns &amp; Refunds</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Online Stores</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-            <div class=\"col-md-4 mb-3 mb-md-0\">
-              <h6 class=\"text-uppercase mb-3\">Company</h6>
-              <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">What We Do</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Available Services</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Latest Posts</a></li>
-                <li><a class=\"footer-link\" href=\"#\">FAQs</a></li>
-              </ul>
-            </div>
             <div class=\"col-md-4\">
               <h6 class=\"text-uppercase mb-3\">Social media</h6>
               <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">Twitter</a></li>
+                <li><a class=\"footer-link\" href=\"#\">Twitter </a></li>
                 <li><a class=\"footer-link\" href=\"#\">Instagram</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Tumblr</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Pinterest</a></li>
@@ -286,7 +270,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 83
+    // line 66
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -296,38 +280,38 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 84
+        // line 67
         echo "  <!-- JavaScript files-->
   <script src=\"";
-        // line 85
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 86
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 87
+        // line 70
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 88
+        // line 71
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 89
+        // line 72
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/js/bootstrap-select.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 90
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 91
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 92
+        // line 75
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
         echo "\"></script>
   <script>
@@ -367,7 +351,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     public function getDebugInfo()
     {
-        return array (  331 => 92,  327 => 91,  323 => 90,  319 => 89,  315 => 88,  311 => 87,  307 => 86,  303 => 85,  300 => 84,  290 => 83,  239 => 40,  229 => 39,  210 => 36,  199 => 33,  196 => 32,  193 => 31,  190 => 30,  187 => 29,  177 => 28,  164 => 22,  160 => 21,  154 => 18,  150 => 17,  146 => 16,  142 => 15,  138 => 14,  132 => 12,  113 => 11,  105 => 5,  95 => 4,  81 => 111,  78 => 110,  76 => 83,  73 => 82,  71 => 39,  67 => 37,  65 => 36,  62 => 35,  60 => 28,  56 => 26,  54 => 4,  49 => 1,);
+        return array (  315 => 75,  311 => 74,  307 => 73,  303 => 72,  299 => 71,  295 => 70,  291 => 69,  287 => 68,  284 => 67,  274 => 66,  241 => 41,  231 => 40,  212 => 37,  201 => 34,  198 => 33,  195 => 32,  192 => 31,  189 => 30,  179 => 29,  166 => 23,  162 => 22,  156 => 19,  152 => 18,  148 => 17,  144 => 16,  140 => 15,  135 => 13,  132 => 12,  113 => 11,  105 => 5,  95 => 4,  81 => 94,  78 => 93,  76 => 66,  73 => 65,  71 => 40,  67 => 38,  65 => 37,  62 => 36,  60 => 29,  56 => 27,  54 => 4,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -383,6 +367,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta name=\"robots\" content=\"all,follow\">
 {% block css %}
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
     <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\">
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
     <link rel=\"stylesheet\" href=\"{{asset('vendor/lightbox2/css/lightbox.min.css')}}\">
@@ -413,28 +398,10 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 {% block footer%}
         <div class=\"container py-4\">
           <div class=\"row py-5\">
-            <div class=\"col-md-4 mb-3 mb-md-0\">
-              <h6 class=\"text-uppercase mb-3\">Customer services</h6>
-              <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">Help &amp; Contact Us</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Returns &amp; Refunds</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Online Stores</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-            <div class=\"col-md-4 mb-3 mb-md-0\">
-              <h6 class=\"text-uppercase mb-3\">Company</h6>
-              <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">What We Do</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Available Services</a></li>
-                <li><a class=\"footer-link\" href=\"#\">Latest Posts</a></li>
-                <li><a class=\"footer-link\" href=\"#\">FAQs</a></li>
-              </ul>
-            </div>
             <div class=\"col-md-4\">
               <h6 class=\"text-uppercase mb-3\">Social media</h6>
               <ul class=\"list-unstyled mb-0\">
-                <li><a class=\"footer-link\" href=\"#\">Twitter</a></li>
+                <li><a class=\"footer-link\" href=\"#\">Twitter </a></li>
                 <li><a class=\"footer-link\" href=\"#\">Instagram</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Tumblr</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Pinterest</a></li>

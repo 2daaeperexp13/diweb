@@ -85,17 +85,24 @@ class __TwigTemplate_67d3ad21b61b84a86d4b4b95b999feeff56e31a2bf02b06796e69a8b484
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new TipoProducto</h1>
+        echo "<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow mb-5 pb-2\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVO TIPO DE PRODUCTO</h1>
+        </div>
 
-    ";
-        // line 8
+        ";
+        // line 12
         echo twig_include($this->env, $context, "tipo_producto/_form.html.twig");
         echo "
-
+    </div>
     <a href=\"";
-        // line 10
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_index");
-        echo "\">back to list</a>
+        echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></h4></a>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +124,7 @@ class __TwigTemplate_67d3ad21b61b84a86d4b4b95b999feeff56e31a2bf02b06796e69a8b484
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +134,16 @@ class __TwigTemplate_67d3ad21b61b84a86d4b4b95b999feeff56e31a2bf02b06796e69a8b484
 {% block title %}New TipoProducto{% endblock %}
 
 {% block body %}
-    <h1>Create new TipoProducto</h1>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow mb-5 pb-2\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVO TIPO DE PRODUCTO</h1>
+        </div>
 
-    {{ include('tipo_producto/_form.html.twig') }}
-
-    <a href=\"{{ path('tipo_producto_index') }}\">back to list</a>
+        {{ include('tipo_producto/_form.html.twig') }}
+    </div>
+    <a href=\"{{ path('tipo_producto_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
+</div>
 {% endblock %}
 ", "tipo_producto/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\tipo_producto\\new.html.twig");
     }

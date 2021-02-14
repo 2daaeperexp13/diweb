@@ -116,13 +116,9 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorium"], "nombre", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
                         <td>
-                            <a class=\" btn btnform2 rounded\" href=\"";
+                            <a class=\"btn btnform2\" href=\"";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_show", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">DATOS</a>
-                            <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -132,7 +128,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 29
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -141,21 +137,27 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorium'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 33
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto \" href=\"";
-        // line 39
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_new");
         echo "\">
             <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
-        // line 40
+        // line 39
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img><h4>
         </a>
+    </div>
+    <div class=\"navigation\"> 
+        ";
+        // line 43
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["categorias"]) || array_key_exists("categorias", $context) ? $context["categorias"] : (function () { throw new RuntimeError('Variable "categorias" does not exist.', 43, $this->source); })()));
+        echo " 
     </div>
 </div>
 ";
@@ -179,7 +181,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
 
     public function getDebugInfo()
     {
-        return array (  156 => 40,  152 => 39,  145 => 34,  136 => 30,  125 => 26,  121 => 25,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  159 => 43,  152 => 39,  148 => 38,  141 => 33,  132 => 29,  121 => 25,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -208,8 +210,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
                         <td>{{ categorium.id }}</td>
                         <td>{{ categorium.nombre }}</td>
                         <td>
-                            <a class=\" btn btnform2 rounded\" href=\"{{ path('categoria_show', {'id': categorium.id}) }}\">DATOS</a>
-                            <a href=\"{{ path('categoria_edit', {'id': categorium.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a class=\"btn btnform2\" href=\"{{ path('categoria_edit', {'id': categorium.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -225,6 +226,9 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
         <a class=\"ml-auto \" href=\"{{ path('categoria_new') }}\">
             <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img><h4>
         </a>
+    </div>
+    <div class=\"navigation\"> 
+        {{ knp_pagination_render(categorias) }} 
     </div>
 </div>
 {% endblock %}

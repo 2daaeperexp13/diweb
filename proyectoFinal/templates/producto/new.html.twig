@@ -3,10 +3,14 @@
 {% block title %}NUEVO PRODUCTO{% endblock %}
 
 {% block body %}
-        <h1>AÑADIR UN NUEVO PRODUCTO</h1>
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow mb-5">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
+            <h1>NUEVO PRODUCTO</h1>
+        </div>
 
-            {{ include('producto/_form.html.twig') }}
-
-        <a href="{{ path('producto_index') }}">Volver</a>
-
+        {{ include('producto/_form.html.twig') }}
+    </div>
+</div>
+<div><a href="{{ path('producto_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a></div>   
 {% endblock %}

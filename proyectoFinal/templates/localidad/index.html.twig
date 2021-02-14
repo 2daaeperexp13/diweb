@@ -24,7 +24,7 @@
                         <td>{{ localidad.codLoc }}</td>
                         <td>{{ localidad.nombre }}</td>
                         <td>
-                            <a href="{{ path('localidad_edit', {'id': localidad.id}) }}" CLASS="ml-5 ">EDITAR<img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
+                            <a class="btn btnform2" href="{{ path('localidad_edit', {'id': localidad.id}) }}">EDITAR <img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
                         </td>
                     </tr>
                 {% else %}

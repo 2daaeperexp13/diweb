@@ -86,8 +86,8 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
 
         // line 6
         echo "<div class=\"container mb-5\">
-    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow mb-5\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>NUEVA LOCALIDAD</h1>
         </div>
 
@@ -99,9 +99,9 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
     <a href=\"";
         // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_index");
-        echo "\"><img class=\"interaccionesBackend rounded mt-3\" src=\"";
+        echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
-        echo "\"></img></a>
+        echo "\"></img></h4></a>
 </div>
         
 ";
@@ -136,14 +136,14 @@ class __TwigTemplate_263f514d7e7b63f7f65dd7b213683d3f3c7f508fa49bf46fa5988a8c64a
 
 {% block body %}
 <div class=\"container mb-5\">
-    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
-        <div class=\"miheader pl-3 text-dark mb-auto rounded\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow mb-5\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>NUEVA LOCALIDAD</h1>
         </div>
 
         {{ include('localidad/_form.html.twig') }}
     </div>
-    <a href=\"{{ path('localidad_index') }}\"><img class=\"interaccionesBackend rounded mt-3\" src=\"{{asset('imgs/volver.png')}}\"></img></a>
+    <a href=\"{{ path('localidad_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
 </div>
         
 {% endblock %}

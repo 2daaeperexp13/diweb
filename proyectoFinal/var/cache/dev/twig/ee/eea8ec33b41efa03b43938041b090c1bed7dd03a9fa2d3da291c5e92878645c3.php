@@ -85,17 +85,24 @@ class __TwigTemplate_9f7213cee76196efcd7dca5fbe1075eff92f92ba24c82c7587fed7583fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Añadir categoria</h1>
+        echo "<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow pb-2 mb-5\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVA CATEGORÍA</h1>
+        </div>
 
-    ";
-        // line 8
+        ";
+        // line 12
         echo twig_include($this->env, $context, "categoria/_form.html.twig");
         echo "
-
+    </div>
     <a href=\"";
-        // line 10
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_index");
-        echo "\">Listar</a>
+        echo "\" class=\"mt-2\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></h4></a>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +124,7 @@ class __TwigTemplate_9f7213cee76196efcd7dca5fbe1075eff92f92ba24c82c7587fed7583fb
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +134,16 @@ class __TwigTemplate_9f7213cee76196efcd7dca5fbe1075eff92f92ba24c82c7587fed7583fb
 {% block title %}CATEGORÍA{% endblock %}
 
 {% block body %}
-    <h1>Añadir categoria</h1>
+<div class=\"container mb-5\">
+    <div class=\"container-fluid border p-0 miheader2 rounded shadow pb-2 mb-5\">
+        <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
+            <h1>NUEVA CATEGORÍA</h1>
+        </div>
 
-    {{ include('categoria/_form.html.twig') }}
-
-    <a href=\"{{ path('categoria_index') }}\">Listar</a>
+        {{ include('categoria/_form.html.twig') }}
+    </div>
+    <a href=\"{{ path('categoria_index') }}\" class=\"mt-2\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
+</div>
 {% endblock %}
 ", "categoria/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\categoria\\new.html.twig");
     }

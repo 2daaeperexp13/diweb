@@ -121,14 +121,10 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>
-                            <a class=\"btnform2 btn rounded-circle\" href=\"";
+                            <a class=\"btn btnform2\" href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_show", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">DATOS</a>
-                            <a href=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\" CLASS=\"ml-5\">EDITAR<img class=\"interaccionesBackend\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -137,7 +133,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 32
+            // line 31
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -146,21 +142,27 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['localidad'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 35
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto p-5\" href=\"";
-        // line 41
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_new");
         echo "\">
             <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"";
-        // line 42
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img></h4>
         </a>
+    </div>
+    <div class=\"navigation\"> 
+        ";
+        // line 45
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 45, $this->source); })()));
+        echo " 
     </div>
 </div>
 ";
@@ -184,7 +186,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 
     public function getDebugInfo()
     {
-        return array (  161 => 42,  157 => 41,  150 => 36,  141 => 32,  130 => 28,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 45,  157 => 41,  153 => 40,  146 => 35,  137 => 31,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -215,8 +217,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
                         <td>{{ localidad.codLoc }}</td>
                         <td>{{ localidad.nombre }}</td>
                         <td>
-                            <a class=\"btnform2 btn rounded-circle\" href=\"{{ path('localidad_show', {'id': localidad.id}) }}\">DATOS</a>
-                            <a href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\" CLASS=\"ml-5\">EDITAR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a class=\"btn btnform2\" href=\"{{ path('localidad_edit', {'id': localidad.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -232,6 +233,9 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         <a class=\"ml-auto p-5\" href=\"{{ path('localidad_new') }}\">
             <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
         </a>
+    </div>
+    <div class=\"navigation\"> 
+        {{ knp_pagination_render(localidades) }} 
     </div>
 </div>
 {% endblock %}

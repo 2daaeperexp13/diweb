@@ -21,8 +21,8 @@ class LocalidadController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator, LocalidadRepository $localidadRepository): Response
     {
-        return $this->render('tipo_producto/index.html.twig', [
-            'tipo_productos' => $paginator->paginate($localidadRepository->createQueryBuilder('t')
+        return $this->render('localidad/index.html.twig', [
+            'localidades' => $paginator->paginate($localidadRepository->createQueryBuilder('t')
                 ->getQuery()
             , $request->query->getInt('page',1),5)
         ]);

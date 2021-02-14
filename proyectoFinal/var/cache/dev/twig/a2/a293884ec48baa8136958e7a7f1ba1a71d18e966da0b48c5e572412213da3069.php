@@ -86,24 +86,27 @@ class __TwigTemplate_d1c98b9f514eb3b64b39a9ef2933277a4c2336b02dde64eb0913ae6ebec
 
         // line 6
         echo "<div class=\"container\">
-    <h1>EDITAR LOCALDIAD</h1>
-
-    ";
-        // line 9
-        echo twig_include($this->env, $context, "localidad/_form.html.twig", ["button_label" => "Update"]);
+    <div class=\" miheader2 p-0 rounded mb-3 pb-2 mb-5\">
+        <div class=\"encabezadoBack m-0 rounded px-1\"><h2>EDITAR LOCALIDAD</h2></div>
+        <div class=\"container-fluid\">
+            ";
+        // line 10
+        echo twig_include($this->env, $context, "localidad/_form.html.twig", ["button_label" => "Guardar"]);
         echo "
-
-    <a href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
-        echo "\"><img class=\"interaccionesBackend\" src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/volver.png"), "html", null, true);
-        echo "\"></img></a>
-
-    <div class=\"\">";
-        // line 13
+            <div >
+                ";
+        // line 12
         echo twig_include($this->env, $context, "localidad/_delete_form.html.twig");
-        echo "</div>
+        echo "
+            </div>
+        </div>
+    </div>
+    <a href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_index");
+        echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></h4></a>
 </div>
 ";
         
@@ -126,7 +129,7 @@ class __TwigTemplate_d1c98b9f514eb3b64b39a9ef2933277a4c2336b02dde64eb0913ae6ebec
 
     public function getDebugInfo()
     {
-        return array (  105 => 13,  98 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 16,  99 => 12,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -137,13 +140,16 @@ class __TwigTemplate_d1c98b9f514eb3b64b39a9ef2933277a4c2336b02dde64eb0913ae6ebec
 
 {% block body %}
 <div class=\"container\">
-    <h1>EDITAR LOCALDIAD</h1>
-
-    {{ include('localidad/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('producto_index') }}\"><img class=\"interaccionesBackend\" src=\"{{asset('/imgs/volver.png')}}\"></img></a>
-
-    <div class=\"\">{{ include('localidad/_delete_form.html.twig') }}</div>
+    <div class=\" miheader2 p-0 rounded mb-3 pb-2 mb-5\">
+        <div class=\"encabezadoBack m-0 rounded px-1\"><h2>EDITAR LOCALIDAD</h2></div>
+        <div class=\"container-fluid\">
+            {{ include('localidad/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('localidad/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href=\"{{ path('localidad_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
 </div>
 {% endblock %}
 ", "localidad/edit.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\localidad\\edit.html.twig");

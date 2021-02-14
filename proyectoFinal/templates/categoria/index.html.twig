@@ -22,7 +22,7 @@
                         <td>{{ categorium.id }}</td>
                         <td>{{ categorium.nombre }}</td>
                         <td>
-                            <a href="{{ path('categoria_edit', {'id': categorium.id}) }}">EDITAR <img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
+                            <a class="btn btnform2" href="{{ path('categoria_edit', {'id': categorium.id}) }}">EDITAR <img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
                         </td>
                     </tr>
                 {% else %}

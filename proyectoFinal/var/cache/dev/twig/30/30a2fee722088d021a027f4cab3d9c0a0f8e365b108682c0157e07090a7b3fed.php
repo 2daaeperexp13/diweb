@@ -65,7 +65,7 @@ class __TwigTemplate_09e5275d2b0d8b44969b34fc25e48c7e2aa8c2d14bb8c2fdb1a23c4c1d9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit Producto";
+        echo "EDITAR PRODUCTO";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,22 +85,29 @@ class __TwigTemplate_09e5275d2b0d8b44969b34fc25e48c7e2aa8c2d14bb8c2fdb1a23c4c1d9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Producto</h1>
-
-    ";
-        // line 8
-        echo twig_include($this->env, $context, "producto/_form.html.twig", ["button_label" => "Update"]);
-        echo "
-
-    <a href=\"";
+        echo " <div class=\"container mb-5 \">
+    <div class=\"  miheader2 mb-5 pb-2 rounded\">
+        <div class=\"encabezadoBack px-1 rounded\"><h1>EDITAR PRODUCTO</h1></div>
+        <div class=\"container-fluid\">
+            ";
         // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
-        echo "\">back to list</a>
-
-    ";
+        echo twig_include($this->env, $context, "producto/_form.html.twig", ["button_label" => "Guardar"]);
+        echo "
+            <div >
+                ";
         // line 12
         echo twig_include($this->env, $context, "producto/_delete_form.html.twig");
         echo "
+            </div>
+        </div>
+    </div>
+</div>
+<a href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_index");
+        echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></h4></a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,23 +129,28 @@ class __TwigTemplate_09e5275d2b0d8b44969b34fc25e48c7e2aa8c2d14bb8c2fdb1a23c4c1d9
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  107 => 17,  99 => 12,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit Producto{% endblock %}
+{% block title %}EDITAR PRODUCTO{% endblock %}
 
 {% block body %}
-    <h1>Edit Producto</h1>
-
-    {{ include('producto/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('producto_index') }}\">back to list</a>
-
-    {{ include('producto/_delete_form.html.twig') }}
+ <div class=\"container mb-5 \">
+    <div class=\"  miheader2 mb-5 pb-2 rounded\">
+        <div class=\"encabezadoBack px-1 rounded\"><h1>EDITAR PRODUCTO</h1></div>
+        <div class=\"container-fluid\">
+            {{ include('producto/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('producto/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
+<a href=\"{{ path('producto_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
 {% endblock %}
 ", "producto/edit.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\producto\\edit.html.twig");
     }

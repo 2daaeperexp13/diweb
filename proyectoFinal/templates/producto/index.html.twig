@@ -30,7 +30,7 @@
                         <td>{{ producto.stock }}</td>
                         <td>
                         <a class="btnform2 btn rounded" href="{{ path('producto_show', {'id': producto.id}) }}">DATOS</a>
-                                    <a href="{{ path('producto_edit', {'id': producto.id}) }}" CLASS="ml-5 ">EDITAR<img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
+                        <a class="btn btnform2 rounded" href="{{ path('producto_edit', {'id': producto.id}) }}">EDITAR <img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
                         </td>
                     </tr>
                 {% else %}

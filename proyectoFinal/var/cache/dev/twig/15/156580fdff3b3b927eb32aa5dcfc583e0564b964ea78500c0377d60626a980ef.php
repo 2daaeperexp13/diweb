@@ -67,11 +67,13 @@ class __TwigTemplate_f3dd35c1e72220036f5441f3ba50cb20cf621b32ff367a31f3a5cd74684
         echo "
             
         </div>
-        <div class=\"col-2 offset-10\">
+        <div class=\"d-flex justify-content-end mr-1\">
             <button class=\"btn btnform2 rounded\">";
         // line 22
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 22, $this->source); })()), "GUARDAR")) : ("GUARDAR")), "html", null, true);
-        echo "</button>
+        echo " <img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/guardar.png"), "html", null, true);
+        echo "\"></img></button>
         </div>
     </div>
     
@@ -100,7 +102,7 @@ class __TwigTemplate_f3dd35c1e72220036f5441f3ba50cb20cf621b32ff367a31f3a5cd74684
 
     public function getDebugInfo()
     {
-        return array (  80 => 26,  73 => 22,  67 => 18,  65 => 16,  59 => 12,  57 => 10,  51 => 6,  49 => 4,  43 => 1,);
+        return array (  82 => 26,  73 => 22,  67 => 18,  65 => 16,  59 => 12,  57 => 10,  51 => 6,  49 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -125,8 +127,8 @@ class __TwigTemplate_f3dd35c1e72220036f5441f3ba50cb20cf621b32ff367a31f3a5cd74684
             })}}
             
         </div>
-        <div class=\"col-2 offset-10\">
-            <button class=\"btn btnform2 rounded\">{{ button_label|default('GUARDAR') }}</button>
+        <div class=\"d-flex justify-content-end mr-1\">
+            <button class=\"btn btnform2 rounded\">{{ button_label|default('GUARDAR') }} <img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/guardar.png')}}\"></img></button>
         </div>
     </div>
     

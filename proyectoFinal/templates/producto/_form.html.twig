@@ -1,56 +1,56 @@
 
     {{ form_start(form) }}
-    <div class="">
-        <div class="form-group">
-            <div class="">
+    <div class="container-fluid">
+        <div class="form-group row">
+            <div class="col-3">
                 {{ form_row(form.categoria,{
                     label:'Categoría'
                 })}}
                 
             </div>
-            <div class="">
+            <div class="col-3 offset-1">
                 {{ form_row(form.tipoProducto,{
                     label:'Tipo de producto'
                 })}}
                 
             </div>
-            <div class="">
+            <div class="col-3 offset-1">
                 {{ form_row(form.nombre,{
-                    label:'nombre'
+                    label:'Nombre'
                 })}}
                 
             </div>
         </div>
-        <div class="formgroup">
-            <div class="">
+        <div class="formgroup row">
+            <div class="col-12">
                 {{ form_row(form.descripcion,{
                     label:'Descripción detallada'
                 })}}
                 
             </div>
-            <div class="">
+        </div>
+        <div class="formgroup row">
+            <div class="col-3 ">
                 {{ form_row(form.stock,{
                     label:'Existencias del producto'
                 })}}
                 
             </div>
-            <div class="">
+            <div class="col-3 ">
                 {{ form_row(form.precio,{
                     label:'Precio'
                 })}}
                 
             </div>
-        </div>
-        <div class="form-group">
-            <div class="">
+            <div class=" col-6">
                 <span class="btn btn-default btn-file">
                     {{ form_row(form.imgProductos,{
                         label:'Imágenes del producto'
                     })}}
                 </span>
             </div>
-            <button class=" btnform2 rounded">{{ button_label|default('GUARDAR') }}</button>
-        </div>
+        </div>  
+        <div class="col-2 offset-10"><button class="btn btnform2 rounded">{{ button_label|default('GUARDAR') }}<img class="interaccionesBackend rounded " src="{{asset('imgs/guardar.png')}}"></img></button>
     </div>
     
 

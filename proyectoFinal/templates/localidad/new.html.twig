@@ -4,14 +4,14 @@
 
 {% block body %}
 <div class="container mb-5">
-    <div class="container-fluid border p-0 miheader2 rounded shadow">
-        <div class="miheader pl-3 text-dark mb-auto rounded">
+    <div class="container-fluid border p-0 miheader2 rounded shadow mb-5">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
             <h1>NUEVA LOCALIDAD</h1>
         </div>
 
         {{ include('localidad/_form.html.twig') }}
     </div>
-    <a href="{{ path('localidad_index') }}"><img class="interaccionesBackend rounded mt-3" src="{{asset('imgs/volver.png')}}"></img></a>
+    <a href="{{ path('localidad_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
 </div>
         
 {% endblock %}

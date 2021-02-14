@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editar Tipode Producto{% endblock %}
+{% block title %}EDITAR TIPO DE PRODUCTO{% endblock %}
 
 {% block body %}
-    <h1>Editar un tipo</h1>
-
-    {{ include('tipo_producto/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('tipo_producto_index') }}">back to list</a>
-
-    {{ include('tipo_producto/_delete_form.html.twig') }}
+<div class="container mb-5 ">
+    <div class="  miheader2 mb-5 pb-2 rounded">
+        <div class="encabezadoBack rounded"><h1>EDITAR TIPO DE PRODUCTO</h1></div>
+        <div class="container-fluid">
+            {{ include('tipo_producto/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('tipo_producto/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('tipo_producto_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
+</div>
 {% endblock %}

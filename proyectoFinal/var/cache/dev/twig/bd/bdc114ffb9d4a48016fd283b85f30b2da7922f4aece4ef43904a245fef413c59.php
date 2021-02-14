@@ -117,11 +117,11 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                         <td>
-                            <a href=\"";
+                             <a class=\"btn btnform2\" href=\"";
             // line 26
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/imgs/editar.png"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
                     </tr>
@@ -146,7 +146,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         <div class=\"mt-3\">
             <a class=\"ml-auto \" href=\"";
         // line 39
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_new");
         echo "\">
                 <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
         // line 40
@@ -212,7 +212,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
                         <td>{{ tipo_producto.id }}</td>
                         <td>{{ tipo_producto.tipo }}</td>
                         <td>
-                            <a href=\"{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('/imgs/editar.png')}}\"></img></a>
+                             <a class=\"btn btnform2\" href=\"{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -225,7 +225,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         </div>
     </div>
         <div class=\"mt-3\">
-            <a class=\"ml-auto \" href=\"{{ path('provincia_new') }}\">
+            <a class=\"ml-auto \" href=\"{{ path('tipo_producto_new') }}\">
                 <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
             </a>
         </div>

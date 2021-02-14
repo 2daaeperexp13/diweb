@@ -42,16 +42,21 @@ img.flogo:hover{
     
 }
 .btnform:hover{
-    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+    background: linear-gradient(to top, #ffa033 0%, #3366cc 100%);
 }
 .btnform{
     background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
+    color: white;
+    border-radius: 10%;
 }
 .btnform2:hover{
     background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
 }
 .btnform2{
-    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+    background: linear-gradient(to top, #7e674e 0%, #7b7b7c 100%);
+    color: white;
+    border-radius: 10%;
+  
 }
 
 .encabezadoBack{

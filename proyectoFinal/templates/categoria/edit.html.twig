@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Categoria{% endblock %}
+{% block title %}EDITAR CATEGORIA{% endblock %}
 
 {% block body %}
-    <h1>Edit Categoria</h1>
-
-    {{ include('categoria/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('categoria_index') }}">back to list</a>
-
-    {{ include('categoria/_delete_form.html.twig') }}
+<div class="container mb-5 ">
+    <div class="  miheader2 mb-5 pb-2">
+        <div class="encabezadoBack"><h1>EDITAR CATEGORIA</h1></div>
+        <div class="container-fluid">
+            {{ include('categoria/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('categoria/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('categoria_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
+</div>
 {% endblock %}

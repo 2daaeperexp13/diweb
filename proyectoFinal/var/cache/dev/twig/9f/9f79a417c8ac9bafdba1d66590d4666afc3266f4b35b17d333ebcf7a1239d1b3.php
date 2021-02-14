@@ -136,10 +136,10 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
             // line 32
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_show", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\">DATOS</a>
-                                    <a href=\"";
+                        <a class=\"btn btnform2 rounded\" href=\"";
             // line 33
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-            echo "\" CLASS=\"ml-5 \">EDITAR<img class=\"interaccionesBackend\" src=\"";
+            echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -238,7 +238,7 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
                         <td>{{ producto.stock }}</td>
                         <td>
                         <a class=\"btnform2 btn rounded\" href=\"{{ path('producto_show', {'id': producto.id}) }}\">DATOS</a>
-                                    <a href=\"{{ path('producto_edit', {'id': producto.id}) }}\" CLASS=\"ml-5 \">EDITAR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                        <a class=\"btn btnform2 rounded\" href=\"{{ path('producto_edit', {'id': producto.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}

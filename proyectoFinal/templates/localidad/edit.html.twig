@@ -4,12 +4,15 @@
 
 {% block body %}
 <div class="container">
-    <h1>EDITAR LOCALDIAD</h1>
-
-    {{ include('localidad/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('producto_index') }}"><img class="interaccionesBackend" src="{{asset('/imgs/volver.png')}}"></img></a>
-
-    <div class="">{{ include('localidad/_delete_form.html.twig') }}</div>
+    <div class=" miheader2 p-0 rounded mb-3 pb-2 mb-5">
+        <div class="encabezadoBack m-0 rounded px-1"><h2>EDITAR LOCALIDAD</h2></div>
+        <div class="container-fluid">
+            {{ include('localidad/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('localidad/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('localidad_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
 </div>
 {% endblock %}
