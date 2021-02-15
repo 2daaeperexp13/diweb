@@ -13,6 +13,12 @@ class PrincipalController extends AbstractController
      */
     public function index(?Array $log): Response
     {
+        if($this->getUser()){
+            foreach ($this->getUser()->getRoles() as $rol ) {
+                if($rol=='ROLE_ADMIN') return $this->redirectToRoute('producto_index');
+            }
+        }
+        
         return $this->render('principal/index.html.twig', [
             'controller_name' => 'PrincipalController',
         ]);

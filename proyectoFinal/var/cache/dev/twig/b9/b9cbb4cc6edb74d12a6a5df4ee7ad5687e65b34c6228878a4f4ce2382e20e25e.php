@@ -75,7 +75,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                   <!-- Link--><a class=\"h4 \" href=\"/inicio\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"h4\" id=\"pagProductos\" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto row\">               
@@ -142,7 +142,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                   <!-- Link--><a class=\"h4 \" href=\"/inicio\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
-                  <!-- Link--><a class=\"h4 \" href=\"#\">Productos</a>
+                  <!-- Link--><a class=\"h4\" id=\"pagProductos\" href=\"#\">Productos</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto row\">               

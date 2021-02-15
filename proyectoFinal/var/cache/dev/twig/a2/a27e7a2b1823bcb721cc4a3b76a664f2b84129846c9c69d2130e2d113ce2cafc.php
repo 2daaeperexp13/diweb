@@ -103,6 +103,19 @@ class __TwigTemplate_95916014b653b69fd0d324584a324d2b93312fa9f0663f325f910be55a1
         echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
         echo "\"></img></h4></a></div>   
+<script>
+var letras=0;
+\$(\"textarea\").on(\"keyup\",function(e){
+  tecla = (document.all) ? e.keyCode : e.which;
+      if(tecla>32)
+\t      letras++;
+      if(letras>10&&tecla==32){
+        letras=0;
+        \$(this).val(\$(this.val()+'\\n');
+      }
+      return true;
+})
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -144,6 +157,19 @@ class __TwigTemplate_95916014b653b69fd0d324584a324d2b93312fa9f0663f325f910be55a1
     </div>
 </div>
 <div><a href=\"{{ path('producto_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a></div>   
+<script>
+var letras=0;
+\$(\"textarea\").on(\"keyup\",function(e){
+  tecla = (document.all) ? e.keyCode : e.which;
+      if(tecla>32)
+\t      letras++;
+      if(letras>10&&tecla==32){
+        letras=0;
+        \$(this).val(\$(this.val()+'\\n');
+      }
+      return true;
+})
+</script>
 {% endblock %}
 ", "producto/new.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\producto\\new.html.twig");
     }

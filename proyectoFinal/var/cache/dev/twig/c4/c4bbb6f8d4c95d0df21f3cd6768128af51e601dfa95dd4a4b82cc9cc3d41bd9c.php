@@ -73,22 +73,18 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <div class=\"modal-body p-0\">
               <div class=\"row align-items-stretch\">
                 <div class=\"col-lg-6 p-lg-0\">
-                  <a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\">
-                  </a>
-                  <a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
-                  </a>
-                  <a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
                 </div>
                 <div class=\"col-lg-6\">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
-                    <h2 class=\"h4\">Red digital smartwatch</h2>
+                    <h2 class=\"h4\"></h2>
                     <p class=\"text-muted\">\$250</p>
-                    <p class=\"text-small mb-4\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
+                    <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
                       <div class=\"col-sm-7 pr-sm-0\">
-                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Quantity</span>
+                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Cantidad</span>
                           <div class=\"quantity\">
                             <button class=\"dec-btn p-0\"><i class=\"fas fa-caret-left\"></i></button>
                             <input class=\"form-control border-0 shadow-0 p-0\" type=\"text\" value=\"1\">
@@ -96,8 +92,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                           </div>
                         </div>
                       </div>
-                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Add to cart</a></div>
-                    </div><a class=\"btn btn-link text-dark p-0\" href=\"#\"><i class=\"far fa-heart mr-2\"></i>Add to wish list</a>
+                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Agregar al carrito</a></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -106,7 +102,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         </div>
       </div>
       <!-- HERO SECTION-->
-      <div class=\"container \">
+      <div id=\"pagina\" class=\"container\">
         <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
@@ -125,7 +121,9 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <h2 class=\"h5 text-uppercase mb-4\">NOVEDADES</h2>
           </header>
           <div id=\"productosIndex\" class=\"row\">
-
+            <div id=\"carga\" class=\"spinner-border text-info  offset-5\" role=\"status\">
+              <span class=\"visually-hidden\">Loading...</span>
+            </div>
           </div>
         </section>
         <!-- SERVICES-->
@@ -184,7 +182,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 114
+    // line 112
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,10 +192,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 115
+        // line 113
         echo "  
   ";
-        // line 116
+        // line 114
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -222,7 +220,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  201 => 116,  198 => 115,  188 => 114,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  199 => 114,  196 => 113,  186 => 112,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -237,22 +235,18 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <div class=\"modal-body p-0\">
               <div class=\"row align-items-stretch\">
                 <div class=\"col-lg-6 p-lg-0\">
-                  <a class=\"product-view d-block h-100 bg-cover bg-center\" style=\"background: url(img/product-5.jpg)\" href=\"img/product-5.jpg\" data-lightbox=\"productview\" title=\"Red digital smartwatch\">
-                  </a>
-                  <a class=\"d-none\" href=\"img/product-5-alt-1.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
-                  </a>
-                  <a class=\"d-none\" href=\"img/product-5-alt-2.jpg\" title=\"Red digital smartwatch\" data-lightbox=\"productview\">
+                  <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
                 </div>
                 <div class=\"col-lg-6\">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
-                    <h2 class=\"h4\">Red digital smartwatch</h2>
+                    <h2 class=\"h4\"></h2>
                     <p class=\"text-muted\">\$250</p>
-                    <p class=\"text-small mb-4\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
+                    <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
                       <div class=\"col-sm-7 pr-sm-0\">
-                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Quantity</span>
+                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Cantidad</span>
                           <div class=\"quantity\">
                             <button class=\"dec-btn p-0\"><i class=\"fas fa-caret-left\"></i></button>
                             <input class=\"form-control border-0 shadow-0 p-0\" type=\"text\" value=\"1\">
@@ -260,8 +254,8 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                           </div>
                         </div>
                       </div>
-                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Add to cart</a></div>
-                    </div><a class=\"btn btn-link text-dark p-0\" href=\"#\"><i class=\"far fa-heart mr-2\"></i>Add to wish list</a>
+                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Agregar al carrito</a></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -270,7 +264,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         </div>
       </div>
       <!-- HERO SECTION-->
-      <div class=\"container \">
+      <div id=\"pagina\" class=\"container\">
         <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
@@ -289,7 +283,9 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             <h2 class=\"h5 text-uppercase mb-4\">NOVEDADES</h2>
           </header>
           <div id=\"productosIndex\" class=\"row\">
-
+            <div id=\"carga\" class=\"spinner-border text-info  offset-5\" role=\"status\">
+              <span class=\"visually-hidden\">Loading...</span>
+            </div>
           </div>
         </section>
         <!-- SERVICES-->

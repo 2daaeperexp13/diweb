@@ -73,7 +73,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
             </div>
         </div>
         <div class=\"formgroup row\">
-            <div class=\"col-12\">
+            <div class=\"col-5 offset-3\">
                 ";
         // line 26
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "descripcion", [], "any", false, false, false, 26), 'row', ["label" => "Descripción detallada"]);
@@ -177,7 +177,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
             </div>
         </div>
         <div class=\"formgroup row\">
-            <div class=\"col-12\">
+            <div class=\"col-5 offset-3\">
                 {{ form_row(form.descripcion,{
                     label:'Descripción detallada'
                 })}}

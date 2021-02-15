@@ -61,7 +61,7 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
 
         // line 2
         echo "    <!-- navbar-->
-     <header class=\"header miheader2 overflow-scroll mb-5 shadow\">
+     <header class=\"header miheader2 o mb-5 shadow\">
         <div class=\"container px-0 px-lg-3 \">
           <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0 \"><div class=\"navbar-brand \"><a  href=\"/producto\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase text-dark h1 \">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
@@ -112,7 +112,7 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
     {
         return new Source("{% block header%}
     <!-- navbar-->
-     <header class=\"header miheader2 overflow-scroll mb-5 shadow\">
+     <header class=\"header miheader2 o mb-5 shadow\">
         <div class=\"container px-0 px-lg-3 \">
           <nav class=\"navbar navbar-expand-lg navbar-light py-5 px-lg-0 \"><div class=\"navbar-brand \"><a  href=\"/producto\"><div id=\"titulo\" class=\" position-relative  mr-5 \"><span class=\"font-weight-bold text-uppercase text-dark h1 \">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>

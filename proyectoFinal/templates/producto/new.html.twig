@@ -13,4 +13,17 @@
     </div>
 </div>
 <div><a href="{{ path('producto_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a></div>   
+<script>
+var letras=0;
+$("textarea").on("keyup",function(e){
+  tecla = (document.all) ? e.keyCode : e.which;
+      if(tecla>32)
+	      letras++;
+      if(letras>10&&tecla==32){
+        letras=0;
+        $(this).val($(this.val()+'\n');
+      }
+      return true;
+})
+</script>
 {% endblock %}

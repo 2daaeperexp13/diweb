@@ -121,7 +121,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
         // line 21
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 21, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
-                <label for=\"inputPassword\">Password</label>
+                <label for=\"inputPassword\">Contraña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
@@ -190,7 +190,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
             <div class=\"container-fluid ml-1\">
                 <label for=\"inputEmail\">Email</label>
                 <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
-                <label for=\"inputPassword\">Password</label>
+                <label for=\"inputPassword\">Contraña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
