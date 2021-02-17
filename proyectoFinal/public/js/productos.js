@@ -52,12 +52,13 @@ function filtroProducto(producto,condicion,container){
 }
 function cargarCategorias() {
     $.ajax({
-        "url":"/categoria/get",
+        "url":"/categoria/datos",
         "dataType": "json",
         "type": "GET",
         "success":  function (data) {
             data.forEach(categoria=>{
-                if(categoria.nombre!="AMBAS")$("<option>").val(categoria.id).text(categoria.nombre).appendTo($("#categoria"));
+                var imagen = $("<img>").attr("src",categoria.icono).css({"width":"15px", "height":"15px"})
+                if(categoria.nombre!="AMBAS")$("<option>").val(categoria.id).append(imagen).appendTo($("#categoria"));
             });
             
         }
