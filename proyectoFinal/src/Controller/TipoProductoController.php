@@ -7,6 +7,7 @@ use App\Form\TipoProductoType;
 use App\Repository\TipoProductoRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,6 +29,15 @@ class TipoProductoController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/tipos", name="tipo_producto_tipos", methods={"GET"})
+     */
+    public function getTipos(TipoProductoRepository $tipoProductoRepository): Response
+    {
+        $tipos=$tipoProductoRepository->createQueryBuilder('p')->getQuery()
+        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        return new JsonResponse($tipos);
+    }
     /**
      * @Route("/new", name="tipo_producto_new", methods={"GET","POST"})
      */

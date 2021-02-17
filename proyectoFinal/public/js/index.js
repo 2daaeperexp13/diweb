@@ -1,30 +1,31 @@
 function volcarProducto(producto,container) {
-    container.producto=producto;
+    
     //ASGINO EL ID DEL PRDUCTO A CADA ELEMENTO QUE CONTENGA DATOS DEL MISMO
-    container.attr("id",container.attr("id")+'_'+producto.id);
+    container.attr("id",container.attr("id")+producto.id);
     $("#imgprod").attr({
-        "id":$("#imgprod").attr("id")+'_'+producto.id,
+        "id":$("#imgprod").attr("id")+producto.id,
         "src":producto.imagenes[0]
     });
 
     $("#nombre").attr({
-        "id":$("#nombre").attr("id")+'_'+producto.id
+        "id":$("#nombre").attr("id")+producto.id
     
     }).text(producto.nombre)
-    $("#precio").attr("id",$("#precio").attr("id")+'_'+producto.id).text(producto.precio);
-    container[0].producto=producto;
+    $("#precio").attr("id",$("#precio").attr("id")+producto.id).text(producto.precio);
     container.find("a").eq(2).on("click",function(){
         var modal=$("#productView");
-        modal.find("a").first().attr("href",container[0].producto.imagenes[0]).css("background-image",'url("'+container[0].producto.imagenes[0]+'")');
+        modal.find("a").first().attr("href",producto.imagenes[0]).css("background-image",'url("'+producto.imagenes[0]+'")');
         var carrusel=modal.find("a").first().parent();
         var numImg=producto.imagenes.length;
         for (let i = 1; i < numImg; i++) {
-            let imagen=container[0].producto.imagenes[i];
-            carrusel.append('<a class="d-none" href="'+imagen+'" title="'+container[0].producto.nombre+'" data-lightbox="productview"></a>');
+            let imagen=producto.imagenes[i];
+            carrusel.append('<a class="d-none" href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
         }
-        modal.find("h2").first().text(container[0].producto.nombre).next().text(container[0].producto.precio+"€").next().text(container[0].producto.descripcion);;
+        modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);;
 
     });
+    
+
 }
 
 function cargaProductos(productos, productosContainer) {
@@ -41,9 +42,10 @@ function cargaProductos(productos, productosContainer) {
                 let container= $("#producto").clone();
                 //Compruebo si el usuario a iniciado sesión para mostrar o no 
                 //la opción de añadir producto al carrito
+                volcarProducto(producto,$('#producto'));
                 if($("header").find($("#login"))[0]) $(".sesion").hide();
-                else $("#prodcarro").attr("id", $("#prodcarro").attr("id")+'_'+producto.id);
-                volcarProducto(producto,$("#producto"));
+                else $("#prodcarro").attr("id", $("#prodcarro").attr("id")+producto.id);
+                
                 (i==productos.length-1)?'':productosContainer.append(container);
             }
         }

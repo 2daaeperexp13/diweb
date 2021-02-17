@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 /**
  * @Route("/categoria")
  */
@@ -62,6 +64,27 @@ class CategoriaController extends AbstractController
         return $this->render('categoria/show.html.twig', [
             'categorium' => $categorium,
         ]);
+    }
+
+    /**
+     * @Route("/datos", name="categoria_datos", methods={"GET","POST"})
+     */
+    public function datos(CategoriaRepository $categoriaRepository)  :JsonResponse
+    {
+        $categorias=$categoriaRepository->createQueryBuilder('c')->getQuery()
+        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+        return new JsonResponse($categorias);
+    }
+    /**
+     * @Route("/get", name="categoria_datos", methods={"GET","POST"})
+     */
+    public function getDatos(CategoriaRepository $categoriaRepository)  :JsonResponse
+    {
+        $categorias=$categoriaRepository->createQueryBuilder('c')->getQuery()
+        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+        return new JsonResponse($categorias);
     }
 
     /**
