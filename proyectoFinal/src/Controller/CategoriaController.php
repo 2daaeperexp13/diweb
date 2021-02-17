@@ -31,6 +31,17 @@ class CategoriaController extends AbstractController
     }
 
     /**
+     * @Route("/datos", name="categoria_datos", methods={"GET","POST"})
+     */
+    public function datos(CategoriaRepository $categoriaRepository)  :JsonResponse
+    {
+        $categorias=$categoriaRepository->createQueryBuilder('c')->getQuery()
+        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+        return new JsonResponse($categorias);
+    }
+    
+    /**
      * @Route("/new", name="categoria_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -64,27 +75,6 @@ class CategoriaController extends AbstractController
         return $this->render('categoria/show.html.twig', [
             'categorium' => $categorium,
         ]);
-    }
-
-    /**
-     * @Route("/datos", name="categoria_datos", methods={"GET","POST"})
-     */
-    public function datos(CategoriaRepository $categoriaRepository)  :JsonResponse
-    {
-        $categorias=$categoriaRepository->createQueryBuilder('c')->getQuery()
-        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
-
-        return new JsonResponse($categorias);
-    }
-    /**
-     * @Route("/get", name="categoria_datos", methods={"GET","POST"})
-     */
-    public function getDatos(CategoriaRepository $categoriaRepository)  :JsonResponse
-    {
-        $categorias=$categoriaRepository->createQueryBuilder('c')->getQuery()
-        ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
-
-        return new JsonResponse($categorias);
     }
 
     /**
