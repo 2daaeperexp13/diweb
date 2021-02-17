@@ -103,12 +103,12 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) {
             // line 13
             echo "            <div class=\"mb-3\">
-                You are logged in as ";
+                Iniciado sesión como ";
             // line 14
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "username", [], "any", false, false, false, 14), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
+            echo "\">Cerrar  sesión</a>
             </div>
         ";
         }
@@ -121,7 +121,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
         // line 21
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 21, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
-                <label for=\"inputPassword\">Contraña</label>
+                <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
@@ -135,10 +135,8 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
                 </div>
             </div>
             <div class=\"row m-1\">
-                <button class=\"btn btn-lg miheader2 col-2 ml-2 rounded btnform\" type=\"submit\">
-                    Iniciar sesión
-                </button>
-                <a href=\"/register\" class=\"btn miheader2 mr-2  col-2 offset-6 rounded btnform\">Registrarme</a>
+                <button class=\"btn btn-lg miheader2 col-2 ml-2 rounded  btn-outline-info btn-sm\" type=\"submit\">Iniciar sesión</button>
+                <a href=\"/register\" class=\"btn btn-outline-danger  miheader2 btn-sm mr-2  col-2 offset-6 rounded \">Registrarme</a>
             </div>
         </div>
     </form>
@@ -182,7 +180,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
 
         {% if app.user %}
             <div class=\"mb-3\">
-                You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
+                Iniciado sesión como {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Cerrar  sesión</a>
             </div>
         {% endif %}
         <div class=\"container-fluid border p-0\">
@@ -190,7 +188,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
             <div class=\"container-fluid ml-1\">
                 <label for=\"inputEmail\">Email</label>
                 <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
-                <label for=\"inputPassword\">Contraña</label>
+                <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
@@ -201,10 +199,8 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
                 </div>
             </div>
             <div class=\"row m-1\">
-                <button class=\"btn btn-lg miheader2 col-2 ml-2 rounded btnform\" type=\"submit\">
-                    Iniciar sesión
-                </button>
-                <a href=\"/register\" class=\"btn miheader2 mr-2  col-2 offset-6 rounded btnform\">Registrarme</a>
+                <button class=\"btn btn-lg miheader2 col-2 ml-2 rounded  btn-outline-info btn-sm\" type=\"submit\">Iniciar sesión</button>
+                <a href=\"/register\" class=\"btn btn-outline-danger  miheader2 btn-sm mr-2  col-2 offset-6 rounded \">Registrarme</a>
             </div>
         </div>
     </form>

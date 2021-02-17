@@ -66,12 +66,13 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<!--  Modal -->
-      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">
-        <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\">
-          <div class=\"modal-content\">
+        echo "
+<!--  Modal Productos -->
+      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
+        <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">
+          <div class=\"modal-content\" style=\"height:500px\">
             <div class=\"modal-body p-0\">
-              <div class=\"row align-items-stretch\">
+              <div class=\"row align-items-stretch\" style=\"height:500px\">
                 <div class=\"col-lg-6 p-lg-0\">
                   <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
@@ -83,16 +84,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-7 pr-sm-0\">
-                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Cantidad</span>
-                          <div class=\"quantity\">
-                            <button class=\"dec-btn p-0\"><i class=\"fas fa-caret-left\"></i></button>
-                            <input class=\"form-control border-0 shadow-0 p-0\" type=\"text\" value=\"1\">
-                            <button class=\"inc-btn p-0\"><i class=\"fas fa-caret-right\"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Agregar al carrito</a></div>
+                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>
@@ -182,7 +174,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 112
+    // line 104
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,10 +184,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 113
+        // line 105
         echo "  
   ";
-        // line 114
+        // line 106
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -220,7 +212,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  199 => 114,  196 => 113,  186 => 112,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  191 => 106,  188 => 105,  178 => 104,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -228,12 +220,13 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<!--  Modal -->
-      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">
-        <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\">
-          <div class=\"modal-content\">
+
+<!--  Modal Productos -->
+      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
+        <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">
+          <div class=\"modal-content\" style=\"height:500px\">
             <div class=\"modal-body p-0\">
-              <div class=\"row align-items-stretch\">
+              <div class=\"row align-items-stretch\" style=\"height:500px\">
                 <div class=\"col-lg-6 p-lg-0\">
                   <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
@@ -245,16 +238,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-7 pr-sm-0\">
-                        <div class=\"border d-flex align-items-center justify-content-between py-1 px-3\"><span class=\"small text-uppercase text-gray mr-4 no-select\">Cantidad</span>
-                          <div class=\"quantity\">
-                            <button class=\"dec-btn p-0\"><i class=\"fas fa-caret-left\"></i></button>
-                            <input class=\"form-control border-0 shadow-0 p-0\" type=\"text\" value=\"1\">
-                            <button class=\"inc-btn p-0\"><i class=\"fas fa-caret-right\"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class=\"col-sm-5 pl-sm-0\"><a class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"cart.html\">Agregar al carrito</a></div>
+                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>

@@ -39,6 +39,7 @@ class ProductoController extends AbstractController
         $objProducto=$productoRepository->findAll();
         for ($i=0; $i < count($productos); $i++) {
             $productos[$i]['tipoProducto']=$objProducto[$i]->getTipoProducto()->getTipo();
+            $productos[$i]['categoria']=$objProducto[$i]->getCategoria()->getId();
             $productos[$i]['imagenes']=[];
             foreach ($objProducto[$i]->getImgProductos() as $img ) {
                 array_push($productos[$i]['imagenes'],$img->getImg());
@@ -56,12 +57,8 @@ class ProductoController extends AbstractController
         $producto = new Producto();
         $form = $this->createForm(ProductoType::class, $producto);
         $form->handleRequest($request);
-        
-
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            //dd();
-            
             $entityManager->persist($producto);
             $entityManager->flush();
             

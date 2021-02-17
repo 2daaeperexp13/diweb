@@ -28,6 +28,8 @@ return [
     'localidad_delete' => [['id'], ['_controller' => 'App\\Controller\\LocalidadController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/localidad']], [], []],
     'pedido_index' => [[], ['_controller' => 'App\\Controller\\PedidoController::index'], [], [['text', '/pedido/']], [], []],
     'pedido_new' => [[], ['_controller' => 'App\\Controller\\PedidoController::new'], [], [['text', '/pedido/new']], [], []],
+    'carrito' => [[], ['_controller' => 'App\\Controller\\PedidoController::carritoProducto'], [], [['text', '/pedido/carritoProducto']], [], []],
+    'carritoOut' => [[], ['_controller' => 'App\\Controller\\PedidoController::carritoProductoOut'], [], [['text', '/pedido/carritoProductoOut']], [], []],
     'pedido_show' => [['id'], ['_controller' => 'App\\Controller\\PedidoController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/pedido']], [], []],
     'pedido_edit' => [['id'], ['_controller' => 'App\\Controller\\PedidoController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/pedido']], [], []],
     'pedido_delete' => [['id'], ['_controller' => 'App\\Controller\\PedidoController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/pedido']], [], []],

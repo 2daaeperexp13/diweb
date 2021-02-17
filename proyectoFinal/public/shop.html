@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
         <div class="col-lg-6">
-          <h1 class="h2 text-uppercase mb-0">productos</h1>
+          <a id="recargar" style="text-decoration:none" href="#"><h1 class="h2 text-uppercase mb-0">productos</h1></a>
         </div>
         <div class="col-lg-6 text-lg-right">
           <nav aria-label="breadcrumb">
@@ -37,14 +37,16 @@
               <div class="col-6 text-right"><strong class="small font-weight-bold text-uppercase">Max</strong></div>
             </div>
           </div>
-          <div class="form-group">
-            <select name="categoria" id="categoria" class="form-control mb-5">
+          <div class="form-group ">
+            <div id="divcategoria" class="form-check">
+              <input class="form-check-input" type="radio" name="categoria" id="categoria">
+              <label class="form-check-label" for=""></label>
+            </div>
 
-            </select>
-            <button class="btn btnform">
-              Filtrar
-            </button>
           </div>
+          <button id="filtrar" class=" btn-outline-primary btn-sm text-hover-white">
+            Filtrar
+          </button>
         </div>
         <!-- SHOP LISTING-->
         <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
@@ -74,10 +76,7 @@
     </div>
   </section>
 </div>
-<script>
- 
-  
-</script>
+<script id="scriptProductos" src="/js/productos.js"></script>
      
 
       

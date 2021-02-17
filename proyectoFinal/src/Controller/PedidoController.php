@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Pedido;
 use App\Form\PedidoType;
 use App\Repository\PedidoRepository;
+use App\Repository\ProductoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,6 +47,32 @@ class PedidoController extends AbstractController
             'pedido' => $pedido,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/carritoProducto", name="carrito", methods={"GET","POST"})
+     */
+    public function carritoProducto(Request $request, ProductoRepository $productoRepository): Response
+    {
+        if (($this->getUser())) {
+            $producto=$productoRepository->find($request->request->get('producto'));
+            $_SESSION['carrito'][$producto->getId()]=$producto;
+            return new Response(true);
+        }
+        else return new Response(false);
+    }
+
+    /**
+     * @Route("/carritoProductoOut", name="carritoOut", methods={"GET","POST"})
+     */
+    public function carritoProductoOut(Request $request, ProductoRepository $productoRepository): Response
+    {
+        if (($this->getUser())) {
+            $producto=$productoRepository->find($request->request->get('producto'));
+            unset($_SESSION['carrito'][$producto->getId()]);
+            return new Response(true);
+        }
+        else return new Response(false);
     }
 
     /**

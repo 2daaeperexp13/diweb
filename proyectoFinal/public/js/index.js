@@ -1,3 +1,5 @@
+var productos=[];
+
 function volcarProducto(producto,container) {
     
     //ASGINO EL ID DEL PRDUCTO A CADA ELEMENTO QUE CONTENGA DATOS DEL MISMO
@@ -22,7 +24,9 @@ function volcarProducto(producto,container) {
             carrusel.append('<a class="d-none" href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
         }
         modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);;
-
+        $("#carritoModal").on("click",function(){
+            añadiraCarrito(producto);
+        });
     });
     
 
@@ -44,7 +48,12 @@ function cargaProductos(productos, productosContainer) {
                 //la opción de añadir producto al carrito
                 volcarProducto(producto,$('#producto'));
                 if($("header").find($("#login"))[0]) $(".sesion").hide();
-                else $("#prodcarro").attr("id", $("#prodcarro").attr("id")+producto.id);
+                else{
+                    $("#prodcarro").attr("id", $("#prodcarro").attr("id")+producto.id).on("click",function(){
+                        añadiraCarrito(producto);
+                    });
+                    
+                } 
                 
                 (i==productos.length-1)?'':productosContainer.append(container);
             }
@@ -52,22 +61,70 @@ function cargaProductos(productos, productosContainer) {
     })
     
 }
-function mostrarPaginaProductos() {
+function añadiraCarrito(producto){
+    $.ajax({
+        "url":"/pedido/carritoProducto",
+        "type":"post",
+        "data": {"producto":producto.id},
+        "success":function(data){
+            if(data) {
+                var carrito= JSON.parse(localStorage.getItem("carrito"));
+                carrito.push(producto);
+                localStorage.setItem("carrito",JSON.stringify(carrito));
+                cargarPaginaCarrito();
+                modificarCarritoHeader(true);
+            }
+
+        }
+    });
+}
+//si es true se suma en uno la cantidad de productos, si es false se resta
+function modificarCarritoHeader(añadir) {
+    var carrito=$("#prodEnCarro");
+    var numActual=carrito.text()[1]*1;
+    
+    if(añadir){
+        numActual++;
+        carrito.text('('+numActual+')');
+    }
+    else{
+        numActual--;
+        carrito.text('('+numActual+')');
+    }
+}
+function cargarPaginaProductos() {
     $("#pagina").load("shop.html");
 }
+function cargarPaginaCarrito() {
+    $("#pagina").load("cart.html");
+}
 $(document).ready(function(){
+    $("a").on("click",function(){
+        $(this).css("text-decoration","none");
+    });
     var productosContainer= $("#productosIndex")
-
+    if(localStorage.getItem("carrito")==null) localStorage.setItem("carrito",JSON.stringify([]));
+    else{
+      
+        $("#prodEnCarro").text('('+(JSON.parse(localStorage.getItem("carrito")).length)+')');
+    }
     $.ajax({
         "url":"/producto/prodindex",
         "dataType": "json",
         "type": "GET",
         "success":  function (data) {
             cargaProductos(data,productosContainer);
+            productos=data;
         }
     })
+
+    
     $("#pagProductos").on("click",function(){
-        mostrarPaginaProductos();
-        $("#principal").append($('<script src="/js/productos.js"></script>'))
+        cargarPaginaProductos();
+        
     });
+    $("#carro").on("click",function(){
+        cargarPaginaCarrito();
+    });
+    
 });

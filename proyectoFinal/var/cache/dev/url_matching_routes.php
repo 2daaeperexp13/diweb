@@ -20,6 +20,8 @@ return [
         '/localidad/new' => [[['_route' => 'localidad_new', '_controller' => 'App\\Controller\\LocalidadController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/pedido' => [[['_route' => 'pedido_index', '_controller' => 'App\\Controller\\PedidoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pedido/new' => [[['_route' => 'pedido_new', '_controller' => 'App\\Controller\\PedidoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/pedido/carritoProducto' => [[['_route' => 'carrito', '_controller' => 'App\\Controller\\PedidoController::carritoProducto'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/pedido/carritoProductoOut' => [[['_route' => 'carritoOut', '_controller' => 'App\\Controller\\PedidoController::carritoProductoOut'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'principal', '_controller' => 'App\\Controller\\PrincipalController::index'], null, null, null, false, false, null]],
         '/producto' => [[['_route' => 'producto_index', '_controller' => 'App\\Controller\\ProductoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/producto/prodindex' => [[['_route' => 'prodIndex', '_controller' => 'App\\Controller\\ProductoController::prodindex'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
