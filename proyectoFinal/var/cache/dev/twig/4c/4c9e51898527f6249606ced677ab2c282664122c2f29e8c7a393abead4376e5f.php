@@ -65,7 +65,7 @@ class __TwigTemplate_c87a9a01df3c46ddfec4ece63a529149f5fbeafd9c1ffcbd4868eb234c1
         echo " <img class=\"interaccionesBackend rounded \" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/guardar.png"), "html", null, true);
         echo "\"></img></button>
-</div>
+</div> 
 ";
         // line 17
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
@@ -111,7 +111,7 @@ class __TwigTemplate_c87a9a01df3c46ddfec4ece63a529149f5fbeafd9c1ffcbd4868eb234c1
 </div>
 <div class=\"d-flex justify-content-end\">
     <button class=\"btn btnform2 rounded mr-2\">{{ button_label|default('GUARDAR') }} <img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/guardar.png')}}\"></img></button>
-</div>
+</div> 
 {{ form_end(form) }}
 ", "tipo_producto/_form.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\tipo_producto\\_form.html.twig");
     }

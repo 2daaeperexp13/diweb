@@ -15,23 +15,30 @@ function volcarProducto(producto,container) {
     }).text(producto.nombre)
     $("#precio").attr("id",$("#precio").attr("id")+producto.id).text(producto.precio);
     container.find("a").eq(2).on("click",function(){
-        var modal=$("#productView");
-        modal.find("a").first().attr("href",producto.imagenes[0]).css("background-image",'url("'+producto.imagenes[0]+'")');
-        var carrusel=modal.find("a").first().parent();
-        var numImg=producto.imagenes.length;
-        for (let i = 1; i < numImg; i++) {
-            let imagen=producto.imagenes[i];
-            carrusel.append('<a class="d-none" href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
-        }
-        modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);;
-        $("#carritoModal").on("click",function(){
-            añadiraCarrito(producto);
-        });
+        datosModal(producto);
     });
     
 
 }
-
+function datosModal(producto){
+    var modal=$("#productView");
+    var linkCarrusel=modal.find("a").first().clone();
+    modal.find("a").first().attr("href",producto.imagenes[0]).css("background-image",'url("'+producto.imagenes[0]+'")');
+    var carrusel=modal.find("a").first().parent();
+    var numImg=producto.imagenes.length;
+    for (let i = 1; i < numImg; i++) {
+        let imagen=producto.imagenes[i];
+        carrusel.append('<a class="d-none " href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
+    }
+    modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);;
+    $("#carritoModal").on("click",function(){
+        añadiraCarrito(producto);
+    });
+    modal.find("button.close").on("click",function(){
+        carrusel.empty();
+        carrusel.append(linkCarrusel);
+    })
+}
 function cargaProductos(productos, productosContainer) {
     
     $.ajax({
@@ -98,16 +105,24 @@ function cargarPaginaProductos() {
 function cargarPaginaCarrito() {
     $("#pagina").load("cart.html");
 }
+
+
 $(document).ready(function(){
+    //variable que a lo el contenedor donde se añadirá la vista de los productos
+    var productosContainer= $("#productosIndex")
+
+    //quita el subrayado a los links
     $("a").on("click",function(){
         $(this).css("text-decoration","none");
     });
-    var productosContainer= $("#productosIndex")
+
+    //Comprueba si hay archivos ya guardados en el local storage (carrito)
     if(localStorage.getItem("carrito")==null) localStorage.setItem("carrito",JSON.stringify([]));
     else{
       
         $("#prodEnCarro").text('('+(JSON.parse(localStorage.getItem("carrito")).length)+')');
     }
+    //Cargo los productos de la pantalla de inicio
     $.ajax({
         "url":"/producto/prodindex",
         "dataType": "json",
@@ -118,13 +133,25 @@ $(document).ready(function(){
         }
     })
 
-    
+    //carga la página productos
     $("#pagProductos").on("click",function(){
         cargarPaginaProductos();
         
     });
+
+    //carga la página del carrito
     $("#carro").on("click",function(){
         cargarPaginaCarrito();
     });
-    
+
+    //abre un modal para modificar datos básicos del usuario
+    $("#misdatos").on("click",function(){
+        $("#contenidodatosModal").load("misdatos.html")
+        $("#misdatosModal").slideDown();
+    });
+    //Abre un modal para añadir un método de pago
+    $("#metodosPago").on("click",function(){
+        $("#contenidometodosModal").load("metodosPago.html")
+        $("#metodosModal").slideDown();
+    });
 });

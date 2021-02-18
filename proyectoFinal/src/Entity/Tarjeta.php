@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TarjetaRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TarjetaRepository::class)
@@ -23,7 +24,7 @@ class Tarjeta
     private $numero;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string")
      */
     private $fechaVencimiento;
 

@@ -48,8 +48,10 @@ class __TwigTemplate_c34a7961933d1333b96943bba8f66bf5ce9767f8cbb9cef00912c704cac
         echo "
     <button class=\"btn\">";
         // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "GUARDAER")) : ("GUARDAER")), "html", null, true);
+        echo "<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/guardar.png"), "html", null, true);
+        echo "\"></img></button>
 ";
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
@@ -75,14 +77,14 @@ class __TwigTemplate_c34a7961933d1333b96943bba8f66bf5ce9767f8cbb9cef00912c704cac
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  57 => 4,  51 => 3,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <button class=\"btn\">{{ button_label|default('GUARDAER') }}<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/guardar.png')}}\"></img></button>
 {{ form_end(form) }}
 ", "provincia/_form.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\provincia\\_form.html.twig");
     }

@@ -121,10 +121,10 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provincium"], "nombre", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>
-                            <a href=\"";
+                            <a class=\"btn btnform2\" href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\"> EDITAR<img class=\"interaccionesBackend\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["provincia"]) || array_key_exists("provincia", $context) ? $context["provincia"] : (function () { throw new RuntimeError('Variable "provincia" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
                         </td>
@@ -158,6 +158,12 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         echo "\"></img></h4>
         </a>
     </div>
+    <div class=\"navigation\"> 
+        ";
+        // line 45
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["provincias"]) || array_key_exists("provincias", $context) ? $context["provincias"] : (function () { throw new RuntimeError('Variable "provincias" does not exist.', 45, $this->source); })()));
+        echo " 
+    </div>
 </div>
 ";
         
@@ -180,7 +186,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
 
     public function getDebugInfo()
     {
-        return array (  157 => 41,  153 => 40,  146 => 35,  137 => 31,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  164 => 45,  157 => 41,  153 => 40,  146 => 35,  137 => 31,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -211,7 +217,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
                         <td>{{ provincium.codProv }}</td>
                         <td>{{ provincium.nombre }}</td>
                         <td>
-                            <a href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\"> EDITAR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a class=\"btn btnform2\" href=\"{{ path('provincia_edit', {'id': provincia.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}
@@ -227,6 +233,9 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         <a class=\"ml-auto \" href=\"{{ path('provincia_new') }}\">
             <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
         </a>
+    </div>
+    <div class=\"navigation\"> 
+        {{ knp_pagination_render(provincias) }} 
     </div>
 </div>
 {% endblock %}

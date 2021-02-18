@@ -25,10 +25,16 @@ function mostrarCarrito(productos,cantidad=1) {
                         if(confirm("¿Estás seguro de eliminar el producto del carrito?"))quitarProducto(producto);
                         
                     });
+                    $("a.prodmod").on("click",function(){
+                       datosModal(producto);
+                    });
                     $("#listaCarrito").append(plantillaProducto);
                 });
                 $("#productocarro").remove();
             }
+        });
+        $("#continuarComprando").on("click",function(){
+            cargarPaginaProductos()
         });
     }
 }

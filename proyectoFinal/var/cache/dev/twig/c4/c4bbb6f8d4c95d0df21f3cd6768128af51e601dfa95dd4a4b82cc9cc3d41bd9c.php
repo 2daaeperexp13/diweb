@@ -67,17 +67,49 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
         // line 4
         echo "
+<!-- Modales usuario-->
+<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"misdatosModal\">
+    <div class=\"modal-dialog\" role=\"document\">
+      <div class=\"modal-content\">
+        <div class=\"modal-header\">
+          <h2 class=\"modal-title text-secondary\">MODIFICAR DATOS</h2>
+          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+            <span aria-hidden=\"true\">&times;</span>
+          </button>
+        </div>
+        <div class=\"modal-body\">
+          <p id=\"contenidodatosModal\"></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"metodosModal\">
+    <div class=\"modal-dialog\" role=\"document\">
+      <div class=\"modal-content\">
+        <div class=\"modal-header\">
+          <h2 class=\"modal-title text-secondary\">AÑADIR MÉTODO DE PAGO</h2>
+          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+            <span aria-hidden=\"true\">&times;</span>
+          </button>
+        </div>
+        <div class=\"modal-body\">
+          <p id=\"contenidometodosModal\"></p>
+        </div>
+      </div>
+    </div>
+</div>
 <!--  Modal Productos -->
-      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
+      <div class=\"modal fade \" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
         <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">
           <div class=\"modal-content\" style=\"height:500px\">
             <div class=\"modal-body p-0\">
-              <div class=\"row align-items-stretch\" style=\"height:500px\">
+              <div class=\"row align-items-stretch overflow-scroll\" style=\"height:500px\">
                 <div class=\"col-lg-6 p-lg-0\">
                   <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
                 </div>
-                <div class=\"col-lg-6\">
+                <div class=\"col-lg-6 \">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
                     <h2 class=\"h4\"></h2>
@@ -117,7 +149,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
               <span class=\"visually-hidden\">Loading...</span>
             </div>
           </div>
-        </section>
+        </section> 
         <!-- SERVICES-->
         <section class=\"py-5 bg-light\">
           <div class=\"container\">
@@ -174,7 +206,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 104
+    // line 136
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -184,10 +216,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 105
+        // line 137
         echo "  
   ";
-        // line 106
+        // line 138
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -212,7 +244,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  191 => 106,  188 => 105,  178 => 104,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  223 => 138,  220 => 137,  210 => 136,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -221,17 +253,49 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
 {% block body %}
 
+<!-- Modales usuario-->
+<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"misdatosModal\">
+    <div class=\"modal-dialog\" role=\"document\">
+      <div class=\"modal-content\">
+        <div class=\"modal-header\">
+          <h2 class=\"modal-title text-secondary\">MODIFICAR DATOS</h2>
+          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+            <span aria-hidden=\"true\">&times;</span>
+          </button>
+        </div>
+        <div class=\"modal-body\">
+          <p id=\"contenidodatosModal\"></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"metodosModal\">
+    <div class=\"modal-dialog\" role=\"document\">
+      <div class=\"modal-content\">
+        <div class=\"modal-header\">
+          <h2 class=\"modal-title text-secondary\">AÑADIR MÉTODO DE PAGO</h2>
+          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+            <span aria-hidden=\"true\">&times;</span>
+          </button>
+        </div>
+        <div class=\"modal-body\">
+          <p id=\"contenidometodosModal\"></p>
+        </div>
+      </div>
+    </div>
+</div>
 <!--  Modal Productos -->
-      <div class=\"modal fade\" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
+      <div class=\"modal fade \" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
         <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">
           <div class=\"modal-content\" style=\"height:500px\">
             <div class=\"modal-body p-0\">
-              <div class=\"row align-items-stretch\" style=\"height:500px\">
+              <div class=\"row align-items-stretch overflow-scroll\" style=\"height:500px\">
                 <div class=\"col-lg-6 p-lg-0\">
                   <a class=\"product-view d-block h-100 bg-cover bg-center\"  href=\"\" data-lightbox=\"productview\" title=\"\">
                   </a>
                 </div>
-                <div class=\"col-lg-6\">
+                <div class=\"col-lg-6 \">
                   <button class=\"close p-4\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button>
                   <div class=\"p-5 my-md-4\">
                     <h2 class=\"h4\"></h2>
@@ -271,7 +335,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
               <span class=\"visually-hidden\">Loading...</span>
             </div>
           </div>
-        </section>
+        </section> 
         <!-- SERVICES-->
         <section class=\"py-5 bg-light\">
           <div class=\"container\">

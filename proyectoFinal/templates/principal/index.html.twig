@@ -2,17 +2,49 @@
 
 {% block body %}
 
+<!-- Modales usuario-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="misdatosModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-secondary">MODIFICAR DATOS</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="contenidodatosModal"></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="metodosModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-secondary">AÑADIR MÉTODO DE PAGO</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="contenidometodosModal"></p>
+        </div>
+      </div>
+    </div>
+</div>
 <!--  Modal Productos -->
-      <div class="modal fade" id="productView" tabindex="-1" role="dialog" aria-hidden="true" style="height:500px">
+      <div class="modal fade " id="productView" tabindex="-1" role="dialog" aria-hidden="true" style="height:500px">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="height:500px">
           <div class="modal-content" style="height:500px">
             <div class="modal-body p-0">
-              <div class="row align-items-stretch" style="height:500px">
+              <div class="row align-items-stretch overflow-scroll" style="height:500px">
                 <div class="col-lg-6 p-lg-0">
                   <a class="product-view d-block h-100 bg-cover bg-center"  href="" data-lightbox="productview" title="">
                   </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 ">
                   <button class="close p-4" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                   <div class="p-5 my-md-4">
                     <h2 class="h4"></h2>
@@ -52,7 +84,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
-        </section>
+        </section> 
         <!-- SERVICES-->
         <section class="py-5 bg-light">
           <div class="container">

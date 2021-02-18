@@ -42,7 +42,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
-        // line 40
+        // line 42
         echo "
 ";
         
@@ -84,24 +84,26 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
         // line 18
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
             // line 19
-            echo "                <li class=\"nav-item position-absolute ml-5 col\">
+            echo "                <li class=\" nav-item col h4\" id=\"carro\"><a  href=\"#\"> <i class=\"fas fa-dolly-flatbed  text-warning\"></i><small id=\"prodEnCarro\" class=\"text-dark\">(0)</small></a></li>
+                <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
                     <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu   position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
-                        <a class=\"dropdown-item\" href=\"#\">Mis datos</a>
+                        <a id=\"misdatos\" class=\"dropdown-item\" href=\"#misdatosModal\" data-toggle=\"modal\">Mis datos</a>
+                        <a id=\"metodosPago\" class=\"dropdown-item\" href=\"#metodosModal\" data-toggle=\"modal\">Añadir método de pago</a>
                         <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
                       </div>
                   </div>
                 </li>
-                <li class=\" nav-item col\" id=\"carro\"><a class=\"h4\" href=\"#\"> <i class=\"fas fa-dolly-flatbed  text-gray\"></i><small id=\"prodEnCarro\" class=\"text-gray\">(0)</small></a></li>
+                
               
                 ";
         } else {
-            // line 31
+            // line 33
             echo "                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
                 ";
         }
-        // line 33
+        // line 35
         echo "              </ul>
             </div>
           </nav>
@@ -124,7 +126,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getDebugInfo()
     {
-        return array (  105 => 33,  101 => 31,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 40,  44 => 1,);
+        return array (  107 => 35,  103 => 33,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 42,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -147,16 +149,18 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
               <ul class=\"navbar-nav ml-auto row\">               
                 
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class=\" nav-item col h4\" id=\"carro\"><a  href=\"#\"> <i class=\"fas fa-dolly-flatbed  text-warning\"></i><small id=\"prodEnCarro\" class=\"text-dark\">(0)</small></a></li>
                 <li class=\"nav-item position-absolute ml-5 col\">
                   <div>
                     <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu   position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
-                        <a class=\"dropdown-item\" href=\"#\">Mis datos</a>
+                        <a id=\"misdatos\" class=\"dropdown-item\" href=\"#misdatosModal\" data-toggle=\"modal\">Mis datos</a>
+                        <a id=\"metodosPago\" class=\"dropdown-item\" href=\"#metodosModal\" data-toggle=\"modal\">Añadir método de pago</a>
                         <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
                       </div>
                   </div>
                 </li>
-                <li class=\" nav-item col\" id=\"carro\"><a class=\"h4\" href=\"#\"> <i class=\"fas fa-dolly-flatbed  text-gray\"></i><small id=\"prodEnCarro\" class=\"text-gray\">(0)</small></a></li>
+                
               
                 {% else %}
                 <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>

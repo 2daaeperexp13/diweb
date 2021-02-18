@@ -102,7 +102,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         echo "
     
     
-    <div class=\"container align-self-center m-5 align-self-center border rounded px-0\">
+    <div class=\"container  m-5 align-self-center border rounded px-0\">
         <div class=\"miheader2  pl-3 text-secondary\"><h1 class=\"mb-3\">Registro</h1></div>
         <div class=\"form  p-2\">
             
@@ -125,7 +125,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         echo "
                         </div>
                     </div>
-                    <div class=\"\">
+                    <div >
                         <div class=\"form-group d-flex justify-content-around flex-column\">
                             ";
         // line 29
@@ -164,7 +164,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         echo "
                         </div>          
                     </div>
-                    <divclass=\" ml-1 form-group d-flex justify-content-around flex-column\">
+                    <div class=\" ml-1 form-group d-flex justify-content-around flex-column\">
                         ";
         // line 49
         ob_start();
@@ -186,14 +186,15 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         }
         // line 57
         echo "                        ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 57, $this->source); })()), "foto", [], "any", false, false, false, 57), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 57, $this->source); })()), "foto", [], "any", false, false, false, 57), 'row', []);
+        // line 59
         echo "
                         <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 \">Registrarme</button>
                     </div>
                 </div>
                 ";
-        // line 61
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 61, $this->source); })()), 'form_end');
+        // line 63
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 63, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -219,7 +220,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
 
     public function getDebugInfo()
     {
-        return array (  196 => 61,  188 => 57,  182 => 55,  179 => 54,  175 => 52,  172 => 50,  170 => 49,  163 => 45,  159 => 44,  155 => 43,  147 => 38,  144 => 37,  142 => 35,  139 => 34,  137 => 32,  134 => 31,  132 => 29,  125 => 24,  123 => 22,  120 => 21,  118 => 19,  111 => 15,  102 => 8,  93 => 6,  88 => 5,  78 => 4,  59 => 3,  36 => 1,);
+        return array (  197 => 63,  191 => 59,  188 => 57,  182 => 55,  179 => 54,  175 => 52,  172 => 50,  170 => 49,  163 => 45,  159 => 44,  155 => 43,  147 => 38,  144 => 37,  142 => 35,  139 => 34,  137 => 32,  134 => 31,  132 => 29,  125 => 24,  123 => 22,  120 => 21,  118 => 19,  111 => 15,  102 => 8,  93 => 6,  88 => 5,  78 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -234,7 +235,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
 
     
     
-    <div class=\"container align-self-center m-5 align-self-center border rounded px-0\">
+    <div class=\"container  m-5 align-self-center border rounded px-0\">
         <div class=\"miheader2  pl-3 text-secondary\"><h1 class=\"mb-3\">Registro</h1></div>
         <div class=\"form  p-2\">
             
@@ -250,7 +251,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                             })}}
                         </div>
                     </div>
-                    <div class=\"\">
+                    <div >
                         <div class=\"form-group d-flex justify-content-around flex-column\">
                             {{form_row(registrationForm.nombre,{
                                 label:'Nombre  '
@@ -271,7 +272,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                             {{form_row(registrationForm.direccion)}}
                         </div>          
                     </div>
-                    <divclass=\" ml-1 form-group d-flex justify-content-around flex-column\">
+                    <div class=\" ml-1 form-group d-flex justify-content-around flex-column\">
                         {% set admin %}
                             {{form_row(registrationForm.admin,{
                                 label:'Administrador'
@@ -280,7 +281,9 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                         {% if is_granted('ROLE_ADMIN') %}
                             {{ admin }}
                         {% endif %}
-                        {{form_row(registrationForm.foto)}}
+                        {{form_row(registrationForm.foto,{
+                            
+                        })}}
                         <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 \">Registrarme</button>
                     </div>
                 </div>

@@ -85,22 +85,29 @@ class __TwigTemplate_2cf10f13ffc7e048042b4c80e3a087ca6c2111d01c7d1f5b28cd99ac323
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Provincia</h1>
-
-    ";
-        // line 8
-        echo twig_include($this->env, $context, "provincia/_form.html.twig", ["button_label" => "Update"]);
-        echo "
-
-    <a href=\"";
+        echo "<div class=\"container mb-5 \">
+    <div class=\"  miheader2 mb-5 pb-2\">
+        <div class=\"encabezadoBack\"><h1>EDITAR PROVINCIA</h1></div>
+        <div class=\"container-fluid\">
+            ";
         // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_index");
-        echo "\">back to list</a>
-
-    ";
+        echo twig_include($this->env, $context, "provincia/_form.html.twig", ["button_label" => "Guardar"]);
+        echo "
+            <div >
+                ";
         // line 12
         echo twig_include($this->env, $context, "provincia/_delete_form.html.twig");
         echo "
+            </div>
+        </div>
+    </div>
+    <a href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_index");
+        echo "\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/volver.png"), "html", null, true);
+        echo "\"></img></h4></a>
+</div>}
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +129,7 @@ class __TwigTemplate_2cf10f13ffc7e048042b4c80e3a087ca6c2111d01c7d1f5b28cd99ac323
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 16,  99 => 12,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,13 +139,18 @@ class __TwigTemplate_2cf10f13ffc7e048042b4c80e3a087ca6c2111d01c7d1f5b28cd99ac323
 {% block title %}Edit Provincia{% endblock %}
 
 {% block body %}
-    <h1>Edit Provincia</h1>
-
-    {{ include('provincia/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('provincia_index') }}\">back to list</a>
-
-    {{ include('provincia/_delete_form.html.twig') }}
+<div class=\"container mb-5 \">
+    <div class=\"  miheader2 mb-5 pb-2\">
+        <div class=\"encabezadoBack\"><h1>EDITAR PROVINCIA</h1></div>
+        <div class=\"container-fluid\">
+            {{ include('provincia/_form.html.twig', {'button_label': 'Guardar'}) }}
+            <div >
+                {{ include('provincia/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+    <a href=\"{{ path('provincia_index') }}\"><h4>INICIO<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/volver.png')}}\"></img></h4></a>
+</div>}
 {% endblock %}
 ", "provincia/edit.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\provincia\\edit.html.twig");
     }

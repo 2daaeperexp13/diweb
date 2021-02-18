@@ -47,7 +47,7 @@ class __TwigTemplate_886da34093a3fd44c5ed00f271954fafee2a456a0b9e2c86127f53ac4fa
     <a href=\"";
         // line 5
         echo (isset($context["signedUrl"]) || array_key_exists("signedUrl", $context) ? $context["signedUrl"] : (function () { throw new RuntimeError('Variable "signedUrl" does not exist.', 5, $this->source); })());
-        echo "\">Confirm my Email</a>.
+        echo "\">Confirmar</a>.
     Este link expirará en ";
         // line 6
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans((isset($context["expiresAtMessageKey"]) || array_key_exists("expiresAtMessageKey", $context) ? $context["expiresAtMessageKey"] : (function () { throw new RuntimeError('Variable "expiresAtMessageKey" does not exist.', 6, $this->source); })()), (isset($context["expiresAtMessageData"]) || array_key_exists("expiresAtMessageData", $context) ? $context["expiresAtMessageData"] : (function () { throw new RuntimeError('Variable "expiresAtMessageData" does not exist.', 6, $this->source); })()), "VerifyEmailBundle"), "html", null, true);
@@ -87,7 +87,7 @@ class __TwigTemplate_886da34093a3fd44c5ed00f271954fafee2a456a0b9e2c86127f53ac4fa
 
 <p>
     Por favor confirme su email: <br><br>
-    <a href=\"{{ signedUrl|raw }}\">Confirm my Email</a>.
+    <a href=\"{{ signedUrl|raw }}\">Confirmar</a>.
     Este link expirará en {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
 </p>
 

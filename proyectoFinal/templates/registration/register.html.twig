@@ -24,7 +24,7 @@
                             })}}
                         </div>
                     </div>
-                    <div class="">
+                    <div >
                         <div class="form-group d-flex justify-content-around flex-column">
                             {{form_row(registrationForm.nombre,{
                                 label:'Nombre  '
@@ -45,7 +45,7 @@
                             {{form_row(registrationForm.direccion)}}
                         </div>          
                     </div>
-                    <divclass=" ml-1 form-group d-flex justify-content-around flex-column">
+                    <div class=" ml-1 form-group d-flex justify-content-around flex-column">
                         {% set admin %}
                             {{form_row(registrationForm.admin,{
                                 label:'Administrador'
@@ -54,7 +54,9 @@
                         {% if is_granted('ROLE_ADMIN') %}
                             {{ admin }}
                         {% endif %}
-                        {{form_row(registrationForm.foto)}}
+                        {{form_row(registrationForm.foto,{
+                            
+                        })}}
                         <button type="submit" class="btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 ">Registrarme</button>
                     </div>
                 </div>

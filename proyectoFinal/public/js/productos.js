@@ -88,14 +88,19 @@ function accionBotonFiltrar(productos){
         
         condicion3= producto.precio>=min && producto.precio<=max;
         ($("#productosIndex")[0].tipo!="") ?  condicion1=producto.tipoProducto==$("#productosIndex")[0].tipo : condicion1=true;
-        debugger;
-        ($("input[name=categoria]:checked").val()!=null || $("input[name=categoria]:checked")=="AMBAS") ?  condicion2=producto.categoria==$("input[name=categoria]:checked").val() : condicion2=true;
+        ($("input[name=categoria]:checked").val()!=null)? $("input[name=categoria]:checked").val()!=3 ?  condicion2=producto.categoria==$("input[name=categoria]:checked").val() : condicion2=true :condicion2=true;
         condicion=condicion1 && condicion2 && condicion3;
         
         filtroProducto(producto,condicion,$("#productosFiltrados"));
 
     });
     
+}
+function quitarFiltros(productosContainer,productosFiltrados) {
+    productosContainer.empty();
+    productosFiltrados.empty();
+    productosContainer[0].tipo="";
+    cargaProductos(productos,productosContainer);
 }
 $(document).ready(function(){
     var productosContainer= $("#productosIndex");
@@ -119,15 +124,14 @@ $(document).ready(function(){
         }
     })
     $("#recargar").on("click",function () {
-        productosContainer.empty();
-        productosFiltrados.empty();
-        productosContainer[0].tipo="";
-        cargaProductos(productos,productosContainer);
+        quitarFiltros(productosContainer,productosFiltrados);
     });
     cargaSlider();
     cargarCategorias();
     $("#filtrar").on("click",function(){
         accionBotonFiltrar(productos);
     });
-    
+    $("#nofiltrar").on("click",function(){
+        quitarFiltros(productosContainer,productosFiltrados);
+    });
 });
