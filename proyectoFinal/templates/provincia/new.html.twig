@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Provincia{% endblock %}
+{% block title %}PROVINCIA{% endblock %}
 
 {% block body %}
-    <h1>Create new Provincia</h1>
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow mb-5">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
+            <h1>NUEVA PROVINCIA</h1>
+        </div>
 
-    {{ include('provincia/_form.html.twig') }}
-
-    <a href="{{ path('provincia_index') }}">back to list</a>
+        {{ include('provincia/_form.html.twig') }}
+    </div>
+    <a href="{{ path('provincia_index') }}"><h4>INICIO<img class="interaccionesBackend rounded " src="{{asset('imgs/volver.png')}}"></img></h4></a>
+</div>
+        
 {% endblock %}

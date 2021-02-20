@@ -14,7 +14,7 @@ function datosProvincias() {
                     
                     datosLocalidades($("option[id^=provincia]:checked").attr("id").split("provincia")[1]*1);
                 });
-                debugger;
+
                 datosLocalidades($("option[id^=provincia]:checked").attr("id").split("provincia")[1]*1)
             }
     })
@@ -68,8 +68,21 @@ function comprar(productos,importe) {
                 "fecha":$("#mes").val()+"/"+$("#ano").val()
         },
         "type":"post",
-        "success":function(data){
-
+        "success":function(){
+            alert("Compra relizada correctamente");
+            $("#prodEnCarro").text("(0)");
+            carrito={};
+            $.ajax({
+                "url":"/pedido/guardarCarrito",
+                    "type":"post",
+                    "data": {"carrito":carrito},
+                    "success": function(data){
+                        if(data){
+                            localStorage.setItem("carrito",JSON.stringify(data));
+                            cargarPaginaCarrito();
+                        }
+                    }
+            });
         }
     });
 }

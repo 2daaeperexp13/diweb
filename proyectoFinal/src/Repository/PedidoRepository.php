@@ -21,14 +21,16 @@ class PedidoRepository extends ServiceEntityRepository
     }
 
 
-    public function unidadesProducto($productos){
+    public function unidadesProducto($productos,$pedido){
         $conn = $this->getEntityManager()->getConnection();
         for ($i=0; $i < count($productos); $i++) { 
             $producto=$productos[$i];
-            $sql= 'UPDATE  producto_pedido SET unidades= :unidades WHERE producto_id = :id';
+            $sql= 'UPDATE  producto_pedido SET unidades= :unidades WHERE producto_id = :id AND pedido_id =:pedido';
             $stmt=$conn->prepare($sql);
+        
             $stmt->bindParam("unidades",$producto['cantidad'],ParameterType::INTEGER);
             $stmt->bindParam("id",$producto['id'],ParameterType::INTEGER);
+            $stmt->bindParam("pedido",$pedido);
 
             $stmt->execute();
         }

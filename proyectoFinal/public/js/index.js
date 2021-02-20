@@ -151,8 +151,14 @@ $(document).ready(function(){
         "dataType": "json",
         "type": "GET",
         "success":  function (data) {
-            cargaProductos(data,productosContainer);
+            
             productos=data;
+            novedades=[];
+            for (let i = 0; i < 11; i++) {
+                novedades.push(productos[i])
+                if(i==propductos.length-1) break;
+            }
+            cargaProductos(novedades,productosContainer);
         }
     })
 

@@ -110,11 +110,12 @@ class PedidoController extends AbstractController
             $producto=$productos[$i];
             $objproducto=$productoRepository->find($producto['id']*1);
             $pedido->addProducto($objproducto);
+            $objproducto->setStock($objproducto->getStock()-$producto['cantidad']);
         }
         $entityManager->persist($pedido);
         $entityManager->flush();
 
-        $pedidoRepository->unidadesProducto($productos);
+        $pedidoRepository->unidadesProducto($productos,$pedido->getId());
 
         return new Response(true);
     }
