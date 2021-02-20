@@ -22,33 +22,39 @@ class Producto
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $nombre;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     private $descripcion;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotBlank
      */
     private $precio;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      */
     private $stock;
 
     /**
      * @ORM\ManyToOne(targetEntity=Categoria::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
      */
     private $categoria;
 
     /**
      * @ORM\ManyToOne(targetEntity=tipoProducto::class, inversedBy="productos")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
      */
     private $tipoProducto;
 

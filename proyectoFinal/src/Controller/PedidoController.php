@@ -71,7 +71,7 @@ class PedidoController extends AbstractController
      */
     public function getCarrito(Request $request, ProductoRepository $productoRepository): JsonResponse
     {
-        if (($this->getUser()->getCarrito()!=null)) {
+        if ($this->getUser()) {
            
             return new JsonResponse($this->getUser()->getCarrito());
         }

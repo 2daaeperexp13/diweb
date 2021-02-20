@@ -154,7 +154,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         echo "\"></img></h4>
             </a>
         </div>
-        <div class=\"navigation\"> 
+        <div class=\"navigation float-right\"> 
             ";
         // line 44
         echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 44, $this->source); })()));
@@ -229,7 +229,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
                 <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"{{asset('imgs/añadir.png')}}\"></img></h4>
             </a>
         </div>
-        <div class=\"navigation\"> 
+        <div class=\"navigation float-right\"> 
             {{ knp_pagination_render(tipo_productos) }} 
         </div>
 </div>

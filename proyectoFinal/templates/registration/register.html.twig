@@ -3,7 +3,7 @@
 {% block title %}Registro{% endblock %}
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        <div class="alert alert-danger" role="alert">Usuario existente</div>
     {% endfor %}
 
     
@@ -54,6 +54,7 @@
                         {% if is_granted('ROLE_ADMIN') %}
                             {{ admin }}
                         {% endif %}
+
                         {{form_row(registrationForm.foto,{
                             
                         })}}

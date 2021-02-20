@@ -156,7 +156,7 @@ $(document).ready(function(){
             novedades=[];
             for (let i = 0; i < 11; i++) {
                 novedades.push(productos[i])
-                if(i==propductos.length-1) break;
+                if(i==productos.length-1) break;
             }
             cargaProductos(novedades,productosContainer);
         }

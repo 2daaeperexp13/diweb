@@ -91,9 +91,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
         // line 8
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })())) {
             // line 9
-            echo "            <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 9, $this->source); })()), "messageKey", [], "any", false, false, false, 9), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 9, $this->source); })()), "messageData", [], "any", false, false, false, 9), "security"), "html", null, true);
-            echo "</div>
+            echo "            <div class=\"alert alert-danger\">Usuario o contraseña incorrectos</div>
         ";
         }
         // line 11
@@ -113,19 +111,26 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
         ";
         }
         // line 17
+        echo "        ";
+        if ((isset($context["registrado"]) || array_key_exists("registrado", $context) ? $context["registrado"] : (function () { throw new RuntimeError('Variable "registrado" does not exist.', 17, $this->source); })())) {
+            // line 18
+            echo "            <h2 class=\"text-center text-seconary\">Ya estás registrado! Se ha enviado un correo de confirmación a su dirección de correo</h2>
+        ";
+        }
+        // line 20
         echo "        <div class=\"container-fluid border p-0\">
             <div class=\"miheader2 h-25 py-1 mb-2 pl-2\"><h2 class=\"h3  font-weight-bold text-secondary\">Introduce una dirección de correo y contraseña</h2></div>
             <div class=\"container-fluid ml-1\">
                 <label for=\"inputEmail\">Email</label>
                 <input type=\"email\" value=\"";
-        // line 21
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 21, $this->source); })()), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 24, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
                 <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 25
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
                 <div class=\"checkbox mb-3\">
@@ -162,7 +167,7 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
 
     public function getDebugInfo()
     {
-        return array (  129 => 25,  122 => 21,  116 => 17,  108 => 14,  105 => 13,  103 => 12,  100 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  134 => 28,  127 => 24,  121 => 20,  117 => 18,  114 => 17,  106 => 14,  103 => 13,  101 => 12,  98 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -175,13 +180,16 @@ class __TwigTemplate_ba3fd9d7ddbe379d96005ef1d649158a67657fbb17f0a4b328f85a8e5ce
 <div class=\"container mb-5\">
     <form method=\"post\">
         {% if error %}
-            <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class=\"alert alert-danger\">Usuario o contraseña incorrectos</div>
         {% endif %}
 
         {% if app.user %}
             <div class=\"mb-3\">
                 Iniciado sesión como {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Cerrar  sesión</a>
             </div>
+        {% endif %}
+        {% if registrado %}
+            <h2 class=\"text-center text-seconary\">Ya estás registrado! Se ha enviado un correo de confirmación a su dirección de correo</h2>
         {% endif %}
         <div class=\"container-fluid border p-0\">
             <div class=\"miheader2 h-25 py-1 mb-2 pl-2\"><h2 class=\"h3  font-weight-bold text-secondary\">Introduce una dirección de correo y contraseña</h2></div>

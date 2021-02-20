@@ -161,7 +161,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
     <div class=\"navigation float-right\"> 
         ";
         // line 45
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["productos"]) || array_key_exists("productos", $context) ? $context["productos"] : (function () { throw new RuntimeError('Variable "productos" does not exist.', 45, $this->source); })()));
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["provincias"]) || array_key_exists("provincias", $context) ? $context["provincias"] : (function () { throw new RuntimeError('Variable "provincias" does not exist.', 45, $this->source); })()));
         echo " 
     </div>
 </div>
@@ -235,7 +235,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
         </a>
     </div>
     <div class=\"navigation float-right\"> 
-        {{ knp_pagination_render(productos) }} 
+        {{ knp_pagination_render(provincias) }} 
     </div>
 </div>
 {% endblock %}

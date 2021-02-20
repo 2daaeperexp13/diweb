@@ -6,13 +6,16 @@
 <div class="container mb-5">
     <form method="post">
         {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-danger">Usuario o contraseña incorrectos</div>
         {% endif %}
 
         {% if app.user %}
             <div class="mb-3">
                 Iniciado sesión como {{ app.user.username }}, <a href="{{ path('app_logout') }}">Cerrar  sesión</a>
             </div>
+        {% endif %}
+        {% if registrado %}
+            <h2 class="text-center text-seconary">Ya estás registrado! Se ha enviado un correo de confirmación a su dirección de correo</h2>
         {% endif %}
         <div class="container-fluid border p-0">
             <div class="miheader2 h-25 py-1 mb-2 pl-2"><h2 class="h3  font-weight-bold text-secondary">Introduce una dirección de correo y contraseña</h2></div>

@@ -81,7 +81,7 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
                   <!-- Link--><a class=\" text-white h4\" href=\"#\">Pedidos</a>
                 </li>
               </ul>
-               <ul class=\"navbar-nav ml-auto\">               
+               <ul class=\"navbar-nav \">               
                 <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/logout\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Cerrar sesión</a></li>
               </ul>
             </div>
@@ -132,7 +132,7 @@ class __TwigTemplate_0c397284683fd07c64b856a0e681dee2642d47fa172c56b82d3f70982b4
                   <!-- Link--><a class=\" text-white h4\" href=\"#\">Pedidos</a>
                 </li>
               </ul>
-               <ul class=\"navbar-nav ml-auto\">               
+               <ul class=\"navbar-nav \">               
                 <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/logout\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Cerrar sesión</a></li>
               </ul>
             </div>

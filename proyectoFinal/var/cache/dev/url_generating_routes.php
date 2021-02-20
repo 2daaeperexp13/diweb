@@ -50,7 +50,7 @@ return [
     'provincia_delete' => [['id'], ['_controller' => 'App\\Controller\\ProvinciaController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/provincia']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],
-    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login/']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'tipo_producto_index' => [[], ['_controller' => 'App\\Controller\\TipoProductoController::index'], [], [['text', '/tipo/producto/']], [], []],
     'tipo_producto_tipos' => [[], ['_controller' => 'App\\Controller\\TipoProductoController::getTipos'], [], [['text', '/tipo/producto/tipos']], [], []],

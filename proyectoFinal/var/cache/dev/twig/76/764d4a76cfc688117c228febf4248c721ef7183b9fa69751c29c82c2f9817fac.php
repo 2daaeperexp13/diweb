@@ -90,9 +90,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "flashes", [0 => "verify_email_error"], "method", false, false, false, 5));
         foreach ($context['_seq'] as $context["_key"] => $context["flashError"]) {
             // line 6
-            echo "        <div class=\"alert alert-danger\" role=\"alert\">";
-            echo twig_escape_filter($this->env, $context["flashError"], "html", null, true);
-            echo "</div>
+            echo "        <div class=\"alert alert-danger\" role=\"alert\">Usuario existente</div>
     ";
         }
         $_parent = $context['_parent'];
@@ -185,16 +183,18 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                         ";
         }
         // line 57
-        echo "                        ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 57, $this->source); })()), "foto", [], "any", false, false, false, 57), 'row', []);
-        // line 59
+        echo "
+                        ";
+        // line 58
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 58, $this->source); })()), "foto", [], "any", false, false, false, 58), 'row', []);
+        // line 60
         echo "
                         <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 \">Registrarme</button>
                     </div>
                 </div>
                 ";
-        // line 63
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 63, $this->source); })()), 'form_end');
+        // line 64
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 64, $this->source); })()), 'form_end');
         echo "
         </div>
     </div>
@@ -220,7 +220,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
 
     public function getDebugInfo()
     {
-        return array (  197 => 63,  191 => 59,  188 => 57,  182 => 55,  179 => 54,  175 => 52,  172 => 50,  170 => 49,  163 => 45,  159 => 44,  155 => 43,  147 => 38,  144 => 37,  142 => 35,  139 => 34,  137 => 32,  134 => 31,  132 => 29,  125 => 24,  123 => 22,  120 => 21,  118 => 19,  111 => 15,  102 => 8,  93 => 6,  88 => 5,  78 => 4,  59 => 3,  36 => 1,);
+        return array (  197 => 64,  191 => 60,  189 => 58,  186 => 57,  180 => 55,  177 => 54,  173 => 52,  170 => 50,  168 => 49,  161 => 45,  157 => 44,  153 => 43,  145 => 38,  142 => 37,  140 => 35,  137 => 34,  135 => 32,  132 => 31,  130 => 29,  123 => 24,  121 => 22,  118 => 21,  116 => 19,  109 => 15,  100 => 8,  93 => 6,  88 => 5,  78 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -230,7 +230,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
 {% block title %}Registro{% endblock %}
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
-        <div class=\"alert alert-danger\" role=\"alert\">{{ flashError }}</div>
+        <div class=\"alert alert-danger\" role=\"alert\">Usuario existente</div>
     {% endfor %}
 
     
@@ -281,6 +281,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                         {% if is_granted('ROLE_ADMIN') %}
                             {{ admin }}
                         {% endif %}
+
                         {{form_row(registrationForm.foto,{
                             
                         })}}
