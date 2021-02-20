@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Tarjeta;
 use App\Entity\Usuario;
 use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
@@ -66,7 +67,7 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-
+    
     /**
      * @Route("/verify/email", name="app_verify_email")
      */

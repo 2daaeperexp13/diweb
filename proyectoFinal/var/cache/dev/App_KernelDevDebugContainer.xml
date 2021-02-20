@@ -455,10 +455,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\TipoProductoRepository" class="App\Repository\TipoProductoRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4337,7 +4333,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.LhWhJe0"/>
+      <argument type="service" id=".service_locator.r26zEbo"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5476,8 +5472,6 @@
     <service id=".abstract.instanceof.App\Repository\ProductoRepository" class="App\Repository\ProductoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProvinciaRepository" class="App\Repository\ProvinciaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProvinciaRepository" class="App\Repository\ProvinciaRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\TarjetaRepository" class="App\Repository\TarjetaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TipoProductoRepository" class="App\Repository\TipoProductoRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TipoProductoRepository" class="App\Repository\TipoProductoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UsuarioRepository" class="App\Repository\UsuarioRepository" autowire="true" abstract="true"/>
@@ -5761,6 +5755,12 @@
         <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
+    <service id=".service_locator.IuXccsC" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="localidadRepository" type="service" id="App\Repository\LocalidadRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.665dTYD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5782,6 +5782,13 @@
     <service id=".service_locator.Y935jyL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.4GAiPw7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pedidoRepository" type="service" id="App\Repository\PedidoRepository"/>
         <argument key="productoRepository" type="service" id="App\Repository\ProductoRepository"/>
       </argument>
     </service>
@@ -5808,6 +5815,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="paginator" type="service" id="knp_paginator"/>
+        <argument key="provinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.eWN17oh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
         <argument key="provinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
       </argument>
     </service>
@@ -5848,7 +5861,7 @@
         <argument key="tipoProducto" type="service" id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto"/>
       </argument>
     </service>
-    <service id=".service_locator.oFbrJVg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Y7Zk3d4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CategoriaController::datos" type="service" id=".service_locator.6ieTL0P"/>
@@ -5856,15 +5869,17 @@
         <argument key="App\Controller\CategoriaController::edit" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\CategoriaController::index" type="service" id=".service_locator.smGk.x1"/>
         <argument key="App\Controller\CategoriaController::show" type="service" id=".service_locator.2OM4L_f"/>
+        <argument key="App\Controller\LocalidadController::datosporProvincia" type="service" id=".service_locator.IuXccsC"/>
         <argument key="App\Controller\LocalidadController::delete" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController::edit" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController::index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController::new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController::show" type="service" id=".service_locator.YVT_0fT"/>
-        <argument key="App\Controller\PedidoController::carritoProducto" type="service" id=".service_locator.Y935jyL"/>
-        <argument key="App\Controller\PedidoController::carritoProductoOut" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\PedidoController::comprar" type="service" id=".service_locator.4GAiPw7"/>
         <argument key="App\Controller\PedidoController::delete" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\PedidoController::edit" type="service" id=".service_locator.AOEYXy4"/>
+        <argument key="App\Controller\PedidoController::getCarrito" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\PedidoController::guardarCarrito" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\PedidoController::index" type="service" id=".service_locator.dZo_iLe"/>
         <argument key="App\Controller\PedidoController::show" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\ProductoController::delete" type="service" id=".service_locator.1jRuMKL"/>
@@ -5872,6 +5887,7 @@
         <argument key="App\Controller\ProductoController::index" type="service" id=".service_locator.1_gyAer"/>
         <argument key="App\Controller\ProductoController::prodindex" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\ProductoController::show" type="service" id=".service_locator.1jRuMKL"/>
+        <argument key="App\Controller\ProvinciaController::datosporProvincia" type="service" id=".service_locator.eWN17oh"/>
         <argument key="App\Controller\ProvinciaController::delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController::edit" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController::index" type="service" id=".service_locator.52xk0Eg"/>
@@ -5894,15 +5910,17 @@
         <argument key="App\Controller\CategoriaController:edit" type="service" id=".service_locator.2OM4L_f"/>
         <argument key="App\Controller\CategoriaController:index" type="service" id=".service_locator.smGk.x1"/>
         <argument key="App\Controller\CategoriaController:show" type="service" id=".service_locator.2OM4L_f"/>
+        <argument key="App\Controller\LocalidadController:datosporProvincia" type="service" id=".service_locator.IuXccsC"/>
         <argument key="App\Controller\LocalidadController:delete" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController:edit" type="service" id=".service_locator.YVT_0fT"/>
         <argument key="App\Controller\LocalidadController:index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController:new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController:show" type="service" id=".service_locator.YVT_0fT"/>
-        <argument key="App\Controller\PedidoController:carritoProducto" type="service" id=".service_locator.Y935jyL"/>
-        <argument key="App\Controller\PedidoController:carritoProductoOut" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\PedidoController:comprar" type="service" id=".service_locator.4GAiPw7"/>
         <argument key="App\Controller\PedidoController:delete" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\PedidoController:edit" type="service" id=".service_locator.AOEYXy4"/>
+        <argument key="App\Controller\PedidoController:getCarrito" type="service" id=".service_locator.Y935jyL"/>
+        <argument key="App\Controller\PedidoController:guardarCarrito" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\PedidoController:index" type="service" id=".service_locator.dZo_iLe"/>
         <argument key="App\Controller\PedidoController:show" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\ProductoController:delete" type="service" id=".service_locator.1jRuMKL"/>
@@ -5910,6 +5928,7 @@
         <argument key="App\Controller\ProductoController:index" type="service" id=".service_locator.1_gyAer"/>
         <argument key="App\Controller\ProductoController:prodindex" type="service" id=".service_locator.Y935jyL"/>
         <argument key="App\Controller\ProductoController:show" type="service" id=".service_locator.1jRuMKL"/>
+        <argument key="App\Controller\ProvinciaController:datosporProvincia" type="service" id=".service_locator.eWN17oh"/>
         <argument key="App\Controller\ProvinciaController:delete" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController:edit" type="service" id=".service_locator.MyFGqY6"/>
         <argument key="App\Controller\ProvinciaController:index" type="service" id=".service_locator.52xk0Eg"/>
@@ -6163,7 +6182,7 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.LhWhJe0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.r26zEbo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriaRepository" type="service" id="App\Repository\CategoriaRepository"/>
@@ -6173,7 +6192,6 @@
         <argument key="App\Repository\PedidoRepository" type="service" id="App\Repository\PedidoRepository"/>
         <argument key="App\Repository\ProductoRepository" type="service" id="App\Repository\ProductoRepository"/>
         <argument key="App\Repository\ProvinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
-        <argument key="App\Repository\TarjetaRepository" type="service" id="App\Repository\TarjetaRepository"/>
         <argument key="App\Repository\TipoProductoRepository" type="service" id="App\Repository\TipoProductoRepository"/>
         <argument key="App\Repository\UsuarioRepository" type="service" id="App\Repository\UsuarioRepository"/>
       </argument>
@@ -6446,12 +6464,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.oFbrJVg"/>
+      <argument type="service" id=".service_locator.Y7Zk3d4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.oFbrJVg"/>
+      <argument type="service" id=".service_locator.Y7Zk3d4"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6867,7 +6885,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.oFbrJVg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Y7Zk3d4"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

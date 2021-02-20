@@ -42,7 +42,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
-        // line 42
+        // line 41
         echo "
 ";
         
@@ -90,7 +90,6 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                     <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu   position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
                         <a id=\"misdatos\" class=\"dropdown-item\" href=\"#misdatosModal\" data-toggle=\"modal\">Mis datos</a>
-                        <a id=\"metodosPago\" class=\"dropdown-item\" href=\"#metodosModal\" data-toggle=\"modal\">Añadir método de pago</a>
                         <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
                       </div>
                   </div>
@@ -99,11 +98,11 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
               
                 ";
         } else {
-            // line 33
+            // line 32
             echo "                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
                 ";
         }
-        // line 35
+        // line 34
         echo "              </ul>
             </div>
           </nav>
@@ -126,7 +125,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getDebugInfo()
     {
-        return array (  107 => 35,  103 => 33,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 42,  44 => 1,);
+        return array (  106 => 34,  102 => 32,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 41,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -155,7 +154,6 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
                     <a class= \"dropdown-toggle h4\"  type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"#\"> Mi perfil</a>
                       <div class=\"dropdown-menu   position-relative z-index-50 \"  aria-labelledby=\"dropdownMenuButton\">
                         <a id=\"misdatos\" class=\"dropdown-item\" href=\"#misdatosModal\" data-toggle=\"modal\">Mis datos</a>
-                        <a id=\"metodosPago\" class=\"dropdown-item\" href=\"#metodosModal\" data-toggle=\"modal\">Añadir método de pago</a>
                         <a class=\"dropdown-item\" href=\"/logout\">Cerrar sesión</a>
                       </div>
                   </div>

@@ -1,4 +1,4 @@
-function mostrarCarrito(productos,cantidad=1) {
+function mostrarCarrito(productos) {
     if(productos.length!=0){
         var plantillaProducto="";
         var contenedorProd="";
@@ -13,14 +13,20 @@ function mostrarCarrito(productos,cantidad=1) {
                     contenedorProd.find("img").first().attr("src",producto.imagenes[0]).addClass("rounded-circle");
                     $("#nombreProducto").text(producto.nombre).attr("id","nombreProducto"+producto.id);
                     $("#precioProducto").text(producto.precio+" €").attr("id","precioProducto"+producto.id);
-                    $("#subtotal").text(($("#subtotal").text().split("€")[0]*1 + producto.precio)+" €");
-                    $("#precioCantidad").text(producto.precio*cantidad+" €").attr("id","precioCantidad"+producto.id);
-                    $("#cantidad").attr("id","cantidad"+producto.id).on("change",function(){
+                    $("#precioCantidad").text(producto.precio*producto.cantidad+" €").attr("id","precioCantidad"+producto.id);
+                    $("#cantidad").attr("id","cantidad"+producto.id).val(producto.cantidad).on("change",function(){
                         if($(this).val()<1)$(this).val(1);
                         $("#precioCantidad"+producto.id).text(producto.precio*$(this).val()+" €");
                         calcularTotal(productos);
+                    }).on("blur",function(){
+
+                        quitarProducto(producto,function(){
+                            añadiraCarrito(producto,$("#cantidad"+producto.id).val(),true);
+                        });
+                        
                     });
-                    $("#total").text($("#subtotal").text());
+                    
+                    
                     $("#carritoOut").attr("id","carritoOut"+producto.id).on("click",function (){
                         if(confirm("¿Estás seguro de eliminar el producto del carrito?"))quitarProducto(producto);
                         
@@ -31,6 +37,8 @@ function mostrarCarrito(productos,cantidad=1) {
                     $("#listaCarrito").append(plantillaProducto);
                 });
                 $("#productocarro").remove();
+                calcularSubotal(productos);
+                calcularTotal(productos);
             }
         });
         $("#continuarComprando").on("click",function(){
@@ -38,6 +46,7 @@ function mostrarCarrito(productos,cantidad=1) {
         });
     }
 }
+
 function calcularTotal(productos) {
     var total=0;
     productos.forEach(producto=>{
@@ -46,21 +55,62 @@ function calcularTotal(productos) {
     });
     $("#total").text(total+" €");
 }
-function quitarProducto(producto){
+function calcularSubotal(productos) {
+    var subtotal=0;
+    productos.forEach(producto=>{
+
+        subtotal=subtotal + $("#precioProducto"+producto.id).text().split("€")[0]*1;
+    });
+    $("#subtotal").text(subtotal+" €");
+}
+function vaciarCarrito() {
+    $("#prodEnCarro").text("(0)");
+    carrito={};
     $.ajax({
-        "url":"/pedido/carritoProductoOut",
+        "url":"/pedido/guardarCarrito",
             "type":"post",
-            "data": {"producto":producto.id},
+            "data": {"carrito":carrito},
             "success": function(data){
                 if(data){
-                    var productoStorage=JSON.parse(localStorage.getItem("carrito"));
-                    productoStorage.splice(productoStorage.indexOf(producto),1);
-                    localStorage.setItem("carrito",JSON.stringify(productoStorage));
-                    $("#productocarro"+producto.id).remove();
-                    
-                    
+                    localStorage.setItem("carrito",JSON.stringify(data));
+                    $("#listaCarrito").empty();
+                    $("#subtotal").text("0 €");
+                    $("#total").text("0 €");
+                }
+            }
+    });
+    
+}
+function quitarProducto(producto,callback=null){
+    var carrito=JSON.parse(localStorage.getItem("carrito"));
+        delete carrito["producto"+producto.id];
+    $.ajax({
+        "url":"/pedido/guardarCarrito",
+            "type":"post",
+            "data": {"carrito":carrito},
+            "success": function(data){
+                if(data){
+                    localStorage.setItem("carrito",JSON.stringify(data));
+                    if(callback!=null) callback();
+                    else{
+                        
+                        $("#productocarro"+producto.id).remove();
+                        modificarCarritoHeader(false);
+                        calcularSubotal(Object.values(data));
+                        calcularTotal(Object.values(data));
+                    }
+
                 }
             }
     });
 }
-mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
+
+mostrarCarrito(Object.values(JSON.parse(localStorage.getItem("carrito"))));
+
+$("#vaciar").on("click",function(){
+    vaciarCarrito();
+});
+
+$("#comprar").on("click",function(){
+    $("#pagina").load("comprar.html");
+});

@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 /**
  * @Route("/provincia")
  */
@@ -25,6 +27,15 @@ class ProvinciaController extends AbstractController
                 ->getQuery()
             , $request->query->getInt('page',1),5)
         ]);
+    }
+
+
+    /**
+     * @Route("/datos", name="provincia", methods={"GET"})
+     */
+    public function datosporProvincia(ProvinciaRepository $provinciaRepository, Request $request): JsonResponse
+    {
+        return new JsonResponse($provinciaRepository->createQueryBuilder('p')->getQuery()->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY));
     }
 
     /**

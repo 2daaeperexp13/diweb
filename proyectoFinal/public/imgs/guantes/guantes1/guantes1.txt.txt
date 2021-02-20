@@ -1,0 +1,54 @@
+--GUANTES 1--
+
+	NOMBRE 
+		GUANTES SPORT BSTAR PIEL TT
+	DESCRIPCION
+		** Guantes moto fabricado en piel de vaca Negro (Analine Flexible) y cuero perforado
+
+		** Proteccion en carbono en los nudillos de goma en los dedos, y Pittard parche de cuero en la palma,
+
+		** Ajuste de velcro en la muñeca
+
+		** Forro interior fino para una mejor agarre.
+		ideal uso racing
+--GUANTES 2 ---
+	NOMBRE
+		GUANTES VERANO STINA MBG4236
+	DESCRIPCION
+		Caracteristicas
+		*Guantes moto fabricado en CORDURA Negro (Analine Flexible) perforado,
+		**Proteccion en nudillos Protección de goma en los dedos, y Pittard parche de cuero en la palma,
+		** Ajuste de velcro en la muñeca
+		** Forro interior para una mejor agarre.
+		ideal uso racing verano.
+
+		**NOTA . se sirve el guante con protecccion en todos los nudillos
+
+		Promoción ENVIO GRATIS peninsula, entrega opción 24/48 horas
+--GUANTES 3 --
+	NOMBRE
+		GUANTES VERANO RAINERS SPRINT
+	DESCRIPCION
+		*Guantes racing Rainers Sprint en color negro.
+
+		*Fabricados con refuerzo en nudillos y piel antideslizante en la palma de la mano
+
+		*Banda elástica de neopreno.
+
+		*Piel Protector de nudillos y TPU Bandas elásticas de neopreno
+
+		*Refuerzo de piel antideslizante en la palma de la mano
+
+		*Cierre mediante velcro Forro poliéster
+
+		Composicion
+		Exterior
+		75 % piel
+		10% poliuertano
+		10% poliester
+		5% goma
+		Interior
+		100 % forro poliester
+
+
+

@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 /**
  * @Route("/localidad")
  */
@@ -28,6 +30,17 @@ class LocalidadController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/datos", name="localidad_provincia", methods={"POST"})
+     */
+    public function datosporProvincia(LocalidadRepository $localidadRepository, Request $request): JsonResponse
+    {
+        return new JsonResponse($localidadRepository->createQueryBuilder('l')
+                                    ->where('l.provincia = :provincia')
+                                    ->setParameter('provincia',$request->request->get('provincia'))
+                                    ->getQuery()->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY));
+    }
+    
     /**
      * @Route("/new", name="localidad_new", methods={"GET","POST"})
      */

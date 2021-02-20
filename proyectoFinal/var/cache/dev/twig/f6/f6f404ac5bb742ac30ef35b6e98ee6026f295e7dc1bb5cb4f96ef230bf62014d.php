@@ -123,7 +123,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
                         <td>
                             <a class=\"btn btnform2\" href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["provincia"]) || array_key_exists("provincia", $context) ? $context["provincia"] : (function () { throw new RuntimeError('Variable "provincia" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("provincia_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["provincium"], "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -217,7 +217,7 @@ class __TwigTemplate_3449f25c413e328d36e597c246043fc901d67da54f0d02d7c93c1e8bdcb
                         <td>{{ provincium.codProv }}</td>
                         <td>{{ provincium.nombre }}</td>
                         <td>
-                            <a class=\"btn btnform2\" href=\"{{ path('provincia_edit', {'id': provincia.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
+                            <a class=\"btn btnform2\" href=\"{{ path('provincia_edit', {'id': provincium.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>
                     </tr>
                 {% else %}

@@ -81,14 +81,11 @@ class Usuario implements UserInterface
     private $provincia;
 
     /**
-     * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="user", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Pedido::class, mappedBy="user", orphanRemoval=true,cascade={"persist"})
      */
     private $pedidos;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Tarjeta::class, mappedBy="usuario", orphanRemoval=true)
-     */
-    private $tarjetas;
+   
 
     /**
      * @ORM\OneToMany(targetEntity=Comentario::class, mappedBy="usuario", orphanRemoval=true)
@@ -100,10 +97,15 @@ class Usuario implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="json", nullable=true)
+     */
+    private $carrito = [];
+
+
     public function __construct()
     {
         $this->pedidos = new ArrayCollection();
-        $this->tarjetas = new ArrayCollection();
         $this->comentarios = new ArrayCollection();
     }
 
@@ -311,35 +313,7 @@ class Usuario implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|Tarjeta[]
-     */
-    public function getTarjetas(): Collection
-    {
-        return $this->tarjetas;
-    }
-
-    public function addTarjeta(Tarjeta $tarjeta): self
-    {
-        if (!$this->tarjetas->contains($tarjeta)) {
-            $this->tarjetas[] = $tarjeta;
-            $tarjeta->setUsuario($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTarjeta(Tarjeta $tarjeta): self
-    {
-        if ($this->tarjetas->removeElement($tarjeta)) {
-            // set the owning side to null (unless already changed)
-            if ($tarjeta->getUsuario() === $this) {
-                $tarjeta->setUsuario(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     /**
      * @return Collection|Comentario[]
@@ -386,5 +360,18 @@ class Usuario implements UserInterface
     public function getIsVerified(): ?bool
     {
         return $this->isVerified;
+    }
+
+    public function getCarrito(): ?array
+    {
+
+        return $this->carrito;
+    }
+
+    public function setCarrito(?array $carrito): self
+    {
+        $this->carrito = $carrito;
+
+        return $this;
     }
 }

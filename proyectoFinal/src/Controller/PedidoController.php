@@ -7,6 +7,7 @@ use App\Form\PedidoType;
 use App\Repository\PedidoRepository;
 use App\Repository\ProductoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -50,30 +51,74 @@ class PedidoController extends AbstractController
     }
 
     /**
-     * @Route("/carritoProducto", name="carrito", methods={"GET","POST"})
+     * @Route("/guardarCarrito", name="carrito", methods={"POST"})
      */
-    public function carritoProducto(Request $request, ProductoRepository $productoRepository): Response
+    public function guardarCarrito(Request $request, ProductoRepository $productoRepository): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
         if (($this->getUser())) {
-            $producto=$productoRepository->find($request->request->get('producto'));
-            $_SESSION['carrito'][$producto->getId()]=$producto;
-            return new Response(true);
+            
+            $this->getUser()->setCarrito($request->request->get('carrito'));
+            $entityManager->persist($this->getUser());
+            $entityManager->flush();
+            return new JsonResponse($this->getUser()->getCarrito());
         }
-        else return new Response(false);
+        else return new Response(null);
     }
 
     /**
-     * @Route("/carritoProductoOut", name="carritoOut", methods={"GET","POST"})
+     * @Route("/getcarrito", name="getcarrito", methods={"GET","POST"})
      */
-    public function carritoProductoOut(Request $request, ProductoRepository $productoRepository): Response
+    public function getCarrito(Request $request, ProductoRepository $productoRepository): JsonResponse
     {
-        if (($this->getUser())) {
-            $producto=$productoRepository->find($request->request->get('producto'));
-            unset($_SESSION['carrito'][$producto->getId()]);
-            return new Response(true);
+        if (($this->getUser()->getCarrito()!=null)) {
+           
+            return new JsonResponse($this->getUser()->getCarrito());
         }
-        else return new Response(false);
+        else return new JsonResponse(null);
     }
+
+    /**
+     * @Route("/compra", name="compra", methods={"GET","POST"})
+     */
+    public function comprar(Request $request, ProductoRepository $productoRepository, PedidoRepository $pedidoRepository): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $pedido=new Pedido();
+
+        //asigno los datos del request en variables
+        $productos=$request->request->get('productos');
+        $importe=$request->request->get('importe');
+        $direccion=$request->request->get('direccion');
+        $tarjeta=$request->request->get('tarjeta');
+        $fechaVencimiento=$request->request->get('fecha');
+        $fechaCompra= Date('Y-m-d H:i:s');
+
+   
+        // asigno los parametros al pedido
+        $pedido->setFecha($fechaCompra)->setPrecio($importe)
+                ->setDireccion($direccion)->setTarjeta($tarjeta)
+                ->setFechaVencimiento($fechaVencimiento);
+
+
+
+        $this->getUser()->addPedido($pedido);
+        $entityManager->persist($this->getUser());
+        $entityManager->flush();
+
+        for ($i=0; $i < count($productos); $i++) { 
+            $producto=$productos[$i];
+            $objproducto=$productoRepository->find($producto['id']*1);
+            $pedido->addProducto($objproducto);
+        }
+        $entityManager->persist($pedido);
+        $entityManager->flush();
+
+        $pedidoRepository->unidadesProducto($productos);
+
+        return new Response(true);
+    }
+
 
     /**
      * @Route("/{id}", name="pedido_show", methods={"GET"})

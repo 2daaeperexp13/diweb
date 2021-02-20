@@ -84,21 +84,6 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
     </div>
 </div>
 
-<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"metodosModal\">
-    <div class=\"modal-dialog\" role=\"document\">
-      <div class=\"modal-content\">
-        <div class=\"modal-header\">
-          <h2 class=\"modal-title text-secondary\">AÑADIR MÉTODO DE PAGO</h2>
-          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
-            <span aria-hidden=\"true\">&times;</span>
-          </button>
-        </div>
-        <div class=\"modal-body\">
-          <p id=\"contenidometodosModal\"></p>
-        </div>
-      </div>
-    </div>
-</div>
 <!--  Modal Productos -->
       <div class=\"modal fade \" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
         <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">
@@ -206,7 +191,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 136
+    // line 121
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -216,10 +201,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 137
+        // line 122
         echo "  
   ";
-        // line 138
+        // line 123
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -244,7 +229,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  223 => 138,  220 => 137,  210 => 136,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  208 => 123,  205 => 122,  195 => 121,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -270,21 +255,6 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
     </div>
 </div>
 
-<div class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" id=\"metodosModal\">
-    <div class=\"modal-dialog\" role=\"document\">
-      <div class=\"modal-content\">
-        <div class=\"modal-header\">
-          <h2 class=\"modal-title text-secondary\">AÑADIR MÉTODO DE PAGO</h2>
-          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
-            <span aria-hidden=\"true\">&times;</span>
-          </button>
-        </div>
-        <div class=\"modal-body\">
-          <p id=\"contenidometodosModal\"></p>
-        </div>
-      </div>
-    </div>
-</div>
 <!--  Modal Productos -->
       <div class=\"modal fade \" id=\"productView\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\" style=\"height:500px\">
         <div class=\"modal-dialog modal-lg modal-dialog-centered\" role=\"document\" style=\"height:500px\">

@@ -20,7 +20,7 @@ class Pedido
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     private $fecha;
 
@@ -42,6 +42,21 @@ class Pedido
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $direccion;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $tarjeta;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fechaVencimiento;
+
     public function __construct()
     {
         $this->pedidoProdutos = new ArrayCollection();
@@ -53,12 +68,12 @@ class Pedido
         return $this->id;
     }
 
-    public function getFecha(): ?\DateTimeInterface
+    public function getFecha()
     {
         return $this->fecha;
     }
 
-    public function setFecha(\DateTimeInterface $fecha): self
+    public function setFecha( $fecha): self
     {
         $this->fecha = $fecha;
 
@@ -115,5 +130,44 @@ class Pedido
         return $this;
     }
 
+    public function getDireccion(): ?string
+    {
+        return $this->direccion;
+    }
 
+    public function setDireccion(string $direccion): self
+    {
+        $this->direccion = $direccion;
+
+        return $this;
+    }
+
+    public function getTarjeta(): ?string
+    {
+        return $this->tarjeta;
+    }
+
+    public function setTarjeta(string $tarjeta): self
+    {
+        $this->tarjeta = $tarjeta;
+
+        return $this;
+    }
+
+    public function getFechaVencimiento(): ?string
+    {
+        return $this->fechaVencimiento;
+    }
+
+    public function setFechaVencimiento(string $fechaVencimiento): self
+    {
+        $this->fechaVencimiento = $fechaVencimiento;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->id."";
+    }
 }
