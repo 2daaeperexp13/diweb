@@ -86,7 +86,17 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 
         // line 6
         echo "<div class=\"container mb-5\">
-    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+    ";
+        // line 7
+        if ((isset($context["exception"]) || array_key_exists("exception", $context) ? $context["exception"] : (function () { throw new RuntimeError('Variable "exception" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "        <h3>";
+            echo twig_escape_filter($this->env, (isset($context["exception"]) || array_key_exists("exception", $context) ? $context["exception"] : (function () { throw new RuntimeError('Variable "exception" does not exist.', 8, $this->source); })()), "html", null, true);
+            echo "</h3>
+    ";
+        }
+        // line 10
+        echo "    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>LOCALIDADES</h1>
         </div>
@@ -101,29 +111,29 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
                 </thead>
                 <tbody>
                 ";
-        // line 21
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["localidad"]) {
-            // line 22
+            // line 25
             echo "                    <tr>
                         <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 23), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                         <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "codLoc", [], "any", false, false, false, 24), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "codLoc", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                         <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 25), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["localidad"], "nombre", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                         <td>
                             <a class=\"btn btnform2\" href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["localidad"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -133,7 +143,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
+            // line 34
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -142,26 +152,26 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['localidad'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 38
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto p-5\" href=\"";
-        // line 40
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_new");
         echo "\">
             <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"";
-        // line 41
+        // line 44
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img></h4>
         </a>
     </div>
     <div class=\"navigation\"> 
         ";
-        // line 45
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 45, $this->source); })()));
+        // line 48
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["localidades"]) || array_key_exists("localidades", $context) ? $context["localidades"] : (function () { throw new RuntimeError('Variable "localidades" does not exist.', 48, $this->source); })()));
         echo " 
     </div>
 </div>
@@ -186,7 +196,7 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 
     public function getDebugInfo()
     {
-        return array (  164 => 45,  157 => 41,  153 => 40,  146 => 35,  137 => 31,  126 => 27,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  174 => 48,  167 => 44,  163 => 43,  156 => 38,  147 => 34,  136 => 30,  131 => 28,  127 => 27,  123 => 26,  120 => 25,  115 => 24,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -197,6 +207,9 @@ class __TwigTemplate_4c59b6c2e034ad8762640eca452eeaa9fb7d4367d95e037fa3b340b4f28
 
 {% block body %}
 <div class=\"container mb-5\">
+    {% if exception %}
+        <h3>{{exception}}</h3>
+    {% endif %}
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>LOCALIDADES</h1>

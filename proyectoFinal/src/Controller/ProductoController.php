@@ -25,7 +25,8 @@ class ProductoController extends AbstractController
         return $this->render('producto/index.html.twig', [
             'productos' => $paginator->paginate($productoRepository->createQueryBuilder('p')
                 ->getQuery()
-            , $request->query->getInt('page',1),5)
+            , $request->query->getInt('page',1),5),
+            'prodjson'=>json_encode($productoRepository->findAll())
         ]);
     }
 

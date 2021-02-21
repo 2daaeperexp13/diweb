@@ -6,6 +6,7 @@ use App\Repository\UsuarioRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -24,6 +25,9 @@ class Usuario implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotNull(message="El email del usuario no puede ser null")
+     * @Assert\Unique(message="Ya existe un usuario con esta cuenta de correo")
+     * @Assert\Email(message = "El email no es un email correcto, por favor inténtelo de nuevo")
      */
     private $email;
 
@@ -35,16 +39,22 @@ class Usuario implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="La contraseña del usuario no puede ser null")
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="El nombre del usuario no puede ser null")
      */
     private $nombre;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="el primer apellido del usuatrio no puede ser null")
      */
     private $ap1;
 
@@ -55,6 +65,8 @@ class Usuario implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotNull(message="El teléfono del usuario nopuede ser null")
+     * @Assert\NotBlank
      */
     private $telefono;
 
@@ -71,12 +83,16 @@ class Usuario implements UserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Localidad::class, inversedBy="usuarios")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="La localidad no puede ser null")
      */
     private $localidad;
 
     /**
      * @ORM\ManyToOne(targetEntity=Provincia::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="La localidad no puede ser null")
      */
     private $provincia;
 
@@ -85,12 +101,6 @@ class Usuario implements UserInterface
      */
     private $pedidos;
 
-   
-
-    /**
-     * @ORM\OneToMany(targetEntity=Comentario::class, mappedBy="usuario", orphanRemoval=true)
-     */
-    private $comentarios;
 
     /**
      * @ORM\Column(type="boolean")
@@ -315,35 +325,7 @@ class Usuario implements UserInterface
 
     
 
-    /**
-     * @return Collection|Comentario[]
-     */
-    public function getComentarios(): Collection
-    {
-        return $this->comentarios;
-    }
 
-    public function addComentario(Comentario $comentario): self
-    {
-        if (!$this->comentarios->contains($comentario)) {
-            $this->comentarios[] = $comentario;
-            $comentario->setUsuario($this);
-        }
-
-        return $this;
-    }
-
-    public function removeComentario(Comentario $comentario): self
-    {
-        if ($this->comentarios->removeElement($comentario)) {
-            // set the owning side to null (unless already changed)
-            if ($comentario->getUsuario() === $this) {
-                $comentario->setUsuario(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function isVerified(): bool
     {

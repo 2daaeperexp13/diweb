@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductoRepository;
 use App\Entity\TipoProducto;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -63,10 +64,7 @@ class Producto
      */
     private $imgProductos;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Comentario::class, mappedBy="producto", orphanRemoval=true)
-     */
-    private $comentarios;
+ 
 
     /**
      * @ORM\ManyToMany(targetEntity=Pedido::class, inversedBy="productos")
@@ -187,35 +185,7 @@ class Producto
         return $this;
     }
 
-    /**
-     * @return Collection|Comentario[]
-     */
-    public function getComentarios(): Collection
-    {
-        return $this->comentarios;
-    }
-
-    public function addComentario(Comentario $comentario): self
-    {
-        if (!$this->comentarios->contains($comentario)) {
-            $this->comentarios[] = $comentario;
-            $comentario->setProducto($this);
-        }
-
-        return $this;
-    }
-
-    public function removeComentario(Comentario $comentario): self
-    {
-        if ($this->comentarios->removeElement($comentario)) {
-            // set the owning side to null (unless already changed)
-            if ($comentario->getProducto() === $this) {
-                $comentario->setProducto(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     /**
      * @return Collection|Pedido[]
@@ -239,4 +209,5 @@ class Producto
         $this->pedidos->removeElement($pedido);
         return $this;
     }
+
 }

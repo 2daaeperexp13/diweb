@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Provincia;
 use App\Form\ProvinciaType;
 use App\Repository\ProvinciaRepository;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,10 +23,12 @@ class ProvinciaController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator,ProvinciaRepository $provinciaRepository): Response
     {
+        $exception=$request->query->get('exception');
         return $this->render('provincia/index.html.twig', [
             'provincias' => $paginator->paginate($provinciaRepository->createQueryBuilder('t')
                 ->getQuery()
-            , $request->query->getInt('page',1),5)
+            , $request->query->getInt('page',1),5),
+            'exception'=>$exception
         ]);
     }
 
@@ -98,8 +101,14 @@ class ProvinciaController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$provincium->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($provincium);
-            $entityManager->flush();
+            try {
+                $entityManager->remove($provincium);
+                $entityManager->flush();
+            } catch (ForeignKeyConstraintViolationException $e) {
+                return $this->redirectToRoute('provincia_index', [
+                    "exception"=>"No es posible eliminar esta provincia, hay localidades asociadas a la misma."
+                ]);
+            }
         }
 
         return $this->redirectToRoute('provincia_index');

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Categoria;
 use App\Form\CategoriaType;
 use App\Repository\CategoriaRepository;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,11 +23,12 @@ class CategoriaController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator, CategoriaRepository $categoriaRepository): Response
     {
-        
+        $exception=$request->query->get('exception');
         return $this->render('categoria/index.html.twig', [
             'categorias' => $paginator->paginate($categoriaRepository->createQueryBuilder('t')
                 ->getQuery()
-            , $request->query->getInt('page',1),5)
+            , $request->query->getInt('page',1),5),
+            'exception'=>$exception
         ]);
     }
 
@@ -106,8 +108,14 @@ class CategoriaController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$categorium->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($categorium);
-            $entityManager->flush();
+            try {
+                $entityManager->remove($categorium);
+                $entityManager->flush();
+            } catch (ForeignKeyConstraintViolationException $e) {
+                return $this->redirectToRoute('categoria_index', [
+                    "exception"=>"No es posible eliminar esta categorÍa, hay productos asociados a la misma."
+                ]);
+            }
         }
 
         return $this->redirectToRoute('categoria_index');

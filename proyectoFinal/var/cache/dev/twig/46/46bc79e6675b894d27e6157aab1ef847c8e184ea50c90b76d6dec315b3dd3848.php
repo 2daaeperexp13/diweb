@@ -29,10 +29,10 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $this->blocks = [
             'head' => [$this, 'block_head'],
             'css' => [$this, 'block_css'],
+            'scripts' => [$this, 'block_scripts'],
             'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
             'footer' => [$this, 'block_footer'],
-            'scripts' => [$this, 'block_scripts'],
         ];
     }
 
@@ -52,32 +52,45 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 27
+        // line 39
         echo "  </head>
   <body>
 ";
-        // line 29
+        // line 41
         $this->displayBlock('header', $context, $blocks);
-        // line 36
+        // line 48
         echo "    <div id=\"principal\" class=\"principal\">
 ";
-        // line 37
+        // line 49
         $this->displayBlock('body', $context, $blocks);
-        // line 38
+        // line 50
         echo "    </div>
       <footer class=\"bg-dark text-white align-self-end \">
 ";
-        // line 40
+        // line 52
         $this->displayBlock('footer', $context, $blocks);
-        // line 65
+        // line 77
         echo "      </footer>
-";
-        // line 66
-        $this->displayBlock('scripts', $context, $blocks);
-        // line 93
-        echo "      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
+
+<script>
+    function injectSvgSprite(path) {
+    
+        var ajax = new XMLHttpRequest();
+        ajax.open(\"GET\", path, true);
+        ajax.send();
+        ajax.onload = function(e) {
+        var div = document.createElement(\"div\");
+        div.className = 'd-none';
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+        }
+    }
+    injectSvgSprite('/icons/orion-svg-sprite.svg'); 
+    
+  </script>
+      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"";
-        // line 94
+        // line 96
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom.css"), "html", null, true);
         echo "\">
     </div>
@@ -108,9 +121,12 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
     <meta name=\"description\" content=\"\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta name=\"robots\" content=\"all,follow\">
-";
+  ";
         // line 11
         $this->displayBlock('css', $context, $blocks);
+        // line 26
+        echo "  ";
+        $this->displayBlock('scripts', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -119,6 +135,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
+    // line 11
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -129,44 +146,44 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "css"));
 
         // line 12
-        echo "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
-    <link rel=\"stylesheet\" href=\"";
+        echo "      <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
+      <link rel=\"stylesheet\" href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+      <link rel=\"stylesheet\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/css/lightbox.min.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"";
         // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/css/bootstrap-select.min.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"";
         // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.carousel.min.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"";
         // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.theme.default.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
-    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
+      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
+      <link rel=\"stylesheet\" href=\"";
         // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.gold.min.css"), "html", null, true);
         echo "\" id=\"theme-stylesheet\">
-    <link rel=\"shortcut icon\" href=\"";
+      <link rel=\"shortcut icon\" href=\"";
         // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/logo.jpg"), "html", null, true);
         echo "\">
 
-";
+  ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -175,7 +192,61 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 29
+    // line 26
+    public function block_scripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        // line 27
+        echo "    <!-- JavaScript files-->
+    <script src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/js/lightbox.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/js/bootstrap-select.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 33
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/owl.carousel.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
+        echo "\"></script>
+    
+  ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 41
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,19 +256,19 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 30
+        // line 42
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 31
+            // line 43
             echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 31)->display($context);
-            // line 32
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 43)->display($context);
+            // line 44
             echo "    ";
         } else {
-            // line 33
+            // line 45
             echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 33)->display($context);
-            // line 34
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 45)->display($context);
+            // line 46
             echo "    ";
         }
         
@@ -208,7 +279,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 37
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -227,7 +298,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 40
+    // line 52
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -237,7 +308,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 41
+        // line 53
         echo "        <div class=\"container py-4\">
           <div class=\"row py-5\">
             <div class=\"col-md-4\">
@@ -270,75 +341,6 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 66
-    public function block_scripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
-
-        // line 67
-        echo "  <!-- JavaScript files-->
-  <script src=\"";
-        // line 68
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 69
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/js/lightbox.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 71
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 72
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/js/bootstrap-select.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 73
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/owl.carousel.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 74
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"), "html", null, true);
-        echo "\"></script>
-  <script src=\"";
-        // line 75
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
-        echo "\"></script>
-  <script>
-    function injectSvgSprite(path) {
-    
-        var ajax = new XMLHttpRequest();
-        ajax.open(\"GET\", path, true);
-        ajax.send();
-        ajax.onload = function(e) {
-        var div = document.createElement(\"div\");
-        div.className = 'd-none';
-        div.innerHTML = ajax.responseText;
-        document.body.insertBefore(div, document.body.childNodes[0]);
-        }
-    }
-    injectSvgSprite('/icons/orion-svg-sprite.svg'); 
-    
-  </script>
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -351,7 +353,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     public function getDebugInfo()
     {
-        return array (  315 => 75,  311 => 74,  307 => 73,  303 => 72,  299 => 71,  295 => 70,  291 => 69,  287 => 68,  284 => 67,  274 => 66,  241 => 41,  231 => 40,  212 => 37,  201 => 34,  198 => 33,  195 => 32,  192 => 31,  189 => 30,  179 => 29,  166 => 23,  162 => 22,  156 => 19,  152 => 18,  148 => 17,  144 => 16,  140 => 15,  135 => 13,  132 => 12,  113 => 11,  105 => 5,  95 => 4,  81 => 94,  78 => 93,  76 => 66,  73 => 65,  71 => 40,  67 => 38,  65 => 37,  62 => 36,  60 => 29,  56 => 27,  54 => 4,  49 => 1,);
+        return array (  312 => 53,  302 => 52,  283 => 49,  272 => 46,  269 => 45,  266 => 44,  263 => 43,  260 => 42,  250 => 41,  237 => 35,  233 => 34,  229 => 33,  225 => 32,  221 => 31,  217 => 30,  213 => 29,  209 => 28,  206 => 27,  196 => 26,  183 => 23,  179 => 22,  173 => 19,  169 => 18,  165 => 17,  161 => 16,  157 => 15,  152 => 13,  149 => 12,  139 => 11,  128 => 26,  126 => 11,  118 => 5,  108 => 4,  94 => 96,  73 => 77,  71 => 52,  67 => 50,  65 => 49,  62 => 48,  60 => 41,  56 => 39,  54 => 4,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -366,21 +368,33 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
     <meta name=\"description\" content=\"\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta name=\"robots\" content=\"all,follow\">
-{% block css %}
-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\">
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/lightbox2/css/lightbox.min.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/nouislider/nouislider.min.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap-select/css/bootstrap-select.min.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.carousel.min.css')}}\">
-    <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.theme.default.css')}}\">
-    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
-    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
-    <link rel=\"stylesheet\" href=\"{{asset('css/style.gold.min.css')}}\" id=\"theme-stylesheet\">
-    <link rel=\"shortcut icon\" href=\"{{asset('imgs/logo.jpg')}}\">
+  {% block css %}
+      <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap/css/bootstrap.min.css')}}\">
+      <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/lightbox2/css/lightbox.min.css')}}\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/nouislider/nouislider.min.css')}}\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap-select/css/bootstrap-select.min.css')}}\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.carousel.min.css')}}\">
+      <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.theme.default.css')}}\">
+      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
+      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
+      <link rel=\"stylesheet\" href=\"{{asset('css/style.gold.min.css')}}\" id=\"theme-stylesheet\">
+      <link rel=\"shortcut icon\" href=\"{{asset('imgs/logo.jpg')}}\">
 
-{% endblock %}
+  {% endblock %}
+  {% block scripts %}
+    <!-- JavaScript files-->
+    <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/lightbox2/js/lightbox.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/nouislider/nouislider.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}\"></script>
+    <script src=\"{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}\"></script>
+    <script src=\"{{asset('js/front.js')}}\"></script>
+    
+  {% endblock %}
 {% endblock %}
   </head>
   <body>
@@ -421,17 +435,8 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         </div>
 {% endblock %}
       </footer>
-{% block scripts %}
-  <!-- JavaScript files-->
-  <script src=\"{{asset('vendor/jquery/jquery.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/lightbox2/js/lightbox.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/nouislider/nouislider.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}\"></script>
-  <script src=\"{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}\"></script>
-  <script src=\"{{asset('js/front.js')}}\"></script>
-  <script>
+
+<script>
     function injectSvgSprite(path) {
     
         var ajax = new XMLHttpRequest();
@@ -447,7 +452,6 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
     injectSvgSprite('/icons/orion-svg-sprite.svg'); 
     
   </script>
-{% endblock %}
       <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"{{asset('css/custom.css')}}\">
     </div>

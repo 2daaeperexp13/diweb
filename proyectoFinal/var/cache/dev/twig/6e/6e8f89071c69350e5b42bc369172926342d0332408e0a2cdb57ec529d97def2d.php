@@ -86,7 +86,17 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
 
         // line 6
         echo "<div class=\"container mb-5\">
-    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
+    ";
+        // line 7
+        if ((isset($context["exception"]) || array_key_exists("exception", $context) ? $context["exception"] : (function () { throw new RuntimeError('Variable "exception" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "        <h3>";
+            echo twig_escape_filter($this->env, (isset($context["exception"]) || array_key_exists("exception", $context) ? $context["exception"] : (function () { throw new RuntimeError('Variable "exception" does not exist.', 8, $this->source); })()), "html", null, true);
+            echo "</h3>
+    ";
+        }
+        // line 10
+        echo "    <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>CATEGORÍAS</h1>
         </div>
@@ -100,25 +110,25 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
                 </thead>
                 <tbody>
                 ";
-        // line 20
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categorias"]) || array_key_exists("categorias", $context) ? $context["categorias"] : (function () { throw new RuntimeError('Variable "categorias" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categorias"]) || array_key_exists("categorias", $context) ? $context["categorias"] : (function () { throw new RuntimeError('Variable "categorias" does not exist.', 23, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["categorium"]) {
-            // line 21
+            // line 24
             echo "                    <tr>
                         <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 22), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                         <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorium"], "nombre", [], "any", false, false, false, 23), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorium"], "nombre", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                         <td>
                             <a class=\"btn btnform2\" href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["categorium"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -128,7 +138,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
+            // line 32
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -137,26 +147,26 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorium'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 36
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto \" href=\"";
-        // line 38
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_new");
         echo "\">
             <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
-        // line 39
+        // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img><h4>
         </a>
     </div>
     <div class=\"navigation\"> 
         ";
-        // line 43
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["categorias"]) || array_key_exists("categorias", $context) ? $context["categorias"] : (function () { throw new RuntimeError('Variable "categorias" does not exist.', 43, $this->source); })()));
+        // line 46
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["categorias"]) || array_key_exists("categorias", $context) ? $context["categorias"] : (function () { throw new RuntimeError('Variable "categorias" does not exist.', 46, $this->source); })()));
         echo " 
     </div>
 </div>
@@ -181,7 +191,7 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
 
     public function getDebugInfo()
     {
-        return array (  159 => 43,  152 => 39,  148 => 38,  141 => 33,  132 => 29,  121 => 25,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 46,  162 => 42,  158 => 41,  151 => 36,  142 => 32,  131 => 28,  126 => 26,  122 => 25,  119 => 24,  114 => 23,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -192,6 +202,9 @@ class __TwigTemplate_8bbb64e37dbd97653ab816c1957706eaddceb672ab84c870d4cc79c5098
 
 {% block body %}
 <div class=\"container mb-5\">
+    {% if exception %}
+        <h3>{{exception}}</h3>
+    {% endif %}
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>CATEGORÍAS</h1>

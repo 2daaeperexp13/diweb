@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PedidoRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,11 +22,15 @@ class Pedido
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="can not be null :/")
      */
     private $fecha;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="El precio no puede ser null")
      */
     private $precio;
 
@@ -33,27 +38,35 @@ class Pedido
 
     /**
      * @ORM\ManyToMany(targetEntity=Producto::class, mappedBy="pedidos")
+     * @Assert\NotNull(message="Un pedido no puede contener 0 productos")
      */
     private $productos;
 
     /**
      * @ORM\ManyToOne(targetEntity=Usuario::class, inversedBy="pedidos")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="Un pedido debe estar asociado a un usuario, este no puede ser null")
      */
     private $user;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="Un pedido debe terner una dirección asociada")
      */
     private $direccion;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message="Un pedido debe tener una tarjeta de crédito o débito asociada a su pago")
+     * @Assert\NotBlank
      */
     private $tarjeta;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message="La tarjeta asociada al pedido debe tener una fecha de vencimiento")
      */
     private $fechaVencimiento;
 

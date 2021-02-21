@@ -12,7 +12,7 @@ function volcarProducto(producto,container) {
     $("#nombre").attr({
         "id":$("#nombre").attr("id")+producto.id
     
-    }).text(producto.nombre)
+    }).text(producto.nombre);
     $("#precio").attr("id",$("#precio").attr("id")+producto.id).text(producto.precio);
     container.find("a").eq(2).on("click",function(){
         datosModal(producto);
@@ -30,7 +30,7 @@ function datosModal(producto){
         let imagen=producto.imagenes[i];
         carrusel.append('<a class="d-none " href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
     }
-    modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);;
+    modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);
     $("#carritoModal").on("click",function(){
         añadiraCarrito(producto);
     });
@@ -38,6 +38,8 @@ function datosModal(producto){
         carrusel.empty();
         carrusel.append(linkCarrusel);
     })
+
+    if(!$("header").find($("#login"))[0]) $("#carritoModal").addClass("d-flex");
 }
 function cargaProductos(productos, productosContainer) {
     
@@ -54,7 +56,10 @@ function cargaProductos(productos, productosContainer) {
                 //Compruebo si el usuario a iniciado sesión para mostrar o no 
                 //la opción de añadir producto al carrito
                 volcarProducto(producto,$('#producto'));
-                if($("header").find($("#login"))[0]) $(".sesion").hide();
+                if($("header").find($("#login"))[0]){
+                    $(".sesion").hide();
+                    
+                } 
                 else{
                     $("#prodcarro").attr("id", $("#prodcarro").attr("id")+producto.id).on("click",function(){
                         añadiraCarrito(producto);

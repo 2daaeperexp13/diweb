@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\TipoProducto;
 use App\Form\TipoProductoType;
 use App\Repository\TipoProductoRepository;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -22,10 +23,12 @@ class TipoProductoController extends AbstractController
      */
     public function index(TipoProductoRepository $tipoProductoRepository, Request $request,PaginatorInterface $paginator ): Response
     {
+        $exception=$request->query->get('exception');
         return $this->render('tipo_producto/index.html.twig', [
             'tipo_productos' => $paginator->paginate($tipoProductoRepository->createQueryBuilder('t')
                 ->getQuery()
-            , $request->query->getInt('page',1),5)
+            , $request->query->getInt('page',1),5),
+            'exception'=>$exception
         ]);
     }
 
@@ -102,8 +105,14 @@ class TipoProductoController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$tipoProducto->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($tipoProducto);
-            $entityManager->flush();
+            try {
+                $entityManager->remove($tipoProducto);
+                $entityManager->flush();
+            } catch (ForeignKeyConstraintViolationException $e) {
+                return $this->redirectToRoute('tipo_producto_index', [
+                    "exception"=>"No es posible eliminar este tipo de producto, hay productos asociados al mismo."
+                ]);
+            }
         }
 
         return $this->redirectToRoute('tipo_producto_index');

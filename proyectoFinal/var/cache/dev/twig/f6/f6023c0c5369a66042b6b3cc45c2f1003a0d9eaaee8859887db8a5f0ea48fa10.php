@@ -42,8 +42,8 @@ class __TwigTemplate_4fb2bbed8116e48c13046bdd0ffa7a1d6f99f423fd7078e6a39dc80774f
         // line 1
         echo "<form method=\"post\" action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["tipo_producto"]) || array_key_exists("tipo_producto", $context) ? $context["tipo_producto"] : (function () { throw new RuntimeError('Variable "tipo_producto" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_method\" value=\"BORRAR\">
+        echo "\" onsubmit=\"return confirm('Está seguro de eliminar este tipo de producto?');\">
+    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 3
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["tipo_producto"]) || array_key_exists("tipo_producto", $context) ? $context["tipo_producto"] : (function () { throw new RuntimeError('Variable "tipo_producto" does not exist.', 3, $this->source); })()), "id", [], "any", false, false, false, 3))), "html", null, true);
@@ -79,8 +79,8 @@ class __TwigTemplate_4fb2bbed8116e48c13046bdd0ffa7a1d6f99f423fd7078e6a39dc80774f
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('tipo_producto_delete', {'id': tipo_producto.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <input type=\"hidden\" name=\"_method\" value=\"BORRAR\">
+        return new Source("<form method=\"post\" action=\"{{ path('tipo_producto_delete', {'id': tipo_producto.id}) }}\" onsubmit=\"return confirm('Está seguro de eliminar este tipo de producto?');\">
+    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ tipo_producto.id) }}\">
     <button class=\"btn btnform2\">BORRAR<img class=\"interaccionesBackend rounded-circle\" src=\"{{asset('/imgs/borrar.png')}}\" width=\"150px\"></img></button>
 </form>

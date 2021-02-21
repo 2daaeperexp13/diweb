@@ -85,55 +85,64 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container mb-5\">
+        echo "<link href=\"https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css\" rel=\"stylesheet\">
+
+<script src=\"https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js\"></script>
+<div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>PRODUCTOS</h1>
         </div>
         <div class=\"m-1 p-3 \">
-            <table class=\"table table-striped bg-white\">
+            <table class=\"table table-striped bg-white\" id=\"table\"   data-toggle=\"table\"
+                data-sort-class=\"table-active\"
+                data-sortable=\"true\"
+                data-height=\"460\"
+                data-url=\"";
+        // line 19
+        echo twig_escape_filter($this->env, (isset($context["prodjson"]) || array_key_exists("prodjson", $context) ? $context["prodjson"] : (function () { throw new RuntimeError('Variable "prodjson" does not exist.', 19, $this->source); })()), "html", null, true);
+        echo "\">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>actions</th>
+                        <th  data-field=\"id\" data-sortable=\"true\">Id</th>
+                        <th  data-field=\"nombre\" data-sortable=\"true\">Nombre</th>
+                        <th  data-field=\"precio\" data-sortable=\"true\">Precio</th>
+                        <th  data-field=\"istock\" data-sortable=\"true\">Stock</th
                     </tr>
                 </thead>
                 <tbody>
                 ";
-        // line 23
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["productos"]) || array_key_exists("productos", $context) ? $context["productos"] : (function () { throw new RuntimeError('Variable "productos" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["productos"]) || array_key_exists("productos", $context) ? $context["productos"] : (function () { throw new RuntimeError('Variable "productos" does not exist.', 29, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["producto"]) {
-            // line 24
+            // line 30
             echo "                    <tr>
                         <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 25), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
                         <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "nombre", [], "any", false, false, false, 26), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "nombre", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                         <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "precio", [], "any", false, false, false, 27), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "precio", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
                         <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "stock", [], "any", false, false, false, 28), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["producto"], "stock", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                         <td>
                         <a class=\"btnform2 btn rounded\" href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_show", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_show", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 36)]), "html", null, true);
             echo "\">DATOS</a>
                         <a class=\"btn btnform2 rounded\" href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["producto"], "id", [], "any", false, false, false, 37)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -143,7 +152,7 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 35
+            // line 41
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -152,29 +161,31 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['producto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 45
         echo "                </tbody>
             </table>
         </div>
     </div>
     <div class=\"mt-3\">
         <a class=\"ml-auto p-5\" href=\"";
-        // line 44
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("producto_new");
         echo "\">
             <h4 class=\"float-left m-0\">AÑADIR<img class=\"interaccionesBackend m-o\" src=\"";
-        // line 45
+        // line 51
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img></h4>
         </a>
     </div>
     <div class=\"navigation float-right\"> 
         ";
-        // line 49
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["productos"]) || array_key_exists("productos", $context) ? $context["productos"] : (function () { throw new RuntimeError('Variable "productos" does not exist.', 49, $this->source); })()));
+        // line 55
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["productos"]) || array_key_exists("productos", $context) ? $context["productos"] : (function () { throw new RuntimeError('Variable "productos" does not exist.', 55, $this->source); })()));
         echo " 
     </div>
 </div>
+
+
 
 ";
         
@@ -197,7 +208,7 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
 
     public function getDebugInfo()
     {
-        return array (  174 => 49,  167 => 45,  163 => 44,  156 => 39,  147 => 35,  136 => 31,  132 => 30,  127 => 28,  123 => 27,  119 => 26,  115 => 25,  112 => 24,  107 => 23,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  183 => 55,  176 => 51,  172 => 50,  165 => 45,  156 => 41,  145 => 37,  141 => 36,  136 => 34,  132 => 33,  128 => 32,  124 => 31,  121 => 30,  116 => 29,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -207,20 +218,26 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
 {% block title %}Producto index{% endblock %}
 
 {% block body %}
+<link href=\"https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css\" rel=\"stylesheet\">
+
+<script src=\"https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js\"></script>
 <div class=\"container mb-5\">
     <div class=\"container-fluid border p-0 miheader2 rounded shadow\">
         <div class=\"encabezadoBack pl-3 text-dark mb-auto rounded\">
             <h1>PRODUCTOS</h1>
         </div>
         <div class=\"m-1 p-3 \">
-            <table class=\"table table-striped bg-white\">
+            <table class=\"table table-striped bg-white\" id=\"table\"   data-toggle=\"table\"
+                data-sort-class=\"table-active\"
+                data-sortable=\"true\"
+                data-height=\"460\"
+                data-url=\"{{prodjson}}\">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>actions</th>
+                        <th  data-field=\"id\" data-sortable=\"true\">Id</th>
+                        <th  data-field=\"nombre\" data-sortable=\"true\">Nombre</th>
+                        <th  data-field=\"precio\" data-sortable=\"true\">Precio</th>
+                        <th  data-field=\"istock\" data-sortable=\"true\">Stock</th
                     </tr>
                 </thead>
                 <tbody>
@@ -253,6 +270,8 @@ class __TwigTemplate_15106a857a73d4ae4b28665050e94ac1c9fc0e7404fa4d5e20435966ea3
         {{ knp_pagination_render(productos) }} 
     </div>
 </div>
+
+
 
 {% endblock %}
 ", "producto/index.html.twig", "C:\\wamp64\\www\\Interfaces web\\diweb\\proyectoFinal\\templates\\producto\\index.html.twig");

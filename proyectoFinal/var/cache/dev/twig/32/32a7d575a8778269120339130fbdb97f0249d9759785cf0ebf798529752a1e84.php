@@ -42,7 +42,7 @@ class __TwigTemplate_214b4eb77f2608a1da2ecc3e578781a446370b2a22ca33fca4a59288685
         // line 1
         echo "<form method=\"post\" action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categoria_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["categorium"]) || array_key_exists("categorium", $context) ? $context["categorium"] : (function () { throw new RuntimeError('Variable "categorium" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo "\" onsubmit=\"return confirm('Está seguro de eliminar esta categoría?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 3
@@ -79,7 +79,7 @@ class __TwigTemplate_214b4eb77f2608a1da2ecc3e578781a446370b2a22ca33fca4a59288685
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('categoria_delete', {'id': categorium.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form method=\"post\" action=\"{{ path('categoria_delete', {'id': categorium.id}) }}\" onsubmit=\"return confirm('Está seguro de eliminar esta categoría?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ categorium.id) }}\">
     <button class=\"btn btnform2\">BORRAR<img class=\"interaccionesBackend rounded-circle\" src=\"{{asset('/imgs/borrar.png')}}\" width=\"150px\"></img></button>

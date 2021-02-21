@@ -101,7 +101,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"#\">Agregar al carrito</a></div>
+                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100  align-items-center justify-content-center px-0 d-none\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0\" href=\"#\">Agregar al carrito</a></div>
+                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100  align-items-center justify-content-center px-0 d-none\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>

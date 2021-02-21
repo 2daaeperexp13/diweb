@@ -42,7 +42,7 @@ class __TwigTemplate_68e8e4f711dce413262dc421679bdcce18681344993e14a0ac50f1be09f
         // line 1
         echo "<form method=\"post\" action=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("localidad_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["localidad"]) || array_key_exists("localidad", $context) ? $context["localidad"] : (function () { throw new RuntimeError('Variable "localidad" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
-        echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        echo "\" onsubmit=\"return confirm('Está seguro de eliminar esta localidad?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 3
@@ -79,7 +79,7 @@ class __TwigTemplate_68e8e4f711dce413262dc421679bdcce18681344993e14a0ac50f1be09f
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('localidad_delete', {'id': localidad.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form method=\"post\" action=\"{{ path('localidad_delete', {'id': localidad.id}) }}\" onsubmit=\"return confirm('Está seguro de eliminar esta localidad?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ localidad.id) }}\">
     <button class=\"btn btnform2\">BORRAR<img class=\"interaccionesBackend rounded-circle\" src=\"{{asset('/imgs/borrar.png')}}\" width=\"150px\"></img></button>

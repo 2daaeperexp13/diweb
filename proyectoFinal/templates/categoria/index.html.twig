@@ -4,6 +4,9 @@
 
 {% block body %}
 <div class="container mb-5">
+    {% if exception %}
+        <h3>{{exception}}</h3>
+    {% endif %}
     <div class="container-fluid border p-0 miheader2 rounded shadow">
         <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
             <h1>CATEGORÍAS</h1>

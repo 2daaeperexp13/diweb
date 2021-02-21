@@ -442,10 +442,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ComentarioRepository" class="App\Repository\ComentarioRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\ImgProductoRepository" class="App\Repository\ImgProductoRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4346,7 +4342,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.r26zEbo"/>
+      <argument type="service" id=".service_locator.vl23C2G"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5507,8 +5503,6 @@
     <service id=".abstract.instanceof.App\Form\TipoProductoType" class="App\Form\TipoProductoType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriaRepository" class="App\Repository\CategoriaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoriaRepository" class="App\Repository\CategoriaRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ComentarioRepository" class="App\Repository\ComentarioRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ComentarioRepository" class="App\Repository\ComentarioRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImgProductoRepository" class="App\Repository\ImgProductoRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ImgProductoRepository" class="App\Repository\ImgProductoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LocalidadRepository" class="App\Repository\LocalidadRepository" autowire="true" abstract="true"/>
@@ -6229,11 +6223,10 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.r26zEbo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.vl23C2G" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriaRepository" type="service" id="App\Repository\CategoriaRepository"/>
-        <argument key="App\Repository\ComentarioRepository" type="service" id="App\Repository\ComentarioRepository"/>
         <argument key="App\Repository\ImgProductoRepository" type="service" id="App\Repository\ImgProductoRepository"/>
         <argument key="App\Repository\LocalidadRepository" type="service" id="App\Repository\LocalidadRepository"/>
         <argument key="App\Repository\PedidoRepository" type="service" id="App\Repository\PedidoRepository"/>

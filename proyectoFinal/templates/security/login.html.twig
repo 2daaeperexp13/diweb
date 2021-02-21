@@ -26,11 +26,7 @@
                 <input type="password" name="password" id="inputPassword" class="form-control" required>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" name="_remember_me"> Recuérdame
-                    </label>
-                </div>
+
             </div>
             <div class="row m-1">
                 <button class="btn btn-lg miheader2 col-2 ml-2 rounded  btn-outline-info btn-sm" type="submit">Iniciar sesión</button>

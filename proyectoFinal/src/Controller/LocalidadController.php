@@ -6,6 +6,7 @@ use App\Entity\Localidad;
 use App\Form\LocalidadType;
 use App\Repository\LocalidadRepository;
 use App\Repository\ProvinciaRepository;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,10 +24,11 @@ class LocalidadController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator, LocalidadRepository $localidadRepository): Response
     {
+        $exception=$request->query->get('exception');
         return $this->render('localidad/index.html.twig', [
-            'localidades' => $paginator->paginate($localidadRepository->createQueryBuilder('t')
-                ->getQuery()
-            , $request->query->getInt('page',1),5)
+            'localidades' => $paginator->paginate($localidadRepository->createQueryBuilder('t')->getQuery()
+            , $request->query->getInt('page',1),5),
+            'exception'=>$exception
         ]);
     }
 
@@ -103,8 +105,15 @@ class LocalidadController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$localidad->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($localidad);
-            $entityManager->flush();
+            try {
+                $entityManager->remove($localidad);
+                $entityManager->flush();
+            } catch (ForeignKeyConstraintViolationException $e) {
+                return $this->redirectToRoute('localidad_index', [
+                    "exception"=>"No es posible eliminar esta localidad, hay usuarios asociados a la misma."
+                ]);
+            }
+
         }
 
         return $this->redirectToRoute('localidad_index');
