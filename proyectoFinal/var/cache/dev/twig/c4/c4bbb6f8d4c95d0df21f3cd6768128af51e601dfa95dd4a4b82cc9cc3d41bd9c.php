@@ -101,7 +101,6 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100  align-items-center justify-content-center px-0 d-none\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>
@@ -112,7 +111,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
       </div>
       <!-- HERO SECTION-->
       <div id=\"pagina\" class=\"container\">
-        <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
+        <section id=\"fondohero\" class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">
@@ -122,7 +121,15 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             </div>
           </div>
         </section>
+        <section class=\" p-2 p-md-4\">
+          <div><h3 class=\"text-primary text-uppercase mb-1\" id=\"titulo-video\"> Video explicativo del frontend de la página</h3></div>
+          <div class=\"container\">
+            <video id=\"video\" controls  width=\"100%\" height=\"auto\">
+              <source src=\"imgs/miproyecto.mkv\">
 
+            </video>
+          </div>
+        </section>
         <!-- TRENDING PRODUCTS-->
         <section class=\"py-5\">
           <header>
@@ -191,7 +198,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     }
 
-    // line 121
+    // line 128
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,10 +208,10 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 122
+        // line 129
         echo "  
   ";
-        // line 123
+        // line 130
         $this->displayParentBlock("scripts", $context, $blocks);
         echo "
   <script src=\"/js/index.js\"></script>
@@ -229,7 +236,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
 
     public function getDebugInfo()
     {
-        return array (  208 => 123,  205 => 122,  195 => 121,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  215 => 130,  212 => 129,  202 => 128,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -272,7 +279,6 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
                     <p class=\"text-muted\">\$250</p>
                     <p class=\"text-small mb-4 \"></p>
                     <div class=\"row align-items-stretch mb-4\">
-                      <div class=\"col-sm-5 pl-sm-0\"><a id=\"carritoModal\" class=\"btn btn-dark btn-sm btn-block h-100  align-items-center justify-content-center px-0 d-none\" href=\"#\">Agregar al carrito</a></div>
                     </div>
                   </div>
                 </div>
@@ -283,7 +289,7 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
       </div>
       <!-- HERO SECTION-->
       <div id=\"pagina\" class=\"container\">
-        <section class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
+        <section id=\"fondohero\" class=\"hero rounded-circle shadow pb-3 bg-cover bg-center d-flex align-items-center\" style=\"background: url(imgs/fondoindex.jpg)\">
           <div class=\"container py-5\">
             <div class=\"row px-4 px-lg-5\">
               <div class=\"col-lg-6\">
@@ -293,7 +299,15 @@ class __TwigTemplate_d94f9f517edde18c2ed8b7e4359b1a6716465d929cc165e8245dc16115d
             </div>
           </div>
         </section>
+        <section class=\" p-2 p-md-4\">
+          <div><h3 class=\"text-primary text-uppercase mb-1\" id=\"titulo-video\"> Video explicativo del frontend de la página</h3></div>
+          <div class=\"container\">
+            <video id=\"video\" controls  width=\"100%\" height=\"auto\">
+              <source src=\"imgs/miproyecto.mkv\">
 
+            </video>
+          </div>
+        </section>
         <!-- TRENDING PRODUCTS-->
         <section class=\"py-5\">
           <header>

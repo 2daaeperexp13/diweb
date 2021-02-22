@@ -2,15 +2,50 @@
 @font-face {
     font-family: "titulo";
     src: url("../fonts/PermanentMarker-Regular.ttf");
-  }
+}
+@font-face{
+    font-family: "general";
+    src: url("../fonts/AkayaKanadaka-Regular.ttf");
+}
+  /*Media query para el logo del header*/
+@media(max-width:700px){
+    #icono-header{
+        font-size: 0.8em;
+        height: 20px;
+        width: 110px;
+        position: relative;
+    }
+    header{
+        padding-top: 0;
+        height: 150px;
+    }
+    #titulo-video{
+        font-size: 1em;
+    }
+}
+body{
+    font-family: "general";
+}
+#miperfil{
+    width:150px;
+}
+#icono-header{
+margin-top: 0;
+height: auto;
+overflow: hidden;
+    
+}
 #carro{
     margin-right: 10%;
 }
+header{
+  height: auto;
+}
 .miheader{
-    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+    background: linear-gradient(to top,#000000 0% ,  #ffffff 50%,#000000 100%);
 }
 .miheader2{
-    background: linear-gradient(to bottom, #ffbf00 0%, #fcf376 100%);
+    background: linear-gradient(to bottom, #000000 0% , #ffcd60 25%, #fff238 50%, #ffcd60 75%,#000000 100%);
 }
 #logo{
     position: relative;
@@ -20,19 +55,17 @@
     margin-right:10%;
     opacity: 55%;
 }
-img.flogo:hover{
-    opacity:100%;
-}
+
 .imgindex{
     width: 230px;
     height: 230px;
 }
 #titulo>span{
-    z-index:999;
+    
     position:absolute;
     margin-top: 20%;
     margin-right: 10%;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-style: oblique;
     font-family: "titulo";
 }

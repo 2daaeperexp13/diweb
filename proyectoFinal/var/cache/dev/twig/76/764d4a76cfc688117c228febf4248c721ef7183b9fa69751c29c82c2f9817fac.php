@@ -101,7 +101,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
     
     
     <div class=\"container  m-5 align-self-center border rounded px-0\">
-        <div class=\"miheader2  pl-3 text-secondary\"><h1 class=\"mb-3\">Registro</h1></div>
+        <div class=\"bg-primary  pl-3 text-secondary\"><h3 class=\"mb-3\">REGISTRO</h3></div>
         <div class=\"form  p-2\">
             
                 ";
@@ -189,7 +189,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 58, $this->source); })()), "foto", [], "any", false, false, false, 58), 'row', []);
         // line 60
         echo "
-                        <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 \">Registrarme</button>
+                        <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded  \">Registrarme</button>
                     </div>
                 </div>
                 ";
@@ -236,7 +236,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
     
     
     <div class=\"container  m-5 align-self-center border rounded px-0\">
-        <div class=\"miheader2  pl-3 text-secondary\"><h1 class=\"mb-3\">Registro</h1></div>
+        <div class=\"bg-primary  pl-3 text-secondary\"><h3 class=\"mb-3\">REGISTRO</h3></div>
         <div class=\"form  p-2\">
             
                 {{ form_start(registrationForm)}}
@@ -285,7 +285,7 @@ class __TwigTemplate_52169ac19c186a473449e627359227a1f23c17373196963cce3fafd1583
                         {{form_row(registrationForm.foto,{
                             
                         })}}
-                        <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded miheader2 \">Registrarme</button>
+                        <button type=\"submit\" class=\"btn btn-warning ml-5 mt-5 btn-outline-primary btn-sm rounded  \">Registrarme</button>
                     </div>
                 </div>
                 {{ form_end(registrationForm) }}

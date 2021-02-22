@@ -52,24 +52,24 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 39
+        // line 38
         echo "  </head>
   <body>
 ";
-        // line 41
+        // line 40
         $this->displayBlock('header', $context, $blocks);
-        // line 48
+        // line 47
         echo "    <div id=\"principal\" class=\"principal\">
 ";
-        // line 49
+        // line 48
         $this->displayBlock('body', $context, $blocks);
-        // line 50
+        // line 49
         echo "    </div>
       <footer class=\"bg-dark text-white align-self-end \">
 ";
-        // line 52
+        // line 51
         $this->displayBlock('footer', $context, $blocks);
-        // line 77
+        // line 76
         echo "      </footer>
 
 <script>
@@ -90,7 +90,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
   </script>
       <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"";
-        // line 96
+        // line 95
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom.css"), "html", null, true);
         echo "\">
     </div>
@@ -124,7 +124,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
   ";
         // line 11
         $this->displayBlock('css', $context, $blocks);
-        // line 26
+        // line 25
         echo "  ";
         $this->displayBlock('scripts', $context, $blocks);
         
@@ -172,14 +172,13 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/assets/owl.theme.default.css"), "html", null, true);
         echo "\">
-      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
-      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
+
       <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.gold.min.css"), "html", null, true);
         echo "\" id=\"theme-stylesheet\">
       <link rel=\"shortcut icon\" href=\"";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/logo.jpg"), "html", null, true);
         echo "\">
 
@@ -192,7 +191,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 26
+    // line 25
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,38 +201,38 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 27
+        // line 26
         echo "    <!-- JavaScript files-->
     <script src=\"";
-        // line 28
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 29
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 30
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/lightbox2/js/lightbox.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 31
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/nouislider/nouislider.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 32
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/bootstrap-select/js/bootstrap-select.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 33
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 34
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 35
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
         echo "\"></script>
     
@@ -246,7 +245,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 41
+    // line 40
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -256,19 +255,19 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 42
+        // line 41
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 43
+            // line 42
             echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 43)->display($context);
-            // line 44
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backend.html.twig"), "base.html.twig", 42)->display($context);
+            // line 43
             echo "    ";
         } else {
-            // line 45
+            // line 44
             echo "      ";
-            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 45)->display($context);
-            // line 46
+            $this->loadTemplate($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontend.html.twig"), "base.html.twig", 44)->display($context);
+            // line 45
             echo "    ";
         }
         
@@ -279,7 +278,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 49
+    // line 48
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -298,7 +297,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     }
 
-    // line 52
+    // line 51
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -308,7 +307,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 53
+        // line 52
         echo "        <div class=\"container py-4\">
           <div class=\"row py-5\">
             <div class=\"col-md-4\">
@@ -353,7 +352,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     public function getDebugInfo()
     {
-        return array (  312 => 53,  302 => 52,  283 => 49,  272 => 46,  269 => 45,  266 => 44,  263 => 43,  260 => 42,  250 => 41,  237 => 35,  233 => 34,  229 => 33,  225 => 32,  221 => 31,  217 => 30,  213 => 29,  209 => 28,  206 => 27,  196 => 26,  183 => 23,  179 => 22,  173 => 19,  169 => 18,  165 => 17,  161 => 16,  157 => 15,  152 => 13,  149 => 12,  139 => 11,  128 => 26,  126 => 11,  118 => 5,  108 => 4,  94 => 96,  73 => 77,  71 => 52,  67 => 50,  65 => 49,  62 => 48,  60 => 41,  56 => 39,  54 => 4,  49 => 1,);
+        return array (  311 => 52,  301 => 51,  282 => 48,  271 => 45,  268 => 44,  265 => 43,  262 => 42,  259 => 41,  249 => 40,  236 => 34,  232 => 33,  228 => 32,  224 => 31,  220 => 30,  216 => 29,  212 => 28,  208 => 27,  205 => 26,  195 => 25,  182 => 22,  178 => 21,  173 => 19,  169 => 18,  165 => 17,  161 => 16,  157 => 15,  152 => 13,  149 => 12,  139 => 11,  128 => 25,  126 => 11,  118 => 5,  108 => 4,  94 => 95,  73 => 76,  71 => 51,  67 => 49,  65 => 48,  62 => 47,  60 => 40,  56 => 38,  54 => 4,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -377,8 +376,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
       <link rel=\"stylesheet\" href=\"{{asset('vendor/bootstrap-select/css/bootstrap-select.min.css')}}\">
       <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.carousel.min.css')}}\">
       <link rel=\"stylesheet\" href=\"{{asset('vendor/owl.carousel2/assets/owl.theme.default.css')}}\">
-      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap\">
-      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap\">
+
       <link rel=\"stylesheet\" href=\"{{asset('css/style.gold.min.css')}}\" id=\"theme-stylesheet\">
       <link rel=\"shortcut icon\" href=\"{{asset('imgs/logo.jpg')}}\">
 

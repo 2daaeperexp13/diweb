@@ -14,6 +14,9 @@ function volcarProducto(producto,container) {
     
     }).text(producto.nombre);
     $("#precio").attr("id",$("#precio").attr("id")+producto.id).text(producto.precio);
+    container.find("a").eq(0).on("click",function(){
+        datosModal(producto);
+    });
     container.find("a").eq(2).on("click",function(){
         datosModal(producto);
     });
@@ -31,15 +34,11 @@ function datosModal(producto){
         carrusel.append('<a class="d-none " href="'+imagen+'" title="'+producto.nombre+'" data-lightbox="productview"></a>');
     }
     modal.find("h2").first().text(producto.nombre).next().text(producto.precio+"€").next().text(producto.descripcion);
-    $("#carritoModal").on("click",function(){
-        añadiraCarrito(producto);
-    });
     modal.find("button.close").on("click",function(){
         carrusel.empty();
         carrusel.append(linkCarrusel);
     })
 
-    if(!$("header").find($("#login"))[0]) $("#carritoModal").addClass("d-flex");
 }
 function cargaProductos(productos, productosContainer) {
     

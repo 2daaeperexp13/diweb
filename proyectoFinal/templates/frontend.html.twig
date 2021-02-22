@@ -2,23 +2,23 @@
     <!-- navbar-->
      <header class="header  shadow  mb-5 miheader">
         <div class="container px-0 px-lg-3 ">
-          <nav class="navbar navbar-expand-lg navbar-light py-5  px-lg-0 h-100"><div class="navbar-brand mr-md-2 py-md-4"><a  href="/" ><div id="titulo" class=" position-relative  mr-md-5 align-items-center"><span class="font-weight-bold text-uppercase  mititulo z-index-50 text-shadows">XRACING</span><img id="logo" class="img-fluid " src="/imgs/logo.jpg"></img></div></a></div>
+          <nav class="navbar navbar-expand-lg navbar-light py-md-0  py-1   px-lg-0 h-100"><div id="icono-header" class="navbar-brand mr-md-2  py-1"><a  href="/" ><div id="titulo" class=" position-relative  mr-md-5 align-items-center"><span class="font-weight-bold text-uppercase  z-index-50 text-shadows">XRACING</span><img id="logo" class="img-fluid " src="/imgs/logo.jpg"></img></div></a></div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav  menu">
-                <li class="nav-item mr-4">
+                <li class="nav-item mr-4 mb-5">
                   <!-- Link--><a class="h4 " href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <!-- Link--><a class="h4" id="pagProductos" href="#">Productos</a>
                 </li>
               </ul>
-              <ul class="navbar-nav ml-auto row">               
+              <ul class="navbar-nav ml-auto row mt-5">               
                 
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <li class=" nav-item col h4" id="carro"><a  href="#"> <i class="fas fa-dolly-flatbed  text-warning"></i><small id="prodEnCarro" class="text-dark">(0)</small></a></li>
-                <li class="nav-item position-absolute ml-5 col">
-                  <div>
+                <li class=" nav-item col h4 mr-5 " id="carro"><a  href="#"> <i class="fas fa-dolly-flatbed  text-warning"></i><small id="prodEnCarro" class="text-dark">(0)</small></a></li>
+                <li class="nav-item  ml-5 col" id="miperfil">
+                  <div >
                     <a class= "dropdown-toggle h4"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Mi perfil</a>
                       <div class="dropdown-menu   position-relative z-index-50 "  aria-labelledby="dropdownMenuButton">
                         <a id="misdatos" class="dropdown-item" href="#misdatosModal" data-toggle="modal">Mis datos</a>

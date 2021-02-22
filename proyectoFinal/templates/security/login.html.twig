@@ -18,7 +18,7 @@
             <h2 class="text-center text-seconary">Ya estás registrado! Se ha enviado un correo de confirmación a su dirección de correo</h2>
         {% endif %}
         <div class="container-fluid border p-0">
-            <div class="miheader2 h-25 py-1 mb-2 pl-2"><h2 class="h3  font-weight-bold text-secondary">Introduce una dirección de correo y contraseña</h2></div>
+            <div class="bg-primary h-25 py-1 mb-2 pl-2"><h2 class="h3-md h5 font-weight-bold text-secondary">Introduce una dirección de correo y contraseña</h2></div>
             <div class="container-fluid ml-1">
                 <label for="inputEmail">Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
@@ -29,8 +29,8 @@
 
             </div>
             <div class="row m-1">
-                <button class="btn btn-lg miheader2 col-2 ml-2 rounded  btn-outline-info btn-sm" type="submit">Iniciar sesión</button>
-                <a href="/register" class="btn btn-outline-danger  miheader2 btn-sm mr-2  col-2 offset-6 rounded ">Registrarme</a>
+                <button class="btn btn-lg btn-outline-primary col-md-2 col-3   ml-2 rounded   btn-sm" type="submit">Iniciar sesión</button>
+                <a href="/register" class="btn   btn-outline-primary btn-sm mr-2  col-md-2 col-3 offset-md-6 offset-4 rounded ">Registrarme</a>
             </div>
         </div>
     </form>
