@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\TipoProductoRepository;
 use App\Entity\Producto;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,6 +23,8 @@ class TipoProducto
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message=" El tipo de producto no puede ser null:/")
+     * @Assert\NotBlank
      */
     private $tipo;
 

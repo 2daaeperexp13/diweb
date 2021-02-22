@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CategoriaRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,6 +20,8 @@ class Categoria
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull(message=" El nombre de la categoría no puede ser null:/")
      */
     private $nombre;
 

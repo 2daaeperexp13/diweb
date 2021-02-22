@@ -51,8 +51,9 @@ class TipoProductoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $img=$request->files->get('tipoproducto')['icono'];
-            $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
+            
+            $img=$request->files->get('tipo_producto')['icono'];
+            if($img!=null) $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($tipoProducto);
             $entityManager->flush();
@@ -85,8 +86,9 @@ class TipoProductoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $img=$request->files->get('tipoproducto')['icono'];
-            $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
+           
+            $img=$request->files->get('tipo_producto')['icono'];
+            if($img!=null) $tipoProducto->setIcono("data:image/jpeg;base64, ".base64_encode(stream_get_contents(fopen($img->getRealPath(),"rb"))));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('tipo_producto_index');

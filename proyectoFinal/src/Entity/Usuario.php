@@ -25,9 +25,6 @@ class Usuario implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotNull(message="El email del usuario no puede ser null")
-     * @Assert\Unique(message="Ya existe un usuario con esta cuenta de correo")
-     * @Assert\Email(message = "El email no es un email correcto, por favor inténtelo de nuevo")
      */
     private $email;
 
@@ -39,8 +36,6 @@ class Usuario implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Assert\NotBlank
-     * @Assert\NotNull(message="La contraseña del usuario no puede ser null")
      */
     private $password;
 

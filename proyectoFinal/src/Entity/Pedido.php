@@ -23,7 +23,7 @@ class Pedido
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank
-     * @Assert\NotNull(message="can not be null :/")
+     * @Assert\NotNull(message=" La fecha no puede ser null:/")
      */
     private $fecha;
 

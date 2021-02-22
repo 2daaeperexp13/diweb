@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\LocalidadRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Provincia;
 /**
@@ -21,11 +22,13 @@ class Localidad
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotNull(message=" El código no puede ser null:/")
      */
     private $codLoc;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message=" El nombre de la localidad no puede ser null:/")
      */
     private $nombre;
 
@@ -33,6 +36,7 @@ class Localidad
      * 
      * @ORM\ManyToOne(targetEntity=Provincia::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message=" La provincia a la que pertenece esta localidad no puede ser null:/")
      */
     private $provincia;
 
