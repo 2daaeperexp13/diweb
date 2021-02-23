@@ -361,6 +361,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\LocalidadController"/>
       </call>
     </service>
+    <service id="App\Controller\MensajeController" class="App\Controller\MensajeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\MensajeController"/>
+      </call>
+    </service>
     <service id="App\Controller\PedidoController" class="App\Controller\PedidoController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -423,6 +430,9 @@
     <service id="App\Form\LocalidadType" class="App\Form\LocalidadType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\MensajeType" class="App\Form\MensajeType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -447,6 +457,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\LocalidadRepository" class="App\Repository\LocalidadRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MensajeRepository" class="App\Repository\MensajeRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -950,6 +964,7 @@
       <argument type="collection">
         <argument>App\Form\CategoriaType</argument>
         <argument>App\Form\LocalidadType</argument>
+        <argument>App\Form\MensajeType</argument>
         <argument>App\Form\PedidoType</argument>
         <argument>App\Form\ProductoType</argument>
         <argument>App\Form\ProvinciaType</argument>
@@ -1312,7 +1327,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator._M0u3aY"/>
+      <argument type="service" id=".service_locator.OXRknau"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2025,6 +2040,7 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2037,7 +2053,6 @@
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
           <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
-          <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2046,6 +2061,7 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-core/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\framework-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\sensio\framework-extra-bundle\src/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\twig-bundle/translations</argument>
@@ -2058,7 +2074,6 @@
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\symfony\security-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\twig\extra-bundle/translations</argument>
             <argument>C:\wamp64\www\Interfaces web\diweb\proyectoFinal\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
-            <argument>translations</argument>
           </argument>
         </argument>
       </argument>
@@ -4342,7 +4357,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.vl23C2G"/>
+      <argument type="service" id=".service_locator.spAzYQW"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5462,6 +5477,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LocalidadController" class="App\Controller\LocalidadController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LocalidadController" class="App\Controller\LocalidadController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LocalidadController" class="App\Controller\LocalidadController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MensajeController" class="App\Controller\MensajeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MensajeController" class="App\Controller\MensajeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MensajeController" class="App\Controller\MensajeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PedidoController" class="App\Controller\PedidoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PedidoController" class="App\Controller\PedidoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PedidoController" class="App\Controller\PedidoController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5491,6 +5509,8 @@
     <service id=".abstract.instanceof.App\Form\CategoriaType" class="App\Form\CategoriaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocalidadType" class="App\Form\LocalidadType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LocalidadType" class="App\Form\LocalidadType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MensajeType" class="App\Form\MensajeType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MensajeType" class="App\Form\MensajeType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PedidoType" class="App\Form\PedidoType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductoType" class="App\Form\ProductoType" autowire="true" abstract="true"/>
@@ -5507,6 +5527,8 @@
     <service id=".abstract.instanceof.App\Repository\ImgProductoRepository" class="App\Repository\ImgProductoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LocalidadRepository" class="App\Repository\LocalidadRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LocalidadRepository" class="App\Repository\LocalidadRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MensajeRepository" class="App\Repository\MensajeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MensajeRepository" class="App\Repository\MensajeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PedidoRepository" class="App\Repository\PedidoRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PedidoRepository" class="App\Repository\PedidoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductoRepository" class="App\Repository\ProductoRepository" autowire="true" abstract="true"/>
@@ -5814,6 +5836,19 @@
         <argument key="localidad" type="service" id=".errored..service_locator.YVT_0fT.App\Entity\Localidad"/>
       </argument>
     </service>
+    <service id=".service_locator.QW1BMvA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mensajeRepository" type="service" id="App\Repository\MensajeRepository"/>
+        <argument key="paginator" type="service" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.u9Yew3L" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mensaje" type="service" id=".errored..service_locator.u9Yew3L.App\Entity\Mensaje"/>
+      </argument>
+    </service>
     <service id=".service_locator.dZo_iLe" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5902,7 +5937,7 @@
         <argument key="tipoProducto" type="service" id=".errored..service_locator.A2udkCN.App\Entity\TipoProducto"/>
       </argument>
     </service>
-    <service id=".service_locator.Y7Zk3d4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.NLqibni" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CategoriaController::datos" type="service" id=".service_locator.6ieTL0P"/>
@@ -5916,6 +5951,9 @@
         <argument key="App\Controller\LocalidadController::index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController::new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController::show" type="service" id=".service_locator.YVT_0fT"/>
+        <argument key="App\Controller\MensajeController::delete" type="service" id=".service_locator.u9Yew3L"/>
+        <argument key="App\Controller\MensajeController::index" type="service" id=".service_locator.QW1BMvA"/>
+        <argument key="App\Controller\MensajeController::show" type="service" id=".service_locator.u9Yew3L"/>
         <argument key="App\Controller\PedidoController::comprar" type="service" id=".service_locator.4GAiPw7"/>
         <argument key="App\Controller\PedidoController::delete" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\PedidoController::edit" type="service" id=".service_locator.AOEYXy4"/>
@@ -5957,6 +5995,9 @@
         <argument key="App\Controller\LocalidadController:index" type="service" id=".service_locator.wJCao0A"/>
         <argument key="App\Controller\LocalidadController:new" type="service" id=".service_locator.665dTYD"/>
         <argument key="App\Controller\LocalidadController:show" type="service" id=".service_locator.YVT_0fT"/>
+        <argument key="App\Controller\MensajeController:delete" type="service" id=".service_locator.u9Yew3L"/>
+        <argument key="App\Controller\MensajeController:index" type="service" id=".service_locator.QW1BMvA"/>
+        <argument key="App\Controller\MensajeController:show" type="service" id=".service_locator.u9Yew3L"/>
         <argument key="App\Controller\PedidoController:comprar" type="service" id=".service_locator.4GAiPw7"/>
         <argument key="App\Controller\PedidoController:delete" type="service" id=".service_locator.AOEYXy4"/>
         <argument key="App\Controller\PedidoController:edit" type="service" id=".service_locator.AOEYXy4"/>
@@ -6045,11 +6086,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator._M0u3aY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OXRknau" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoriaType" type="service" id="App\Form\CategoriaType"/>
         <argument key="App\Form\LocalidadType" type="service" id="App\Form\LocalidadType"/>
+        <argument key="App\Form\MensajeType" type="service" id="App\Form\MensajeType"/>
         <argument key="App\Form\PedidoType" type="service" id="App\Form\PedidoType"/>
         <argument key="App\Form\ProductoType" type="service" id="App\Form\ProductoType"/>
         <argument key="App\Form\ProvinciaType" type="service" id="App\Form\ProvinciaType"/>
@@ -6223,12 +6265,13 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.vl23C2G" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.spAzYQW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoriaRepository" type="service" id="App\Repository\CategoriaRepository"/>
         <argument key="App\Repository\ImgProductoRepository" type="service" id="App\Repository\ImgProductoRepository"/>
         <argument key="App\Repository\LocalidadRepository" type="service" id="App\Repository\LocalidadRepository"/>
+        <argument key="App\Repository\MensajeRepository" type="service" id="App\Repository\MensajeRepository"/>
         <argument key="App\Repository\PedidoRepository" type="service" id="App\Repository\PedidoRepository"/>
         <argument key="App\Repository\ProductoRepository" type="service" id="App\Repository\ProductoRepository"/>
         <argument key="App\Repository\ProvinciaRepository" type="service" id="App\Repository\ProvinciaRepository"/>
@@ -6297,6 +6340,12 @@
     <service id=".service_locator.5nX7ca3.App\Controller\LocalidadController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LocalidadController"/>
       <argument>App\Controller\LocalidadController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\MensajeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\MensajeController"/>
+      <argument>App\Controller\MensajeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
@@ -6504,12 +6553,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Y7Zk3d4"/>
+      <argument type="service" id=".service_locator.NLqibni"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Y7Zk3d4"/>
+      <argument type="service" id=".service_locator.NLqibni"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6523,6 +6572,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.2OM4L_f.App\Entity\Categoria" class="App\Entity\Categoria"/>
     <service id=".errored..service_locator.YVT_0fT.App\Entity\Localidad" class="App\Entity\Localidad"/>
+    <service id=".errored..service_locator.u9Yew3L.App\Entity\Mensaje" class="App\Entity\Mensaje"/>
     <service id=".errored..service_locator.AOEYXy4.App\Entity\Pedido" class="App\Entity\Pedido"/>
     <service id=".errored..service_locator.1jRuMKL.App\Entity\Producto" class="App\Entity\Producto"/>
     <service id=".errored..service_locator.MyFGqY6.App\Entity\Provincia" class="App\Entity\Provincia"/>
@@ -6927,7 +6977,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Y7Zk3d4"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.NLqibni"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

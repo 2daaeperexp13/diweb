@@ -19,6 +19,8 @@ return [
         '/localidad' => [[['_route' => 'localidad_index', '_controller' => 'App\\Controller\\LocalidadController::index'], null, ['GET' => 0], null, true, false, null]],
         '/localidad/datos' => [[['_route' => 'localidad_provincia', '_controller' => 'App\\Controller\\LocalidadController::datosporProvincia'], null, ['POST' => 0], null, false, false, null]],
         '/localidad/new' => [[['_route' => 'localidad_new', '_controller' => 'App\\Controller\\LocalidadController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/mensaje' => [[['_route' => 'mensaje_index', '_controller' => 'App\\Controller\\MensajeController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/mensaje/new' => [[['_route' => 'mensaje_new', '_controller' => 'App\\Controller\\MensajeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/pedido' => [[['_route' => 'pedido_index', '_controller' => 'App\\Controller\\PedidoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pedido/new' => [[['_route' => 'pedido_new', '_controller' => 'App\\Controller\\PedidoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/pedido/guardarCarrito' => [[['_route' => 'carrito', '_controller' => 'App\\Controller\\PedidoController::guardarCarrito'], null, ['POST' => 0], null, false, false, null]],
@@ -66,29 +68,32 @@ return [
                     .'|/edit(*:256)'
                     .'|(*:264)'
                 .')'
+                .'|/mensaje/([^/]++)(?'
+                    .'|(*:293)'
+                .')'
                 .'|/p(?'
                     .'|edido/([^/]++)(?'
-                        .'|(*:295)'
-                        .'|/edit(*:308)'
-                        .'|(*:316)'
+                        .'|(*:324)'
+                        .'|/edit(*:337)'
+                        .'|(*:345)'
                     .')'
                     .'|ro(?'
                         .'|ducto/([^/]++)(?'
-                            .'|(*:347)'
-                            .'|/edit(*:360)'
-                            .'|(*:368)'
+                            .'|(*:376)'
+                            .'|/edit(*:389)'
+                            .'|(*:397)'
                         .')'
                         .'|vincia/([^/]++)(?'
-                            .'|(*:395)'
-                            .'|/edit(*:408)'
-                            .'|(*:416)'
+                            .'|(*:424)'
+                            .'|/edit(*:437)'
+                            .'|(*:445)'
                         .')'
                     .')'
                 .')'
                 .'|/tipo/producto/([^/]++)(?'
-                    .'|(*:453)'
-                    .'|/edit(*:466)'
-                    .'|(*:474)'
+                    .'|(*:482)'
+                    .'|/edit(*:495)'
+                    .'|(*:503)'
                 .')'
             .')/?$}sDu',
     ],
@@ -106,18 +111,22 @@ return [
         243 => [[['_route' => 'localidad_show', '_controller' => 'App\\Controller\\LocalidadController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         256 => [[['_route' => 'localidad_edit', '_controller' => 'App\\Controller\\LocalidadController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         264 => [[['_route' => 'localidad_delete', '_controller' => 'App\\Controller\\LocalidadController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        295 => [[['_route' => 'pedido_show', '_controller' => 'App\\Controller\\PedidoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        308 => [[['_route' => 'pedido_edit', '_controller' => 'App\\Controller\\PedidoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        316 => [[['_route' => 'pedido_delete', '_controller' => 'App\\Controller\\PedidoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        347 => [[['_route' => 'producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        360 => [[['_route' => 'producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        368 => [[['_route' => 'producto_delete', '_controller' => 'App\\Controller\\ProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        395 => [[['_route' => 'provincia_show', '_controller' => 'App\\Controller\\ProvinciaController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        408 => [[['_route' => 'provincia_edit', '_controller' => 'App\\Controller\\ProvinciaController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        416 => [[['_route' => 'provincia_delete', '_controller' => 'App\\Controller\\ProvinciaController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        453 => [[['_route' => 'tipo_producto_show', '_controller' => 'App\\Controller\\TipoProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        466 => [[['_route' => 'tipo_producto_edit', '_controller' => 'App\\Controller\\TipoProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        474 => [
+        293 => [
+            [['_route' => 'mensaje_show', '_controller' => 'App\\Controller\\MensajeController::show'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'mensaje_delete', '_controller' => 'App\\Controller\\MensajeController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        ],
+        324 => [[['_route' => 'pedido_show', '_controller' => 'App\\Controller\\PedidoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        337 => [[['_route' => 'pedido_edit', '_controller' => 'App\\Controller\\PedidoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        345 => [[['_route' => 'pedido_delete', '_controller' => 'App\\Controller\\PedidoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        376 => [[['_route' => 'producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        389 => [[['_route' => 'producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        397 => [[['_route' => 'producto_delete', '_controller' => 'App\\Controller\\ProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        424 => [[['_route' => 'provincia_show', '_controller' => 'App\\Controller\\ProvinciaController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        437 => [[['_route' => 'provincia_edit', '_controller' => 'App\\Controller\\ProvinciaController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        445 => [[['_route' => 'provincia_delete', '_controller' => 'App\\Controller\\ProvinciaController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        482 => [[['_route' => 'tipo_producto_show', '_controller' => 'App\\Controller\\TipoProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        495 => [[['_route' => 'tipo_producto_edit', '_controller' => 'App\\Controller\\TipoProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        503 => [
             [['_route' => 'tipo_producto_delete', '_controller' => 'App\\Controller\\TipoProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

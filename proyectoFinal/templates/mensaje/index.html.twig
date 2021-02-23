@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MENSAJES{% endblock %}
+
+{% block body %}
+<div class="container mb-5">
+    <div class="container-fluid border p-0 miheader2 rounded shadow">
+        <div class="encabezadoBack pl-3 text-dark mb-auto rounded">
+            <h1>MENSAJES</h1>
+        </div>
+        <div class="m-1 p-3 ">
+            <table class="table table-striped bg-white">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for mensaje in mensajes %}
+                    <tr>
+                        <td>{{ mensaje.email }}</td>
+                        <td>{{ mensaje.mensaje }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No hay registros en la base de datos</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="navigation"> 
+        {{ knp_pagination_render(mensajes) }} 
+    </div>
+</div>
+{% endblock %}

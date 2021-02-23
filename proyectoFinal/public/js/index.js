@@ -51,6 +51,7 @@ function cargaProductos(productos, productosContainer) {
             let numP=productos.length;
             for (let i = 0; i < numP; i++){
                 let producto=productos[i];
+                $("#producto").addClass("ui-widget-content");
                 let container= $("#producto").clone();
                 //Compruebo si el usuario a iniciado sesión para mostrar o no 
                 //la opción de añadir producto al carrito
@@ -62,6 +63,12 @@ function cargaProductos(productos, productosContainer) {
                 else{
                     $("#prodcarro").attr("id", $("#prodcarro").attr("id")+producto.id).on("click",function(){
                         añadiraCarrito(producto);
+                    });
+                    $("#producto"+producto.id).draggable({ 
+                        "revert": true ,
+                        "stop":function(e,ui){
+                            alert(e.position.top);
+                        }
                     });
                     
                 } 
@@ -123,6 +130,9 @@ function cargarPaginaCarrito() {
     $("#pagina").load("cart.html");
 }
 
+function cargaPaginaContacto() {
+    $("#pagina").load("contacto.html");
+}
 //Comprueba si hay archivos ya guardados en el carrito
 function getCarrito() {
     $.ajax({
@@ -172,6 +182,10 @@ $(document).ready(function(){
         
     });
 
+    $("#pagContacto").on("click",function(){
+        cargaPaginaContacto();
+        
+    });
     //carga la página del carrito
     $("#carro").on("click",function(){
         cargarPaginaCarrito();

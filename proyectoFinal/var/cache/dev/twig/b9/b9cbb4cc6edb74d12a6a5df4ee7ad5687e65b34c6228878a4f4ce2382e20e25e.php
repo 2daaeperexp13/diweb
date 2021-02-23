@@ -42,7 +42,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
         // line 1
         $this->displayBlock('header', $context, $blocks);
-        // line 41
+        // line 44
         echo "
 ";
         
@@ -70,20 +70,23 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
           <nav class=\"navbar navbar-expand-lg navbar-light py-md-0  py-1   px-lg-0 h-100\"><div id=\"icono-header\" class=\"navbar-brand mr-md-2  py-1\"><a  href=\"/\" ><div id=\"titulo\" class=\" position-relative  mr-md-5 align-items-center\"><span class=\"font-weight-bold text-uppercase  z-index-50 text-shadows\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
-              <ul class=\"navbar-nav  menu\">
-                <li class=\"nav-item mr-4 mb-5\">
+              <ul class=\"navbar-nav  menu py-md-5\">
+                <li class=\"nav-item mr-4 \">
                   <!-- Link--><a class=\"h4 \" href=\"/\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
                   <!-- Link--><a class=\"h4\" id=\"pagProductos\" href=\"#\">Productos</a>
                 </li>
+                <li class=\"nav-item\">
+                  <!-- Link--><a class=\"h4 ml-lg-4\" id=\"pagContacto\" href=\"#\">Contacto</a>
+                </li>
               </ul>
               <ul class=\"navbar-nav ml-auto row mt-5\">               
                 
                 ";
-        // line 18
+        // line 21
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 19
+            // line 22
             echo "                <li class=\" nav-item col h4 mr-5 \" id=\"carro\"><a  href=\"#\"> <i class=\"fas fa-dolly-flatbed  text-warning\"></i><small id=\"prodEnCarro\" class=\"text-dark\">(0)</small></a></li>
                 <li class=\"nav-item  ml-5 col\" id=\"miperfil\">
                   <div >
@@ -98,11 +101,11 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
               
                 ";
         } else {
-            // line 32
+            // line 35
             echo "                <li class=\"nav-item\"><a id=\"login\" class=\"h4\" href=\"/login\"> <i class=\"fas fa-user-alt mr-1 text-gray\"></i>Log in</a></li>
                 ";
         }
-        // line 34
+        // line 37
         echo "              </ul>
             </div>
           </nav>
@@ -125,7 +128,7 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
 
     public function getDebugInfo()
     {
-        return array (  106 => 34,  102 => 32,  87 => 19,  85 => 18,  67 => 2,  57 => 1,  46 => 41,  44 => 1,);
+        return array (  109 => 37,  105 => 35,  90 => 22,  88 => 21,  67 => 2,  57 => 1,  46 => 44,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -137,12 +140,15 @@ class __TwigTemplate_6e93a41b2c4cc4b0974a137a2987145042d7623f21bbf839e53d128973c
           <nav class=\"navbar navbar-expand-lg navbar-light py-md-0  py-1   px-lg-0 h-100\"><div id=\"icono-header\" class=\"navbar-brand mr-md-2  py-1\"><a  href=\"/\" ><div id=\"titulo\" class=\" position-relative  mr-md-5 align-items-center\"><span class=\"font-weight-bold text-uppercase  z-index-50 text-shadows\">XRACING</span><img id=\"logo\" class=\"img-fluid \" src=\"/imgs/logo.jpg\"></img></div></a></div>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>
             <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">
-              <ul class=\"navbar-nav  menu\">
-                <li class=\"nav-item mr-4 mb-5\">
+              <ul class=\"navbar-nav  menu py-md-5\">
+                <li class=\"nav-item mr-4 \">
                   <!-- Link--><a class=\"h4 \" href=\"/\">Inicio</a>
                 </li>
                 <li class=\"nav-item\">
                   <!-- Link--><a class=\"h4\" id=\"pagProductos\" href=\"#\">Productos</a>
+                </li>
+                <li class=\"nav-item\">
+                  <!-- Link--><a class=\"h4 ml-lg-4\" id=\"pagContacto\" href=\"#\">Contacto</a>
                 </li>
               </ul>
               <ul class=\"navbar-nav ml-auto row mt-5\">               
