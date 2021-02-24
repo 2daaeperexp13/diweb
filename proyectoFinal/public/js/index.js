@@ -67,7 +67,7 @@ function cargaProductos(productos, productosContainer) {
                     $("#producto"+producto.id).draggable({ 
                         "revert": true ,
                         "stop":function(e,ui){
-                            alert(e.position.top);
+                            if(confirm("desea añadir el producto al carrito?"))añadiraCarrito(producto);
                         }
                     });
                     

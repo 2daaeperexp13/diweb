@@ -25,6 +25,7 @@
                     <tr>
                         <td>{{ tipo_producto.id }}</td>
                         <td>{{ tipo_producto.tipo }}</td>
+                        <td><img src="{{tipo_producto.icono}}" width="50px" height="50px" class="rounded-circle"></td>
                         <td>
                              <a class="btn btnform2" href="{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}">EDITAR <img class="interaccionesBackend" src="{{asset('imgs/editar.png')}}"></img></a>
                         </td>

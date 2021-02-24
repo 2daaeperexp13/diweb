@@ -15,7 +15,8 @@ class TipoProductoType extends AbstractType
         $builder
             ->add('tipo')
             ->add('icono',FileType::class,[
-                'mapped'=>false
+                'mapped'=>false,
+                'label'=>"hola"
             ])
         ;
         ;

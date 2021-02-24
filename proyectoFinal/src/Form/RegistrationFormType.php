@@ -29,8 +29,8 @@ class RegistrationFormType extends AbstractType
             ->add('ap1')
             ->add('ap2')
             ->add('telefono')
-            ->add('provincia')
-            ->add('localidad')
+            ->add('provincia', null,['mapped'=>true])
+            ->add('localidad', null,['mapped'=>true])
             ->add('direccion')
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

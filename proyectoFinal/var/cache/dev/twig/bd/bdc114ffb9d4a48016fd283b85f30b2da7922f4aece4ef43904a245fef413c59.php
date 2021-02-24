@@ -126,10 +126,14 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "tipo", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
+                        <td><img src=\"";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "icono", [], "any", false, false, false, 28), "html", null, true);
+            echo "\" width=\"50px\" height=\"50px\" class=\"rounded-circle\"></td>
                         <td>
                              <a class=\"btn btnform2\" href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["tipo_producto"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\">EDITAR <img class=\"interaccionesBackend\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/editar.png"), "html", null, true);
             echo "\"></img></a>
@@ -139,7 +143,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 33
+            // line 34
             echo "                    <tr>
                         <td colspan=\"4\">No hay registros en la base de datos</td>
                     </tr>
@@ -148,26 +152,26 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tipo_producto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 38
         echo "                </tbody>      
             </table>
         </div>
     </div>
         <div class=\"mt-3\">
             <a class=\"ml-auto \" href=\"";
-        // line 42
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tipo_producto_new");
         echo "\">
                 <h4>AÑADIR<img class=\"interaccionesBackend\" src=\"";
-        // line 43
+        // line 44
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/añadir.png"), "html", null, true);
         echo "\"></img></h4>
             </a>
         </div>
         <div class=\"navigation float-right\"> 
             ";
-        // line 47
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 47, $this->source); })()));
+        // line 48
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["tipo_productos"]) || array_key_exists("tipo_productos", $context) ? $context["tipo_productos"] : (function () { throw new RuntimeError('Variable "tipo_productos" does not exist.', 48, $this->source); })()));
         echo " 
         </div>
 </div>
@@ -192,7 +196,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
 
     public function getDebugInfo()
     {
-        return array (  170 => 47,  163 => 43,  159 => 42,  152 => 37,  143 => 33,  132 => 29,  127 => 27,  123 => 26,  120 => 25,  115 => 24,  100 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  174 => 48,  167 => 44,  163 => 43,  156 => 38,  147 => 34,  136 => 30,  131 => 28,  127 => 27,  123 => 26,  120 => 25,  115 => 24,  100 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -224,6 +228,7 @@ class __TwigTemplate_d284f6fd24844ae660c2b3fb1abd1184c121a149f127b5c1221b58a0381
                     <tr>
                         <td>{{ tipo_producto.id }}</td>
                         <td>{{ tipo_producto.tipo }}</td>
+                        <td><img src=\"{{tipo_producto.icono}}\" width=\"50px\" height=\"50px\" class=\"rounded-circle\"></td>
                         <td>
                              <a class=\"btn btnform2\" href=\"{{ path('tipo_producto_edit', {'id': tipo_producto.id}) }}\">EDITAR <img class=\"interaccionesBackend\" src=\"{{asset('imgs/editar.png')}}\"></img></a>
                         </td>

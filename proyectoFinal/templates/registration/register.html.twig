@@ -27,7 +27,7 @@
                     <div >
                         <div class="form-group d-flex justify-content-around flex-column">
                             {{form_row(registrationForm.nombre,{
-                                label:'Nombre  '
+                                label:'Nombre'
                             })}}
                             {{form_row(registrationForm.ap1,{
                                 label:'Primer apellido'
@@ -40,8 +40,12 @@
                     </div>
                     <div >
                         <div class="form-group d-flex justify-content-around flex-column">
-                            {{form_row(registrationForm.provincia)}}
-                            {{form_row(registrationForm.localidad)}}
+                            {{form_row(registrationForm.provincia,{
+                                id:'provincia'
+                            })}}
+                            {{form_row(registrationForm.localidad,{
+                                id:'localidad'
+                            })}}
                             {{form_row(registrationForm.direccion)}}
                         </div>          
                     </div>
@@ -64,5 +68,6 @@
                 {{ form_end(registrationForm) }}
         </div>
     </div>
+
     
 {% endblock %}
