@@ -5,7 +5,7 @@ function cargarTipos(productos,container) {
         "type": "GET",
         "success":  function (dataT) {
             dataT.forEach(tipoProducto => {
-                var tipo= $('<li class="mb-2"><a class="reset-anchor" href="#" id="'+tipoProducto.tipo+'">'+tipoProducto.tipo+'</a></li>');
+                var tipo= $('<li class="mb-2 d-flex justify-content-between"><a class="reset-anchor" href="#" id="'+tipoProducto.tipo+'">'+tipoProducto.tipo+'</a></li>');
                 tipo.on("click",function(e){
                     e.preventDefault();
                     $("#productosIndex")[0].tipo=tipoProducto.tipo;
@@ -15,7 +15,7 @@ function cargarTipos(productos,container) {
                     
                 });
                 $("#tipoProductos").append(tipo);
-                $("#"+tipoProducto.tipo).append($('<img src="'+tipoProducto.icono+'" width="70px" height="40px" class="rounded-circle"></img>'))
+                $("#"+tipoProducto.tipo).parent().append($('<img src="'+tipoProducto.icono+'" width="50px" height="auto" class="rounded-circle ml-5 img img-fluid"></img>'))
             });
         }
     });

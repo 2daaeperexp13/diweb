@@ -111,7 +111,7 @@ var letras=0;
 \t      letras++;
       if(letras>10&&tecla==32){
         letras=0;
-        \$(this).val(\$(this.val()+'\\n');
+        \$(this).val(\$(this).val()+'\\n');
       }
       return true;
 })
@@ -165,7 +165,7 @@ var letras=0;
 \t      letras++;
       if(letras>10&&tecla==32){
         letras=0;
-        \$(this).val(\$(this.val()+'\\n');
+        \$(this).val(\$(this).val()+'\\n');
       }
       return true;
 })

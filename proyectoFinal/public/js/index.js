@@ -40,7 +40,8 @@ function datosModal(producto){
     })
 
 }
-function cargaProductos(productos, productosContainer) {
+//si el atribute index es true se cargan los ultimos 8 productos
+function cargaProductos(productos, productosContainer,index=false) {
     
     $.ajax({
         "url":"/prodIndex.html",
@@ -49,6 +50,7 @@ function cargaProductos(productos, productosContainer) {
             $("#carga").hide();
             productosContainer.append(data);
             let numP=productos.length;
+            if(index) numP=8;
             for (let i = 0; i < numP; i++){
                 let producto=productos[i];
                 $("#producto").addClass("ui-widget-content");
@@ -73,7 +75,7 @@ function cargaProductos(productos, productosContainer) {
                     
                 } 
                 
-                (i==productos.length-1)?'':productosContainer.append(container);
+                if(index==false || (index==true && i<7))(i==productos.length-1)?'':productosContainer.append(container);
             }
         }
     })
@@ -172,7 +174,7 @@ $(document).ready(function(){
                 novedades.push(productos[i])
                 if(i==productos.length-1) break;
             }
-            cargaProductos(novedades,productosContainer);
+            cargaProductos(novedades,productosContainer,true);
         }
     })
 

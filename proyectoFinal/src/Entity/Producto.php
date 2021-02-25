@@ -36,12 +36,14 @@ class Producto
     /**
      * @ORM\Column(type="float")
      * @Assert\NotBlank
+     * @Assert\Positive
      */
     private $precio;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank
+     * @Assert\Positive
      */
     private $stock;
 

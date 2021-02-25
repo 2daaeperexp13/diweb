@@ -103,24 +103,22 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
                 <span class=\"btn btn-default btn-file\">
                     ";
         // line 47
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), "imgProductos", [], "any", false, false, false, 47), 'row', ["label" => "Imágenes del producto"]);
-        // line 49
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), "imgProductos", [], "any", false, false, false, 47), 'row', ["label" => "Imágenes del producto", "id" => "img"]);
+        // line 50
         echo "
                 </span>
             </div>
         </div>  
         <div class=\"col-2 offset-10\"><button class=\"btn btnform2 rounded\">";
-        // line 53
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 53, $this->source); })()), "GUARDAR")) : ("GUARDAR")), "html", null, true);
+        // line 54
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 54, $this->source); })()), "GUARDAR")) : ("GUARDAR")), "html", null, true);
         echo "<img class=\"interaccionesBackend rounded \" src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("imgs/guardar.png"), "html", null, true);
         echo "\"></img></button>
     </div>
-    
-
     ";
-        // line 57
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 57, $this->source); })()), 'form_end');
+        // line 56
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 56, $this->source); })()), 'form_end');
         echo "
 
 
@@ -148,7 +146,7 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
 
     public function getDebugInfo()
     {
-        return array (  123 => 57,  114 => 53,  108 => 49,  106 => 47,  99 => 42,  97 => 40,  91 => 36,  89 => 34,  81 => 28,  79 => 26,  71 => 20,  69 => 18,  63 => 14,  61 => 12,  55 => 8,  53 => 6,  46 => 2,  43 => 1,);
+        return array (  121 => 56,  114 => 54,  108 => 50,  106 => 47,  99 => 42,  97 => 40,  91 => 36,  89 => 34,  81 => 28,  79 => 26,  71 => 20,  69 => 18,  63 => 14,  61 => 12,  55 => 8,  53 => 6,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -200,15 +198,14 @@ class __TwigTemplate_2456358890a9a9eb31631780ddcc1951be3df83bbc72fd9ede7f26c920a
             <div class=\" col-6\">
                 <span class=\"btn btn-default btn-file\">
                     {{ form_row(form.imgProductos,{
-                        label:'Imágenes del producto'
+                        label:'Imágenes del producto',
+                        id:\"img\"
                     })}}
                 </span>
             </div>
         </div>  
         <div class=\"col-2 offset-10\"><button class=\"btn btnform2 rounded\">{{ button_label|default('GUARDAR') }}<img class=\"interaccionesBackend rounded \" src=\"{{asset('imgs/guardar.png')}}\"></img></button>
     </div>
-    
-
     {{ form_end(form) }}
 
 

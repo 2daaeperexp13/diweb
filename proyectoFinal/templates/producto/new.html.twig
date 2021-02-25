@@ -21,7 +21,7 @@ $("textarea").on("keyup",function(e){
 	      letras++;
       if(letras>10&&tecla==32){
         letras=0;
-        $(this).val($(this.val()+'\n');
+        $(this).val($(this).val()+'\n');
       }
       return true;
 })
