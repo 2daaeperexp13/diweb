@@ -69,7 +69,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 ";
         // line 54
         $this->displayBlock('footer', $context, $blocks);
-        // line 79
+        // line 87
         echo "      </footer>
 
 <script>
@@ -90,7 +90,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
   </script>
       <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.1/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">
       <link rel=\"stylesheet\" href=\"";
-        // line 98
+        // line 106
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/custom.css"), "html", null, true);
         echo "\">
     </div>
@@ -322,6 +322,14 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
                 <li><a class=\"footer-link\" href=\"#\">Pinterest</a></li>
               </ul>
             </div>
+            <div class=\"col-md-4\">
+              <h6 class=\"text-uppercase mb-3\">Información de contacto</h6>
+              <ul class=\"list-unstyled mb-0\">
+                <li><span class=\"footer-link\" href=\"#\">Teléfono: 999 999 999</span></li>
+                <li><span class=\"footer-link\" href=\"#\">Dirección Calle Martos 25, Martos, Jaén </span></li>
+                <li><span class=\"footer-link\" href=\"#\">Email: 2daaeperexp13@ieslasfuentezuelas.com</span></li>
+              </ul>
+            </div>
           </div>
           <div class=\"border-top pt-4\" style=\"border-color: #1d1d1d !important\">
             <div class=\"row\">
@@ -355,7 +363,7 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
 
     public function getDebugInfo()
     {
-        return array (  314 => 55,  304 => 54,  285 => 51,  274 => 48,  271 => 47,  268 => 46,  265 => 45,  262 => 44,  252 => 43,  237 => 35,  233 => 34,  229 => 33,  225 => 32,  221 => 31,  217 => 30,  213 => 29,  209 => 28,  205 => 26,  195 => 25,  182 => 22,  178 => 21,  173 => 19,  169 => 18,  165 => 17,  161 => 16,  157 => 15,  152 => 13,  149 => 12,  139 => 11,  128 => 25,  126 => 11,  118 => 5,  108 => 4,  94 => 98,  73 => 79,  71 => 54,  67 => 52,  65 => 51,  62 => 50,  60 => 43,  56 => 41,  54 => 4,  49 => 1,);
+        return array (  314 => 55,  304 => 54,  285 => 51,  274 => 48,  271 => 47,  268 => 46,  265 => 45,  262 => 44,  252 => 43,  237 => 35,  233 => 34,  229 => 33,  225 => 32,  221 => 31,  217 => 30,  213 => 29,  209 => 28,  205 => 26,  195 => 25,  182 => 22,  178 => 21,  173 => 19,  169 => 18,  165 => 17,  161 => 16,  157 => 15,  152 => 13,  149 => 12,  139 => 11,  128 => 25,  126 => 11,  118 => 5,  108 => 4,  94 => 106,  73 => 87,  71 => 54,  67 => 52,  65 => 51,  62 => 50,  60 => 43,  56 => 41,  54 => 4,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -423,6 +431,14 @@ class __TwigTemplate_3261f4e45763eaa131b2bd9da214c7bd87d318e774853519bc092e068f7
                 <li><a class=\"footer-link\" href=\"#\">Instagram</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Tumblr</a></li>
                 <li><a class=\"footer-link\" href=\"#\">Pinterest</a></li>
+              </ul>
+            </div>
+            <div class=\"col-md-4\">
+              <h6 class=\"text-uppercase mb-3\">Información de contacto</h6>
+              <ul class=\"list-unstyled mb-0\">
+                <li><span class=\"footer-link\" href=\"#\">Teléfono: 999 999 999</span></li>
+                <li><span class=\"footer-link\" href=\"#\">Dirección Calle Martos 25, Martos, Jaén </span></li>
+                <li><span class=\"footer-link\" href=\"#\">Email: 2daaeperexp13@ieslasfuentezuelas.com</span></li>
               </ul>
             </div>
           </div>

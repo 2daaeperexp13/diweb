@@ -1,4 +1,4 @@
-/* your styles go here */
+
 @font-face {
     font-family: "titulo";
     src: url("../fonts/PermanentMarker-Regular.ttf");
@@ -45,9 +45,7 @@ header{
 .miheader{
     background: linear-gradient(to top,#000000 0% ,  #ffffff 50%,#000000 100%);
 }
-.miheader2{
-    background: linear-gradient(to bottom, #000000 0% , #ffcd60 25%, #fff238 50%, #ffcd60 75%,#000000 100%);
-}
+
 #logo{
     position: relative;
     width: 180px;
@@ -75,14 +73,7 @@ header{
     text-shadow: #3366cc;
     
 }
-.btnform:hover{
-    background: linear-gradient(to top, #ffa033 0%, #3366cc 100%);
-}
-.btnform{
-    background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
-    color: white;
-    border-radius: 10%;
-}
+
 .btnform2:hover{
     background: linear-gradient(to bottom, #ffbf00 0%, #e46b55 100%);
 }
@@ -110,4 +101,7 @@ a:hover{
     width: 30px;
     height:30px;
     
+}
+.miheader2{
+    background: linear-gradient(to top,#000000 0% ,  #ffffff 50%,#000000 100%);
 }
